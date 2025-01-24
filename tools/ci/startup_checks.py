@@ -6,6 +6,8 @@ import subprocess
 import time
 import signal
 
+TEN_MINUTES_IN_SECONDS = 600
+
 def main():
     print("Running exe startup checks...({})".format(platform.system()))
 
@@ -24,7 +26,7 @@ def main():
 
     print("Sleeping for 5 minutes...")
 
-    time.sleep(300)
+    time.sleep(TEN_MINUTES_IN_SECONDS)
 
     print("Checking logs and killing exes...")
 
