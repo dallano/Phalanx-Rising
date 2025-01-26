@@ -58,9 +58,9 @@ xi.settings.map =
     ENMITY_CAP = 30000,
 
     -- Misc EXP related settings
-    EXP_RATE                = 1.0,
+    EXP_RATE                = 1.5,
     EXP_LOSS_RATE           = 1.0,
-    EXP_PARTY_GAP_PENALTIES = true,
+    EXP_PARTY_GAP_PENALTIES = false,
 
     -- A party member's experience points are nullified if the level difference with the highest-level party member exceeds this value.
     -- When set to 0, there is no nullification of EXP regardless of how wide the gap is between party members.
@@ -83,7 +83,7 @@ xi.settings.map =
     EXP_RETAIN = 0,
 
     -- Minimum level at which experience points can be lost
-    EXP_LOSS_LEVEL = 31,
+    EXP_LOSS_LEVEL = 7,
 
     -- Minimum level at which regional influence is lost in conquest when a player dies
     -- Level 5 and below don't lose influence: http://wiki.ffo.jp/html/498.html
@@ -109,10 +109,10 @@ xi.settings.map =
     ALL_JOBS_WIDESCAN = true,
 
     -- Base player movement speed
-    BASE_SPEED = 50,
+    BASE_SPEED = 60,
 
     -- Player movement speed limit
-    SPEED_LIMIT = 80,
+    SPEED_LIMIT = 100,
 
     -- Mount speed, expressed as player speed. Can surpass speed limit.
     MOUNT_SPEED = 80,
@@ -123,14 +123,14 @@ xi.settings.map =
 
     -- Multiplier for speed of engaged mobs when their target is out of range.
     -- The default for almost all mobs on retail is 2.5x their normal speed.
-    MOB_RUN_SPEED_MULTIPLIER = 2.5,
+    MOB_RUN_SPEED_MULTIPLIER = 0.95,
 
     -- Allows you to manipulate the constant multiplier in the skill-up rate formulas, having a potent effect on skill-up rates.
-    SKILLUP_CHANCE_MULTIPLIER = 1.0,
+    SKILLUP_CHANCE_MULTIPLIER = 2.0,
     CRAFT_CHANCE_MULTIPLIER   = 1.0,
 
     -- Multiplier for skillup amounts. Using anything above 1 will break the 0.5 cap, the cap will become 0.9 (For maximum, set to 5)
-    SKILLUP_AMOUNT_MULTIPLIER = 1,
+    SKILLUP_AMOUNT_MULTIPLIER = 2,
     CRAFT_AMOUNT_MULTIPLIER   = 1,
 
     -- Gardening Factors. DO NOT change defaults without verifiable proof that your change IS how retail does it. Myths need to be optional.
@@ -149,16 +149,16 @@ xi.settings.map =
     CRAFT_SPECIALIZATION_POINTS = 400,
 
     -- Multiplier applied to high quality chance
-    CRAFT_HQ_CHANCE_MULTIPLIER = 1.0,
+    CRAFT_HQ_CHANCE_MULTIPLIER = 1.5,
 
     -- Enable/disable all fishing, including quests. ENABLE AT YOUR OWN RISK.
-    FISHING_ENABLE = false,
+    FISHING_ENABLE = true,
 
     -- Sets the minimum level a character must be to fish.
     FISHING_MIN_LEVEL = 1,
 
     -- Multiplier for fishing skill-up chance. Default = 1.0, very hard.
-    FISHING_SKILL_MULTIPLIER = 1.0,
+    FISHING_SKILL_MULTIPLIER = 5.0,
 
     -- Enable/disable skill-ups from bloodpacts
     SKILLUP_BLOODPACT = true,
@@ -172,8 +172,8 @@ xi.settings.map =
     FELLOW_TP_MULTIPLIER = 1.0,
 
     -- Adjust max HP pool for NMs, regular mobs, players, and trusts/fellows. Acts as a multiplier, so default is 1.
-    NM_HP_MULTIPLIER        = 1.0,
-    MOB_HP_MULTIPLIER       = 1.0,
+    NM_HP_MULTIPLIER        = 0.5,
+    MOB_HP_MULTIPLIER       = 0.5,
     PLAYER_HP_MULTIPLIER    = 1.0,
     ALTER_EGO_HP_MULTIPLIER = 1.0,
 
@@ -191,7 +191,7 @@ xi.settings.map =
     -- 1            = 1/2   (default, 75/37, 99/49)
     -- 2            = 2/3   (75/50, 99/66)
     -- 3            = equal (75/75, 99/99)
-    SUBJOB_RATIO = 1,
+    SUBJOB_RATIO = 2,
 
     -- Also adjust monsters subjob in ratio adjustments? 1 = true / 0 = false
     INCLUDE_MOB_SJ = false,
@@ -218,16 +218,16 @@ xi.settings.map =
     MOB_GIL_MULTIPLIER = 1.0,
 
     -- All mobs drop this much extra gil per mob LV even if they normally drop zero.
-    ALL_MOBS_GIL_BONUS = 0,
+    ALL_MOBS_GIL_BONUS = 5,
 
     -- Maximum total bonus gil that can be dropped. Default 9999 gil.
-    MAX_GIL_BONUS = 9999,
+    MAX_GIL_BONUS = 1500,
 
     -- Allow mobs to walk back home instead of despawning
-    MOB_NO_DESPAWN = false,
+    MOB_NO_DESPAWN = true,
 
     -- Adds extra time to mob despawn in seconds. Base time is 25s, so a setting of 5 here would be a total of 30 seconds.
-    MOB_ADDITIONAL_TIME_TO_DEAGGRO = 0,
+    MOB_ADDITIONAL_TIME_TO_DEAGGRO = 25,
 
     -- Allows parry, block, and guard to skill up regardless of the action occuring.
     -- This did not happen in previous eras
@@ -236,7 +236,7 @@ xi.settings.map =
     GUARD_OLD_SKILLUP_STYLE = false,
 
     -- Globally adjusts ALL battlefield level caps by this many levels.
-    BATTLE_CAP_TWEAK = 0,
+    BATTLE_CAP_TWEAK = 10,
 
     -- Enable/disable level cap of mission battlefields stored in database.
     LV_CAP_MISSION_BCNM = false,
@@ -284,8 +284,14 @@ xi.settings.map =
     -- Seconds between healing ticks. Default is 10
     HEALING_TICK_DELAY = 10,
 
+    -- Set to 1 to enable server side anti-cheating measurements
+    ANTICHEAT_ENABLED = true,
+
+    -- Set to 1 to completely disable auto-jailing offenders
+    ANTICHEAT_JAIL_DISABLE = true,
+
     -- Enable/disable keeping jug pets through zoning
-    KEEP_JUGPET_THROUGH_ZONING = false,
+    KEEP_JUGPET_THROUGH_ZONING = true,
 
     -- Despawn jug pets that have a minimum level below level sync or zone level restriction.
     -- Such as despawning Courier Carrie in a level 20 cap when their minimum level to summon is 23.
@@ -296,5 +302,5 @@ xi.settings.map =
     -- their GM level is the same or higher than this number.
     -- The max GM level is 5, so setting this to 6 disables it
     -- for everone. Setting it to 0 enables for everyone.
-    REPORT_LUA_ERRORS_TO_PLAYER_LEVEL = 6,
+    REPORT_LUA_ERRORS_TO_PLAYER_LEVEL = 0,
 }
