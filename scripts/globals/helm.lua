@@ -1403,18 +1403,6 @@ local rocks =
 -----------------------------------
 
 local function doesToolBreak(player, info)
-    local roll  = math.random(1, 100)
-    local mod   = info.mod
-
-    if mod then
-        roll = roll + (player:getMod(mod) / 10)
-    end
-
-    if roll <= info.settingBreak then
-        player:tradeComplete()
-        return true
-    end
-
     return false
 end
 
@@ -1550,9 +1538,10 @@ xi.helm.onTrade = function(player, npc, trade, helmType, csid, func)
 
         -- success! reward item and decrement number of remaining uses on the point
         if itemID ~= 0 then
-            player:addItem(itemID)
+            npcUtil.giveItem(player, { { itemID, math.random(1, 3) } })
+            -- player:addItem(itemID)
 
-            local uses = (npc:getLocalVar('uses') - 1) % 4
+            local uses = (npc:getLocalVar('uses') - 1) % 8
             npc:setLocalVar('uses', uses)
 
             if uses == 0 then
