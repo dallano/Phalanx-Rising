@@ -9,6 +9,10 @@ entity.onMobInitialize = function(mob)
     mob:setMobMod(xi.mobMod.ADD_EFFECT, 1)
 end
 
+entity.onMobSpawn = function(mob)
+    xi.nmloot.addDrops(mob)
+end
+
 entity.onAdditionalEffect = function(mob, target, damage)
     return xi.mob.onAddEffect(mob, target, damage, xi.mob.ae.ENWATER)
 end

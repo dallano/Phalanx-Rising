@@ -24,6 +24,7 @@ end
 
 entity.onMobSpawn = function(mob)
     mob:setMod(xi.mod.REGAIN, 33)
+    xi.nmloot.addDrops(mob)
 end
 
 entity.onMobDeath = function(mob, player, optParams)

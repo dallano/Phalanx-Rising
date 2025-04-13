@@ -11,6 +11,7 @@ end
 
 entity.onMobSpawn = function(mob)
     DespawnMob(mob:getID(), 600)
+    xi.nmloot.addDrops(mob)
 end
 
 entity.onMobDeath = function(mob, player, optParams)

@@ -1,8 +1,6 @@
 -----------------------------------
--- Area: Palborough Mines
---   NM: Bu'Ghi Howlblade
------------------------------------
-mixins = { require('scripts/mixins/job_special') }
+-- Area: King Ranperres Tomb
+--   NM: Crypt Ghost
 -----------------------------------
 ---@type TMobEntity
 local entity = {}
@@ -12,7 +10,6 @@ entity.onMobSpawn = function(mob)
 end
 
 entity.onMobDeath = function(mob, player, optParams)
-    xi.hunts.checkHunt(mob, player, 219)
 end
 
 return entity

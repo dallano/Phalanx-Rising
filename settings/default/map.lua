@@ -93,10 +93,10 @@ xi.settings.map =
     LEVEL_SYNC_ENABLE = true,
 
     -- Disables ability to equip higher level gear when level cap/sync effect is on player.
-    DISABLE_GEAR_SCALING = false,
+    DISABLE_GEAR_SCALING = true,
 
     -- Disables Treasure Hunter procs (Era behavior wants this true)
-    DISABLE_TREASURE_HUNTER_PROCS = false,
+    DISABLE_TREASURE_HUNTER_PROCS = true,
 
     -- Weaponskill point base (before skillchain) for breaking latent - whole numbers only. retail is 1.
     WS_POINTS_BASE = 1,
@@ -130,7 +130,7 @@ xi.settings.map =
     CRAFT_CHANCE_MULTIPLIER   = 1.0,
 
     -- Multiplier for skillup amounts. Using anything above 1 will break the 0.5 cap, the cap will become 0.9 (For maximum, set to 5)
-    SKILLUP_AMOUNT_MULTIPLIER = 2,
+    SKILLUP_AMOUNT_MULTIPLIER = 3,
     CRAFT_AMOUNT_MULTIPLIER   = 1,
 
     -- Gardening Factors. DO NOT change defaults without verifiable proof that your change IS how retail does it. Myths need to be optional.
@@ -143,10 +143,10 @@ xi.settings.map =
     CRAFT_MODERN_SYSTEM = true,
 
     -- Craft level limit from witch specialization points beginning to count. (Retail = 700; Level 75 era:600)
-    CRAFT_COMMON_CAP = 700,
+    CRAFT_COMMON_CAP = 3200,
 
     -- Amount of points allowed in crafts over the level defined above. Points are shared across all crafting skills. (Retail = 400; All skills can go to max = 3200)
-    CRAFT_SPECIALIZATION_POINTS = 400,
+    CRAFT_SPECIALIZATION_POINTS = 3200,
 
     -- Multiplier applied to high quality chance
     CRAFT_HQ_CHANCE_MULTIPLIER = 1.5,
@@ -197,8 +197,8 @@ xi.settings.map =
     INCLUDE_MOB_SJ = false,
 
     -- Adjust base stats (str/vit/etc.) for NMs, regular mobs, players, and trusts/fellows. Acts as a multiplier, so default is 1.
-    NM_STAT_MULTIPLIER        = 1.0,
-    MOB_STAT_MULTIPLIER       = 1.0,
+    NM_STAT_MULTIPLIER        = 0.8,
+    MOB_STAT_MULTIPLIER       = 0.8,
     PLAYER_STAT_MULTIPLIER    = 1.0,
     ALTER_EGO_STAT_MULTIPLIER = 1.0,
 

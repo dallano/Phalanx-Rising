@@ -27,6 +27,10 @@ entity.onMobDeath = function(mob, player, optParams)
     xi.hunts.checkHunt(mob, player, 152)
 end
 
+entity.onMobSpawn = function(mob)
+    xi.nmloot.addDrops(mob)
+end
+
 entity.onMobDespawn = function(mob)
     xi.mob.updateNMSpawnPoint(mob, spawnPoints)
     mob:setRespawnTime(math.random(900, 3600)) -- 15 min to 1 hour

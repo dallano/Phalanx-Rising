@@ -7,6 +7,10 @@ require('scripts/quests/tutorial')
 ---@type TMobEntity
 local entity = {}
 
+entity.onMobSpawn = function(mob)
+    xi.nmloot.addDrops(mob)
+end
+
 entity.onMobDeath = function(mob, player, optParams)
     xi.hunts.checkHunt(mob, player, 154)
     xi.regime.checkRegime(player, mob, 71, 2, xi.regime.type.FIELDS)

@@ -12,11 +12,11 @@ xi.settings = xi.settings or {}
 xi.settings.main =
 {
     -- Server name (not longer than 15 characters)
-    SERVER_NAME = "Nameless",
+    SERVER_NAME = "FFXISP",
 
     SERVER_MESSAGE =
-        "Please visit https://github.com/LandSandBoat/server for the latest information on the project.\n" ..
-        "Thank you, and we hope you enjoy sailing the sands!",
+        "Welcome to Final Fantasy XI Singleplayer! A tailed experience that aims to give the player\n" ..
+        "a fun and engaging solo experience without the need of trusts.",
 
     -- Setting to lock content more accurately to the expansions defined below.
     -- This generally results in a more accurate presentation of your selected expansions,
@@ -27,7 +27,7 @@ xi.settings.main =
     -- Enable Expansion (1 = Enabled, 0 = Disabled)
     ENABLE_COP       = 1,
     ENABLE_TOAU      = 1,
-    ENABLE_WOTG      = 0,
+    ENABLE_WOTG      = 1,
     ENABLE_ACP       = 0,
     ENABLE_AMK       = 0,
     ENABLE_ASA       = 0,
@@ -38,10 +38,10 @@ xi.settings.main =
     ENABLE_VOIDWATCH = 0, -- Not an expansion, but has its own storyline. (Not Implemented)
 
     -- FIELDS OF VALOR/Grounds of Valor settings
-    ENABLE_FIELD_MANUALS  = 0, -- Enables Fields of Valor
-    ENABLE_GROUNDS_TOMES  = 0, -- Enables Grounds of Valor
-    ENABLE_SURVIVAL_GUIDE = 0, -- Enables Survival Guides (Not Implemented)
-    REGIME_WAIT           = 0, -- Make people wait till 00:00 game time as in retail. If it's 0, there is no wait time.
+    ENABLE_FIELD_MANUALS  = 1, -- Enables Fields of Valor
+    ENABLE_GROUNDS_TOMES  = 1, -- Enables Grounds of Valor
+    ENABLE_SURVIVAL_GUIDE = 1, -- Enables Survival Guides (Not Implemented)
+    REGIME_WAIT           = 24, -- Make people wait till 00:00 game time as in retail. If it's 0, there is no wait time.
     FOV_REWARD_ALLIANCE   = 0, -- Allow Fields of Valor rewards while being a member of an alliance. (default retail behavior: 0)
     GOV_REWARD_ALLIANCE   = 0, -- Allow Grounds of Valor rewards while being a member of an alliance. (default retail behavior: 1)
 
@@ -65,10 +65,10 @@ xi.settings.main =
     CAP_CURRENCY_VALOR     = 50000,
 
     -- Magian Trials
-    ENABLE_MAGIAN_TRIALS = 1,
+    ENABLE_MAGIAN_TRIALS = 0,
 
     -- VoidWalker
-    ENABLE_VOIDWALKER = 1,
+    ENABLE_VOIDWALKER = 0,
 
     -- Monstrosity (Heavily in development, use at your own risk!)
     ENABLE_MONSTROSITY               = 0,
@@ -115,7 +115,7 @@ xi.settings.main =
     UNLOCK_OUTPOST_WARPS           = 0,  -- Set to 1 to give starting characters all outpost warps.  2 to add Tu'Lia and Tavnazia.
 
     SHOP_PRICE      = 0.750, -- Multiplies prices in NPC shops.
-    GIL_RATE        = 1.000, -- Multiplies gil earned from quests.  Won't always display in game.
+    GIL_RATE        = 1.500, -- Multiplies gil earned from quests.  Won't always display in game.
     BAYLD_RATE      = 1.000, -- Multiples bayld earned from quests.
     -- Note: EXP rates are also influenced by conf setting
     EXP_RATE        = 1.500, -- Multiplies exp from script (except FoV/GoV).
@@ -279,7 +279,7 @@ xi.settings.main =
 
     -- CHOCOBO RAISING (HEAVILY-IN-DEVELOPMENT, USE AT YOUR OWN RISK)
     -- GM command: `!chocoboraising`
-    ENABLE_CHOCOBO_RAISING              = true, -- true/false. Enable Chocobo Raising features.
+    ENABLE_CHOCOBO_RAISING              = false, -- true/false. Enable Chocobo Raising features.
     DEBUG_CHOCOBO_RAISING               = false, -- true/false. Enable verbose debug logging for Chocobo Raising (visible by players).
     CHOCOBO_RAISING_STAT_POS_MULTIPLIER = 1.0,   -- float. Multiplier for positive stat changes. Default 1.0.
     CHOCOBO_RAISING_STAT_NEG_MULTIPLIER = 1.0,   -- float. Multiplier for negative stat changes. Default 1.0.
@@ -300,9 +300,9 @@ xi.settings.main =
     HOMEPOINT_TELEPORT           = 0,     -- Enables the homepoint teleport system
     DIG_ABUNDANCE_BONUS          = 0,     -- Increase chance of digging up an item (450  = item digup chance +45)
     DIG_FATIGUE                  = 100,   -- Allowed succesful digs per day. Set to 0 to disable Dig Fatigue
-    DIG_GRANT_BURROW             = 0,     -- Set to 1 to grant burrow ability
-    DIG_GRANT_BORE               = 0,     -- Set to 1 to grant bore ability
-    ENM_COOLDOWN                 = 36,   -- Number of hours before a player can obtain same KI for ENMs (default: 5 days)
+    DIG_GRANT_BURROW             = 1,     -- Set to 1 to grant burrow ability
+    DIG_GRANT_BORE               = 1,     -- Set to 1 to grant bore ability
+    ENM_COOLDOWN                 = 72,   -- Number of hours before a player can obtain same KI for ENMs (default: 5 days)
     FORCE_SPAWN_QM_RESET_TIME    = 300,   -- Number of seconds the ??? remains hidden for after the despawning of the mob it force spawns.
     EQUIP_FROM_OTHER_CONTAINERS  = false, -- true/false. Allows equipping items from Mog Satchel, Sack, and Case. Only possible with the use of client addons.
     REGIME_REWARD_THRESHOLD      = 15,    -- If the player is more than N levels below the minimum suggested range, do not award experience.

@@ -11,6 +11,10 @@ entity.onMobInitialize = function(mob)
     mob:setMobMod(xi.mobMod.ADD_EFFECT, 1)
 end
 
+entity.onMobSpawn = function(mob)
+    xi.nmloot.addDrops(mob)
+end
+
 entity.onMobRoam = function(mob)
     local hour = VanadielHour()
     if hour >= 5 and hour < 17 then

@@ -13421,6 +13421,9 @@ INSERT INTO `mob_groups` VALUES (2,7071,210,'Garrison_30',0,129,0,0,0,25,30,1);
 INSERT INTO `mob_groups` VALUES (3,7071,210,'Garrison_40',0,129,0,0,0,35,40,1);
 INSERT INTO `mob_groups` VALUES (4,7071,210,'Garrison_50',0,129,0,0,0,45,50,1);
 INSERT INTO `mob_groups` VALUES (5,7071,210,'Garrison_75',0,129,0,0,0,70,75,1);
+INSERT INTO `mob_groups` VALUES (1000,7071,210,'[XISP]pal',0,129,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1001,5927,210,'[XISP]choco',0,129,0,0,0,1,75,0);
+INSERT INTO `mob_groups` VALUES (1002,7071,210,'[XISP]squire',0,129,0,0,0,1,75,1);
 
 -- ------------------------------------------------------------
 -- Cloister_of_Tides (Zone 211)

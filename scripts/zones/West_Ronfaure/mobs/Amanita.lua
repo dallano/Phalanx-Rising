@@ -6,6 +6,7 @@
 local entity = {}
 
 entity.onMobSpawn = function(mob)
+    xi.nmloot.addDrops(mob)
     mob:setMod(xi.mod.REGAIN, 100)
 end
 

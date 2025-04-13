@@ -15,6 +15,10 @@ entity.onMobInitialize = function(mob)
     mob:addMod(xi.mod.ATT, 50) -- May need adjustment along with cmbDmgMult in mob_pools.sql
 end
 
+entity.onMobSpawn = function(mob)
+    xi.nmloot.addDrops(mob)
+end
+
 entity.onMobRoam = function(mob)
     -- Fairly sure he shouldn't be storing up max TP while idle.
     if mob:getMod(xi.mod.REGAIN) ~= 0 then
