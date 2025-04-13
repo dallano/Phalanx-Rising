@@ -9,7 +9,7 @@ entity.onTrade = function(player, npc, trade)
 end
 
 entity.onTrigger = function(player, npc)
-    player:startEvent(937)
+    xi.xispal.quest1(player, npc, xi.nation.BASTOK)
 end
 
 entity.onEventUpdate = function(player, csid, option, npc)

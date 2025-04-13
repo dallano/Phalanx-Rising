@@ -8,6 +8,7 @@ require('scripts/quests/tutorial')
 local entity = {}
 
 entity.onMobSpawn = function(mob)
+    xi.nmloot.addDrops(mob)
 end
 
 entity.onMobDeath = function(mob, player, optParams)

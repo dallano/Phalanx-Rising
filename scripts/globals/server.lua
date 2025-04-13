@@ -6,6 +6,7 @@ xi.server = xi.server or {}
 
 xi.server.onServerStart = function()
     xi.events.handler.checkSeasonalEvents()
+    xi.xisp.setSeed() -- [XISP] Sets server seed used in random generation
 end
 
 xi.server.onJSTMidnight = function()

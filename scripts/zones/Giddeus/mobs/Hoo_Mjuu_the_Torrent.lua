@@ -14,6 +14,8 @@ entity.onMobSpawn = function(mob)
             { id = xi.jsa.BENEDICTION, hpp = math.random(10, 50) },
         },
     })
+
+    xi.nmloot.addDrops(mob)
 end
 
 entity.onMobDeath = function(mob, player, optParams)

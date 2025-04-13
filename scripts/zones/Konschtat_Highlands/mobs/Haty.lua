@@ -7,6 +7,10 @@ require('scripts/quests/tutorial')
 ---@type TMobEntity
 local entity = {}
 
+entity.onMobSpawn = function(mob)
+    xi.nmloot.addDrops(mob)
+end
+
 entity.onMobRoam = function(mob)
     local hour = VanadielHour()
     if hour >= 5 and hour < 17 then

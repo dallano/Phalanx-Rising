@@ -237,6 +237,8 @@ xi.player.onGameIn = function(player, firstLogin, zoning)
         -- Login Campaign rewards points once daily
         xi.events.loginCampaign.onGameIn(playerArg)
     end)
+
+    xi.xispal.onZone(player)
 end
 
 xi.player.onPlayerDeath = function(player)
