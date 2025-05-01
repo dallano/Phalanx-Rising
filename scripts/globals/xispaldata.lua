@@ -39,7 +39,7 @@ xi.xispal.name =
 
     [8]  = 'Totoro',
     [9]  = 'Pancha',
-    [10] = 'Sorua',
+    [10] = 'Soruo',
     [11] = 'Gurido',
 
     [12] = 'Korvahn',
@@ -129,35 +129,17 @@ xi.xispal.chocoboColor =
     [4] = 0x0800, -- green
 }
 
--- Default Chocobo:
--- 0x0700200000000000000000000000000000000000
 
--- Black Chocobo:
--- 0x0700210000000000000000000000000000000000
-
--- Blue Chocobo:
--- 0x0700220000000000000000000000000000000000
-
--- Red Chocobo:
--- 0x0700230000000000000000000000000000000000
-
--- Green Chocobo:
--- 0x0700240000000000000000000000000000000000
-
--- Antsy chocobo:
--- 0x0000560000000000000000000000000000000000
-
--- Anxious chocobo:
--- 0x0000570000000000000000000000000000000000
-
--- Sad eating chocobo:
--- 0x0000580000000000000000000000000000000000
-
--- Happy Chocobo:
--- 0x0000590000000000000000000000000000000000
-
--- Active Chocobo:
--- 0x0000810000000000000000000000000000000000
+-- 0x0700200000000000000000000000000000000000 -- Default Chocobo:
+-- 0x0700210000000000000000000000000000000000 -- Black Chocobo:
+-- 0x0700220000000000000000000000000000000000 -- Blue Chocobo:
+-- 0x0700230000000000000000000000000000000000 -- Red Chocobo:
+-- 0x0700240000000000000000000000000000000000 -- Green Chocobo:
+-- 0x0000560000000000000000000000000000000000 -- Antsy chocobo:
+-- 0x0000570000000000000000000000000000000000 -- Anxious chocobo:
+-- 0x0000580000000000000000000000000000000000 -- Sad eating chocobo:
+-- 0x0000590000000000000000000000000000000000 -- Happy Chocobo:
+-- 0x0000810000000000000000000000000000000000 -- Active Chocobo:
 
 -- Items needed by the squire in order to grow up
 xi.xispal.squireItems =
@@ -311,6 +293,7 @@ xi.xispal.equipment =
     DRG_RELIC       = 91,
     SMN_AF          = 92,
     SMN_RELIC       = 93,
+    --------------------------
     OGRE            = 94,
     KOENIG          = 95,
     WAR_AKETON      = 96,
@@ -328,9 +311,9 @@ xi.xispal.equipment =
     CARAPACE        = 108,
     DUSK            = 109,
     DRAGON_HARNESS  = 110,
-    SAN_AKETON      = 111, -- Body doesn't match other pieces
-    WIN_AKETON      = 112, -- Body doesn't match other pieces
-    BASTOK_AKETON   = 113, -- Body doesn't match other pieces
+    SAN_AKETON      = 111, -- Body only
+    WIN_AKETON      = 112, -- Body only
+    BASTOK_AKETON   = 113, -- Body only
     SCORP_BREAST    = 114,
     AUSTERE         = 115,
     -- Leather: 116
@@ -379,65 +362,61 @@ xi.xispal.equipment =
     COR_RELIC       = 168,
     PUP_AF          = 169,
     PUP_RELIC       = 170,
-    -- TOAU Gear: 171 - 176
-    -- Repeeat: 177 (Oracle)
-    -- Leather 178
-    COOL_SCOUT = 180,
-    COOL_TANK  = 181,
-    ASKAR      = 182,
-    COOL_NIN   = 184,
-    COOL_MAGE  = 186,
-    -- Zest: 187 - 194
-    TIDAL_TALISMAN = 228,
+    -- TOAU Gear:   = 171 - 176
+    -- Repeat:      = 177, (Oracle)
+    -- Leather:     = 178,
+    COOL_SCOUT      = 180,
+    COOL_TANK       = 181,
+    ASKAR           = 182,
+    COOL_NIN        = 184,
+    COOL_MAGE       = 186,
+    -- Zest:        = 187 - 194
+    -- OOE stuff
+    TIDAL_TALISMAN  = 228,
     -- OOE stuff
 }
 
 -- Weapons
 xi.xispal.weapons =
 {
-    --------- While sub == 0 --------------
-    -- GS: 64 - 75
-    -- 1H Axe: 76 - 91
-    -- GAXE: 92 - 99
-    -- Clubs: 100 - 116
-    -- H2H: 117 - 143
-    -- GKAT: 144 - 156
-    -- Dagger: 157 - 180
-    -- Rapiers: 181 - 193
-    -- Scythe: 194 - 201
-    -- Polearm: 202 - 217 (Gungnir, sick)
-    -- Wands: 218 - 248
-    -- Swords: 249 - 255
+    [0]  = { 64,   75 }, -- GS:      64  -  75
+    [1]  = { 76,   91 }, -- 1H Axe:  76  -  91
+    [2]  = { 92,   99 }, -- GAXE:    92  -  99
+    [3]  = { 100, 116 }, -- Clubs:   100 - 116
+    [4]  = { 117, 143 }, -- H2H:     117 - 143
+    [5]  = { 144, 156 }, -- GKAT:    144 - 156
+    [6]  = { 157, 180 }, -- Dagger:  157 - 180
+    [7]  = { 181, 193 }, -- Rapiers: 181 - 193
+    [8]  = { 194, 201 }, -- Scythe:  194 - 201
+    [9]  = { 202, 217 }, -- Polearm: 202 - 217 (Ends with Gungnir, sick)
+    [10] = { 218, 248 }, -- Wands:   218 - 248
+    [11] = { 249, 255 }, -- Swords:  249 - 255
     -- Repeat??
-
-    ----------  ------------------
 }
 
 xi.xispal.subs =
 {
 
-    -- Shields: 19-63
-    -- 1H axe: 76 - 96
-    -- Clubs: 100-116
-    -- H2H: 117 - 143
-    -- Daggers: 157 - 180
-    -- Rapiers: 181 - 193
-    -- Wands: 218 - 248
-    -- Swords: 249 - 255
-    -- Repeat?
-
+    [0] = { 19,   63 }, -- Shields: 19  -  63
+    [1] = { 76,   96 }, -- 1H axe:  76  -  96
+    [2] = { 100, 116 }, -- Clubs:   100 - 116
+    [3] = { 117, 143 }, -- H2H:     117 - 143
+    [4] = { 157, 180 }, -- Daggers: 157 - 180
+    [5] = { 181, 193 }, -- Rapiers: 181 - 193
+    [6] = { 193, 248 }, -- Wands:   218 - 248
+    [7] = { 249, 255 }, -- Swords:  249 - 255
 }
 
 xi.xispal.squireGearSets =
 {
     [0] = -- Level 1-10
     {
-        body  = xi.xispal.equipment.COOL_SCOUT,
-        hands = xi.xispal.equipment.COOL_SCOUT,
-        legs  = xi.xispal.equipment.COOL_SCOUT,
-        feet  = xi.xispal.equipment.COOL_SCOUT,
-        main  = 249,
-        sub   = 55,
+        body  = xi.xispal.equipment.RSE,
+        hands = xi.xispal.equipment.BRONZE,
+        legs  = xi.xispal.equipment.RSE,
+        feet  = xi.xispal.equipment.BRONZE,
+        main  = xi.xispal.weapons[11][1] + 0,
+        sub   = 0,
     },
     [1] = -- Lvl 10-20
     {
@@ -445,127 +424,158 @@ xi.xispal.squireGearSets =
         hands = xi.xispal.equipment.LEATHER,
         legs  = xi.xispal.equipment.DOUBLET,
         feet  = xi.xispal.equipment.KENPO,
-        main  = 5,
-        sub   = 5,
+        main  = xi.xispal.weapons[11][1] + 0,
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [2] = -- Lvl 20-30
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [3] = -- Lvl 30-40
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [4] = -- Lvl 40-50
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [5] = -- AF
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [6] = -- Lvl 50-60
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [7] = -- Lvl 60-70
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [8] = -- Lvl 60-75
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [9] = -- 75 + 1
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [10] = -- 75 + 2
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [11] = -- 75 + 3
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [12] = -- 75 + 4
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [13] = -- 75 + 5
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [14] = -- 75 + 6
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [15] = -- 75 + 7
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
     },
     [16] = -- 75 + 8
     {
-        body = 1,
-        hands = 1,
-        legs = 1,
-        feet = 1,
-        main = 5,
+        body  = xi.xispal.equipment.BONE,
+        hands = xi.xispal.equipment.LEATHER,
+        legs  = xi.xispal.equipment.DOUBLET,
+        feet  = xi.xispal.equipment.KENPO,
+        main  = xi.xispal.weapons[11][1],
+        sub   = xi.xispal.subs[0][1] + 0,
+    },
+}
+
+xi.xispal.knightGearSets =
+{
+    [0] =
+    {
+
+    },
+}
+
+xi.xispal.mageGearSets =
+{
+    [0] =
+    {
+
     },
 }

@@ -7150,6 +7150,13 @@ INSERT INTO `mob_pools` VALUES (7072,'Magicked_Bones_dagger','Magicked_Bones_dag
 INSERT INTO `mob_pools` VALUES (7073,'Vasiliceratops','Vasiliceratops',257,0x0000B90800000000000000000000000000000000,1,1,5,240,100,1024,0,0,0,2,0,0,7,131,0,0,0,0,0,257,257);
 
 -- ------------------------------------------------------------
+-- XISP Section
+
+-- ------------------------------------------------------------
+INSERT INTO `mob_pools` VALUES (20000,'Pal_Squire','Pal_Squire',145,0x0000B70400000000000000000000000000000000,5,3,3,240,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,149);
+INSERT INTO `mob_pools` VALUES (20001,'Pal_Knight','Pal_Knight',145,0x0000B70400000000000000000000000000000000,1,1,3,240,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,149);
+INSERT INTO `mob_pools` VALUES (20002,'Pal_Mage','Pal_Mage',145,0x0000B70400000000000000000000000000000000,3,5,3,240,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,146);
+-- ------------------------------------------------------------
 -- Start of Ambuscade section
 -- NOTE: The mobs are changed every update in the DATs, so using out-of-date
 --       mob entries will result in the current update's names being shown.

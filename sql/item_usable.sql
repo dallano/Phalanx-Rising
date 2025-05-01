@@ -1764,7 +1764,7 @@ INSERT INTO `item_usable` VALUES (5981,'plate_of_boiled_barnacles_+1',1,1,28,0,0
 INSERT INTO `item_usable` VALUES (5982,'senroh_skewer',1,1,28,0,0,0,0,0);
 INSERT INTO `item_usable` VALUES (5983,'piscators_skewer',1,1,28,0,0,0,0,0);
 INSERT INTO `item_usable` VALUES (5984,'branch_of_gnatbane',1,1,28,0,0,0,0,0);
-INSERT INTO `item_usable` VALUES (5985,'sprig_of_hemlock',1,1,28,0,0,0,0,0);
+INSERT INTO `item_usable` VALUES (5985,'sprig_of_hemlock',1,1,55,80,0,0,0,0);
 INSERT INTO `item_usable` VALUES (5988,'scroll_of_instant_protect',1,7,30,0,0,0,0,0);
 INSERT INTO `item_usable` VALUES (5989,'scroll_of_instant_shell',1,7,32,0,0,0,0,0);
 INSERT INTO `item_usable` VALUES (5990,'scroll_of_instant_stoneskin',1,7,8,0,0,0,0,0);

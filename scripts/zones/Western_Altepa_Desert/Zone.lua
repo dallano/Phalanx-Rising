@@ -102,7 +102,7 @@ zoneObject.onZoneWeatherChange = function(weather)
             DisallowRespawn(dahu:getID(), false)
 
             -- Spawn if respawn is up
-            if dahu:getRespawnTime() == 0 then
+            if dahu:getRespawnTime() == 0 and not dahu:isSpawned() then
                 SpawnMob(dahu:getID())
             end
         else

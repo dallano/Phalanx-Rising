@@ -1,22 +1,30 @@
 -----------------------------------
 -- ID: 5985
 -- Item: Sprig of Hemlock
--- Food Effect: 5 Min, All Races
--- Paralysis
+-- Effect: XISP - resurrects a fallen pal.
 -----------------------------------
+
 ---@type TItem
 local itemObject = {}
-
+------------------------------------------------------------------
+-- XISP
 itemObject.onItemCheck = function(target, item, param, caster)
-    return 0
+    local party = xi.xispal.getParty(caster)
+
+    if party then
+        for _, member in pairs(party) do
+            if not member:isAlive() then
+                return 0
+            end
+        end
+    end
+
+    return 1
 end
 
 itemObject.onItemUse = function(target)
-    if not target:hasStatusEffect(xi.effect.PARALYSIS) then
-        target:addStatusEffect(xi.effect.PARALYSIS, 20, 0, 600)
-    else
-        target:messageBasic(xi.msg.basic.NO_EFFECT)
-    end
+    xi.xispal.resurrect(target)
 end
+------------------------------------------------------------------
 
 return itemObject
