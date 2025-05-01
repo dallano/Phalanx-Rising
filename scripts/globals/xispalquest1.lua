@@ -25,13 +25,6 @@ local dialogue12 = {} -- Mithra Names
 local menu5 = {}
 local dialogue13 = {}
 
-
-local sendMenu = function(player, menuID)
-    player:timer(50, function(playerArg)
-        playerArg:customMenu(menuID)
-    end)
-end
-
 local race   = ''
 local name   = ''
 
@@ -47,7 +40,7 @@ dialogue1 =
         'I\'m interested.',
         function(playerArg)
             menu2.options = dialogue2
-            sendMenu(playerArg, menu2)
+            xi.xisp.sendMenu(playerArg, menu2)
             playerArg:printToPlayer("Excellent! What kind of squire are you looking for?", xi.msg.channel.SAY, ' ')
         end,
     },
@@ -70,7 +63,7 @@ dialogue2 =
         'Boy.',
         function(playerArg)
             menu3.options = dialogue3
-            sendMenu(playerArg, menu3)
+            xi.xisp.sendMenu(playerArg, menu3)
             gender = 'boy'
             playerArg:printToPlayer("A boy. Understood. Does their appearance matter?", xi.msg.channel.SAY, ' ')
         end,
@@ -79,7 +72,7 @@ dialogue2 =
         'Girl.',
         function(playerArg)
             menu3.options = dialogue4
-            sendMenu(playerArg, menu3)
+            xi.xisp.sendMenu(playerArg, menu3)
             gender = 'girl'
             playerArg:printToPlayer("A girl. Understood. Does their appearance matter?", xi.msg.channel.SAY, ' ')
         end,
@@ -102,7 +95,7 @@ dialogue3 = -- Boys
             race = race .. 'Tall for his age'
             playerArg:printToPlayer("Hm... " .. race .. " you say? I think I know someone like that...", xi.msg.channel.SAY, ' ')
             menu4.options = dialogue5
-            sendMenu(playerArg, menu4)
+            xi.xisp.sendMenu(playerArg, menu4)
         end,
     },
     {
@@ -113,7 +106,7 @@ dialogue3 = -- Boys
             race = race .. 'About average'
             playerArg:printToPlayer("Hm... " .. race .. " you say? I think I know someone like that...", xi.msg.channel.SAY, ' ')
             menu4.options = dialogue6
-            sendMenu(playerArg, menu4)
+            xi.xisp.sendMenu(playerArg, menu4)
         end,
     },
     {
@@ -124,7 +117,7 @@ dialogue3 = -- Boys
             race = race .. 'Small as a mouse'
             playerArg:printToPlayer("Hm... " .. race .. " you say? I think I know someone like that...", xi.msg.channel.SAY, ' ')
             menu4.options = dialogue7
-            sendMenu(playerArg, menu4)
+            xi.xisp.sendMenu(playerArg, menu4)
         end,
     },
     {
@@ -135,7 +128,7 @@ dialogue3 = -- Boys
             race = race .. 'A lumbering oaf'
             playerArg:printToPlayer("Hm... " .. race .. " you say? I think I know someone like that...", xi.msg.channel.SAY, ' ')
             menu4.options = dialogue8
-            sendMenu(playerArg, menu4)
+            xi.xisp.sendMenu(playerArg, menu4)
         end,
     },
 }
@@ -150,7 +143,7 @@ dialogue4 =
             race = race .. 'Tall for her age'
             playerArg:printToPlayer("Hm... " .. race .. " you say? I think I know someone like that...", xi.msg.channel.SAY, ' ')
             menu4.options = dialogue9
-            sendMenu(playerArg, menu4)
+            xi.xisp.sendMenu(playerArg, menu4)
         end,
     },
     {
@@ -161,7 +154,7 @@ dialogue4 =
             race = race .. 'About average'
             playerArg:printToPlayer("Hm... " .. race .. " you say? I think I know someone like that...", xi.msg.channel.SAY, ' ')
             menu4.options = dialogue10
-            sendMenu(playerArg, menu4)
+            xi.xisp.sendMenu(playerArg, menu4)
         end,
     },
     {
@@ -172,7 +165,7 @@ dialogue4 =
             race = race .. 'Small as a mouse'
             playerArg:printToPlayer("Hm... " .. race .. " you say? I think I know someone like that...", xi.msg.channel.SAY, ' ')
             menu4.options = dialogue11
-            sendMenu(playerArg, menu4)
+            xi.xisp.sendMenu(playerArg, menu4)
         end,
     },
     {
@@ -183,7 +176,7 @@ dialogue4 =
             race = race .. 'Nimble on her toes'
             playerArg:printToPlayer("Hm... " .. race .. " you say? I think I know someone like that...", xi.msg.channel.SAY, ' ')
             menu4.options = dialogue12
-            sendMenu(playerArg, menu4)
+            xi.xisp.sendMenu(playerArg, menu4)
         end,
     },
 }
@@ -203,7 +196,7 @@ dialogue5 = -- Elvaan Male
             name = xi.xispal.name[0]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -213,7 +206,7 @@ dialogue5 = -- Elvaan Male
             name = xi.xispal.name[1]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -223,7 +216,7 @@ dialogue5 = -- Elvaan Male
             name = xi.xispal.name[2]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -233,7 +226,7 @@ dialogue5 = -- Elvaan Male
             name = xi.xispal.name[3]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
 }
@@ -246,7 +239,7 @@ dialogue6 = -- Hume Male
             name = xi.xispal.name[4]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -256,7 +249,7 @@ dialogue6 = -- Hume Male
             name = xi.xispal.name[5]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -266,7 +259,7 @@ dialogue6 = -- Hume Male
             name = xi.xispal.name[6]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -276,7 +269,7 @@ dialogue6 = -- Hume Male
             name = xi.xispal.name[7]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
 }
@@ -289,7 +282,7 @@ dialogue7 = -- Taru Male
             name = xi.xispal.name[7]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -299,7 +292,7 @@ dialogue7 = -- Taru Male
             name = xi.xispal.name[9]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -309,7 +302,7 @@ dialogue7 = -- Taru Male
             name = xi.xispal.name[10]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -319,7 +312,7 @@ dialogue7 = -- Taru Male
             name = xi.xispal.name[11]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
 }
@@ -332,7 +325,7 @@ dialogue8 = -- Galka
             name = xi.xispal.name[12]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -342,7 +335,7 @@ dialogue8 = -- Galka
             name = xi.xispal.name[13]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -352,7 +345,7 @@ dialogue8 = -- Galka
             name = xi.xispal.name[14]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -362,7 +355,7 @@ dialogue8 = -- Galka
             name = xi.xispal.name[15]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
 }
@@ -375,7 +368,7 @@ dialogue9 = -- Elvaan F
             name = xi.xispal.name[16]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -385,7 +378,7 @@ dialogue9 = -- Elvaan F
             name = xi.xispal.name[17]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -395,7 +388,7 @@ dialogue9 = -- Elvaan F
             name = xi.xispal.name[18]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -405,7 +398,7 @@ dialogue9 = -- Elvaan F
             name = xi.xispal.name[19]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
 }
@@ -418,7 +411,7 @@ dialogue10 = -- Hume F
             name = xi.xispal.name[20]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -428,7 +421,7 @@ dialogue10 = -- Hume F
             name = xi.xispal.name[21]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -438,7 +431,7 @@ dialogue10 = -- Hume F
             name = xi.xispal.name[22]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -448,7 +441,7 @@ dialogue10 = -- Hume F
             name = xi.xispal.name[23]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
 }
@@ -461,7 +454,7 @@ dialogue11 = -- Taru F
             name = xi.xispal.name[24]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -471,7 +464,7 @@ dialogue11 = -- Taru F
             name = xi.xispal.name[25]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -481,7 +474,7 @@ dialogue11 = -- Taru F
             name = xi.xispal.name[26]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -491,7 +484,7 @@ dialogue11 = -- Taru F
             name = xi.xispal.name[27]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
 }
@@ -504,7 +497,7 @@ dialogue12 = -- Mithra
             name = xi.xispal.name[28]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -514,7 +507,7 @@ dialogue12 = -- Mithra
             name = xi.xispal.name[29]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -524,7 +517,7 @@ dialogue12 = -- Mithra
             name = xi.xispal.name[30]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
     {
@@ -534,7 +527,7 @@ dialogue12 = -- Mithra
             name = xi.xispal.name[31]
             playerArg:printToPlayer(name .. "... " .. race .. "... How does that sound?", xi.msg.channel.SAY, ' ')
             menu5.options = dialogue13
-            sendMenu(playerArg, menu5)
+            xi.xisp.sendMenu(playerArg, menu5)
         end,
     },
 }
@@ -559,7 +552,7 @@ dialogue13 =
         'Let\'s start again...',
         function(playerArg)
             menu2.options = dialogue2
-            sendMenu(playerArg, menu2)
+            xi.xisp.sendMenu(playerArg, menu2)
         end,
     },
 }
@@ -574,7 +567,7 @@ xi.xispal.quest1 = function(player, npc, nation)
         prog <= 6
     then
         -- Player must be lvl 10 + rank 2
-        if player:getMainLvl() < 10 or player:getRank() < 2 then
+        if player:getMainLvl() < 10 or player:getRank(player:getNation()) < 2 then
             player:printToPlayer("Hmm? Here to talk about the squire program? Come back when you have more experience.", xi.msg.channel.SAY, name)
             return
         end
@@ -582,7 +575,7 @@ xi.xispal.quest1 = function(player, npc, nation)
         player:printToPlayer("Adventurer. You've come at a good time. Are you interested in taking on a squire?", xi.msg.channel.SAY, name)
 
         menu.options = dialogue1
-        sendMenu(player, menu)
+        xi.xisp.sendMenu(player, menu)
     else
         player:printToPlayer("How goes your squire? I hope all is in order... Let's see here.", xi.msg.channel.SAY, name)
 
@@ -593,7 +586,7 @@ xi.xispal.quest1 = function(player, npc, nation)
         elseif prog == 4 then
             player:printToPlayer("They've learned a lot I see. Those aren't the same eyes I once saw when they first left this place.", xi.msg.channel.SAY, name)
         elseif prog == 3 then
-            player:printToPlayer("Still a greenhorn. But noticeable progress. Keep up the good work, adventurer.", xi.msg.channel.SAY, name)
+            player:printToPlayer("Still a greenhorn. But noticeable progress. Keep up the good work, adventurers.", xi.msg.channel.SAY, name)
         elseif prog > 0 then
             player:printToPlayer("They've been asking you for favors? Hah! I thought it ought to be the other way around.", xi.msg.channel.SAY, name)
         else

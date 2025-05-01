@@ -52,3 +52,9 @@ xi.xisp.setSeed = function()
         seed = GetServerVariable('[XISP]ServerSeed')
     end
 end
+
+xi.xisp.sendMenu = function(player, menuID)
+    player:timer(50, function(playerArg)
+        playerArg:customMenu(menuID)
+    end)
+end

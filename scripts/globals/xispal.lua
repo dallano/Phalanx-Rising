@@ -1,18 +1,45 @@
 xi = xi or {}
 xi.xispal = xi.xispal or {}
 
+--------------------------- Planning -----------------------------------------------------------------------
+--- Squire: Player takes on squire. Squire interacts with player based
+---         on mission progress. Dialogue to hint where player should go
+---
+--- Knight: The player is granted a knight certificate after defeating their first dragon. This certificate
+---         grants the player to take on a knight into their party, and allows the player to choose which job
+---         the knight is based on where they decide to recruit them from.
+---
+---         Sandoria: Dragoon     //   Paladin
+---         Bastok:   Dark Knight //   Warrior
+---         Windurst: Ranger      //   Monk
+---         Norg:     Samurai     //   Ninja?
+---
+--- Mage:
+---         Sandoria: White Mage
+---         Windurst: Black Mage // Summoner (Would be sick and doable with a lot of hard work)
+---
+---
+---
+----------------------------------------------------------------------------------------------------------------
+
 local BODY_OFFSET  = 0x1000
 local HANDS_OFFSET = 0x2000
 local LEGS_OFFSET  = 0x3000
 local FEET_OFFSET  = 0x4000
 local MAIN_OFFSET  = 0x5000
 local SUB_OFFSET   = 0x6000
-local RANGE_OFFSET  = 0x7000
+local RANGE_OFFSET = 0x7000
 
+xi.xispal.generateModelID = function(face, race, tier, pal)
+    local gearSets =
+    {
+        ["Squire"] = xi.xispal.squireGearSets[tier],
+        ["Knight"] = xi.xispal.knightGearSets[tier],
+        ["Mage"]   = xi.xispal.mageGearSets[tier],
+    }
 
+    local table = gearSets[pal]
 
-
-local generateModelID = function(face, race, tier)
     if tier > 16 then
         tier = 0
     end
@@ -25,12 +52,12 @@ local generateModelID = function(face, race, tier)
     modelID = modelID .. "00"
 
     -- Equipment
-    modelID = modelID .. string.format("%04X", BODY_OFFSET + xi.xispal.squireGearSets[tier].body)
-    modelID = modelID .. string.format("%04X", HANDS_OFFSET + xi.xispal.squireGearSets[tier].hands)
-    modelID = modelID .. string.format("%04X", LEGS_OFFSET + xi.xispal.squireGearSets[tier].legs)
-    modelID = modelID .. string.format("%04X", FEET_OFFSET + xi.xispal.squireGearSets[tier].feet)
-    modelID = modelID .. string.format("%04X", MAIN_OFFSET + xi.xispal.squireGearSets[tier].main)
-    modelID = modelID .. string.format("%04X", SUB_OFFSET + xi.xispal.squireGearSets[tier].sub)
+    modelID = modelID .. string.format("%04X", BODY_OFFSET + table.body)
+    modelID = modelID .. string.format("%04X", HANDS_OFFSET + table.hands)
+    modelID = modelID .. string.format("%04X", LEGS_OFFSET + table.legs)
+    modelID = modelID .. string.format("%04X", FEET_OFFSET + table.feet)
+    modelID = modelID .. string.format("%04X", MAIN_OFFSET + table.main)
+    modelID = modelID .. string.format("%04X", SUB_OFFSET + table.sub)
     modelID = modelID .. string.format("%04X", RANGE_OFFSET)
 
     modelID = modelID .. "80"
@@ -39,27 +66,7 @@ local generateModelID = function(face, race, tier)
 end
 
 
-
-
-local sendMenu = function(player, menuID)
-    player:timer(50, function(playerArg)
-        playerArg:customMenu(menuID)
-    end)
-end
-
-
-
-
-local levelup = function(pal, player)
-    if player:getMainLvl() ~= pal:getMainLvl() then
-        pal:setMobLevel(player:getMainLvl())
-    end
-end
-
-
-
-
--- Returns a list of IDs of all possible followers
+-- Returns a table of IDs of all possible followers
 xi.xispal.getFollowers = function(player)
     local followers = {}
 
@@ -67,8 +74,8 @@ xi.xispal.getFollowers = function(player)
         table.insert(followers, player:getCharVar('[XISP]squireID'))
     end
 
-    if player:getCharVar('[XISP]tankID') ~= 0 then
-        table.insert(followers, player:getCharVar('[XISP]tankID'))
+    if player:getCharVar('[XISP]knightID') ~= 0 then
+        table.insert(followers, player:getCharVar('[XISP]knightID'))
     end
 
     if player:getCharVar('[XISP]mageID') ~= 0 then
@@ -87,41 +94,128 @@ xi.xispal.getFollowers = function(player)
 end
 
 
+-- Returns table of pals as entities. Discludes chocobo.
+xi.xispal.getParty = function(player)
+    local party = {}
+
+    if player:getCharVar('[XISP]squireID') ~= 0 then
+        table.insert(party, GetMobByID(player:getCharVar('[XISP]squireID')))
+    end
+
+    if player:getCharVar('[XISP]knightID') ~= 0 then
+        table.insert(party, GetMobByID(player:getCharVar('[XISP]knightID')))
+    end
+
+    if player:getCharVar('[XISP]mageID') ~= 0 then
+        table.insert(party, GetMobByID(player:getCharVar('[XISP]mageID')))
+    end
+
+    return party
+end
 
 
 xi.xispal.resetFollowers = function(player)
-    local followers =
-    {
-        player:getCharVar('[XISP]squireID'),
-        player:getCharVar('[XISP]tankID'),
-        player:getCharVar('[XISP]mageID'),
-        player:getCharVar('[XISP]damageID'),
-        player:getCharVar('[XISP]chocoID'),
-    }
+    local party = xi.xispal.getFollowers(player)
 
-    for _, follower in pairs(followers) do
-        if follower ~= 0 then
-            local followerMob = GetMobByID(follower)
+    print("Resetting xispal followers:")
 
-            if followerMob and followerMob:isSpawned() then
-                followerMob:setBehavior(bit.band(followerMob:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
-                DespawnMob(follower)
-            end
+    for _, member in pairs(party) do
+        local pal = GetMobByID(member)
+
+        if pal and pal:isSpawned() then
+            pal:setBehavior(bit.band(pal:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
+            DespawnMob(pal:getID())
+            print("Successfully despawned pal: " .. pal:getPacketName())
         end
     end
 
     player:setCharVar('[XISP]squireID', 0)
-    player:setCharVar('[XISP]tankID', 0)
+    player:setCharVar('[XISP]knightID', 0)
     player:setCharVar('[XISP]mageID', 0)
     player:setCharVar('[XISP]damageID', 0)
     player:setCharVar('[XISP]chocoID', 0)
 end
 
 
+xi.xispal.resurrect = function(player)
+    local party = xi.xispal.getParty(player)
+    local pal
+
+    for _, member in pairs(party) do
+        if member and not member:isAlive() then
+            pal = member
+            break
+        end
+    end
+
+    if pal and not pal:isAlive() then
+        pal:independentAnimation(pal, 12, 4)
+
+        pal:timer(6000, function(palArg)
+            palArg:hideName(true)
+            palArg:entityAnimationPacket('stnd')
+        end)
+
+        pal:timer(10000, function(palArg)
+            palArg:hideName(false)
+            palArg:resetAI()
+            palArg:independentAnimation(palArg, 76, 4)
+            palArg:setHP(palArg:getMaxHP() * 0.33)
+            palArg:setMP(palArg:getMaxMP() * 0.33)
+            palArg:setAnimation(0)
+            pal:stun(10000)
+        end)
+    end
+end
 
 
-xi.xispal.follow = function(player, pal)
-    if player:getZone() ~= pal:getZone() then
+xi.xispal.raisePlayer = function(pal, player)
+    local job = pal:getMainJob()
+    local lvl = pal:getMainLvl()
+
+    if pal:getLocalVar('isCasting') == 1 or player:hasRaiseTractorMenu() then
+        return
+    end
+
+    if player and player:isDead() then
+        pal:setLocalVar('isCasting', 1)
+        local spell
+        for _, raise in pairs(xi.xispal.white.RAISE) do
+            if raise.lvl[job] and lvl >= raise.lvl[job] then
+                spell = raise
+            end
+        end
+
+        pal:entityAnimationPacket(xi.animationString.CAST_WHITE_MAGIC_START)
+        pal:timer(spell.castTime, function(palArg)
+            pal:entityAnimationPacket(xi.animationString.CAST_WHITE_MAGIC_STOP)
+            palArg:independentAnimation(player, spell.spell, 0)
+            player:sendRaise(spell.power)
+            palArg:timer(20 * 1000, function(palArg2)
+                palArg2:setLocalVar('isCasting', 0)
+            end)
+        end)
+    end
+end
+
+
+xi.xispal.levelSync = function(pal, player)
+    -- Ensure we're the same level as player
+    if player:getMainLvl() ~= pal:getMainLvl() then
+        pal:setMobLevel(player:getMainLvl())
+    end
+
+    -- Add to battlefield i player is in one.
+    local effect = player:getStatusEffect(xi.effect.BATTLEFIELD)
+    if effect then
+        pal:addStatusEffect(effect)
+    end
+end
+
+
+xi.xispal.follow = function(pal, player)
+    -- Debug (If left unhooked with player, despawn pal)
+    if not player or player:getZone() ~= pal:getZone() then
         pal:setBehavior(bit.band(pal:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
         pal:setMobMod(xi.mobMod.NO_DESPAWN, 0)
         DespawnMob(pal:getID())
@@ -145,7 +239,7 @@ xi.xispal.follow = function(player, pal)
                 leader = player
             else
                 leader = GetMobByID(followers[followerIndex - 1])
-                -- If the leader is dead or nil, fall back to player
+                -- If the target is dead or nil, fall back to player
                 if not (leader and leader:isAlive()) then
                     leader = player
                 end
@@ -157,393 +251,228 @@ xi.xispal.follow = function(player, pal)
 end
 
 
+xi.xispal.isCaster = function(pal)
+    local job = pal:getMainJob()
+    return (job == xi.job.WHM or job == xi.job.BLM)
+end
 
 
-xi.xispal.onMobRoam = function(player, pal)
-    local pos = pal:getPos()
-    pal:setSpawn(pos.x, pos.y, pos.z) -- Fixes pal attempting to path home
-    local anim = player:getAnimation()
-    pal:setMagicCastingEnabled(false)
+-- WIP until I'm able to figure out how to allow to change target flags
+xi.xispal.checkRegen = function(pal, player, party, job, lvl)
+    -- local spells = xi.xispal.white.REGEN
+    -- local regen
+    -- local target
 
-    if pal:getSpeed() ~= player:getSpeed() then
-        pal:setBaseSpeed(player:getSpeed())
+    -- -- Find level appropriate regen
+    -- for _, spell in pairs(spells) do
+    --     if spell.lvl[job] and lvl >= spell.lvl[job] then
+    --         regen = spell
+    --     end
+    -- end
+
+    -- -- Cast on party member in need
+    -- for _, member in pairs(party) do
+    --     local hpp = member:getHPP()
+
+    --     -- First ensure no party member is in dire need of cure
+    --     if hpp < 50 then
+    --         return
+    --     end
+    --     -- Otherwise proceed to find appropriate member within healthy HP range
+    --     if
+    --         hpp <= 95 and
+    --         hpp >= 65 and
+    --         not player:hasStatusEffect(regen.effect)
+    --     then
+    --         target = member
+    --         break
+    --     end
+    -- end
+
+    -- pal:castSpell(regen.spell, target)
+end
+
+
+xi.xispal.checkCure = function(pal, player, party, job, lvl)
+    local spells = xi.xispal.white.CURE
+    local cure
+
+    for _, member in pairs(party) do
+    end
+end
+
+
+xi.xispal.checkElemental = function(pal, target, player, job, lvl)
+    local spells = xi.xispal.black.ELEMENTAL
+end
+
+
+-- Enfeeble casting will go through all possible spells to be cast, then
+-- cast one at random from the needed list.
+xi.xispal.checkEnfeeble = function(pal, target, player, job, lvl)
+    local whiteSpells = xi.xispal.white.ENFEEBLE
+    local blackSpells = xi.xispal.black.ENFEEBLE
+end
+
+
+xi.xispal.checkBuff = function(pal, player, party, job, lvl)
+    local spells = xi.xispal.white.BUFF
+
+    for _, member in pairs(party) do
+    end
+end
+
+
+-- Priority of casting:
+--  1: Regen
+--  2: Cure
+--  3: Buffs
+--  4: Debuffs
+--  5: Elemental
+xi.xispal.checkMagic = function(pal, player)
+    local party = xi.xispal.getParty(player)
+    local job   = pal:getMainJob()
+    local lvl   = pal:getMainLvl()
+
+    table.insert(party, player)
+
+    if
+        job ~= xi.job.WHM and
+        job ~= xi.job.RDM and
+        job ~= xi.job.PLD and
+        job ~= xi.job.BLM and
+        job ~= xi.job.DRK
+    then
+        return
     end
 
-    if player:isEngaged() then
-        pal:updateEnmity(player:getTarget())
-    else
-        xi.xispal.follow(player, pal)
-        levelup(pal, player)
+    if pal:getCurrentAction() == xi.action.MAGIC_CASTING then
+        return
     end
 
+    -- Cure / Buff / Regen Section
+    if job == xi.job.PLD or job == xi.job.WHM or job == xi.job.RDM then
+        if job ~= xi.job.PLD then
+            xi.xispal.checkRegen(pal, player, party, job, lvl)
+        end
 
-    if anim > 0 then
-        pal:setAnimation(anim)
-    else
-        if pal:getAnimation() ~= 0 then
-            pal:setAnimation(0)
+        xi.xispal.checkCure(pal, player, party, job, lvl)
+        xi.xispal.checkBuff(pal, player, party, job, lvl)
+    end
+
+    -- Enfeeble / Elemental Section
+    if pal:isEngaged() then
+        local target = pal:getTarget()
+
+        if job ~= xi.job.PLD then
+            xi.xispal.checkEnfeeble(pal, target, player, job, lvl)
+        end
+
+        if job ~= xi.job.PLD and job ~= xi.job.WHM then
+            xi.xispal.checkEnfeeble(pal, target, player, job, lvl)
         end
     end
 end
 
 
-
-
-xi.xispal.onMobEngage = function(player, pal, target)
-    pal:setMagicCastingEnabled(true)
+xi.xispal.checkAbility = function(pal, player)
 end
 
 
+xi.xispal.checkWeaponSkill = function(pal, target, player)
+end
 
 
-xi.xispal.youngSquireTrade = function(player, pal)
-    local menu = {}
-    local dialogue = {}
+xi.xispal.onMobSpawn = function(pal, player)
+    pal:setMobLevel(player:getMainLvl())
+    pal:setMobMod(xi.mobMod.NO_DESPAWN, 1)
+    pal:setBehavior(bit.bor(pal:getBehavior(), xi.behavior.NO_DESPAWN))
+    pal:setRoamFlags(xi.roamFlag.SCRIPTED)
 
-    menu =
-    {
-        title = 'Can I have it...?',
-        options = {},
-    }
+    if xi.xispal.isCaster(pal) then
+        pal:setBehavior(bit.bor(pal:getBehavior(), xi.behavior.STANDBACK))
+    end
+end
 
-    dialogue =
-    {
-        {
-            'Of course!',
-            function(playerArg)
-                local item = xi.xispal.squireItems[player:getCharVar('[XISP]squireProg') + 1][player:getCharVar('[XISP]palItem')]
-                playerArg:delItem(item, 1, 0)
-                playerArg:printToPlayer("Thank you! Thank you! Thank you! I can't wait to get started my training with this.", xi.msg.channel.PARTY, pal:getPacketName())
-                playerArg:setCharVar('[XISP]palTimer1', VanadielUniqueDay() + 1)
-                playerArg:incrementCharVar('[XISP]squireProg', 1)
-            end,
-        },
-        {
-            'Let me think about it.',
-            function(playerArg)
-            end,
-        },
-    }
 
-    if player:getCharVar('[XISP]palTimer1') > VanadielUniqueDay() then
-        return
-
+xi.xispal.onMobRoam = function(pal, player)
+    if player:isDead() then
+        xi.xispal.raisePlayer(pal, player)
     else
-        local random   = xi.xisp.seed_random(GetServerVariable('[XISP]ServerSeed'))
-        local progress = player:getCharVar('[XISP]squireProg')
-
-        player:setCharVar('[XISP]palItem', random(#xi.xispal.squireItems[progress + 1]))
-        local item = xi.xispal.squireItems[progress + 1][player:getCharVar('[XISP]palItem')]
-
-        if player:hasItem(item) then
-            player:printToPlayer("You found one! This is just what I was looking for!", xi.msg.channel.PARTY, pal:getPacketName())
-            menu.options = dialogue
-            sendMenu(player, menu)
-        end
-
-    end
-end
-
-
-
-
-xi.xispal.youngSquireChat = function(player, pal)
-    local random      = xi.xisp.seed_random(GetServerVariable('[XISP]ServerSeed'))
-    local progress    = player:getCharVar('[XISP]squireProg')
-    local chatControl = player:getCharVar('[XISP]chatControl')
-    local wait        = player:getCharVar('[XISP]palTimer1')
-
-    -- This generation will always be the same based on the server seed
-    player:setCharVar('[XISP]palItem', random(#xi.xispal.squireItems[progress + 1]))
-    local item = xi.xispal.squireItems[progress + 1][player:getCharVar('[XISP]palItem')]
-
-    if progress == 6 then
-        player:printToPlayer("Master I've completed my training. I'm ready to join you in the field. Can we go see our nation's recruiter?", xi.msg.channel.PARTY, pal:getPacketName())
-        return
-    end
-
-    if wait > VanadielUniqueDay() then
-        player:printToPlayer("I've been deep in my studies, Master " .. player:getName() .. "!", xi.msg.channel.PARTY, pal:getPacketName())
-    else
-        if chatControl == 0 then
-            player:printToPlayer("Hi, " .. player:getName() .. "! It's so very nice to meet you.", xi.msg.channel.PARTY, pal:getPacketName())
-            player:setCharVar('[XISP]chatControl', 1)
-        elseif chatControl == 1 then
-            player:printToPlayer("There are a few things I need in order to continue in my training... Can you help me find them?", xi.msg.channel.PARTY, pal:getPacketName())
-            player:setCharVar('[XISP]chatControl', 2)
-        elseif chatControl == 2 then
-            local itemName = GetItemByID(item):getName():gsub('%_', " ")
-
-            player:printToPlayer("I think a " .. itemName .. " would help me get started! Can you help me find one?", xi.msg.channel.PARTY, pal:getPacketName())
-            player:setCharVar('[XISP]chatControl', 1)
-        end
-    end
-
-end
-
-
-
-
-xi.xispal.spawnYoungSquire = function(player)
-    local look = xi.xispal.youngLook[player:getCharVar('[XISP]squireRace')]
-    local zone = player:getZone()
-    local pos  = player:getPos()
-
-    -- Young squires only allowed in cities
-    if zone:getTypeMask() ~= xi.zoneType.CITY then
-        return
-    end
-
-    if player:getCharVar('[XISP]quest1Var') ~= 1 then
-        return
-    end
-
-    local pal = zone:insertDynamicEntity({
-        objtype               = xi.objType.MOB,
-        allegiance            = xi.allegiance.PLAYER,
-        name                  = xi.xispal.name[player:getCharVar('[XISP]squireName')],
-        x                     = pos.x + 1,
-        y                     = pos.y,
-        z                     = pos.z + 1,
-        rotation              = pos.rotation,
-        look                  = look,
-        groupId               = 1000,
-        groupZoneId           = xi.zone.GM_HOME,
-        releaseIdOnDisappear  = true,
-
-        onTrigger = function(player, pal)
-            xi.xispal.youngSquireChat(player, pal)
-            xi.xispal.youngSquireTrade(player, pal)
-        end,
-
-        onMobSpawn = function(pal)
-            -- Fun notes --
-            -- Anim 90 makes them go super saiyan
-
-            pal:setMobLevel(player:getMainLvl())
-            -- pal:setBehavior(bit.bor(pal:getBehavior(), xi.behavior.STANDBACK)) -- If mage standback?
-            pal:setMobMod(xi.mobMod.NO_DESPAWN, 1)
-            pal:setBehavior(bit.bor(pal:getBehavior(), xi.behavior.NO_DESPAWN))
-            pal:setRoamFlags(xi.roamFlag.SCRIPTED)
-        end,
-
-        onMobRoam = function(pal)
-            local pos = pal:getPos()
+        if not player or player:getZone() ~= pal:getZone() then
+            if player:isAlive() then
+                pal:setBehavior(bit.band(pal:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
+                pal:setMobMod(xi.mobMod.NO_DESPAWN, 0)
+                DespawnMob(pal:getID())
+            end
+        else
+            local anim = player:getAnimation()
+            local pos  = player:getPos()
             pal:setSpawn(pos.x, pos.y, pos.z) -- Fixes pal attempting to path home
 
-            if pal:getSpeed() ~= player:getSpeed() then
-                pal:setBaseSpeed(player:getSpeed())
-            end
+            xi.xispal.levelSync(pal, player)
+            xi.xispal.follow(pal, player)
+            xi.xispal.checkMagic(pal, player)
 
-            xi.xispal.follow(player, pal)
-        end,
-
-        onMobEngage = function(pal, target)
-            xi.xispal.onMobEngage(player, pal, target)
-        end,
-
-        onMobDeath = function(pal, player, optParams)
-            -- Do stuff
-        end,
-    })
-
-    pal:setSpawn(pos.x - 1, pos.y, pos.z)
-    pal:timer(500, function(palArg)
-        palArg:spawn()
-    end)
-    pal:setAllegiance(1)
-
-    player:setCharVar('[XISP]squireID', pal:getID())
-end
-
-
-
-
-xi.xispal.spawnSquire = function(player)
-    local face = player:getCharVar('[XISP]squireFace')
-    local race = player:getCharVar('[XISP]squireRace')
-    local look = generateModelID(xi.xispal.face[face], xi.xispal.race[race], player:getCharVar('[XISP]squireTier'))
-
-    local zone = player:getZone()
-    local pos  = player:getPos()
-
-    local pal = zone:insertDynamicEntity({
-        objtype               = xi.objType.MOB,
-        allegiance            = xi.allegiance.PLAYER,
-        name                  = xi.xispal.name[player:getCharVar('[XISP]squireName')],
-        x                     = pos.x + 1,
-        y                     = pos.y,
-        z                     = pos.z + 1,
-        rotation              = pos.rotation,
-        look                  = look,
-        groupId               = 1000,
-        groupZoneId           = xi.zone.GM_HOME,
-        releaseIdOnDisappear  = true,
-
-        onMobSpawn = function(pal)
-            -- Fun notes --
-            -- Anim 90 makes them go super saiyan
-
-            pal:setMobLevel(player:getMainLvl())
-            pal:setMobMod(xi.mobMod.NO_DESPAWN, 1)
-            pal:setBehavior(bit.bor(pal:getBehavior(), xi.behavior.NO_DESPAWN))
-            pal:setRoamFlags(xi.roamFlag.SCRIPTED)
-        end,
-
-        onMobRoam = function(pal)
-            xi.xispal.onMobRoam(player, pal)
-        end,
-
-        onMobEngage = function(pal, target)
-            xi.xispal.onMobEngage(player, pal, target)
-        end,
-
-        onMobDeath = function(pal, player, optParams)
-            -- Do stuff
-        end,
-    })
-
-    pal:setSpawn(pos.x - 1, pos.y, pos.z)
-    pal:timer(500, function(palArg)
-        palArg:spawn()
-    end)
-    pal:setAllegiance(1)
-
-    player:setCharVar('[XISP]squireID', pal:getID())
-end
-
-
-
-
-xi.xispal.spawnChocobo = function(player)
-    if player:getCharVar('[XISP]hasChocobo') == 0 then
-        return
-    end
-
-    local look = 86 -- Default yellow chocobo
-    local zone = player:getZone()
-    local pos  = player:getPos()
-
-    if player:getCharVar('[XISP]chocoGrow') < 10 then
-        look = 3031 -- Baby Chocobo
-    end
-
-    -- Only adults spawn outdoors
-    if look == 86 and zone:getTypeMask() ~= xi.zoneType.OUTDOORS then
-        return
-    end
-
-    -- Only chicks spawn within city walls
-    if look == 3031 and zone:getTypeMask() ~= xi.zoneType.CITY then
-        return
-    end
-
-    local choco = zone:insertDynamicEntity({
-        objtype               = xi.objType.MOB,
-        allegiance            = xi.allegiance.PLAYER,
-        name                  = "Chocobo",
-        x                     = pos.x,
-        y                     = pos.y,
-        z                     = pos.z,
-        rotation              = pos.rotation,
-        look                  = look,
-        groupId               = 1000,
-        groupZoneId           = xi.zone.GM_HOME,
-        releaseIdOnDisappear  = true,
-
-        onMobSpawn = function(choco)
-            choco:setBehavior(bit.bor(choco:getBehavior(), xi.behavior.NO_DESPAWN))
-            choco:setRoamFlags(xi.roamFlag.SCRIPTED)
-            choco:setBaseSpeed(player:getSpeed())
-            choco:setMobMod(xi.mobMod.NO_DESPAWN, 1)
-            choco:setAutoAttackEnabled(false)
-        end,
-
-        onMobRoam = function(choco)
-            xi.xispal.follow(player, choco)
-            -- Cute animations
-            if math.random(10) <= 2 and choco:getModelId() == 3031 then
-                if math.random(2) == 1 then
-                    choco:entityAnimationPacket(xi.animationString.SPECIAL_10)
+            -- Rest if not casting spells, low MP, and player is nearby
+            if
+                (xi.xispal.isCaster(pal) or pal:getMainJob() == xi.job.RDM) and
+                pal:getMPP() < 90 and
+                pal:checkDistance(player) < 20
+            then
+                pal:setAnimation(xi.animation.HEALING)
+            else
+                if anim > 0 then
+                    pal:setAnimation(anim)
                 else
-                    choco:entityAnimationPacket(xi.animationString.SPECIAL_00)
-                end
-            end
-
-        end,
-
-        onTrigger = function(player, choco)
-            local chocogrow = player:getCharVar('[XISP]chocoGrow')
-            local model     = choco:getModelId()
-            local duration   = 360
-
-            if model == 86 then -- Adult
-                -- Check if player has any agro first.
-                player:delStatusEffectSilent(xi.effect.MOUNTED)
-                player:addStatusEffectEx(xi.effect.MOUNTED, xi.effect.MOUNTED, xi.mount.CHOCOBO, 0, 1800, 0, duration, true)
-                choco:setBehavior(bit.band(choco:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
-                DespawnMob(choco:getID())
-
-            elseif model == 3031 then
-                if player:getCharVar('[XISP]chocoWait') <= VanadielUniqueDay() then
-                    print('??')
-                    player:incrementCharVar('[XISP]chocoGrow', 1)
-                    player:setCharVar('[XISP]chocoWait', VanadielUniqueDay() + 1)
-                    chocogrow = player:getCharVar('[XISP]chocoGrow')
-
-                    if chocogrow < 1 then
-                        player:printToPlayer("Your chocobo seems a little nervous.", xi.msg.channel.SYSTEM_3, ' ')
-                    elseif chocogrow < 3 then
-                        player:printToPlayer("Your chocobo has begun to warm up to you.", xi.msg.channel.SYSTEM_3, ' ')
-                    elseif chocogrow < 5 then
-                        player:printToPlayer("Your chocobo refuses to leave your side.", xi.msg.channel.SYSTEM_3, ' ')
-                    elseif chocogrow < 9 then
-                        player:printToPlayer("Your chocobo has come to adore you.", xi.msg.channel.SYSTEM_3, ' ')
-                    else
-                        -- Chocobo all grown up!
-                        choco:entityAnimationPacket(xi.animationString.SPECIAL_20)
+                    if pal:getAnimation() ~= 0 then
+                        pal:setAnimation(0)
                     end
                 end
-
-                if chocogrow < 1 then
-                    choco:entityAnimationPacket(xi.animationString.SPECIAL_00)
-                elseif chocogrow < 3 then
-                    choco:entityAnimationPacket(xi.animationString.SPECIAL_30)
-                elseif chocogrow < 5 then
-                    choco:entityAnimationPacket(xi.animationString.SPECIAL_30)
-                elseif chocogrow < 9 then
-                    choco:entityAnimationPacket(xi.animationString.SPECIAL_20)
-                    choco:independentAnimation(choco, 252, 4)
-                else
-                    choco:independentAnimation(choco, 251, 4)
-                end
             end
-        end,
-        })
-
-        choco:setSpawn(pos.x + 1, pos.y, pos.z - 1)
-        choco:timer(500, function(chocoArg)
-            choco:setAllegiance(1)
-            chocoArg:spawn()
-        end)
-        player:setCharVar('[XISP]chocoID', choco:getID())
+        end
+    end
 end
 
 
+xi.xispal.onMobEngage = function(pal, target, player)
+end
+
+
+xi.xispal.onMobFight = function(pal, target, player)
+    xi.xispal.checkMagic(pal, player)
+    xi.xispal.checkAbility(pal, player)
+    xi.xispal.checkWeaponSkill(pal, target, player)
+end
 
 
 xi.xispal.onZone = function(player)
     xi.xispal.resetFollowers(player)
 
+    -- Delay used in order to get access to player:getZone()
     player:timer(1000, function(playerArg)
-        xi.xispal.spawnChocobo(playerArg)
+        -- Spawn Chocobo
+        if player:getCharVar('[XISP]hasChocobo') == 1 then
+            xi.xispal.spawnChocobo(playerArg)
+        end
 
+        -- Spawn Squire
         if playerArg:getCharVar('[XISP]quest1Var') >= 1 then
             if playerArg:getCharVar('[XISP]squireProg') < 7 then
                 xi.xispal.spawnYoungSquire(playerArg)
             else
                 xi.xispal.spawnSquire(playerArg)
             end
+        end
+
+        -- Spawn Knight
+        if playerArg:getCharVar('[XISP]hasKnight') >= 1 then
+            xi.xispal.spawnKnight(playerArg)
+        end
+
+        -- Spawn Mage
+        if playerArg:getCharVar('[XISP]hasMage') >= 1 then
+            xi.xispal.spawnMage(playerArg)
         end
     end)
 end

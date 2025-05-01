@@ -7170,6 +7170,13 @@ INSERT INTO `mob_pools` VALUES (7087,'Alexander_WTC','Alexander',33,0x00002A0700
 INSERT INTO `mob_pools` VALUES (7088,'Alexander_Image','Alexander_Image',33,0x00002B0700000000000000000000000000000000,7,7,11,240,100,0,1,1,0,26,0,0,1,1665,16,0,547,0,0,0,33);
 
 -- ------------------------------------------------------------
+-- XISP Section
+
+-- ------------------------------------------------------------
+INSERT INTO `mob_pools` VALUES (20000,'Pal_Squire','Pal_Squire',145,0x0000B70400000000000000000000000000000000,5,3,3,240,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,149);
+INSERT INTO `mob_pools` VALUES (20001,'Pal_Knight','Pal_Knight',145,0x0000B70400000000000000000000000000000000,1,1,3,240,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,149);
+INSERT INTO `mob_pools` VALUES (20002,'Pal_Mage','Pal_Mage',145,0x0000B70400000000000000000000000000000000,3,5,3,240,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,146);
+-- ------------------------------------------------------------
 -- Start of Ambuscade section
 -- NOTE: The mobs are changed every update in the DATs, so using out-of-date
 --       mob entries will result in the current update's names being shown.

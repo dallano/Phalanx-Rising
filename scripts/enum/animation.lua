@@ -57,3 +57,55 @@ xi.animMode =
 }
 
 xi.anim = xi.animation
+
+-- 20, 4 reappear
+-- 26, 4  = pretty disappear
+-- 70, 4  = cool disappear
+-- 71, 4  = riverne disappear
+-- 72, 4  = riverne reappear
+-- 73, 4  = riverne disappear (2)
+-- 74, 4  = riverne reappear (2)
+-- 75, 4 = pretty disappear
+-- 76, 4 = pretty reappear
+-- 85, 4 = stylish self player disappear
+-- 87, 4 = cactroc Rapido
+-- lots here
+-- 114, 4 ninja teleport
+-- 123, 4 = elegant teleport
+-- 128, 4 = goblin rolling dice
+-- 201, 4 = gentle teleport
+-- 202, 4 = toau teleport
+-- 231, 4 = toau reappear
+-- 205 - 207 cool german messaging
+-- 246, 4 = angel spawn + aura
+-- 247, 4 = demon spawn + aura
+
+-- 248, 4 = cool buff
+
+
+-- 10, 3  = FFX death
+-- 45, 3  = Alternative warp
+-- 54, 3  = pretty disappear
+
+-- Spawning
+-- 86, 3 = Ifrit
+-- 87, 3 = Titan
+-- 88, 3 = Leviathan
+-- 89, 3 = Garuda
+-- 90, 3 = Shiva
+-- 91, 3 = Ramuh
+-- 50, 4 = Fenrir
+-- 84, 4 = Diabloso?
+-- 98, 4 = ??
+
+-- Despawning
+-- 92, 3 = Ifrit
+-- 93, 3 = Titan
+-- 94, 3 = Leviathan
+-- 95, 3 = Garuda
+-- 96, 3 = Shiva
+-- 97, 3 = Ramuh
+
+-- Rank
+-- 100 - 145, 3 Ranking
+-- 146 ~ CoP messages

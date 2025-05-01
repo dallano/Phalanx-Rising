@@ -494,14 +494,12 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1750, xi.item.WALNUT_LOG    },
-                    { 1750, xi.item.WILLOW_LOG    },
-                    { 1000, xi.item.YEW_LOG       },
-                    {  750, xi.item.ARROWWOOD_LOG },
-                    {  500, xi.item.ASH_LOG       },
-                    {  500, xi.item.DRYAD_ROOT    },
-                    {  250, xi.item.ACORN         },
-                    {  100, xi.item.OAK_LOG       },
+                    { 2500, xi.item.WALNUT_LOG    },
+                    { 2500, xi.item.YEW_LOG       },
+                    { 2500, xi.item.OAK_LOG       },
+                    { 1000, xi.item.DRYAD_ROOT    },
+                    { 1000, xi.item.WILLOW_LOG },
+                    {  500, xi.item.ACORN         },
                 },
 
                 points =
@@ -516,14 +514,11 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 3330, xi.item.ARROWWOOD_LOG },
-                    { 1750, xi.item.ASH_LOG       },
-                    { 2000, xi.item.MAPLE_LOG     },
-                    { 1420, xi.item.FAERIE_APPLE  },
-                    {  830, xi.item.WALNUT_LOG    },
-                    {  170, xi.item.ACORN         },
-                    {  330, xi.item.ELM_LOG       },
-                    {  170, xi.item.OAK_LOG       },
+                    { 3000, xi.item.WALNUT_LOG    },
+                    { 2500, xi.item.ELM_LOG       },
+                    { 2000, xi.item.OAK_LOG       },
+                    { 2000, xi.item.FAERIE_APPLE  },
+                    {  500, xi.item.ACORN         },
                 },
 
                 points =
@@ -539,14 +534,11 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2220, xi.item.ARROWWOOD_LOG },
-                    { 2220, xi.item.FAERIE_APPLE  },
-                    { 2220, xi.item.ASH_LOG       },
-                    { 2220, xi.item.MAPLE_LOG     },
-                    {  100, xi.item.WALNUT_LOG    },
-                    {  100, xi.item.ACORN         },
-                    { 1110, xi.item.ELM_LOG       },
-                    {  100, xi.item.OAK_LOG       },
+                    { 2000, xi.item.WALNUT_LOG    },
+                    { 2500, xi.item.ELM_LOG       },
+                    { 3000, xi.item.OAK_LOG       },
+                    { 2000, xi.item.FAERIE_APPLE  },
+                    {  500, xi.item.ACORN         },
                 },
 
                 points =
@@ -562,16 +554,14 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1070, xi.item.ARROWWOOD_LOG        },
-                    { 1070, xi.item.DOGWOOD_LOG          },
-                    { 2300, xi.item.HANDFUL_OF_PINE_NUTS },
-                    { 1070, xi.item.HANDFUL_OF_ALMONDS   },
-                    {  500, xi.item.CHESTNUT_LOG         },
-                    { 2300, xi.item.DATE                 },
-                    {  500, xi.item.EBONY_LOG            },
-                    {  500, xi.item.LAUAN_LOG            },
-                    {  490, xi.item.ROSEWOOD_LOG         },
-                    {  200, xi.item.BLOODWOOD_LOG        },
+                    { 2000, xi.item.DOGWOOD_LOG          },
+                    { 1500, xi.item.CHESTNUT_LOG         },
+                    {  100, xi.item.HANDFUL_OF_PINE_NUTS },
+                    {  100, xi.item.HANDFUL_OF_ALMONDS   },
+                    {  100, xi.item.DATE                 },
+                    { 1000, xi.item.EBONY_LOG            },
+                    { 2000, xi.item.ROSEWOOD_LOG         },
+                    {  500, xi.item.BLOODWOOD_LOG        },
                 },
 
                 points =
@@ -588,16 +578,14 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2200, xi.item.DOGWOOD_LOG          },
-                    { 1520, xi.item.HANDFUL_OF_ALMONDS   },
-                    { 1260, xi.item.ARROWWOOD_LOG        },
-                    {  470, xi.item.CHESTNUT_LOG         },
-                    {  680, xi.item.DATE                 },
-                    {  940, xi.item.LAUAN_LOG            },
-                    { 1150, xi.item.HANDFUL_OF_PINE_NUTS },
-                    {  680, xi.item.ROSEWOOD_LOG         },
-                    {  260, xi.item.BLOODWOOD_LOG        },
-                    {  310, xi.item.EBONY_LOG            },
+                    { 2000, xi.item.DOGWOOD_LOG          },
+                    { 1500, xi.item.CHESTNUT_LOG         },
+                    {  100, xi.item.HANDFUL_OF_PINE_NUTS },
+                    {  100, xi.item.HANDFUL_OF_ALMONDS   },
+                    {  100, xi.item.DATE                 },
+                    { 1000, xi.item.EBONY_LOG            },
+                    { 2000, xi.item.ROSEWOOD_LOG         },
+                    {  500, xi.item.BLOODWOOD_LOG        },
                 },
 
                 points =
@@ -614,17 +602,14 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1890, xi.item.ARROWWOOD_LOG      },
-                    { 1400, xi.item.ASH_LOG            },
-                    { 1430, xi.item.MAPLE_LOG          },
-                    { 1270, xi.item.WALNUT             },
-                    {  850, xi.item.CHESTNUT_LOG       },
-                    { 1000, xi.item.RONFAURE_CHESTNUT  },
-                    {  760, xi.item.WALNUT_LOG         },
-                    {  490, xi.item.BAG_OF_FRUIT_SEEDS },
-                    {   40, xi.item.JACARANDA_LOG      },
-                    {  400, xi.item.OAK_LOG            },
-                    {  290, xi.item.TEAK_LOG           },
+                    { 1500, xi.item.OAK_LOG            },
+                    { 2500, xi.item.WALNUT_LOG         },
+                    { 2000, xi.item.WALNUT             },
+                    { 2500, xi.item.CHESTNUT_LOG       },
+                    {  500, xi.item.RONFAURE_CHESTNUT  },
+                    {  500, xi.item.BAG_OF_FRUIT_SEEDS },
+                    {  200, xi.item.JACARANDA_LOG      },
+                    {  300, xi.item.TEAK_LOG           },
                 },
 
                 points =
@@ -642,15 +627,11 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2000, xi.item.WALNUT        },
-                    { 1540, xi.item.WALNUT_LOG    },
-                    { 1140, xi.item.ARROWWOOD_LOG },
-                    { 1090, xi.item.ASH_LOG       },
-                    {  860, xi.item.OAK_LOG       },
-                    {  860, xi.item.WILLOW_LOG    },
-                    {  510, xi.item.ACORN         },
-                    {  170, xi.item.JACARANDA_LOG },
-                    {  230, xi.item.TEAK_LOG      },
+                    { 2500, xi.item.OAK_LOG       },
+                    { 3500, xi.item.WALNUT_LOG    },
+                    { 3000, xi.item.WALNUT        },
+                    {  500, xi.item.JACARANDA_LOG },
+                    {  500, xi.item.TEAK_LOG      },
                 },
 
                 points =
@@ -668,13 +649,11 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2910, xi.item.FLASK_OF_HOLY_WATER },
-                    { 2230, xi.item.PAIR_OF_NOPALES     },
-                    { 1650, xi.item.DRAGON_FRUIT        },
-                    { 1490, xi.item.BIRD_FEATHER        },
-                    { 1250, xi.item.BIRD_EGG            },
-                    {  170, xi.item.BAG_OF_CACTUS_STEMS },
-                    {   50, xi.item.OPTICAL_NEEDLE      },
+                    { 2500, xi.item.FLASK_OF_HOLY_WATER },
+                    { 2500, xi.item.PAIR_OF_NOPALES     },
+                    { 2500, xi.item.BIRD_FEATHER        },
+                    { 2400, xi.item.BAG_OF_CACTUS_STEMS },
+                    {  100, xi.item.OPTICAL_NEEDLE      },
                 },
 
                 points =
@@ -692,13 +671,14 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2610, xi.item.ARROWWOOD_LOG      },
-                    { 2030, xi.item.ASH_LOG            },
-                    { 2570, xi.item.MAPLE_LOG          },
-                    {  540, xi.item.CHESTNUT_LOG       },
-                    {  580, xi.item.BAG_OF_FRUIT_SEEDS },
-                    {  910, xi.item.YEW_LOG            },
-                    {  410, xi.item.RONFAURE_CHESTNUT  },
+                    { 2500, xi.item.ARROWWOOD_LOG      },
+                    { 2000, xi.item.YEW_LOG            },
+                    { 1500, xi.item.MAPLE_LOG          },
+                    { 2000, xi.item.WILLOW_LOG          },
+                    { 1000, xi.item.HOLLY_LOG          },
+                    {  500, xi.item.CHESTNUT_LOG       },
+                    {  400, xi.item.RONFAURE_CHESTNUT  },
+                    {  100, xi.item.BAG_OF_FRUIT_SEEDS },
                 },
 
                 points =
@@ -735,14 +715,12 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2040, xi.item.WALNUT_LOG    },
-                    { 1850, xi.item.WILLOW_LOG    },
-                    { 1790, xi.item.YEW_LOG       },
-                    { 1460, xi.item.ARROWWOOD_LOG },
-                    { 1430, xi.item.ASH_LOG       },
-                    {  580, xi.item.ACORN         },
+                    { 2500, xi.item.WALNUT_LOG    },
+                    { 2500, xi.item.YEW_LOG       },
+                    { 1000, xi.item.WILLOW_LOG    },
+                    { 1500, xi.item.OAK_LOG       },
+                    {  500, xi.item.ACORN         },
                     {  550, xi.item.DRYAD_ROOT    },
-                    {   60, xi.item.OAK_LOG       },
                 },
 
                 points =
@@ -780,16 +758,14 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2410, xi.item.LAUAN_LOG                },
-                    { 1980, xi.item.ARROWWOOD_LOG            },
-                    { 1550, xi.item.YAGUDO_CHERRY            },
-                    { 1030, xi.item.BUNCH_OF_BUBURIMU_GRAPES },
-                    {  780, xi.item.DRYAD_ROOT               },
-                    {  520, xi.item.BAG_OF_FRUIT_SEEDS       },
-                    {  950, xi.item.HOLLY_LOG                },
-                    {  340, xi.item.EBONY_LOG                },
-                    {  170, xi.item.MAHOGANY_LOG             },
-                    {  260, xi.item.ROSEWOOD_LOG             },
+                    { 2500, xi.item.LAUAN_LOG                },
+                    { 2500, xi.item.BUNCH_OF_BUBURIMU_GRAPES },
+                    { 2500, xi.item.HOLLY_LOG                },
+                    { 1000, xi.item.YAGUDO_CHERRY            },
+                    {  500, xi.item.ROSEWOOD_LOG             },
+                    {  100, xi.item.DRYAD_ROOT               },
+                    {  400, xi.item.BAG_OF_FRUIT_SEEDS       },
+                    {  500, xi.item.EBONY_LOG                },
                 },
 
                 points =
@@ -833,17 +809,15 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1900, xi.item.ARROWWOOD_LOG          },
-                    { 1430, xi.item.PIECE_OF_RATTAN_LUMBER },
-                    { 1190, xi.item.LAUAN_LOG              },
-                    { 1190, xi.item.REVIVAL_TREE_ROOT      },
-                    {  950, xi.item.AQUILARIA_LOG          },
-                    {  480, xi.item.BEEHIVE_CHIP           },
-                    {  480, xi.item.BAG_OF_TREE_CUTTINGS   },
-                    {  100, xi.item.DRAGON_FRUIT           },
-                    {  240, xi.item.EBONY_LOG              },
-                    {  100, xi.item.HOLLY_LOG              },
-                    {  100, xi.item.ROSEWOOD_LOG           },
+                    { 1500, xi.item.EBONY_LOG              },
+                    { 1000, xi.item.MAHOGANY_LOG           },
+                    { 1000, xi.item.PIECE_OF_RATTAN_LUMBER },
+                    { 1000, xi.item.LAUAN_LOG              },
+                    { 2500, xi.item.AQUILARIA_LOG         },
+                    { 1000, xi.item.DRAGON_FRUIT           },
+                    { 1000, xi.item.BAG_OF_TREE_CUTTINGS   },
+                    {  500, xi.item.BEEHIVE_CHIP           },
+                    {  500, xi.item.ROSEWOOD_LOG           },
                 },
 
                 points =
@@ -860,18 +834,16 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2220, xi.item.ARROWWOOD_LOG          },
-                    { 2220, xi.item.PIECE_OF_RATTAN_LUMBER },
-                    { 1130, xi.item.LAUAN_LOG              },
-                    {  780, xi.item.BEEHIVE_CHIP           },
-                    {  650, xi.item.DRYAD_ROOT             },
-                    {  650, xi.item.BUTTERPEAR             },
-                    {  610, xi.item.REVIVAL_TREE_ROOT      },
-                    {  610, xi.item.AQUILARIA_LOG          },
-                    {  570, xi.item.KAPOR_LOG              },
-                    {  350, xi.item.MAHOGANY_LOG           },
-                    {  170, xi.item.EBONY_LOG              },
-                    {   90, xi.item.BAG_OF_TREE_CUTTINGS   },
+                    { 1500, xi.item.EBONY_LOG              },
+                    { 1500, xi.item.MAHOGANY_LOG           },
+                    { 1000, xi.item.PIECE_OF_RATTAN_LUMBER },
+                    { 1000, xi.item.LAUAN_LOG              },
+                    { 1500, xi.item.DRYAD_ROOT             },
+                    { 1000, xi.item.REVIVAL_TREE_ROOT      },
+                    { 1000, xi.item.BAG_OF_TREE_CUTTINGS   },
+                    {  500, xi.item.BEEHIVE_CHIP           },
+                    {  500, xi.item.ROSEWOOD_LOG           },
+                    {  500, xi.item.BUTTERPEAR             },
                 },
 
                 points =
@@ -903,12 +875,11 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2950, xi.item.ARROWWOOD_LOG },
-                    { 2230, xi.item.ASH_LOG       },
-                    { 2120, xi.item.MAPLE_LOG     },
-                    { 1000, xi.item.WILLOW_LOG    },
-                    {  620, xi.item.ELM_LOG       },
-                    {  650, xi.item.HOLLY_LOG     },
+                    { 2500, xi.item.ARROWWOOD_LOG },
+                    { 2500, xi.item.ASH_LOG       },
+                    { 1500, xi.item.MAPLE_LOG     },
+                    { 2500, xi.item.WILLOW_LOG    },
+                    { 1000, xi.item.HOLLY_LOG     },
                 },
 
                 points =
@@ -949,21 +920,14 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1150, xi.item.IGNEOUS_ROCK           },
-                    { 1130, xi.item.CHUNK_OF_ZINC_ORE      },
-                    { 1100, xi.item.CHUNK_OF_COPPER_ORE    },
-                    { 1080, xi.item.CHUNK_OF_TIN_ORE       },
-                    { 1050, xi.item.CHUNK_OF_SILVER_ORE    },
-                    {  970, xi.item.CHUNK_OF_IRON_ORE      },
-                    {  680, xi.item.SUIT_OF_MOBLIN_MAIL    },
-                    {  630, xi.item.MOBLIN_HELM            },
-                    {  600, xi.item.MOBLIN_MASK            },
-                    {  570, xi.item.GOBLIN_DIE             },
-                    {  570, xi.item.SUIT_OF_MOBLIN_ARMOR   },
-                    {   80, xi.item.CHUNK_OF_DARKSTEEL_ORE },
-                    {   80, xi.item.CHUNK_OF_MYTHRIL_ORE   },
-                    {   70, xi.item.CHUNK_OF_GOLD_ORE      },
-                    {   70, xi.item.CHUNK_OF_PLATINUM_ORE  },
+                    { 1000, xi.item.IGNEOUS_ROCK           },
+                    { 2500, xi.item.CHUNK_OF_ZINC_ORE      },
+                    { 2500, xi.item.CHUNK_OF_SILVER_ORE    },
+                    { 2500, xi.item.CHUNK_OF_IRON_ORE      },
+                    {  500, xi.item.CHUNK_OF_DARKSTEEL_ORE },
+                    {  300, xi.item.CHUNK_OF_MYTHRIL_ORE   },
+                    {  500, xi.item.CHUNK_OF_GOLD_ORE      },
+                    {  200, xi.item.CHUNK_OF_PLATINUM_ORE  },
                 },
 
                 points =
@@ -988,18 +952,12 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1660, xi.item.CHUNK_OF_COPPER_ORE    },
-                    { 1100, xi.item.CHUNK_OF_TIN_ORE       },
-                    { 1450, xi.item.CHUNK_OF_ZINC_ORE      },
-                    { 1790, xi.item.IGNEOUS_ROCK           },
-                    { 1450, xi.item.CHUNK_OF_SILVER_ORE    },
-                    {  140, xi.item.CHUNK_OF_ALUMINUM_ORE  },
-                    { 1720, xi.item.CHUNK_OF_IRON_ORE      },
-                    {   70, xi.item.CHUNK_OF_DARKSTEEL_ORE },
-                    {  210, xi.item.CHUNK_OF_MYTHRIL_ORE   },
-                    {  140, xi.item.CHUNK_OF_GOLD_ORE      },
-                    {  340, xi.item.CHUNK_OF_PLATINUM_ORE  },
-                    {   70, xi.item.RED_ROCK               },
+                    { 3000, xi.item.CHUNK_OF_SILVER_ORE    },
+                    { 1500, xi.item.CHUNK_OF_ALUMINUM_ORE  },
+                    { 1500, xi.item.CHUNK_OF_IRON_ORE      },
+                    { 1500, xi.item.CHUNK_OF_MYTHRIL_ORE   },
+                    {  500, xi.item.CHUNK_OF_PLATINUM_ORE  },
+                    { 1000, xi.item.RED_ROCK               },
                 },
 
                 points =
@@ -1021,20 +979,13 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2250, xi.item.PINCH_OF_SULFUR      },
-                    { 2990, xi.item.CHUNK_OF_IRON_ORE    },
-                    { 1590, xi.item.HANDFUL_OF_IRON_SAND },
-                    { 1540, xi.item.FLINT_STONE          },
-                    { 1340, xi.item.PINCH_OF_BOMB_ASH    },
-                    {  960, xi.item.SUIT_OF_MOBLIN_MAIL  },
-                    { 1150, xi.item.MOBLIN_HELM          },
-                    {  450, xi.item.SUIT_OF_MOBLIN_ARMOR },
-                    {  380, xi.item.TROLL_PAULDRON       },
-                    {  450, xi.item.TROLL_VAMBRACE       },
-                    {  430, xi.item.MOBLIN_MASK          },
-                    {  210, xi.item.DEMON_HORN           },
-                    {  140, xi.item.CHUNK_OF_ADAMAN_ORE  },
-                    {   30, xi.item.CHUNK_OF_KHROMA_ORE  },
+                    { 1500, xi.item.PINCH_OF_SULFUR      },
+                    { 2000, xi.item.CHUNK_OF_IRON_ORE    },
+                    { 3500, xi.item.HANDFUL_OF_IRON_SAND },
+                    { 1500, xi.item.PINCH_OF_BOMB_ASH    },
+                    {  500, xi.item.DEMON_HORN           },
+                    {  800, xi.item.CHUNK_OF_ADAMAN_ORE  },
+                    {  200, xi.item.CHUNK_OF_KHROMA_ORE  },
                 },
 
                 points =
@@ -1068,20 +1019,12 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2010, xi.item.CHUNK_OF_AHT_URHGAN_BRASS },
-                    { 1000, xi.item.PINCH_OF_BOMB_ASH         },
-                    { 1720, xi.item.FLINT_STONE               },
-                    {  290, xi.item.CHUNK_OF_GOLD_ORE         },
-                    { 1440, xi.item.HANDFUL_OF_IRON_SAND      },
-                    {   50, xi.item.CHUNK_OF_LUMINIUM_ORE     },
-                    {  430, xi.item.SUIT_OF_MOBLIN_ARMOR      },
-                    {  430, xi.item.MOBLIN_HELM               },
-                    {  480, xi.item.SUIT_OF_MOBLIN_MAIL       },
-                    {  290, xi.item.MOBLIN_MASK               },
-                    {  100, xi.item.CHUNK_OF_ORICHALCUM_ORE   },
-                    { 1200, xi.item.PINCH_OF_SULFUR           },
-                    {  480, xi.item.TROLL_PAULDRON            },
-                    {  330, xi.item.TROLL_VAMBRACE            },
+                    { 2500, xi.item.CHUNK_OF_AHT_URHGAN_BRASS },
+                    { 2500, xi.item.PINCH_OF_BOMB_ASH         },
+                    { 1000, xi.item.CHUNK_OF_GOLD_ORE         },
+                    { 2500, xi.item.HANDFUL_OF_IRON_SAND      },
+                    {  500, xi.item.CHUNK_OF_LUMINIUM_ORE     },
+                    { 1000, xi.item.CHUNK_OF_ORICHALCUM_ORE   },
                 },
 
                 points =
@@ -1113,18 +1056,11 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1870, xi.item.CHUNK_OF_COPPER_ORE   },
-                    { 1930, xi.item.CHUNK_OF_ZINC_ORE     },
-                    { 1500, xi.item.CHUNK_OF_TIN_ORE      },
-                    { 1340, xi.item.PEBBLE                },
-                    {  860, xi.item.CHUNK_OF_SILVER_ORE   },
-                    { 1180, xi.item.CHUNK_OF_IRON_ORE     },
-                    {  750, xi.item.CHUNK_OF_MYTHRIL_ORE  },
-                    {  210, xi.item.MOBLIN_MASK           },
-                    {  110, xi.item.MOBLIN_HELM           },
-                    {  110, xi.item.SUIT_OF_MOBLIN_MAIL   },
-                    {   50, xi.item.SUIT_OF_MOBLIN_ARMOR  },
-                    {  160, xi.item.CHUNK_OF_PLATINUM_ORE },
+                    { 1000, xi.item.CHUNK_OF_ZINC_ORE     },
+                    { 2000, xi.item.CHUNK_OF_SILVER_ORE   },
+                    { 2000, xi.item.CHUNK_OF_IRON_ORE     },
+                    { 4500, xi.item.CHUNK_OF_MYTHRIL_ORE  },
+                    {  500, xi.item.CHUNK_OF_PLATINUM_ORE },
                 },
 
                 points =
@@ -1165,16 +1101,14 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1460, xi.item.CHUNK_OF_COPPER_ORE    },
-                    { 1650, xi.item.CHUNK_OF_IRON_ORE      },
-                    { 1300, xi.item.CHUNK_OF_TIN_ORE       },
-                    { 1140, xi.item.PEBBLE                 },
-                    { 1320, xi.item.CHUNK_OF_ZINC_ORE      },
-                    {  840, xi.item.FLINT_STONE            },
-                    {  360, xi.item.CHUNK_OF_SILVER_ORE    },
-                    {  170, xi.item.RED_ROCK               },
-                    {  150, xi.item.CHUNK_OF_DARKSTEEL_ORE },
-                    {  110, xi.item.CHUNK_OF_GOLD_ORE      },
+                    { 1500, xi.item.CHUNK_OF_COPPER_ORE    },
+                    { 1500, xi.item.CHUNK_OF_IRON_ORE      },
+                    { 1500, xi.item.CHUNK_OF_TIN_ORE       },
+                    { 1000, xi.item.CHUNK_OF_ZINC_ORE      },
+                    { 1500, xi.item.CHUNK_OF_SILVER_ORE    },
+                    { 2000, xi.item.RED_ROCK               },
+                    {  500, xi.item.CHUNK_OF_DARKSTEEL_ORE },
+                    {  500, xi.item.CHUNK_OF_GOLD_ORE      },
                 },
 
                 points =
@@ -1220,13 +1154,12 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1130, xi.item.CHUNK_OF_ZINC_ORE     },
-                    {  940, xi.item.CHUNK_OF_IRON_ORE     },
-                    { 1040, xi.item.PEBBLE                },
-                    {  970, xi.item.CHUNK_OF_TIN_ORE      },
-                    {  900, xi.item.CHUNK_OF_MYTHRIL_ORE  },
-                    {  900, xi.item.CHUNK_OF_SILVER_ORE   },
-                    {  800, xi.item.CHUNK_OF_COPPER_ORE   },
+                    { 2500, xi.item.CHUNK_OF_ZINC_ORE     },
+                    { 1000, xi.item.CHUNK_OF_IRON_ORE     },
+                    { 2500, xi.item.CHUNK_OF_MYTHRIL_ORE  },
+                    { 2000, xi.item.CHUNK_OF_SILVER_ORE   },
+                    { 1500, xi.item.CHUNK_OF_COPPER_ORE   },
+                    {  400, xi.item.PEBBLE                },
                     {  100, xi.item.CHUNK_OF_PLATINUM_ORE },
                 },
 
@@ -1260,14 +1193,14 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2450, xi.item.CHUNK_OF_IRON_ORE      },
-                    { 1800, xi.item.PEBBLE                 },
-                    { 1850, xi.item.CHUNK_OF_COPPER_ORE    },
-                    { 1330, xi.item.CHUNK_OF_ZINC_ORE      },
-                    { 1120, xi.item.CHUNK_OF_TIN_ORE       },
-                    {  550, xi.item.SNAPPING_MOLE          },
-                    {  180, xi.item.CHUNK_OF_SILVER_ORE    },
-                    {   40, xi.item.CHUNK_OF_DARKSTEEL_ORE },
+                    { 1500, xi.item.CHUNK_OF_IRON_ORE      },
+                    { 2000, xi.item.CHUNK_OF_ZINC_ORE      },
+                    { 1000, xi.item.PEBBLE                 },
+                    { 2500, xi.item.CHUNK_OF_COPPER_ORE    },
+                    { 2500, xi.item.CHUNK_OF_TIN_ORE       },
+                    {  100, xi.item.SNAPPING_MOLE          },
+                    {  300, xi.item.CHUNK_OF_SILVER_ORE    },
+                    {  100, xi.item.CHUNK_OF_SILVER_ORE    },
                 },
 
                 points =
@@ -1303,15 +1236,12 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1890, xi.item.PEBBLE                 },
-                    { 1670, xi.item.CHUNK_OF_ZINC_ORE      },
-                    { 1510, xi.item.CHUNK_OF_COPPER_ORE    },
-                    { 1470, xi.item.CHUNK_OF_TIN_ORE       },
-                    { 1450, xi.item.CHUNK_OF_IRON_ORE      },
-                    {  810, xi.item.CHUNK_OF_SILVER_ORE    },
-                    {  590, xi.item.CHUNK_OF_DARKSTEEL_ORE },
-                    {  400, xi.item.RED_ROCK               },
-                    {   80, xi.item.CHUNK_OF_GOLD_ORE      },
+                    { 1000, xi.item.CHUNK_OF_ZINC_ORE      },
+                    { 4000, xi.item.CHUNK_OF_IRON_ORE      },
+                    { 1500, xi.item.CHUNK_OF_SILVER_ORE    },
+                    { 3000, xi.item.CHUNK_OF_DARKSTEEL_ORE },
+                    {  800, xi.item.RED_ROCK               },
+                    {  200, xi.item.CHUNK_OF_GOLD_ORE      },
                 },
 
                 points =
@@ -1341,17 +1271,15 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 3260, xi.item.FLINT_STONE             },
-                    { 1520, xi.item.CHUNK_OF_IRON_ORE       },
-                    {  430, xi.item.PINCH_OF_SULFUR         },
-                    {  650, xi.item.BOMB_ARM                },
-                    {  870, xi.item.PINCH_OF_BOMB_ASH       },
-                    { 1300, xi.item.HANDFUL_OF_IRON_SAND    },
-                    {  250, xi.item.CHUNK_OF_ADAMAN_ORE     },
-                    {  600, xi.item.CHUNK_OF_DARKSTEEL_ORE  },
-                    { 1520, xi.item.CHUNK_OF_ORPIMENT       },
-                    {  100, xi.item.CHUNK_OF_ORICHALCUM_ORE },
-                    {  220, xi.item.RED_ROCK                },
+                    { 2000, xi.item.CHUNK_OF_IRON_ORE       },
+                    {  500, xi.item.PINCH_OF_SULFUR         },
+                    { 1000, xi.item.BOMB_ARM                },
+                    { 1000, xi.item.PINCH_OF_BOMB_ASH       },
+                    { 1500, xi.item.HANDFUL_OF_IRON_SAND    },
+                    { 1000, xi.item.CHUNK_OF_ADAMAN_ORE     },
+                    { 2000, xi.item.CHUNK_OF_DARKSTEEL_ORE  },
+                    {  300, xi.item.CHUNK_OF_ORPIMENT       },
+                    {  700, xi.item.CHUNK_OF_ORICHALCUM_ORE },
                 },
 
                 points =
@@ -1498,7 +1426,7 @@ xi.helm.result = function(player, helmType, broke, itemID)
     -- Item results
     if itemID > 0 then
         -- Egg-Hunt Extravaganza Event
-        if xi.events and xi.events.eggHunt then
+        if xi.events and xi.events.eggHunt and math.random(1, 10) <= 2 then
             xi.events.eggHunt.helmResult(player)
         end
 
@@ -1541,7 +1469,7 @@ xi.helm.onTrade = function(player, npc, trade, helmType, csid, func)
             npcUtil.giveItem(player, { { itemID, math.random(1, 3) } })
             -- player:addItem(itemID)
 
-            local uses = (npc:getLocalVar('uses') - 1) % 8
+            local uses = (npc:getLocalVar('uses') - 1) % 4
             npc:setLocalVar('uses', uses)
 
             if uses == 0 then

@@ -1220,6 +1220,12 @@ xi.conquest.overseerOnTrigger = function(player, npc, guardNation, guardType, gu
 
     -- OUTPOST AND BORDER OVERSEERS
     elseif guardType >= xi.conquest.guard.OUTPOST then
+        -- XISP players do not need supplies to earn OP warp
+        if not player:hasTeleport(guardNation, guardRegion + 5) then
+            player:printToPlayer("Congratulations. You have unlocked this outpost for future teleportion.", xi.msg.channel.SAY, npc:getName())
+            player:addTeleport(guardNation, guardRegion + 5)
+        end
+
         local a1 = getArg1(player, guardNation, guardType)
         if a1 == 1808 then -- non-allied nation
             player:startEvent(guardEvent, a1, 0, 0, 0, 0, player:getRank(player:getNation()), 0, 0)

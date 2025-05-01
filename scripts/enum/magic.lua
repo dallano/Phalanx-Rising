@@ -221,6 +221,7 @@ xi.magic.spellFamily =
 ---@enum xi.magic.spell
 xi.magic.spell =
 {
+    NONE                  =    0,
     CURE                  =    1,
     CURE_II               =    2,
     CURE_III              =    3,
