@@ -179,7 +179,7 @@ xi.settings.main =
     CHEST_MIN_ILLUSION_TIME  = 1800,  -- 30 minutes
 
     -- Multiplier to NM lottery spawn chance. (Default 1.0) eg. 0 = disable lottery spawns. -1 for always 100% chance.
-    NM_LOTTERY_CHANCE = 1.0,
+    NM_LOTTERY_CHANCE = 2.0,
     -- Multiplier to NM lottery cooldown time (Default 1.0) eg. 2.0 = twice as long. 0 = no cooldowns.
     NM_LOTTERY_COOLDOWN = 1.0,
 
@@ -294,7 +294,7 @@ xi.settings.main =
 
     -- MISC
     RIVERNE_PORTERS              = 120,   -- Time in seconds that Unstable Displacements in Cape Riverne stay open after trading a scale.
-    LANTERNS_STAY_LIT            = 1200,  -- time in seconds that lanterns in the Den of Rancor stay lit.
+    LANTERNS_STAY_LIT            = 2400,  -- time in seconds that lanterns in the Den of Rancor stay lit.
     ENABLE_COP_ZONE_CAP          = 1,     -- Enable or disable lvl cap
     ALLOW_MULTIPLE_EXP_RINGS     = 0,     -- Set to 1 to remove ownership restrictions on the Chariot/Empress/Emperor Band trio.
     BYPASS_EXP_RING_ONE_PER_WEEK = 0,     -- Set to 1 to bypass the limit of one ring per Conquest Tally Week.

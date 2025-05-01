@@ -59,7 +59,7 @@ xi.job_utils.warrior.useBrazenRush = function(player, target, ability)
 end
 
 xi.job_utils.warrior.useDefender = function(player, target, ability)
-    player:addStatusEffect(xi.effect.DEFENDER, 1, 0, 180 + player:getMod(xi.mod.DEFENDER_DURATION))
+    player:addStatusEffect(xi.effect.DEFENDER, 250, 0, 180 + player:getMod(xi.mod.DEFENDER_DURATION))
 end
 
 xi.job_utils.warrior.useMightyStrikes = function(player, target, ability)

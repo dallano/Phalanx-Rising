@@ -16,9 +16,9 @@ spellObject.onMagicCastingCheck = function(caster, target, spell)
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
-    -- if target:isPC() then
+    if target:isPC() then
         target:sendRaise(1)
-    -- else
+    else
         if target:getName() == 'Prishe' then
             -- CoP 8-4 Prishe
             target:setLocalVar('Raise', 1)
@@ -26,7 +26,7 @@ spellObject.onSpellCast = function(caster, target, spell)
             target:addHP(target:getMaxHP())
             target:addMP(target:getMaxMP())
         end
-    -- end
+    end
 
     spell:setMsg(xi.msg.basic.MAGIC_CASTS_ON)
 

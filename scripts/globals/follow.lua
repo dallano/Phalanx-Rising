@@ -34,7 +34,12 @@ xi.follow.follow = function(follower, leader)
 
     xi.follow.stopFollowing(follower)
     follower:follow(leader, xi.followType.ROAM)
-    follower:addListener('DESPAWN', 'FOLLOW_DESPAWN', onMobDespawn)
+
+    -- XISP Only despawn if no_despawn is not assigned
+    if follower:getMobMod(xi.mobMod.NO_DESPAWN) == 0 then
+        follower:addListener('DESPAWN', 'FOLLOW_DESPAWN', onMobDespawn)
+    end
+
     follower:setLocalVar('leaderID', leaderID)
 end
 

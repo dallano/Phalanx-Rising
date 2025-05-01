@@ -18,9 +18,9 @@ local effectObject = {}
 effectObject.onEffectGain = function(target, effect)
     local power = effect:getPower()
     if power == 2 then
-        target:addMod(xi.mod.PHYS_ABSORB, 100) -- Percent not /10000
+        target:addMod(xi.mod.PHYS_ABSORB, 75) -- Percent not /10000
     elseif power == 1 then
-        target:addMod(xi.mod.UDMGPHYS, -10000)
+        target:addMod(xi.mod.UDMGPHYS, -5000)
     else
         target:addMod(xi.mod.DMGPHYS, -5000)
     end
@@ -32,9 +32,9 @@ end
 effectObject.onEffectLose = function(target, effect)
     local power = effect:getPower()
     if power == 2 then
-        target:delMod(xi.mod.PHYS_ABSORB, 100) -- Percent not /10000
+        target:delMod(xi.mod.PHYS_ABSORB, 75) -- Percent not /10000
     elseif power == 1 then
-        target:delMod(xi.mod.UDMGPHYS, -10000)
+        target:delMod(xi.mod.UDMGPHYS, -5000)
     else
         target:delMod(xi.mod.DMGPHYS, -5000)
     end

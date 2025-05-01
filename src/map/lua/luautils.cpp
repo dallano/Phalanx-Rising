@@ -4979,6 +4979,13 @@ namespace luautils
         return outPos;
     }
 
+    void OnPlayerRaise(CCharEntity* PChar)
+    {
+        TracyZoneScoped;
+
+        callGlobal<void>("xi.player.onPlayerRaise", PChar);
+    }
+
     void OnPlayerDeath(CCharEntity* PChar)
     {
         TracyZoneScoped;

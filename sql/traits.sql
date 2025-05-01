@@ -180,6 +180,7 @@ INSERT INTO `traits` VALUES (9,'auto regen',22,35,1,370,1,'SOA',0);
 INSERT INTO `traits` VALUES (9,'auto regen',22,65,2,370,2,'SOA',0);
 INSERT INTO `traits` VALUES (9,'auto regen',22,95,3,370,3,'SOA',0);
 INSERT INTO `traits` VALUES (10,'auto refresh',7,35,1,369,1,'TOAU',0);
+INSERT INTO `traits` VALUES (10,'auto refresh',8,45,1,369,1,NULL,0); -- DRK (XISP)
 INSERT INTO `traits` VALUES (10,'auto refresh',15,25,1,369,1,NULL,0);
 INSERT INTO `traits` VALUES (10,'auto refresh',15,90,2,369,2,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (11,'rapid shot',11,15,1,359,25,NULL,0);
@@ -209,7 +210,7 @@ INSERT INTO `traits` VALUES (14,'store tp',12,70,4,73,25,NULL,0);
 INSERT INTO `traits` VALUES (14,'store tp',12,90,5,73,30,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (15,'double attack',1,25,1,288,10,NULL,0);
 INSERT INTO `traits` VALUES (15,'double attack',1,50,2,288,12,'ROV',0);
-INSERT INTO `traits` VALUES (15,'double attack',1,75,3,288,14,'ABYSSEA',0); -- level 76 prior to ROV update (05/14/2015), set Abby tag so it's removed from 75-cap servers
+INSERT INTO `traits` VALUES (15,'double attack',1,20,3,288,14,NULL,0); -- XISP Thief
 INSERT INTO `traits` VALUES (15,'double attack',1,85,4,288,16,'ROV',0);
 INSERT INTO `traits` VALUES (15,'double attack',1,99,5,288,18,'ROV',0);
 INSERT INTO `traits` VALUES (16,'triple attack',6,55,1,302,5,NULL,0);
@@ -446,9 +447,9 @@ INSERT INTO `traits` VALUES (76,'ambush',6,75,1,0,0,'TOAU',2374);
 INSERT INTO `traits` VALUES (77,'iron will',7,75,1,0,0,'TOAU',2436);
 INSERT INTO `traits` VALUES (78,'guardian',7,75,1,0,0,'TOAU',2438);
 INSERT INTO `traits` VALUES (79,'muted soul',8,75,1,0,0,'TOAU',2500);
-INSERT INTO `traits` VALUES (80,'desperate blows',8,15,1,906,500,'SOA',0);
-INSERT INTO `traits` VALUES (80,'desperate blows',8,30,2,906,1000,'SOA',0);
-INSERT INTO `traits` VALUES (80,'desperate blows',8,45,3,906,1500,'SOA',0);
+INSERT INTO `traits` VALUES (80,'desperate blows',8,15,1,906,500,'WOTG',0); -- XISP
+INSERT INTO `traits` VALUES (80,'desperate blows',8,30,2,906,1000,'WOTG',0); -- XISP
+INSERT INTO `traits` VALUES (80,'desperate blows',8,45,3,906,1500,'WOTG',0); -- XISP
 INSERT INTO `traits` VALUES (81,'beast affinity ',9,75,1,0,0,'TOAU',0);
 INSERT INTO `traits` VALUES (82,'beast healer',9,75,1,0,0,'TOAU',0);
 INSERT INTO `traits` VALUES (83,'snapshot',11,75,1,0,0,'TOAU',0);
@@ -460,7 +461,7 @@ INSERT INTO `traits` VALUES (84,'recycle',17,65,2,305,20,'SOA',0);
 INSERT INTO `traits` VALUES (84,'recycle',17,95,3,305,30,'SOA',0);
 INSERT INTO `traits` VALUES (85,'ikishoten',12,75,1,0,0,'TOAU',2756);
 INSERT INTO `traits` VALUES (86,'overwhelm',12,75,1,0,0,'TOAU',2758);
-INSERT INTO `traits` VALUES (87,'ninja tool expert.',13,75,1,308,0,'TOAU',2818);
+INSERT INTO `traits` VALUES (87,'ninja tool expert.',13,37,1,308,0,'TOAU',2818);
 INSERT INTO `traits` VALUES (88,'empathy',14,75,1,0,0,'TOAU',0);
 INSERT INTO `traits` VALUES (89,'strafe',14,20,1,986,10,'TOAU',0);
 INSERT INTO `traits` VALUES (89,'strafe',14,40,2,986,15,'TOAU',0);

@@ -920,10 +920,10 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1000, xi.item.IGNEOUS_ROCK           },
                     { 2500, xi.item.CHUNK_OF_ZINC_ORE      },
                     { 2500, xi.item.CHUNK_OF_SILVER_ORE    },
                     { 2500, xi.item.CHUNK_OF_IRON_ORE      },
+                    { 1000, xi.item.IGNEOUS_ROCK           },
                     {  500, xi.item.CHUNK_OF_DARKSTEEL_ORE },
                     {  300, xi.item.CHUNK_OF_MYTHRIL_ORE   },
                     {  500, xi.item.CHUNK_OF_GOLD_ORE      },
@@ -1466,7 +1466,7 @@ xi.helm.onTrade = function(player, npc, trade, helmType, csid, func)
 
         -- success! reward item and decrement number of remaining uses on the point
         if itemID ~= 0 then
-            npcUtil.giveItem(player, { { itemID, math.random(1, 3) } })
+            npcUtil.giveItem(player, { { itemID, math.random(1, 2) } })
             -- player:addItem(itemID)
 
             local uses = (npc:getLocalVar('uses') - 1) % 4

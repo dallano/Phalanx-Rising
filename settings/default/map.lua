@@ -172,7 +172,7 @@ xi.settings.map =
     FELLOW_TP_MULTIPLIER = 1.0,
 
     -- Adjust max HP pool for NMs, regular mobs, players, and trusts/fellows. Acts as a multiplier, so default is 1.
-    NM_HP_MULTIPLIER        = 0.5,
+    NM_HP_MULTIPLIER        = 0.8,
     MOB_HP_MULTIPLIER       = 0.5,
     PLAYER_HP_MULTIPLIER    = 1.0,
     ALTER_EGO_HP_MULTIPLIER = 1.0,
@@ -197,8 +197,8 @@ xi.settings.map =
     INCLUDE_MOB_SJ = false,
 
     -- Adjust base stats (str/vit/etc.) for NMs, regular mobs, players, and trusts/fellows. Acts as a multiplier, so default is 1.
-    NM_STAT_MULTIPLIER        = 0.8,
-    MOB_STAT_MULTIPLIER       = 0.8,
+    NM_STAT_MULTIPLIER        = 1.0,
+    MOB_STAT_MULTIPLIER       = 1.0,
     PLAYER_STAT_MULTIPLIER    = 1.0,
     ALTER_EGO_STAT_MULTIPLIER = 1.0,
 
@@ -215,16 +215,16 @@ xi.settings.map =
     DROP_RATE_MULTIPLIER = 1.0,
 
     -- Multiplier for gil naturally dropped by mobs. Does not apply to the bonus gil from all_mobs_gil_bonus. Default is 1.0.
-    MOB_GIL_MULTIPLIER = 1.0,
+    MOB_GIL_MULTIPLIER = 2.0,
 
     -- All mobs drop this much extra gil per mob LV even if they normally drop zero.
-    ALL_MOBS_GIL_BONUS = 5,
+    ALL_MOBS_GIL_BONUS = 0,
 
     -- Maximum total bonus gil that can be dropped. Default 9999 gil.
-    MAX_GIL_BONUS = 1500,
+    MAX_GIL_BONUS = 9999,
 
     -- Allow mobs to walk back home instead of despawning
-    MOB_NO_DESPAWN = true,
+    MOB_NO_DESPAWN = false,
 
     -- Adds extra time to mob despawn in seconds. Base time is 25s, so a setting of 5 here would be a total of 30 seconds.
     MOB_ADDITIONAL_TIME_TO_DEAGGRO = 25,
@@ -236,7 +236,7 @@ xi.settings.map =
     GUARD_OLD_SKILLUP_STYLE = false,
 
     -- Globally adjusts ALL battlefield level caps by this many levels.
-    BATTLE_CAP_TWEAK = 10,
+    BATTLE_CAP_TWEAK = 0,
 
     -- Enable/disable level cap of mission battlefields stored in database.
     LV_CAP_MISSION_BCNM = false,
@@ -250,7 +250,7 @@ xi.settings.map =
     MAX_MERIT_POINTS = 30,
 
     -- Minimum time between uses of yell command (in seconds).
-    YELL_COOLDOWN = 30,
+    YELL_COOLDOWN = 0,
 
     -- Prevent players from sending tells to hidden GMs. You will still receive them from other GMs.
     BLOCK_TELL_TO_HIDDEN_GM = false,

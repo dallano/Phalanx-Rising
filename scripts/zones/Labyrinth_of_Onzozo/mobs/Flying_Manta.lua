@@ -33,8 +33,8 @@ entity.onMobDeath = function(mob, player, optParams)
 end
 
 entity.onMobDespawn = function(mob)
-    xi.mob.phOnDespawn(mob, lordOfOnzozoPHTable, 4, 57600) -- 16 hour minimum
-    xi.mob.phOnDespawn(mob, pegPowlerPHTable, 4, 7200) -- 2 hour minimum
+    xi.mob.phOnDespawn(mob, lordOfOnzozoPHTable, 2, 57600) -- 16 hour minimum (XISP remains vanilla)
+    xi.mob.phOnDespawn(mob, pegPowlerPHTable, 5, 7200) -- 2 hour minimum (XISP boosted slightly)
 end
 
 return entity

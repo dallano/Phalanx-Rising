@@ -17,7 +17,7 @@ entity.onMobDeath = function(mob, player, optParams)
 end
 
 entity.onMobDespawn = function(mob)
-    xi.mob.phOnDespawn(mob, pranksterPHTable, 15, 3600) -- 1 hour
+    xi.mob.phOnDespawn(mob, pranksterPHTable, 15, 3600) -- 1 hour (XISP)
 end
 
 return entity

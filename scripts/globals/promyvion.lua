@@ -268,7 +268,7 @@ end
 
 xi.promyvion.receptacleOnMobSpawn = function(mob)
     -- Handle Stray pop cooldown.
-    mob:setLocalVar('[Stray]CooldownIdle', os.time() + 60 * math.random(2, 6))
+    mob:setLocalVar('[Stray]CooldownIdle', os.time() + 60 * math.random(4, 6)) -- XISP
     mob:setLocalVar('[Stray]CooldownFight', 0)
 
     -- Handle decoration: Fade-in.
@@ -291,7 +291,7 @@ xi.promyvion.receptacleOnMobRoam = function(mob)
         end
 
         -- Handle cooldown.
-        mob:setLocalVar('[Stray]CooldownIdle', os.time() + 60 * math.random(2, 6))
+        mob:setLocalVar('[Stray]CooldownIdle', os.time() + 60 * math.random(4, 6)) -- XISP
     end
 end
 
@@ -307,7 +307,7 @@ xi.promyvion.receptacleOnMobFight = function(mob, target)
 
     -- Handle initial cooldown.
     if strayCooldown == 0 then
-        strayCooldown = os.time() + 5 * math.random(2, 4)
+        strayCooldown = os.time() + 60 * math.random(2, 4)
         mob:setLocalVar('[Stray]CooldownFight', strayCooldown)
     end
 
@@ -321,7 +321,7 @@ xi.promyvion.receptacleOnMobFight = function(mob, target)
         end
 
         -- Handle cooldown.
-        mob:setLocalVar('[Stray]CooldownFight', os.time() + 5 * math.random(2, 4))
+        mob:setLocalVar('[Stray]CooldownFight', os.time() + 60 * math.random(2, 4))
     end
 
     -- Check for alive associated Strays and update enmity.

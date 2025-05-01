@@ -54,7 +54,7 @@ INSERT INTO `abilities` VALUES (34,'aggressor',1,45,1,300,4,118,0,2,2000,0,6,20.
 INSERT INTO `abilities` VALUES (35,'provoke',1,5,4,30,5,0,0,3,2000,0,6,18.0,0,1,1800,0,0,NULL);
 INSERT INTO `abilities` VALUES (36,'focus',2,25,1,120,13,120,0,4,2000,0,6,20.0,0,1,300,448,0,NULL);
 INSERT INTO `abilities` VALUES (37,'dodge',2,15,1,120,14,121,0,5,2000,0,6,20.0,0,1,300,450,0,NULL);
-INSERT INTO `abilities` VALUES (38,'chakra',2,35,1,180,15,102,0,6,2000,0,6,20.0,0,1,300,452,0,NULL);
+INSERT INTO `abilities` VALUES (38,'chakra',2,10,1,180,15,102,0,6,2000,0,6,20.0,0,1,300,452,0,NULL);
 INSERT INTO `abilities` VALUES (39,'boost',2,5,1,15,16,116,0,7,2000,0,6,20.0,0,1,300,0,0,NULL);
 INSERT INTO `abilities` VALUES (40,'counterstance',2,45,1,300,17,0,0,8,2000,0,6,20.0,0,1,900,0,0,NULL);
 INSERT INTO `abilities` VALUES (41,'steal',6,5,4,300,60,125,0,181,2000,0,3,4.4,0,1,300,0,0,NULL);
@@ -393,7 +393,7 @@ INSERT INTO `abilities` VALUES (385,'apogee',15,70,1,180,108,100,0,94,2000,0,6,0
 INSERT INTO `abilities` VALUES (386,'entrust',21,75,1,600,93,100,0,332,2000,0,6,0.0,0,1,300,0,0,'SOA');
 INSERT INTO `abilities` VALUES (387,'bestial_loyalty',9,23,1,1200,94,100,0,83,2000,0,6,18.0,0,1,0,900,0,'SOA');
 INSERT INTO `abilities` VALUES (388,'cascade',4,85,1,60,12,100,0,333,2000,0,6,0.0,0,0,0,0,0,NULL); -- check animation
-INSERT INTO `abilities` VALUES (389,'consume_mana',8,55,1,60,95,0,0,337,2000,0,6,0.0,0,1,1300,0,0,'SOA');
+INSERT INTO `abilities` VALUES (389,'consume_mana',8,55,1,60,95,0,0,337,2000,0,6,0.0,0,1,1300,0,0,'WOTG');
 INSERT INTO `abilities` VALUES (390,'naturalists_roll',17,67,1,60,193,420,0,328,2000,0,6,8.0,1,1,80,0,8,'SOA'); -- No Enhancing Magic Duration MOD, Empty PH effect exists
 INSERT INTO `abilities` VALUES (391,'runeists_roll',17,70,1,60,193,420,0,329,2000,0,6,8.0,1,1,80,0,8,'SOA');
 INSERT INTO `abilities` VALUES (392,'crooked_cards',17,95,1,600,96,100,0,335,2000,0,6,0.0,0,0,0,0,0,NULL);

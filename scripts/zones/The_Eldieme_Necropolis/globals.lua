@@ -42,7 +42,7 @@ local lightBrazier = function(player, npc)
     npc:setAnimation(xi.anim.OPEN_DOOR)
 
     --unlight brazier after five minutes
-    npc:timer(300000, function()
+    npc:timer(1000 * 60 * 30, function() -- XISP 30 min
         npc:setAnimation(xi.anim.CLOSE_DOOR)
     end)
 

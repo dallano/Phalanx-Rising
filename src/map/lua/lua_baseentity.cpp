@@ -5573,6 +5573,19 @@ void CLuaBaseEntity::setModelId(uint16 modelId, sol::object const& slotObj)
 }
 
 /************************************************************************
+ *  Function: updateModel() (XISP)
+ *  Purpose : Sends a packet to update the HUMANOID model of a newly generated model
+ *  Example : mob:updateModel()
+ *  Notes   : This is needed when models use a string hex look ID vs int model ID
+ ************************************************************************/
+
+ void CLuaBaseEntity::updateModel()
+ {
+    m_PBaseEntity->loc.zone->UpdateEntityPacket(m_PBaseEntity, ENTITY_UPDATE, UPDATE_HP);
+    m_PBaseEntity->updatemask |= UPDATE_LOOK;
+ }
+
+/************************************************************************
  *  Function: getCostume()
  *  Purpose : Returns the PC's appearance
  *  Example : player:getCostume()
@@ -19214,6 +19227,7 @@ void CLuaBaseEntity::Register()
     SOL_REGISTER("hideName", CLuaBaseEntity::hideName);
     SOL_REGISTER("getModelId", CLuaBaseEntity::getModelId);
     SOL_REGISTER("setModelId", CLuaBaseEntity::setModelId);
+    SOL_REGISTER("updateModel", CLuaBaseEntity::updateModel);
     SOL_REGISTER("getCostume", CLuaBaseEntity::getCostume);
     SOL_REGISTER("setCostume", CLuaBaseEntity::setCostume);
     SOL_REGISTER("getCostume2", CLuaBaseEntity::getCostume2);

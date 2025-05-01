@@ -420,6 +420,7 @@ namespace luautils
     auto NearLocation(sol::table const& table, float radius, float theta) -> sol::table;
     auto GetFurthestValidPosition(CLuaBaseEntity* fromTarget, float distance, float theta) -> sol::table;
 
+    void OnPlayerRaise(CCharEntity* PChar);
     void OnPlayerDeath(CCharEntity* PChar);
     void OnPlayerLevelUp(CCharEntity* PChar);
     void OnPlayerLevelDown(CCharEntity* PChar);

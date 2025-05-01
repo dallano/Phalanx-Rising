@@ -75,7 +75,7 @@ end
 entity.onMobDespawn = function(mob)
     local params = { }
     params.spawnPoints = totteringSpawnPoints
-    xi.mob.phOnDespawn(mob, totteringPHTable, 20, 3600, params) -- 1 hour
+    xi.mob.phOnDespawn(mob, totteringPHTable, 15, 3600, params) -- 1 hour (XISP)
 end
 
 return entity

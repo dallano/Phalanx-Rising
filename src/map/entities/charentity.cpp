@@ -2733,6 +2733,7 @@ void CCharEntity::Raise()
 
     PAI->Internal_Raise();
     SetDeathTimestamp(0);
+    luautils::OnPlayerRaise(this);
 }
 
 void CCharEntity::SetDeathTimestamp(uint32 timestamp)

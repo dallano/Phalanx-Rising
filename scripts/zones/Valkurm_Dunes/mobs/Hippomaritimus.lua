@@ -19,6 +19,10 @@ entity.onMobInitialize = function(mob)
     mob:setRespawnTime(math.random(3600, 5400)) -- 60-90 min repop
 end
 
+entity.onMobSpawn = function(mob)
+    xi.nmloot.addDrops(mob)
+end
+
 entity.onMobDeath = function(mob, player, optParams)
     xi.hunts.checkHunt(mob, player, 210)
 end

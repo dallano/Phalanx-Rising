@@ -25,47 +25,115 @@ xi.xispal = xi.xispal or {}
 -- Quests:
 -- quest1Var = Tracker used in the quest for creating the player squire.
 -- Second quest uses no tracker, but instead squireProg.
-xi.xispal.name =
+
+xi.xispal.statInfo =
 {
+    RACE =
+    {
+        [xi.race.HUME_M]   = { HPbase = 33, HPgrowth = 8,  MPbase = 15, MPgrowth = 3, },
+        [xi.race.HUME_F]   = { HPbase = 33, HPgrowth = 8,  MPbase = 15, MPgrowth = 4, },
+        [xi.race.ELVAAN_M] = { HPbase = 35, HPgrowth = 16, MPbase = 10, MPgrowth = 1, },
+        [xi.race.ELVAAN_F] = { HPbase = 35, HPgrowth = 16, MPbase = 10, MPgrowth = 1, },
+        [xi.race.TARU_M]   = { HPbase = 29, HPgrowth = 10, MPbase = 20, MPgrowth = 5, },
+        [xi.race.TARU_F]   = { HPbase = 29, HPgrowth = 10, MPbase = 20, MPgrowth = 5, },
+        [xi.race.MITHRA]   = { HPbase = 38, HPgrowth = 8,  MPbase = 15, MPgrowth = 3, },
+        [xi.race.GALKA]    = { HPbase = 33, HPgrowth = 19, MPbase = 12, MPgrowth = 2, },
+        -- etc.
+    },
+
+    JOB =
+    {
+        [xi.job.WAR] = { HPbase = 8, HPgrowth = 17, MPbase = 0, MPgrowth = 0,  },
+        [xi.job.MNK] = { HPbase = 9, HPgrowth = 19, MPbase = 0, MPgrowth = 0,  },
+        [xi.job.WHM] = { HPbase = 5, HPgrowth = 13, MPbase = 4, MPgrowth = 12, },
+        [xi.job.BLM] = { HPbase = 4, HPgrowth = 11, MPbase = 5, MPgrowth = 14, },
+        [xi.job.RDM] = { HPbase = 6, HPgrowth = 14, MPbase = 3, MPgrowth = 10, },
+        [xi.job.THF] = { HPbase = 6, HPgrowth = 14, MPbase = 0, MPgrowth = 0,  },
+        [xi.job.PLD] = { HPbase = 7, HPgrowth = 16, MPbase = 2, MPgrowth = 8,  },
+        [xi.job.DRK] = { HPbase = 7, HPgrowth = 16, MPbase = 2, MPgrowth = 8,  },
+        [xi.job.BST] = { HPbase = 7, HPgrowth = 16, MPbase = 0, MPgrowth = 0,  },
+        [xi.job.BRD] = { HPbase = 6, HPgrowth = 14, MPbase = 0, MPgrowth = 0,  },
+        [xi.job.RNG] = { HPbase = 5, HPgrowth = 13, MPbase = 0, MPgrowth = 0,  },
+        [xi.job.SAM] = { HPbase = 8, HPgrowth = 17, MPbase = 0, MPgrowth = 0,  },
+        [xi.job.NIN] = { HPbase = 6, HPgrowth = 14, MPbase = 0, MPgrowth = 0,  },
+        [xi.job.DRG] = { HPbase = 7, HPgrowth = 16, MPbase = 0, MPgrowth = 0,  },
+        [xi.job.SMN] = { HPbase = 3, HPgrowth = 10, MPbase = 6, MPgrowth = 16, },
+    }
+}
+
+xi.xispal.squireName =
+{
+    -- Hume Male
     [0] = 'Valeth',
     [1] = 'Eryndor',
     [2] = 'Serendil',
     [3] = 'Alistair',
 
+    -- Elvaan Male
     [4] = 'Edron',
     [5] = 'Halric',
     [6] = 'Garrent',
     [7] = 'Petyr',
 
+    -- Taru Male
     [8]  = 'Totoro',
     [9]  = 'Pancha',
     [10] = 'Soruo',
     [11] = 'Gurido',
 
+    -- Galka
     [12] = 'Korvahn',
     [13] = 'Draggarim',
     [14] = 'Werei',
     [15] = 'Belben',
 
+    -- Elvaan Female
     [16] = 'Ariette',
     [17] = 'Ophelia',
     [18] = 'Iselienne',
     [19] = 'Odette',
 
+    -- Hume Female
     [20] = 'Thera',
     [21] = 'Brienne',
     [22] = 'Anju',
     [23] = 'Nora',
 
+    -- Taru Female
     [24] = 'Lulu',
     [25] = 'Pipira',
     [26] = 'Nanaka',
     [27] = 'Mimi',
 
+    -- Mithra
     [28] = 'Sora',
     [29] = 'Mikota',
     [30] = 'Vira',
     [31] = 'Paya',
+}
+
+xi.xispal.afQuests =
+{
+    { xi.questLog.BASTOK,      xi.quest.id.bastok.THE_TALEKEEPERS_GIFT,      }, -- WAR
+    { xi.questLog.BASTOK,      xi.quest.id.bastok.TRUE_STRENGTH,             }, -- MNK
+    { xi.questLog.SANDORIA,    xi.quest.id.sandoria.PIEUJES_DECISION,        }, -- WHM
+    { xi.questLog.WINDURST,    xi.quest.id.windurst.THE_ROOT_OF_THE_PROBLEM, }, -- BLM
+    { xi.questLog.SANDORIA,    xi.quest.id.sandoria.PEACE_FOR_THE_SPIRIT,    }, -- RDM
+    { xi.questLog.WINDURST,    xi.quest.id.windurst.AS_THICK_AS_THIEVES,     }, -- THF
+    { xi.questLog.SANDORIA,    xi.quest.id.sandoria.UNDER_OATH,              }, -- PLD
+    { xi.questLog.BASTOK,      xi.quest.id.bastok.BLADE_OF_EVIL,             }, -- DRK
+    { xi.questLog.JEUNO,       xi.quest.id.jeuno.A_NEW_DAWN,                 }, -- BST
+    { xi.questLog.JEUNO,       xi.quest.id.jeuno.THE_CIRCLE_OF_TIME,         }, -- BRD
+    { xi.questLog.WINDURST,    xi.quest.id.windurst.UNBRIDLED_PASSION,       }, -- RNG
+    { xi.questLog.OUTLANDS,    xi.quest.id.outlands.A_THIEF_IN_NORG,         }, -- SAM
+    { xi.questLog.OUTLANDS,    xi.quest.id.outlands.TRUE_WILL,               }, -- NIN
+    { xi.questLog.SANDORIA,    xi.quest.id.sandoria.KNIGHT_STALKER,          }, -- DRG
+    { xi.questLog.WINDURST,    xi.quest.id.windurst.CARBUNCLE_DEBACLE        }, -- SMN
+    { xi.questLog.AHT_URHGAN,  xi.quest.id.ahtUrhgan.TRANSFORMATIONS,        }, -- BLU
+    { xi.questLog.AHT_URHGAN,  xi.quest.id.ahtUrhgan.AGAINST_ALL_ODDS,       }, -- COR
+    { xi.questLog.AHT_URHGAN,  xi.quest.id.ahtUrhgan.PUPPETMASTER_BLUES,     }, -- PUP
+    { xi.questLog.JEUNO,       xi.quest.id.jeuno.COMEBACK_QUEEN,             }, -- DNC
+    { xi.questLog.CRYSTAL_WAR, xi.quest.id.crystalWar.SEEING_BLOOD_RED,      }, -- SCH
 }
 
 xi.xispal.face =
@@ -195,6 +263,108 @@ xi.xispal.squireItems =
     },
 }
 
+xi.xispal.palInfo =
+{
+    -- Knights
+    [xi.job.DRG] =
+    {
+        name = "Emilien",
+        face = 4,
+        race = xi.race.ELVAAN_M,
+        job  = xi.job.DRG,
+        zone = xi.zone.CHATEAU_DORAGUILLE,
+        quest = { xi.questLog.SANDORIA, xi.quest.id.sandoria.THE_HOLY_CREST },
+    },
+
+    [xi.job.THF] =
+    {
+        name = "Ayala",
+        face = 13,
+        race = xi.race.MITHRA,
+        job  = xi.job.THF,
+        zone = xi.zone.PORT_WINDURST,
+    },
+
+    [xi.job.SAM] =
+    {
+        name = "Yamagi",
+        face = 14,
+        race = xi.race.HUME_M,
+        job  = xi.job.SAM,
+        zone = xi.zone.NORG,
+        quest = { xi.questLog.OUTLANDS, xi.quest.id.outlands.FORGE_YOUR_DESTINY },
+    },
+
+    [xi.job.DRK] =
+    {
+        name = "Yaric",
+        face = 1,
+        race = xi.race.GALKA,
+        job  = xi.job.DRK,
+        zone = xi.zone.METALWORKS,
+        quest = { xi.questLog.BASTOK, xi.quest.id.bastok.BLADE_OF_DARKNESS },
+    },
+
+    [xi.job.PLD] =
+    {
+        name = "Isolde",
+        face = 3,
+        race = xi.race.ELVAAN_F,
+        job  = xi.job.PLD,
+        zone = xi.zone.SOUTHERN_SAN_DORIA,
+        quest = { xi.questLog.SANDORIA, xi.quest.id.sandoria.A_KNIGHTS_TEST },
+    },
+
+    -- Mages
+    [xi.job.WHM] =
+    {
+        name = "Rilea",
+        face = 10,
+        race = xi.race.HUME_F,
+        job  = xi.job.WHM,
+        zone = xi.zone.NORTHERN_SAN_DORIA,
+    },
+
+    [xi.job.BLM] =
+    {
+        name = "Vivio",
+        face = 5,
+        race = xi.race.TARU_M,
+        job  = xi.job.BLM,
+        zone = xi.zone.HEAVENS_TOWER,
+    },
+
+    [xi.job.SMN] =
+    {
+        name = "Irving",
+        face = 3,
+        race = xi.race.HUME_M,
+        job  = xi.job.SMN,
+        zone = xi.zone.WINDURST_WALLS,
+        quest = { xi.questLog.WINDURST, xi.quest.id.windurst.I_CAN_HEAR_A_RAINBOW },
+    },
+
+    [xi.job.BRD] =
+    {
+        name = "Thessa",
+        face = 7,
+        race = xi.race.MITHRA,
+        job  = xi.job.BRD,
+        zone = xi.zone.LOWER_JEUNO,
+        quest = { xi.questLog.JEUNO, xi.quest.id.jeuno.PATH_OF_THE_BARD },
+    },
+
+    [xi.job.NIN] =
+    {
+        name = "Umbria",
+        face = 2,
+        race = xi.race.TARU_F,
+        job  = xi.job.NIN,
+        zone = xi.zone.KAZHAM,
+        quest = { xi.questLog.BASTOK, xi.quest.id.bastok.AYAME_AND_KAEDE },
+    },
+}
+
 xi.xispal.equipment =
 {
     NONE            = 0,
@@ -248,7 +418,8 @@ xi.xispal.equipment =
     VERMILION       = 47,
     BLUECOTE        = 48,
     BLACKCOTE       = 49,
-    UNKNOWN         = 50, -- Body only
+    UNKNOWN         = 50,
+    -- ----------------------- --
     TIGER           = 51,
     IRONSCALE       = 52,
     STEELSCALE      = 53,
@@ -391,7 +562,6 @@ xi.xispal.weapons =
     [9]  = { 202, 217 }, -- Polearm: 202 - 217 (Ends with Gungnir, sick)
     [10] = { 218, 248 }, -- Wands:   218 - 248
     [11] = { 249, 255 }, -- Swords:  249 - 255
-    -- Repeat??
 }
 
 xi.xispal.subs =
@@ -418,164 +588,254 @@ xi.xispal.squireGearSets =
         main  = xi.xispal.weapons[11][1] + 0,
         sub   = 0,
     },
-    [1] = -- Lvl 10-20
+    [1] = -- Lvl 10-25
     {
         body  = xi.xispal.equipment.BONE,
         hands = xi.xispal.equipment.LEATHER,
         legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1] + 0,
+        feet  = xi.xispal.equipment.KENPOGI,
+        main  = xi.xispal.weapons[11][1] + 3,
         sub   = xi.xispal.subs[0][1] + 0,
     },
-    [2] = -- Lvl 20-30
+    [2] = -- Lvl 25-35
     {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
+        body  = xi.xispal.equipment.WOOL,
+        hands = xi.xispal.equipment.RAPTOR,
         legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
+        feet  = xi.xispal.equipment.RAPTOR,
+        main  = xi.xispal.weapons[11][1] + 3, -- Iron Sword
+        sub   = xi.xispal.subs[0][1] + 16, -- Faerie
     },
-    [3] = -- Lvl 30-40
+    [3] = -- Lvl 40-50
     {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
+        body  = xi.xispal.equipment.RSE2,
+        hands = xi.xispal.equipment.DARKSTEEL_PLATE,
+        legs  = xi.xispal.equipment.RSE2,
+        feet  = xi.xispal.equipment.DARKSTEEL_PLATE,
+        main  = xi.xispal.weapons[7][1] + 4, -- Rapier
+        sub   = xi.xispal.subs[0][1] + 25, -- Darksteel
     },
-    [4] = -- Lvl 40-50
+    [4] = -- Unlock full AF set
     {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
+        body  = xi.xispal.equipment.RDM_AF,
+        hands = xi.xispal.equipment.RDM_AF,
+        legs  = xi.xispal.equipment.RDM_AF,
+        feet  = xi.xispal.equipment.RDM_AF,
+        main  = xi.xispal.weapons[7][1] + 1, -- Gold white Rapier
+        sub   = xi.xispal.subs[0][1] + 24, -- Gold Darksteel
     },
-    [5] = -- AF
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
-    [6] = -- Lvl 50-60
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
-    [7] = -- Lvl 60-70
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
-    [8] = -- Lvl 60-75
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
-    [9] = -- 75 + 1
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
-    [10] = -- 75 + 2
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
-    [11] = -- 75 + 3
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
-    [12] = -- 75 + 4
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
-    [13] = -- 75 + 5
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
-    [14] = -- 75 + 6
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
-    [15] = -- 75 + 7
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
-    [16] = -- 75 + 8
-    {
-        body  = xi.xispal.equipment.BONE,
-        hands = xi.xispal.equipment.LEATHER,
-        legs  = xi.xispal.equipment.DOUBLET,
-        feet  = xi.xispal.equipment.KENPO,
-        main  = xi.xispal.weapons[11][1],
-        sub   = xi.xispal.subs[0][1] + 0,
-    },
+    -- Excalibur?
+    -- main  = xi.xispal.weapons[0][1] + 0, -- 0, 1, 3
+    -- sub   = 256,
 }
 
 xi.xispal.knightGearSets =
 {
-    [0] =
+    [xi.job.DRG] = -- SANDORIA
     {
+        [0] = -- Initial
+        {
+            body  = xi.xispal.equipment.SQUIRE,
+            hands = xi.xispal.equipment.BREASTPLATE,
+            legs  = xi.xispal.equipment.CHAINMAIL,
+            feet  = xi.xispal.equipment.BREASTPLATE,
+            main  = xi.xispal.weapons[9][1] + 3, -- Bronze
+            sub   = 0,
+        },
+        [1] = -- Stage before AF
+        {
+            body  = xi.xispal.equipment.BRIG,
+            hands = xi.xispal.equipment.COEURL,
+            legs  = xi.xispal.equipment.GAMBY,
+            feet  = xi.xispal.equipment.BREASTPLATE,
+            main  = xi.xispal.weapons[9][1] + 0, -- Halberd
+            sub   = 0,
+        },
+        [2] = -- Unlock full AF set
+        {
+            body  = xi.xispal.equipment.DRG_AF,
+            hands = xi.xispal.equipment.DRG_AF,
+            legs  = xi.xispal.equipment.DRG_AF,
+            feet  = xi.xispal.equipment.DRG_AF,
+            main  = xi.xispal.weapons[5][1] + 8, -- Thalassocrat
+            sub   = 256,
+        },
+    },
 
+    [xi.job.SAM] = -- Norg
+    {
+        [0] = -- Initial
+        {
+            body  = xi.xispal.equipment.SHINOBI,
+            hands = xi.xispal.equipment.SHINOBI,
+            legs  = xi.xispal.equipment.HARA,
+            feet  = xi.xispal.equipment.SHINOBI,
+            main  = xi.xispal.weapons[5][1] + 6,
+            sub   = 0,
+        },
+        [1] = -- Stage before AF
+        {
+            body  = xi.xispal.equipment.JUJITSU,
+            hands = xi.xispal.equipment.HARA,
+            legs  = xi.xispal.equipment.SHINOBI,
+            feet  = xi.xispal.equipment.HARA,
+            main  = xi.xispal.weapons[5][1] + 6,
+            sub   = 0,
+        },
+        [2] = -- Unlock full AF set
+        {
+            body  = xi.xispal.equipment.SAM_AF,
+            hands = xi.xispal.equipment.SAM_AF,
+            legs  = xi.xispal.equipment.SAM_AF,
+            feet  = xi.xispal.equipment.SAM_AF,
+            main  = xi.xispal.weapons[5][1] + 6,
+            sub   = 0,
+        },
+    },
+
+    [xi.job.DRK] = -- BASTOK
+    {
+        [0] = -- Initial
+        {
+            body  = xi.xispal.equipment.MUSKET,
+            hands = xi.xispal.equipment.MUSKET,
+            legs  = xi.xispal.equipment.MUSKET,
+            feet  = xi.xispal.equipment.MUSKET,
+            main  = xi.xispal.weapons[0][1] + 3,
+            sub   = 0,
+        },
+        [1] = -- Stage before AF
+        {
+            body  = xi.xispal.equipment.DARKSTEEL_PLATE,
+            hands = xi.xispal.equipment.DARKSTEEL_PLATE,
+            legs  = xi.xispal.equipment.DARKSTEEL_PLATE,
+            feet  = xi.xispal.equipment.DARKSTEEL_PLATE,
+            main  = xi.xispal.weapons[0][1] + 8,
+            sub   = 0,
+        },
+        [2] = -- Unlock full AF set
+        {
+            body  = xi.xispal.equipment.DRK_AF,
+            hands = xi.xispal.equipment.DRK_AF,
+            legs  = xi.xispal.equipment.DRK_AF,
+            feet  = xi.xispal.equipment.DRK_AF,
+            main  = xi.xispal.weapons[0][1] + 6,
+            sub   = 0,
+        },
+    },
+
+    [xi.job.PLD] = -- JEUNO
+    {
+        [0] = -- Initial
+        {
+            body  = xi.xispal.equipment.SAN_AKETON,
+            hands = xi.xispal.equipment.BREASTPLATE,
+            legs  = xi.xispal.equipment.BREASTPLATE,
+            feet  = xi.xispal.equipment.BREASTPLATE,
+            main  = xi.xispal.weapons[11][1] + 4, -- 253 a cool sword
+            sub   = xi.xispal.subs[0][1] + 9,
+        },
+        [1] = -- Stage before AF
+        {
+            body  = xi.xispal.equipment.IRONSCALE,
+            hands = xi.xispal.equipment.DARKSTEEL_PLATE,
+            legs  = xi.xispal.equipment.DARKSTEEL_PLATE,
+            feet  = xi.xispal.equipment.DARKSTEEL_PLATE,
+            main  = xi.xispal.weapons[11][1] + 4,
+            sub   = xi.xispal.subs[0][1] + 9,
+        },
+        [2] = -- Unlock full AF set
+        {
+            body  = xi.xispal.equipment.PLD_AF,
+            hands = xi.xispal.equipment.PLD_AF,
+            legs  = xi.xispal.equipment.PLD_AF,
+            feet  = xi.xispal.equipment.PLD_AF,
+            main  = xi.xispal.weapons[11][1] + 4,
+            sub   = xi.xispal.subs[0][1] + 9,
+        },
+    },
+
+    [xi.job.THF] = -- WINDURST
+    {
+        [0] = -- Initial
+        {
+            body  = xi.xispal.equipment.VAGABOND,
+            hands = xi.xispal.equipment.NONE,
+            legs  = xi.xispal.equipment.LIZARD,
+            feet  = xi.xispal.equipment.RSE,
+            main  = xi.xispal.weapons[6][1] + 10,
+            sub   = 0,
+        },
+        [1] = -- Stage before AF
+        {
+            body  = xi.xispal.equipment.BLUECOTE,
+            hands = xi.xispal.equipment.JUPON,
+            legs  = xi.xispal.equipment.TACTICIAN,
+            feet  = xi.xispal.equipment.TUNIC,
+            main  = xi.xispal.weapons[6][1] + 11,
+            sub   = 0,
+        },
+        [2] = -- Unlock full AF set
+        {
+            body  = xi.xispal.equipment.THF_AF,
+            hands = xi.xispal.equipment.THF_AF,
+            legs  = xi.xispal.equipment.THF_AF,
+            feet  = xi.xispal.equipment.THF_AF,
+            main  = xi.xispal.weapons[6][1] + 12,
+            sub   = 0,
+        },
     },
 }
 
 xi.xispal.mageGearSets =
 {
-    [0] =
+    [xi.job.WHM] =
     {
+        body  = xi.xispal.equipment.WHM_AF,
+        hands = xi.xispal.equipment.WHM_AF,
+        legs  = xi.xispal.equipment.WHM_AF,
+        feet  = xi.xispal.equipment.WHM_AF,
+        main  = xi.xispal.weapons[0][1] + 10, -- 0, 1, 3
+        sub   = 256,
+    },
 
+    [xi.job.BLM] =
+    {
+        body  = xi.xispal.equipment.BLM_AF,
+        hands = xi.xispal.equipment.BLM_AF,
+        legs  = xi.xispal.equipment.BLM_AF,
+        feet  = xi.xispal.equipment.BLM_AF,
+        main  = xi.xispal.weapons[0][1] + 4,
+        sub   = 256,
+    },
+
+    [xi.job.SMN] =
+    {
+        body  = xi.xispal.equipment.SMN_AF,
+        hands = xi.xispal.equipment.SMN_AF,
+        legs  = xi.xispal.equipment.SMN_AF,
+        feet  = xi.xispal.equipment.SMN_AF,
+        main  = xi.xispal.weapons[0][1] + 10, -- 0, 1, 3
+        sub   = 256,
+    },
+
+    [xi.job.BRD] =
+    {
+        body  = xi.xispal.equipment.BRD_AF,
+        hands = xi.xispal.equipment.BRD_AF,
+        legs  = xi.xispal.equipment.BRD_AF,
+        feet  = xi.xispal.equipment.BRD_AF,
+        main  = xi.xispal.weapons[0][1] + 5, -- 0, 1, 3
+        sub   = 256,
+    },
+
+    [xi.job.NIN] =
+    {
+        body  = xi.xispal.equipment.NIN_AF,
+        hands = xi.xispal.equipment.NIN_AF,
+        legs  = xi.xispal.equipment.NIN_AF,
+        feet  = xi.xispal.equipment.NIN_AF,
+        main  = xi.xispal.weapons[0][1] + 5, -- 0, 1, 3
+        sub   = 256,
     },
 }

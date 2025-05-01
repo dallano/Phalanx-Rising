@@ -1,15 +1,13 @@
 -----------------------------------
--- Area: Metalworks
---  NPC: Wise Owl
--- Type: Smithing Adv. Image Support
--- !pos -106.336 2.000 26.117 237
+-- Area: Heaven's Tower
+--  NPC: Rayjin-Ojin
+-- Type: XISP Squire Quest Giver
 -----------------------------------
 ---@type TNpcEntity
 local entity = {}
 
--- XISP Epic Crafter
 entity.onTrigger = function(player, npc)
-
+    xi.xispal.quest1(player, npc, npc:getNation())
 end
 
 entity.onEventFinish = function(player, csid, option, npc)

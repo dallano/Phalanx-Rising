@@ -8,13 +8,13 @@
 local entity = {}
 
 entity.onTrigger = function(player, npc)
-    if player:getQuestStatus(xi.questLog.SANDORIA, xi.quest.id.sandoria.EXIT_THE_GAMBLER) == xi.questStatus.QUEST_ACCEPTED then
-        player:startEvent(523)
-    else
-        player:startEvent(503)
-    end
+    -- if player:getQuestStatus(xi.questLog.SANDORIA, xi.quest.id.sandoria.EXIT_THE_GAMBLER) == xi.questStatus.QUEST_ACCEPTED then
+    --     player:startEvent(523)
+    -- else
+    --     player:startEvent(503)
+    -- end
 
-    if true then
+    if false then
         return
     end
 
@@ -23,6 +23,9 @@ entity.onTrigger = function(player, npc)
     local HANDS_OFFSET = 0x2000
     local LEGS_OFFSET  = 0x3000
     local FEET_OFFSET  = 0x4000
+    local MAIN_OFFSET  = 0x5000
+    local SUB_OFFSET   = 0x6000
+    local RANGE_OFFSET = 0x7000
 
     if npc:getLocalVar('control') == 1 then
 
@@ -30,18 +33,23 @@ entity.onTrigger = function(player, npc)
             DespawnMob(mob:getID())
         end
         npc:setLocalVar('control', 0)
-        print('done!')
+        print('Despawned!')
     -- Spawn new set
     else
+        print('Spawning!')
         npc:setLocalVar('control', 1)
         local offset = 0
-        for i = 160, 250 do
+        for i = 249, 290 do
             local zone = npc:getZone()
-            local body = string.format("%04X", BODY_OFFSET + i)
-            local hands = string.format("%04X", HANDS_OFFSET + i)
-            local legs = string.format("%04X", LEGS_OFFSET + i)
-            local feet = string.format("%04X", FEET_OFFSET + i)
-            local look = "0x0100010100" .. body .. hands .. legs .. feet .. "50F96000700000"
+            local body = string.format("%04X", BODY_OFFSET + 0)
+            local hands = string.format("%04X", HANDS_OFFSET + 0)
+            local legs = string.format("%04X", LEGS_OFFSET + 0)
+            local feet = string.format("%04X", FEET_OFFSET + 0)
+            local main = string.format("%04X", MAIN_OFFSET + i)
+            local sub = string.format("%04X", SUB_OFFSET + 28)
+            local range = string.format("%04X", RANGE_OFFSET)
+            local look = "0x0100010100" .. body .. hands .. legs .. feet .. main .. sub .. range .. "80"
+            print(look)
 
             if zone then
                 local pal = zone:insertDynamicEntity({
@@ -61,16 +69,16 @@ entity.onTrigger = function(player, npc)
                         pal:setRoamFlags(xi.roamFlag.SCRIPTED)
                     end,
                 })
+
                 if pal then
                     local pos = pal:getPos()
                     pal:setSpawn(pos.x, pos.y, pos.z + offset)
+
                     pal:spawn()
                     offset = offset + 1
                 end
             end
         end
     end
-
 end
-
 return entity

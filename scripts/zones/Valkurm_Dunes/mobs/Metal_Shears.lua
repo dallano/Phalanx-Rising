@@ -22,6 +22,10 @@ entity.onMobInitialize = function(mob)
     mob:setRespawnTime(math.random(3600, 4200)) -- 60-70 min repop
 end
 
+entity.onMobSpawn = function(mob)
+    xi.nmloot.addDrops(mob)
+end
+
 entity.onAdditionalEffect = function(mob, target, damage)
     return xi.mob.onAddEffect(mob, target, damage, xi.mob.ae.POISON, { power = 15, duration = math.random(10, 25) })
 end

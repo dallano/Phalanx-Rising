@@ -1641,7 +1641,7 @@ xi.treasure.onTrade = function(player, npc, trade, chestType)
         end
 
         local gilAmount = math.random(info.gil[2], info.gil[3])
-        local gil = gilAmount / #membersInZone
+        local gil = gilAmount * 2 -- XISP
         for i = 1, #membersInZone do
             npcUtil.giveCurrency(membersInZone[i], 'gil', gil)
         end

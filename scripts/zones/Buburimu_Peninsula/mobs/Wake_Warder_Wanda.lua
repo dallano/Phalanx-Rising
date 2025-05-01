@@ -9,6 +9,10 @@ entity.onMobInitialize = function(mob)
     mob:setMobMod(xi.mobMod.MAGIC_COOL, 50) -- just one spell to spam
 end
 
+entity.onMobSpawn = function(mob)
+    xi.nmloot.addDrops(mob)
+end
+
 entity.onMobEngage = function(mob, target)
     mob:setMod(xi.mod.REGAIN, 25)
 end

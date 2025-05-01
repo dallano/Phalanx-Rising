@@ -30,7 +30,7 @@ entity.onMobDespawn = function(mob)
     local params = {}
     params.nightOnly = true
     params.spawnPoints = citiSpawnPoints
-    xi.mob.phOnDespawn(mob, citipatiPHTable, 20, math.random(10800, 21600), params) -- 3 to 6 hours, night only
+    xi.mob.phOnDespawn(mob, citipatiPHTable, 15, math.random(10800, 21600), params) -- 3 to 6 hours, night only (XISP)
 end
 
 return entity

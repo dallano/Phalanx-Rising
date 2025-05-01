@@ -167,6 +167,8 @@ xi.player.onGameIn = function(player, firstLogin, zoning)
             player:messageSpecial(ID.text.ABYSSEA_TIME_OFFSET + 8)
             player:setPos(unpack(xi.abyssea.exitPositions[zoneID]))
         end
+
+        -- XISP
     end
 
     -- Abyssea starting quest should be flagged when expansion is active
@@ -242,10 +244,16 @@ xi.player.onGameIn = function(player, firstLogin, zoning)
     xi.xispal.onZone(player)
 end
 
+xi.player.onPlayerRaise = function(player)
+    xi.xispal.updateFollowers(player)
+end
+
 xi.player.onPlayerDeath = function(player)
+    xi.xispal.playerDied(player)
 end
 
 xi.player.onPlayerLevelUp = function(player)
+    xi.xispal.playerLevelUpChat(player)
 end
 
 xi.player.onPlayerLevelDown = function(player)

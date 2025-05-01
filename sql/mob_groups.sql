@@ -201,10 +201,6 @@ INSERT INTO `mob_groups` VALUES (53,7062,4,'Locus_Bight_Rarab',60,0,309,308300,0
 INSERT INTO `mob_groups` VALUES (54,7063,4,'Locus_Camelopard',60,0,432,308300,0,84,86,0);
 INSERT INTO `mob_groups` VALUES (55,7064,4,'Locus_Hypnos_Eft',60,0,2379,308300,0,84,86,0);
 INSERT INTO `mob_groups` VALUES (56,7061,4,'Locus_Ghost_Crab',60,0,2931,308300,0,84,86,0);
-INSERT INTO `mob_groups` VALUES (53,7062,4,'Locus_Bight_Rarab',60,0,309,308300,0,84,86,0);
-INSERT INTO `mob_groups` VALUES (54,7063,4,'Locus_Camelopard',60,0,432,308300,0,84,86,0);
-INSERT INTO `mob_groups` VALUES (55,7064,4,'Locus_Hypnos_Eft',60,0,2379,308300,0,84,86,0);
-INSERT INTO `mob_groups` VALUES (56,7061,4,'Locus_Ghost_Crab',60,0,2931,308300,0,84,86,0);
 -- INSERT INTO `mob_groups` VALUES (57,6810,4,'Locus_Fiddler_Crab',0,0,0,0,0,139,139,0); -- Needs capture for Venom Shower and Mega Scissors
 
 -- ------------------------------------------------------------
@@ -656,29 +652,26 @@ INSERT INTO `mob_groups` VALUES (61,1245,15,'Ephemeral_Limule',300,0,783,5000,10
 INSERT INTO `mob_groups` VALUES (1,4283,16,'Wanderer',960,0,2612,0,0,22,24,0);
 INSERT INTO `mob_groups` VALUES (2,4317,16,'Weeper',960,0,2634,0,0,24,26,0);
 INSERT INTO `mob_groups` VALUES (3,2048,16,'Idle_Wanderer',960,0,1350,0,0,29,31,0);
-INSERT INTO `mob_groups` VALUES (3,2048,16,'Idle_Wanderer',960,0,1350,0,0,29,31,0);
 INSERT INTO `mob_groups` VALUES (4,3897,16,'Thinker',960,0,2398,0,0,28,28,0);
 INSERT INTO `mob_groups` VALUES (5,2614,16,'Memory_Receptacle',300,0,0,0,0,30,30,0);
 INSERT INTO `mob_groups` VALUES (6,3784,16,'Stray',0,128,0,0,0,21,21,0);
 INSERT INTO `mob_groups` VALUES (7,4283,16,'Wanderer',960,0,2612,0,0,26,28,0);
 INSERT INTO `mob_groups` VALUES (8,4317,16,'Weeper',960,0,2634,0,0,28,30,0);
-INSERT INTO `mob_groups` VALUES (9,3897,16,'Thinker',960,0,2398,0,0,33,34,0);
+INSERT INTO `mob_groups` VALUES (9,3897,16,'Thinker',960,0,2398,0,0,31,33,0);
 INSERT INTO `mob_groups` VALUES (10,3539,16,'Seether',960,0,2192,0,0,30,32,0);
 INSERT INTO `mob_groups` VALUES (11,3784,16,'Stray',0,128,0,0,0,23,24,0);
 INSERT INTO `mob_groups` VALUES (12,4283,16,'Wanderer',960,0,2612,0,0,29,31,0);
 INSERT INTO `mob_groups` VALUES (13,4317,16,'Weeper',960,0,2634,0,0,31,33,0);
-INSERT INTO `mob_groups` VALUES (14,3539,16,'Seether',960,0,2192,0,0,33,35,0);
-INSERT INTO `mob_groups` VALUES (15,3897,16,'Thinker',960,0,2398,0,0,35,37,0);
+INSERT INTO `mob_groups` VALUES (14,3539,16,'Seether',960,0,2192,0,0,32,33,0);
+INSERT INTO `mob_groups` VALUES (15,3897,16,'Thinker',960,0,2398,0,0,32,33,0);
 INSERT INTO `mob_groups` VALUES (16,3784,16,'Stray',0,128,0,0,0,26,27,0);
-INSERT INTO `mob_groups` VALUES (17,4317,16,'Weeper',960,0,2634,0,0,33,35,0);
-INSERT INTO `mob_groups` VALUES (18,3539,16,'Seether',960,0,2192,0,0,35,37,0);
+INSERT INTO `mob_groups` VALUES (17,4317,16,'Weeper',960,0,2634,0,0,32,33,0);
+INSERT INTO `mob_groups` VALUES (18,3539,16,'Seether',960,0,2192,0,0,32,33,0);
 INSERT INTO `mob_groups` VALUES (19,4283,16,'Wanderer',960,0,2612,0,0,32,33,0);
-INSERT INTO `mob_groups` VALUES (20,3897,16,'Thinker',960,0,2398,0,0,37,39,0);
-INSERT INTO `mob_groups` VALUES (21,681,16,'Cerebrator',14400,0,447,0,0,38,38,0);
+INSERT INTO `mob_groups` VALUES (20,3897,16,'Thinker',960,0,2398,0,0,32,33,0);
+INSERT INTO `mob_groups` VALUES (21,681,16,'Cerebrator',14400,0,447,0,0,35,35,0);
 INSERT INTO `mob_groups` VALUES (22,298,16,'Woeful_Weeper',960,0,0,0,0,29,31,0);
 INSERT INTO `mob_groups` VALUES (23,4527,16,'Livid_Seether',960,0,0,0,0,29,31,0);
-INSERT INTO `mob_groups` VALUES (22,298,16,'Woeful_Weeper',960,0,1350,0,0,83,84,0);
-INSERT INTO `mob_groups` VALUES (23,4527,16,'Livid_Seether',960,0,1350,0,0,83,84,0);
 
 -- ------------------------------------------------------------
 -- Spire_of_Holla (Zone 17)
@@ -704,7 +697,7 @@ INSERT INTO `mob_groups` VALUES (14,0,17,'Constant_Wanderer',0,128,0,0,0,0,0,0);
 -- ------------------------------------------------------------
 
 INSERT INTO `mob_groups` VALUES (1,4283,18,'Wanderer',960,0,2613,0,0,22,24,0);
-INSERT INTO `mob_groups` VALUES (2,2048,18,'Idle_Wanderer',960,0,1350,0,0,83,84,0);
+INSERT INTO `mob_groups` VALUES (2,2048,18,'Idle_Wanderer',960,0,1350,0,0,22,24,0);
 INSERT INTO `mob_groups` VALUES (3,4317,18,'Weeper',960,0,2635,0,0,24,26,0);
 INSERT INTO `mob_groups` VALUES (4,1768,18,'Gorger',960,0,1207,0,0,29,31,0);
 INSERT INTO `mob_groups` VALUES (5,6645,18,'Memory_Receptacle',300,0,0,0,0,30,30,0);
@@ -712,27 +705,27 @@ INSERT INTO `mob_groups` VALUES (6,3784,18,'Stray',0,128,0,0,0,20,21,0);
 INSERT INTO `mob_groups` VALUES (7,4317,18,'Weeper',960,0,2635,0,0,28,30,0);
 INSERT INTO `mob_groups` VALUES (8,4283,18,'Wanderer',960,0,2613,0,0,26,28,0);
 INSERT INTO `mob_groups` VALUES (9,3539,18,'Seether',960,0,2193,0,0,30,32,0);
-INSERT INTO `mob_groups` VALUES (10,1768,18,'Gorger',960,0,1207,0,0,32,34,0);
+INSERT INTO `mob_groups` VALUES (10,1768,18,'Gorger',960,0,1207,0,0,32,33,0);
 INSERT INTO `mob_groups` VALUES (11,3784,18,'Stray',0,128,0,0,0,23,24,0);
 INSERT INTO `mob_groups` VALUES (12,4283,18,'Wanderer',960,0,2613,0,0,29,31,0);
 INSERT INTO `mob_groups` VALUES (13,4317,18,'Weeper',960,0,2635,0,0,31,33,0);
-INSERT INTO `mob_groups` VALUES (14,3539,18,'Seether',960,0,2193,0,0,33,35,0);
-INSERT INTO `mob_groups` VALUES (15,1768,18,'Gorger',960,0,1207,0,0,35,37,0);
+INSERT INTO `mob_groups` VALUES (14,3539,18,'Seether',960,0,2193,0,0,31,33,0);
+INSERT INTO `mob_groups` VALUES (15,1768,18,'Gorger',960,0,1207,0,0,31,33,0);
 INSERT INTO `mob_groups` VALUES (16,3784,18,'Stray',0,128,0,0,0,26,28,0);
-INSERT INTO `mob_groups` VALUES (17,3539,18,'Seether',960,0,2193,0,0,35,37,0);
-INSERT INTO `mob_groups` VALUES (18,4317,18,'Weeper',960,0,2635,0,0,33,35,0);
+INSERT INTO `mob_groups` VALUES (17,3539,18,'Seether',960,0,2193,0,0,31,33,0);
+INSERT INTO `mob_groups` VALUES (18,4317,18,'Weeper',960,0,2635,0,0,32,33,0);
 INSERT INTO `mob_groups` VALUES (19,4283,18,'Wanderer',960,0,2613,0,0,31,33,0);
-INSERT INTO `mob_groups` VALUES (20,1768,18,'Gorger',960,0,1207,0,0,37,39,0);
+INSERT INTO `mob_groups` VALUES (20,1768,18,'Gorger',960,0,1207,0,0,32,33,0);
 INSERT INTO `mob_groups` VALUES (21,3483,18,'Satiator',14400,0,2166,0,0,38,38,0);
-INSERT INTO `mob_groups` VALUES (22,298,18,'Woeful_Weeper',960,0,1350,0,0,83,84,0);
-INSERT INTO `mob_groups` VALUES (23,4527,18,'Livid_Seether',960,0,1350,0,0,83,84,0);
+INSERT INTO `mob_groups` VALUES (22,298,18,'Woeful_Weeper',960,0,1350,0,0,33,34,0);
+INSERT INTO `mob_groups` VALUES (23,4527,18,'Livid_Seether',960,0,1350,0,0,33,34,0);
 
 -- ------------------------------------------------------------
 -- Spire_of_Dem (Zone 19)
 -- ------------------------------------------------------------
 
 INSERT INTO `mob_groups` VALUES (1,3204,19,'Progenerator',0,128,0,3700,0,37,38,0);
-INSERT INTO `mob_groups` VALUES (2,2947,19,'Offspring',0,128,0,0,0,27,28,0);
+INSERT INTO `mob_groups` VALUES (2,2947,19,'Offspring',0,128,0,150,0,27,28,0);
 INSERT INTO `mob_groups` VALUES (3,2080,19,'Ingester',0,128,0,0,0,0,0,0);
 INSERT INTO `mob_groups` VALUES (4,2825,19,'Neoingester',0,128,0,0,0,0,0,0);
 INSERT INTO `mob_groups` VALUES (5,2824,19,'Neogorger',0,128,0,0,0,0,0,0);
@@ -749,27 +742,27 @@ INSERT INTO `mob_groups` VALUES (11,0,19,'Disconsolate_Weeper',0,128,0,0,0,0,0,0
 
 INSERT INTO `mob_groups` VALUES (1,4283,20,'Wanderer',960,0,2614,0,0,22,28,0);
 INSERT INTO `mob_groups` VALUES (2,4317,20,'Weeper',960,0,2636,0,0,25,30,0);
-INSERT INTO `mob_groups` VALUES (3,2048,20,'Idle_Wanderer',960,0,1350,0,0,83,84,0);
+INSERT INTO `mob_groups` VALUES (3,2048,20,'Idle_Wanderer',960,0,1350,0,0,22,28,0);
 INSERT INTO `mob_groups` VALUES (4,830,20,'Craver',960,0,526,0,0,29,31,0);
 INSERT INTO `mob_groups` VALUES (5,6646,20,'Memory_Receptacle',300,0,0,0,0,30,30,0);
 INSERT INTO `mob_groups` VALUES (6,3784,20,'Stray',0,128,0,0,0,21,21,0);
 INSERT INTO `mob_groups` VALUES (7,4283,20,'Wanderer',960,0,2614,0,0,26,28,0);
 INSERT INTO `mob_groups` VALUES (8,4317,20,'Weeper',960,0,2636,0,0,28,30,0);
 INSERT INTO `mob_groups` VALUES (9,3539,20,'Seether',960,0,2194,0,0,30,32,0);
-INSERT INTO `mob_groups` VALUES (10,830,20,'Craver',960,0,526,0,0,32,34,0);
+INSERT INTO `mob_groups` VALUES (10,830,20,'Craver',960,0,526,0,0,31,32,0);
 INSERT INTO `mob_groups` VALUES (11,3784,20,'Stray',0,128,0,0,0,23,24,0);
 INSERT INTO `mob_groups` VALUES (12,4283,20,'Wanderer',960,0,2614,0,0,29,31,0);
 INSERT INTO `mob_groups` VALUES (13,4317,20,'Weeper',960,0,2636,0,0,31,33,0);
-INSERT INTO `mob_groups` VALUES (14,3539,20,'Seether',960,0,2194,0,0,33,35,0);
-INSERT INTO `mob_groups` VALUES (15,830,20,'Craver',960,0,526,0,0,35,36,0);
+INSERT INTO `mob_groups` VALUES (14,3539,20,'Seether',960,0,2194,0,0,32,33,0);
+INSERT INTO `mob_groups` VALUES (15,830,20,'Craver',960,0,526,0,0,32,33,0);
 INSERT INTO `mob_groups` VALUES (16,3784,20,'Stray',0,128,0,0,0,26,27,0);
-INSERT INTO `mob_groups` VALUES (17,3539,20,'Seether',960,0,2194,0,0,35,37,0);
-INSERT INTO `mob_groups` VALUES (18,4317,20,'Weeper',960,0,2636,0,0,33,35,0);
+INSERT INTO `mob_groups` VALUES (17,3539,20,'Seether',960,0,2194,0,0,33,34,0);
+INSERT INTO `mob_groups` VALUES (18,4317,20,'Weeper',960,0,2636,0,0,32,33,0);
 INSERT INTO `mob_groups` VALUES (19,4283,20,'Wanderer',960,0,2614,0,0,31,33,0);
-INSERT INTO `mob_groups` VALUES (20,830,20,'Craver',960,0,526,0,0,36,40,0);
+INSERT INTO `mob_groups` VALUES (20,830,20,'Craver',960,0,526,0,0,33,34,0);
 INSERT INTO `mob_groups` VALUES (21,820,20,'Coveter',14400,0,522,0,0,38,38,0);
-INSERT INTO `mob_groups` VALUES (22,298,20,'Woeful_Weeper',960,0,1350,0,0,83,84,0);
-INSERT INTO `mob_groups` VALUES (23,4527,20,'Livid_Seether',960,0,1350,0,0,83,84,0);
+INSERT INTO `mob_groups` VALUES (22,298,20,'Woeful_Weeper',960,0,1350,0,0,33,34,0);
+INSERT INTO `mob_groups` VALUES (23,4527,20,'Livid_Seether',960,0,1350,0,0,33,34,0);
 
 -- ------------------------------------------------------------
 -- Spire_of_Mea (Zone 21)
@@ -796,7 +789,7 @@ INSERT INTO `mob_groups` VALUES (3,2947,22,'Offspring',0,128,0,0,0,47,48,0);
 INSERT INTO `mob_groups` VALUES (4,3699,22,'Solicitor',0,128,0,0,0,56,58,0);
 INSERT INTO `mob_groups` VALUES (5,6651,22,'Wanderer',960,0,2192,0,0,46,48,0);
 INSERT INTO `mob_groups` VALUES (6,6652,22,'Weeper',960,0,2636,0,0,48,50,0);
-INSERT INTO `mob_groups` VALUES (7,2048,22,'Idle_Wanderer',960,0,1350,0,0,84,85,0);
+INSERT INTO `mob_groups` VALUES (7,2048,22,'Idle_Wanderer',960,0,1350,0,0,52,54,0);
 INSERT INTO `mob_groups` VALUES (8,6649,22,'Thinker',960,0,2399,0,0,52,54,0);
 INSERT INTO `mob_groups` VALUES (9,6644,22,'Gorger',960,0,1208,0,0,52,54,0);
 INSERT INTO `mob_groups` VALUES (10,6643,22,'Craver',960,0,527,0,0,52,54,0);
@@ -826,8 +819,8 @@ INSERT INTO `mob_groups` VALUES (33,6644,22,'Gorger',960,0,1208,0,0,56,58,0);
 INSERT INTO `mob_groups` VALUES (34,6643,22,'Craver',960,0,527,0,0,56,58,0);
 INSERT INTO `mob_groups` VALUES (35,6650,22,'Stray',0,128,0,0,0,45,46,0);
 INSERT INTO `mob_groups` VALUES (36,3212,22,'Provoker',0,128,2028,7500,0,58,60,0);
-INSERT INTO `mob_groups` VALUES (37,4527,22,'Livid_Seether',960,0,1350,0,0,85,86,0);
-INSERT INTO `mob_groups` VALUES (38,298,22,'Woeful_Weeper',960,0,1350,0,0,85,86,0);
+INSERT INTO `mob_groups` VALUES (37,4527,22,'Livid_Seether',960,0,1350,0,0,58,60,0);
+INSERT INTO `mob_groups` VALUES (38,298,22,'Woeful_Weeper',960,0,1350,0,0,58,60,0);
 
 -- ------------------------------------------------------------
 -- Spire_of_Vahzl (Zone 23)
@@ -13425,14 +13418,9 @@ INSERT INTO `mob_groups` VALUES (5,7071,210,'Garrison_75',0,129,0,0,0,70,75,1);
 INSERT INTO `mob_groups` VALUES (1000,20000,210,'[XISP]squire',0,129,0,0,0,1,75,1);
 INSERT INTO `mob_groups` VALUES (1001,20001,210,'[XISP]knight',0,129,0,0,0,1,75,1);
 INSERT INTO `mob_groups` VALUES (1002,20002,210,'[XISP]mage',0,129,0,0,0,1,75,1);
--- INSERT INTO `mob_groups` VALUES (1003,7071,210,'[XISP]damage',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1004,7071,210,'[XISP]choco',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (2000,1280,210,'[XISP]dragon',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1000,20000,210,'[XISP]squire',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1001,20001,210,'[XISP]knight',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1002,20002,210,'[XISP]mage',0,129,0,0,0,1,75,1);
--- INSERT INTO `mob_groups` VALUES (1003,7071,210,'[XISP]damage',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1004,7071,210,'[XISP]choco',0,129,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1003,7071,210,'[XISP]choco',0,129,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1004,5551,210,'[XISP]wyvern',0,129,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1005,2461,210,'[XISP]avatar',0,129,0,0,0,1,75,1);
 INSERT INTO `mob_groups` VALUES (2000,1280,210,'[XISP]dragon',0,129,0,0,0,1,75,1);
 
 -- ------------------------------------------------------------

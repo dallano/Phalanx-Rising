@@ -19,7 +19,7 @@ entity.onMobDeath = function(mob, player, optParams)
 end
 
 entity.onMobDespawn = function(mob)
-    xi.mob.phOnDespawn(mob, lizzyPHTable, 9, 1) -- Pure Lottery
+    xi.mob.phOnDespawn(mob, lizzyPHTable, 10, 1) -- Pure Lottery
 end
 
 return entity

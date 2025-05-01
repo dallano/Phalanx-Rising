@@ -32,21 +32,21 @@ local casketInfo =
     },
     messageOffset =
     {
-        NO_COMBINATION           = 9,  -- You were unable to enter a combination.
-        HUNCH_GREATER_LESS       = 10,  -- You have a hunch that the lock's combination is ≺0 = GREATER, 1 = LESS≻[greater/less] than ≺INPUT NUMBER≻.
-        UNABLE_TO_OPEN_LOCK      = 11,  -- Player failed to open the lock.
-        CORRECT_NUMBER_WAS       = 12,  -- It appears that the correct combination was ≺NUMBER≻.
-        OPENED_LOCK              = 13, -- Player succeeded in opening the lock!
-        HUNCH_SECOND_EVEN_ODD    = 14, -- You have a hunch that the second digit is ≺0 = EVEN, 1 = ODD≻[even/odd].
-        HUNCH_FIRST_EVEN_ODD     = 15, -- You have a hunch that the first digit is ≺0 = EVEN, 1 = ODD≻[even/odd].
-        COMBINATION_GREATER_LESS = 16, -- You have a hunch that the combination is greater than ≺NUMBER≻ and less than ≺NUMBER≻.
-        COMBINATION_LESS_THAN    = 17, -- You have a hunch that the combination is less than ≺NUMBER≻.
-        COMBINATION_GREATER_THAN = 18, -- You have a hunch that the combination is greater than ≺NUMBER≻.
-        ONE_OF_TWO_DIGITS_IS     = 19, -- You have a hunch that one of the two digits is ≺NUMBER≻.
-        SECOND_DIGIT_IS          = 20, -- You have a hunch that the second digit is ≺NUMBER≻, ≺NUMBER≻, or ≺NUMBER≻.
-        FIRST_DIGIT_IS           = 21, -- You have a hunch that the first digit is ≺NUMBER≻, ≺NUMBER≻, or ≺NUMBER≻.
-        UNABLE_TO_GET_HINT       = 22, -- You were unable to glean anything from your examination of the lock.
-        MONSTER_CONCEALED_CHEST  = 24, -- The monster was concealing a treasure chest!
+        NO_COMBINATION           = 6,  -- You were unable to enter a combination.
+        HUNCH_GREATER_LESS       = 7,  -- You have a hunch that the lock's combination is ≺0 = GREATER, 1 = LESS≻[greater/less] than ≺INPUT NUMBER≻.
+        UNABLE_TO_OPEN_LOCK      = 8,  -- Player failed to open the lock.
+        CORRECT_NUMBER_WAS       = 9,  -- It appears that the correct combination was ≺NUMBER≻.
+        OPENED_LOCK              = 10, -- Player succeeded in opening the lock!
+        HUNCH_SECOND_EVEN_ODD    = 11, -- You have a hunch that the second digit is ≺0 = EVEN, 1 = ODD≻[even/odd].
+        HUNCH_FIRST_EVEN_ODD     = 12, -- You have a hunch that the first digit is ≺0 = EVEN, 1 = ODD≻[even/odd].
+        COMBINATION_GREATER_LESS = 13, -- You have a hunch that the combination is greater than ≺NUMBER≻ and less than ≺NUMBER≻.
+        COMBINATION_LESS_THAN    = 14, -- You have a hunch that the combination is less than ≺NUMBER≻.
+        COMBINATION_GREATER_THAN = 15, -- You have a hunch that the combination is greater than ≺NUMBER≻.
+        ONE_OF_TWO_DIGITS_IS     = 16, -- You have a hunch that one of the two digits is ≺NUMBER≻.
+        SECOND_DIGIT_IS          = 17, -- You have a hunch that the second digit is ≺NUMBER≻, ≺NUMBER≻, or ≺NUMBER≻.
+        FIRST_DIGIT_IS           = 18, -- You have a hunch that the first digit is ≺NUMBER≻, ≺NUMBER≻, or ≺NUMBER≻.
+        UNABLE_TO_GET_HINT       = 19, -- You were unable to glean anything from your examination of the lock.
+        MONSTER_CONCEALED_CHEST  = 21, -- The monster was concealing a treasure chest!
     },
     casketZones =
     {

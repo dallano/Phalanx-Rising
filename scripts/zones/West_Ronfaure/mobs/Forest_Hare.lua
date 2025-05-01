@@ -50,7 +50,7 @@ end
 entity.onMobDespawn = function(mob)
     local params = { }
     params.spawnPoints = jaggedySpawnPoints
-    xi.mob.phOnDespawn(mob, jaggedyPHTable, 9, 2400, params) -- 40 minute minimum
+    xi.mob.phOnDespawn(mob, jaggedyPHTable, 10, 2400, params) -- 40 minute minimum
 end
 
 return entity

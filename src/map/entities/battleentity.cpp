@@ -2047,9 +2047,18 @@ void CBattleEntity::OnMobSkillFinished(CMobSkillState& state, action_t& action)
     {
         action.actiontype = ACTION_PET_MOBABILITY_FINISH;
     }
-    else if (PSkill->getID() < 256)
+    // Humanoid targeted ability skill IDs tied to humanoid animation IDs in mob_skills.sql
+    else if (PSkill->getID() < 256  || PSkill->getID() == 1431 || PSkill->getID() == 1432 || PSkill->getID() == 1437)
     {
         action.actiontype = ACTION_WEAPONSKILL_FINISH;
+    }
+    // Humanoid self targeting job ability skill IDs tied to humanoid animation IDs in mob_skills.sql
+    else if ((PSkill->getID() >= 1428 && PSkill->getID() <= 1430) ||
+        (PSkill->getID() >= 1433 && PSkill->getID() <= 1436)  ||
+        (PSkill->getID() >= 697 && PSkill->getID() <= 715) ||
+        (PSkill->getID() >= 1008 && PSkill->getID() <= 1023))
+    {
+        action.actiontype = ACTION_JOBABILITY_FINISH;
     }
     else
     {

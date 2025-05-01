@@ -55,19 +55,20 @@ effectObject.onEffectGain = function(target, effect)
 end
 
 effectObject.onEffectTick = function(target, effect)
-    local healtime = effect:getTickCount()
 
+    local healtime = effect:getTickCount()
     if healtime > 2 then
         -- curse II also known as "zombie"
         if
-            not target:hasStatusEffect(xi.effect.DISEASE) and
-            not target:hasStatusEffect(xi.effect.PLAGUE) and
-            not target:hasStatusEffect(xi.effect.CURSE_II)
+        not target:hasStatusEffect(xi.effect.DISEASE) and
+        not target:hasStatusEffect(xi.effect.PLAGUE) and
+        not target:hasStatusEffect(xi.effect.CURSE_II)
         then
             local healHP = 0
             if
                 target:getContinentID() == 1 and
-                target:hasStatusEffect(xi.effect.SIGNET)
+                target:hasStatusEffect(xi.effect.SIGNET) or
+                target:getLocalVar('[XISP]isPal')
             then
                 healHP = 10 + (3 * math.floor(target:getMainLvl() / 10)) + (healtime - 2) * (1 + math.floor(target:getMaxHP() / 300)) + target:getMod(xi.mod.HPHEAL)
             else
@@ -98,6 +99,11 @@ effectObject.onEffectLose = function(target, effect)
 
     -- Dances with Luopans
     target:setLocalVar('GEO_DWL_Resting', 0)
+
+    -- XISP logic
+    if target:getLocalVar('[XISP]isPal') == 1 then
+        target:setLocalVar('[XISP]canRest', os.time() + 5)
+    end
 end
 
 return effectObject

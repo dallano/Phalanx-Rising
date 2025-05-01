@@ -28,7 +28,7 @@ local spawnNewSquire = function(player)
         squire:timer(2000, function(squireArg)
             squireArg:setBehavior(bit.band(squireArg:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
             DespawnMob(squireArg:getID())
-            xi.xispal.spawnSquire(player)
+            xi.xispal.spawnSquire(player, player:getZone())
         end)
     end
 end

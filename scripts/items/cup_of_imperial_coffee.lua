@@ -18,11 +18,13 @@ itemObject.onItemUse = function(target)
 end
 
 itemObject.onEffectGain = function(target, effect)
+    target:addMod(xi.mod.MOVE_SPEED_STACKABLE, 5) -- XISP
     target:addMod(xi.mod.HPHEAL, 3)
     target:addMod(xi.mod.MPHEAL, 3)
 end
 
 itemObject.onEffectLose = function(target, effect)
+    target:delMod(xi.mod.MOVE_SPEED_STACKABLE, 5) -- XISP
     target:delMod(xi.mod.HPHEAL, 3)
     target:delMod(xi.mod.MPHEAL, 3)
 end

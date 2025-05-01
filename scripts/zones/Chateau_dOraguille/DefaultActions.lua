@@ -17,7 +17,7 @@ return {
     ['Ferdechiond'] = { event = 511 },
     ['Halver']      = { text = ID.text.HALVER_OFFSET + 1092 },
     ['Michilca']    = { event = 517 },
-    ['Milchupain']  = { event = 516 },
+    -- ['Milchupain']  = { event = 516 }, -- XISP
     ['Mistaravant'] = { event = 524 },
     ['Nachou']      = { event = 523 },
     ['Tombstone']   = { messageSpecial = ID.text.TOMBSTONE },

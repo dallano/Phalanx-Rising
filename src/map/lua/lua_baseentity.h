@@ -293,6 +293,7 @@ public:
     void   hideName(bool isHidden);
     uint16 getModelId();
     void   setModelId(uint16 modelId, sol::object const& slotObj);
+    void   updateModel();
     uint16 getCostume();
     void   setCostume(uint16 costume);
     uint16 getCostume2();

@@ -7,9 +7,137 @@ local lowerJeunoGlobal = require('scripts/zones/Lower_Jeuno/globals')
 ---@type TZone
 local zoneObject = {}
 
+local menu = {}
+local menu2 = {}
+local dialogue = {}
+local dialogue2 = {}
+local palJob = xi.job.BRD
+
+menu =
+{
+    title = 'Can I come with you?',
+    options = {},
+}
+
+dialogue =
+{
+    {
+        'I am.',
+        function(player)
+            xi.xispal.setMage(player, xi.xispal.palInfo[palJob])
+            player:printToPlayer("Yay! You won't regret it!", xi.msg.channel.PARTY, "Thessa")
+        end,
+    },
+    {
+        'Let me think about it.',
+        function(player)
+            return
+        end,
+    },
+}
+
+menu2 =
+{
+    title = 'Are you leaving me here?',
+    options = {},
+}
+
+dialogue2 =
+{
+    {
+        'Take care.',
+        function(player)
+            xi.xispal.removeMage(player)
+        end,
+    },
+    {
+        'On second thought...',
+        function(player)
+            return
+        end,
+    },
+}
+
 zoneObject.onInitialize = function(zone)
     zone:registerCuboidTriggerArea(1, 23, 0, -43, 44, 7, -39) -- Inside Tenshodo HQ. TODO: Find out if this is used other than in ZM 17 (not anymore). Remove if not.
     xi.chocobo.initZone(zone)
+
+    -- Thessa (XISP)
+    local table = xi.xispal.palInfo[palJob]
+    local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.mageGearSets[table.job])
+
+    zone:insertDynamicEntity({
+        objtype   = xi.objType.NPC,
+        name      = table.name,
+        look      = look,
+        x         = -21.40,
+        y         = -0.10,
+        z         = -65.00,
+        rotation  = 201,
+        widescan  = 1,
+
+        onTrigger  = function(player, npc)
+            local hasMage = player:getCharVar('[XISP]hasMage')
+
+            if npc:getLocalVar('dialogueLock') == 1 then
+                return
+            end
+            print(table.quest[1], table.quest[2])
+            print(table.quest)
+            if player:hasCompletedQuest(table.quest[1], table.quest[2]) and player:getRank(player:getNation()) >= 6 then
+                if player:getCharVar('[XISP]' .. table.name .. 'FirstDialogue') == 0 and npc:getLocalVar('dialogueLock') == 0 then
+                    npc:setLocalVar('dialogueLock', 1)
+
+                    player:printToPlayer("Ah, hello... sorry, I didn't mean to bother you.", xi.msg.channel.SAY, table.name)
+                    player:timer(4000, function(player)
+                        player:printToPlayer("I just... noticed your gear. You've clearly seen the world.", xi.msg.channel.SAY, table.name)
+                        player:timer(4000, function(player)
+                            player:printToPlayer("I'm... a bard. Or at least, I hope to be. I've trained, quietly, here in town.", xi.msg.channel.SAY, table.name)
+                            player:timer(4000, function(player)
+                                player:printToPlayer("But I haven't had the courage to leave on my own. Not yet.", xi.msg.channel.SAY, table.name)
+                                player:timer(4000, function(player)
+                                    player:printToPlayer("The songs I want to write, they need real stories. Real people.", xi.msg.channel.SAY, table.name)
+                                    player:timer(4000, function(player)
+                                        player:printToPlayer("If you'd let me come with you… I'd do my best to support you.", xi.msg.channel.SAY, table.name)
+                                        player:printToPlayer("Quietly, of course. I don't need the spotlight. Just a place to begin.", xi.msg.channel.SAY, table.name)
+                                        player:timer(4000, function(player)
+                                            player:printToPlayer("May I follow you? Just until I find the courage to stand on my own.", xi.msg.channel.SAY, table.name)
+                                            player:setCharVar('[XISP]' .. table.name .. 'FirstDialogue', 1)
+                                            npc:setLocalVar('dialogueLock', 0)
+                                            return
+                                        end)
+                                    end)
+                                end)
+                            end)
+                        end)
+                    end)
+                else
+                    if player:getCharVar('[XISP]' .. table.name .. 'FirstDialogue') == 1 then
+                        -- Currently in party
+                        if hasMage == 1 and player:getCharVar('[XISP]mageJob') == table.job then
+                            player:printToPlayer("Yes, " .. player:getName() .. "? Care to hear a paeon while you rest?", xi.msg.channel.PARTY, table.name)
+                            menu2.options = dialogue2
+                            xi.xisp.sendMenu(player, menu2)
+
+                        -- Player has mage, but this one isn't in party, or we need to recruit
+                        elseif
+                            (hasMage == 1 and player:getCharVar('[XISP]mageJob') ~= table.job) or
+                            hasMage == 0
+                        then
+                            player:printToPlayer("" .. player:getName() .. "! What are you doing here?", xi.msg.channel.SAY, table.name)
+                            menu.options = dialogue
+                            xi.xisp.sendMenu(player, menu)
+
+                        else -- Shouldn't be reached. But a fail-safe
+                            player:printToPlayer("Good day, ".. player:getName() .. ". Please come back later, I am busy.", xi.msg.channel.SAY, table.name)
+                        end
+                    end
+                end
+            else
+                player:printToPlayer("Care to hear a ballad? Ms. Almobankha just started.", xi.msg.channel.SAY, table.name)
+            end
+        end,
+    })
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

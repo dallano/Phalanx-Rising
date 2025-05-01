@@ -1,20 +1,28 @@
 -----------------------------------
 -- ID: 5259
 -- Item: Rebirth Feather
--- Status Effect: Reraise III
+-- Status Effect: Revive Pal (XISP)
 -----------------------------------
 ---@type TItem
 local itemObject = {}
 
+-- XISP
 itemObject.onItemCheck = function(target, item, param, caster)
-    return 0
+    local party = xi.xispal.getParty(caster)
+
+    if party then
+        for _, member in pairs(party) do
+            if not member:isAlive() then
+                return 0
+            end
+        end
+    end
+
+    return 1
 end
 
 itemObject.onItemUse = function(target)
-    local duration = 7200
-    target:delStatusEffect(xi.effect.RERAISE)
-    target:addStatusEffect(xi.effect.RERAISE, 3, 0, duration)
-    target:messageBasic(xi.msg.basic.GAINS_EFFECT_OF_STATUS, xi.effect.RERAISE)
+    xi.xispal.resurrect(target)
 end
 
 return itemObject
