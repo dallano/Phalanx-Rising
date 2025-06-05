@@ -34,6 +34,9 @@ mission.sections =
                     player:setLocalVar('Mission[4][23]mustZone', 1)
                     player:setCharVar('Mission[4][23]Timer', VanadielUniqueDay() + 1)
                     mission:complete(player)
+                    local item = xi.xisp.augmentItems[2][math.random(1, #xi.xisp.augmentItems[2])]
+                    player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, item)
+                    player:addItem(item, 1)
                 end,
             },
         },

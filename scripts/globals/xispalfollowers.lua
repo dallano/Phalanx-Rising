@@ -154,6 +154,7 @@ xi.xispal.spawnSquire = function(player, zone)
         releaseIdOnDisappear  = true,
 
         onMobSpawn = function(pal)
+            pal:setLocalVar('spawnTime', os.time())
             xi.xispal.onMobSpawn(pal, player, race, pal:getMainJob())
             player:setCharVar('[XISP]squireIdleChat', os.time() + math.random(25, 45))
         end,
@@ -172,6 +173,10 @@ xi.xispal.spawnSquire = function(player, zone)
         end,
 
         onMobDeath = function(pal, player, optParams)
+        end,
+
+        onbMobDespawn = function(pal)
+            print(pal:getLocalVar('spawnTime') - os.time())
         end,
     })
 
@@ -294,9 +299,34 @@ xi.xispal.spawnWyvern = function(pal)
     local zone = pal:getZone()
     local pos  = pal:getPos()
 
+    local healingBreath = function(wyvern, master)
+        local master = wyvern:getMaster()
+        local lvl    = master:getMainLvl()
+        local skill  = 621 -- Healing Breath
+        local healAmount = 80
+
+        if master and master:getHPP() < 50 and wyvern:getLocalVar('breathCooldown') < os.time() then
+            wyvern:setLocalVar('breathCooldown', os.time() + 20)
+
+            if lvl >= 40 then
+                skill = 623
+                healAmount = 250
+            elseif lvl >= 20 then
+                skill = 622
+                healAmount = 150
+            end
+
+            healAmount = healAmount + lvl * 0.9
+
+            wyvern:independentAnimation(master, skill, xi.animMode.ENEMY_SKILL)
+            xi.mobskills.mobHealMove(master, healAmount)
+        end
+    end
+
     local wyvern = zone:insertDynamicEntity({
         objtype               = xi.objType.MOB,
-        name                  = "Rathian",
+        allegiance            = xi.allegiance.PLAYER,
+        name                  = "Tatang",
         x                     = pos.x - 1,
         y                     = pos.y,
         z                     = pos.z - 1,
@@ -308,6 +338,14 @@ xi.xispal.spawnWyvern = function(pal)
 
         onMobSpawn = function(wyvern)
             wyvern:setStatus(xi.status.NORMAL)
+        end,
+
+        onMobRoam = function(wyvern)
+            healingBreath(wyvern)
+        end,
+
+        onMobFight = function(wyvern, target)
+            healingBreath(wyvern)
         end,
     })
     return wyvern

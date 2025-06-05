@@ -61,6 +61,8 @@ INSERT INTO `mob_droplist` VALUES (3,0,0,1000,1919,@COMMON); -- Sin Of Intempera
 INSERT INTO `mob_droplist` VALUES (3,0,0,1000,1914,@COMMON); -- Sin Of Indolence (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (3,0,0,1000,1913,@COMMON); -- Sin Of Indignation (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (3,0,0,1000,1915,@RARE);   -- Sin Of Indulgence (Rare, 5%)
+-- XISP Tier 4 Relic Enchantment
+INSERT INTO `mob_droplist` VALUES (3,0,0,1000,3220,@COMMON); -- Wieldance Jewel (Common, 15%)
 
 -- ZoneID: 161 - Abyssal Demon
 INSERT INTO `mob_droplist` VALUES (4,0,0,1000,16867,@COMMON); -- Orc Piercer (Common, 15%)
@@ -1486,6 +1488,11 @@ INSERT INTO `mob_droplist` VALUES (165,0,0,1000,914,@ALWAYS);    -- Vial Of Merc
 INSERT INTO `mob_droplist` VALUES (165,0,0,1000,939,@VCOMMON);   -- Hecteyes Eye (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (165,0,0,1000,939,@VCOMMON);   -- Hecteyes Eye (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (165,0,0,1000,15515,@VCOMMON); -- Peacock Amulet (Very Common, 24%)
+INSERT INTO `mob_droplist` VALUES (165,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (165,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (165,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (165,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (165,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID:  15 - Arimaspi -- TODO: Abyssea NM
 INSERT INTO `mob_droplist` VALUES (166,0,0,1000,11743,@COMMON); -- Searing Sash (Common, 15%)
@@ -1643,6 +1650,10 @@ INSERT INTO `mob_droplist` VALUES (177,0,0,1000,15760,@COMMON); -- Marabout Sand
 INSERT INTO `mob_droplist` VALUES (178,1,1,1000,17413,850);     -- Hermits Wand (Group 1, 85%)
 INSERT INTO `mob_droplist` VALUES (178,1,1,1000,13729,@COMMON); -- Priests Robe (Group 1, Common, 15%)
 INSERT INTO `mob_droplist` VALUES (178,2,0,1000,656,0);         -- Beastcoin (Steal)
+INSERT INTO `mob_droplist` VALUES (178,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (178,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (178,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (178,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 205 - Ash Dragon
 INSERT INTO `mob_droplist` VALUES (179,0,0,1000,903,@ALWAYS);  -- Dragon Talon (Always, 100%)
@@ -2396,6 +2407,10 @@ INSERT INTO `mob_droplist` VALUES (252,4,0,1000,939,0);          -- Hecteyes Eye
 -- ZoneID: 108 - Haty
 -- ZoneID: 108 - Bendigeit Vran
 INSERT INTO `mob_droplist` VALUES (253,0,0,1000,18246,@ALWAYS); -- Rogetsurin (Always, 100%)
+INSERT INTO `mob_droplist` VALUES (253,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (253,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (253,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (253,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 218 - Bennu -- TODO: Abyssea NM
 INSERT INTO `mob_droplist` VALUES (254,0,0,1000,18474,@ALWAYS);  -- Snow Sachet (Always, 100%)
@@ -3112,6 +3127,10 @@ INSERT INTO `mob_droplist` VALUES (333,0,0,1000,928,@ALWAYS);    -- Pinch Of Bom
 INSERT INTO `mob_droplist` VALUES (333,0,0,1000,13506,@COMMON);  -- Bomb Ring (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (333,0,0,1000,17316,@VCOMMON); -- Bomb Arm (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (333,2,0,1000,17316,0);        -- Bomb Arm (Steal)
+INSERT INTO `mob_droplist` VALUES (333,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (333,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (333,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (333,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 205 - Bomb Queen
 INSERT INTO `mob_droplist` VALUES (334,0,0,1000,13567,@ALWAYS);   -- Bomb Queen Ring (Always, 100%)
@@ -3312,6 +3331,11 @@ INSERT INTO `mob_droplist` VALUES (357,2,0,1000,17622,0);       -- Buccaneers Kn
 
 -- ZoneID: 124 - Bright-Handed Kunberry
 INSERT INTO `mob_droplist` VALUES (358,0,0,1000,15468,@VCOMMON); -- Resentment Cape (Very Common, 24%)
+INSERT INTO `mob_droplist` VALUES (358,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (358,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (358,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (358,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (358,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID:   5 - Brontotaur
 -- ZoneID:   5 - Tyrannotaur
@@ -3416,6 +3440,10 @@ INSERT INTO `mob_droplist` VALUES (368,4,0,1000,882,@RARE);     -- Sheep Tooth (
 INSERT INTO `mob_droplist` VALUES (369,0,0,1000,868,@VCOMMON);  -- Handful Of Pugil Scales (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (369,0,0,1000,13057,@COMMON); -- Buburimu Gorget (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (369,2,0,1000,864,0);         -- Handful Of Fish Scales (Steal)
+INSERT INTO `mob_droplist` VALUES (369,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (369,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (369,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (369,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:   5 - Buffalo
 INSERT INTO `mob_droplist` VALUES (370,0,0,1000,5703,@COMMON);   -- Jug Of Uleguerand Milk (Common, 15%)
@@ -3639,6 +3667,13 @@ INSERT INTO `mob_droplist` VALUES (394,1,2,@UNCOMMON,1341,310);  -- Neptunal Abj
 INSERT INTO `mob_droplist` VALUES (394,1,2,@UNCOMMON,1317,230);  -- Dryadic Abjuration Legs (Group 2, Uncommon, 10% - 23%)
 INSERT INTO `mob_droplist` VALUES (394,1,2,@UNCOMMON,1323,230);  -- Earthen Abjuration Feet (Group 2, Uncommon, 10% - 23%)
 INSERT INTO `mob_droplist` VALUES (394,1,2,@UNCOMMON,1324,230);  -- Aquarian Abjuration Head (Group 2, Uncommon, 10% - 23%)
+-- XISP Tier 3 Enchantments
+INSERT INTO `mob_droplist` VALUES (394,1,3,250,3223,180); -- Balance Coin
+INSERT INTO `mob_droplist` VALUES (394,1,3,250,3227,180); -- Voyage Coin
+INSERT INTO `mob_droplist` VALUES (394,1,3,250,3219,180); -- Wieldance Coin
+INSERT INTO `mob_droplist` VALUES (394,1,3,250,3215,180); -- Ardor Coin
+INSERT INTO `mob_droplist` VALUES (394,1,3,250,3211,180); -- Vision Coin
+INSERT INTO `mob_droplist` VALUES (394,1,3,250,3337,100); -- Gold Meed
 
 -- ZoneID: 114 - Cactrot Rapido
 INSERT INTO `mob_droplist` VALUES (395,0,0,1000,13401,@COMMON); -- Arete Del Sol (Common, 15%)
@@ -3759,6 +3794,11 @@ INSERT INTO `mob_droplist` VALUES (411,0,0,1000,4173,@COMMON);   -- Hi-Reraiser 
 INSERT INTO `mob_droplist` VALUES (411,0,0,1000,13402,@COMMON);  -- Cassie Earring (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (411,0,0,1000,837,@UNCOMMON);  -- Spool Of Malboro Fiber (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (411,2,0,1000,920,0);          -- Malboro Vine (Steal)
+INSERT INTO `mob_droplist` VALUES (411,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (411,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (411,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (411,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (411,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 132 - Carabosse -- TODO: Abyssea NM
 INSERT INTO `mob_droplist` VALUES (412,0,0,1000,11512,@ALWAYS);  -- Ryoshi Hachimaki (Always, 100%)
@@ -4013,6 +4053,11 @@ INSERT INTO `mob_droplist` VALUES (443,0,0,1000,646,@RARE);      -- Chunk Of Ada
 
 -- ZoneID: 114 - Centurio Xii-I
 INSERT INTO `mob_droplist` VALUES (444,0,0,1000,14806,@VCOMMON); -- Intruder Earring (Very Common, 24%)
+INSERT INTO `mob_droplist` VALUES (444,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (444,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (444,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (444,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (444,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 216 - Cep-Kamuy -- TODO: Abyssea NM
 INSERT INTO `mob_droplist` VALUES (445,0,0,1000,11696,@UNCOMMON); -- Kemas Earring (Uncommon, 10%)
@@ -4088,6 +4133,10 @@ INSERT INTO `mob_droplist` VALUES (454,4,0,1000,882,@RARE);      -- Sheep Tooth 
 
 -- ZoneID: 141 - Chariotbuster Byakzak
 INSERT INTO `mob_droplist` VALUES (455,0,0,1000,17708,@ALWAYS); -- Auriga Xiphos (Always, 100%)
+INSERT INTO `mob_droplist` VALUES (455,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (455,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (455,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (455,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 176 - Charybdis
 INSERT INTO `mob_droplist` VALUES (456,0,0,1000,17652,@ALWAYS); -- Joyeuse (Always, 100%)
@@ -4262,6 +4311,10 @@ INSERT INTO `mob_droplist` VALUES (469,1,2,@UNCOMMON,3146,250);   -- Navarchs Se
 
 -- ZoneID: 191 - Chocoboleech
 INSERT INTO `mob_droplist` VALUES (470,0,0,1000,18412,@ALWAYS); -- Gassan (Always, 100%)
+INSERT INTO `mob_droplist` VALUES (470,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (470,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (470,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (470,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 216 - Cirein-Croin -- TODO: Abyssea NM
 INSERT INTO `mob_droplist` VALUES (471,0,0,1000,2965,@ALWAYS);  -- Cirein-Croins Lantern (Always, 100%)
@@ -4600,6 +4653,11 @@ INSERT INTO `mob_droplist` VALUES (507,0,0,1000,19233,@UNCOMMON); -- Lyft Crossb
 
 -- ZoneID: 119 - Coo Keja The Unseen
 INSERT INTO `mob_droplist` VALUES (508,0,0,1000,15504,@VCOMMON); -- Ajase Bead Necklace (Very Common, 24%)
+INSERT INTO `mob_droplist` VALUES (508,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (508,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (508,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (508,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (508,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- 509 Available
 
@@ -4902,6 +4960,10 @@ INSERT INTO `mob_droplist` VALUES (544,0,0,1000,12922,@UNCOMMON); -- Martial Sla
 INSERT INTO `mob_droplist` VALUES (544,0,0,1000,529,@RARE);       -- Luminicloth (Rare, 5%)
 INSERT INTO `mob_droplist` VALUES (544,0,0,1000,1027,@VRARE);     -- Ranperre Chest Key (Very Rare, 1%)
 INSERT INTO `mob_droplist` VALUES (544,2,0,1000,825,0);           -- Square Of Cotton Cloth (Steal)
+INSERT INTO `mob_droplist` VALUES (544,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (544,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (544,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (544,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:  68 - Crystal Eater
 INSERT INTO `mob_droplist` VALUES (545,0,0,1000,15978,@UNCOMMON); -- Rapture Earring (Uncommon, 10%)
@@ -5960,10 +6022,18 @@ INSERT INTO `mob_droplist` VALUES (689,2,0,1000,1449,0);          -- Tukuku Whit
 -- ZoneID: 194 - Doppelganger Dio
 INSERT INTO `mob_droplist` VALUES (690,0,0,1000,940,@ALWAYS);   -- Revival Tree Root (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (690,0,0,1000,16773,@COMMON); -- Cruel Scythe (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (690,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (690,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (690,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (690,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 194 - Doppelganger Gog
 INSERT INTO `mob_droplist` VALUES (691,0,0,1000,940,@ALWAYS);   -- Revival Tree Root (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (691,0,0,1000,16863,@COMMON); -- Cruel Spear (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (691,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (691,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (691,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (691,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:  62 - Dorgerwor The Astute
 INSERT INTO `mob_droplist` VALUES (692,0,0,1000,16222,@COMMON); -- Mercenarys Mantle (Common, 15%)
@@ -6227,9 +6297,11 @@ INSERT INTO `mob_droplist` VALUES (729,0,0,1000,3429,@ALWAYS);    -- Fiendish To
 INSERT INTO `mob_droplist` VALUES (729,0,0,1000,13658,@COMMON);   -- Shadow Mantle (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (729,0,0,1000,14646,@UNCOMMON); -- Shadow Ring (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (729,0,0,1000,3494,@RARE);      -- Forgotten Hope (Rare, 5%)
-INSERT INTO `mob_droplist` VALUES (729,1,1,@VRARE,1450,333);      -- Lungo-Nango Jadeshell (Group 1, Very Rare, 1%)
-INSERT INTO `mob_droplist` VALUES (729,1,1,@VRARE,1453,333);      -- Montiont Silverpiece (Group 1, Very Rare, 1%)
-INSERT INTO `mob_droplist` VALUES (729,1,1,@VRARE,1456,333);      -- One Hundred Byne Bill (Group 1, Very Rare, 1%)
+INSERT INTO `mob_droplist` VALUES (729,1,1,@ALWAYS,1450,333);      -- Lungo-Nango Jadeshell (Group 1, Very Rare, 1%)
+INSERT INTO `mob_droplist` VALUES (729,1,1,@ALWAYS,1453,333);      -- Montiont Silverpiece (Group 1, Very Rare, 1%)
+INSERT INTO `mob_droplist` VALUES (729,1,1,@ALWAYS,1456,333);      -- One Hundred Byne Bill (Group 1, Very Rare, 1%)
+-- XISP Tier 4 Relic Enchantments
+INSERT INTO `mob_droplist` VALUES (3,0,0,1000,3224,@VCOMMON); -- Balance Jewel
 
 -- ZoneID: 135 - Arch Dynamis Lord
 INSERT INTO `mob_droplist` VALUES (730,0,0,1000,3502,@ALWAYS);     -- Vial Of Umbral Marrow (Always, 100%)
@@ -7594,6 +7666,10 @@ INSERT INTO `mob_droplist` VALUES (916,1,2,@UNCOMMON,3184,250);   -- Callers Sea
 INSERT INTO `mob_droplist` VALUES (917,0,0,1000,12371,@ALWAYS); -- Clipeus (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (917,0,0,1000,894,@UNCOMMON); -- Beetle Jaw (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (917,0,0,1000,846,@COMMON);   -- Insect Wing (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (917,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (917,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (917,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (917,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- 918 Available
 
@@ -7804,6 +7880,13 @@ INSERT INTO `mob_droplist` VALUES (946,0,0,1000,908,@UNCOMMON);  -- Adamantoise 
 INSERT INTO `mob_droplist` VALUES (946,0,0,1000,1311,@UNCOMMON); -- Piece Of Oxblood (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (946,0,0,1000,655,@RARE);      -- Adaman Ingot (Rare, 5%)
 INSERT INTO `mob_droplist` VALUES (946,0,0,1000,722,@VRARE);     -- Divine Log (Very Rare, 1%)
+-- XISP Tier 3 Enchantments
+INSERT INTO `mob_droplist` VALUES (946,1,3,250,3223,180); -- Balance Coin
+INSERT INTO `mob_droplist` VALUES (946,1,3,250,3227,180); -- Voyage Coin
+INSERT INTO `mob_droplist` VALUES (946,1,3,250,3219,180); -- Wieldance Coin
+INSERT INTO `mob_droplist` VALUES (946,1,3,250,3215,180); -- Ardor Coin
+INSERT INTO `mob_droplist` VALUES (946,1,3,250,3211,180); -- Vision Coin
+INSERT INTO `mob_droplist` VALUES (946,1,3,250,3337,100); -- Gold Meed
 
 -- ZoneID: 193 - Gerwitzs Axe
 INSERT INTO `mob_droplist` VALUES (947,0,0,1000,16681,@ALWAYS); -- Gerwitzs Axe (Always, 100%)
@@ -7831,6 +7914,10 @@ INSERT INTO `mob_droplist` VALUES (952,0,0,1000,12567,@COMMON); -- Steam Scale M
 INSERT INTO `mob_droplist` VALUES (952,0,0,1000,852,@COMMON);   -- Lizard Skin (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (952,0,0,1000,4362,@COMMON);  -- Lizard Egg (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (952,2,0,1000,4362,0);        -- Lizard Egg (Steal)
+INSERT INTO `mob_droplist` VALUES (952,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (952,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (952,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (952,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:  82 - Ghoul War
 -- ZoneID: 111 - Ghast War
@@ -10160,6 +10247,10 @@ INSERT INTO `mob_droplist` VALUES (1190,4,0,1000,637,0);         -- Vial Of Slim
 INSERT INTO `mob_droplist` VALUES (1191,0,0,1000,922,@ALWAYS);   -- Bat Wing (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (1191,0,0,1000,13576,@COMMON); -- Night Cape (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (1191,0,0,1000,924,@RARE);     -- Vial Of Fiend Blood (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (1191,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1191,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1191,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1191,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:  90 - Gold Quadav
 -- ZoneID:  90 - Vajra Quadav
@@ -10814,6 +10905,10 @@ INSERT INTO `mob_droplist` VALUES (1291,0,0,1000,15348,@UNCOMMON);-- Mountain Ga
 INSERT INTO `mob_droplist` VALUES (1292,0,0,1000,847,@ALWAYS);     -- Bird Feather (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (1292,0,0,1000,17281,@VCOMMON);  -- Wingedge (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (1292,2,0,1000,847,0);           -- Bird Feather (Steal)
+INSERT INTO `mob_droplist` VALUES (1292,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1292,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1292,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1292,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 213 - Hellion
 INSERT INTO `mob_droplist` VALUES (1293,0,0,1000,18041,@ALWAYS); -- A Loutrance (Always, 100%)
@@ -11036,6 +11131,10 @@ INSERT INTO `mob_droplist` VALUES (1327,4,0,1000,4543,0);     -- Goblin Mushpot 
 INSERT INTO `mob_droplist` VALUES (1329,0,0,1000,12798,@COMMON); -- Zealots Mitts (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (1329,0,0,1000,4746,@COMMON);  -- Scroll Of Deodorize (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (1329,0,0,1000,17132,@RARE);   -- Monster Signa (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (1329,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1329,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1329,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1329,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 197 - Hornfly
 INSERT INTO `mob_droplist` VALUES (1330,0,0,1000,846,@UNCOMMON); -- Insect Wing (Uncommon, 10%)
@@ -11107,6 +11206,10 @@ INSERT INTO `mob_droplist` VALUES (1337,0,0,1000,2162,@RARE);    -- Mamool Ja He
 INSERT INTO `mob_droplist` VALUES (1338,1,1,@ALWAYS,13051,900);       -- Coarse Leggings (Group 1, Always, 100% - 90%)
 INSERT INTO `mob_droplist` VALUES (1338,1,1,@ALWAYS,17412,@UNCOMMON); -- Wild Cudgel (Group 1, Always, 100% - Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (1338,2,0,1000,656,0);              -- Beastcoin (Steal)
+INSERT INTO `mob_droplist` VALUES (1338,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1338,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1338,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1338,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:   7 - Hunter Antlion
 INSERT INTO `mob_droplist` VALUES (1339,0,0,1000,1616,@RARE);  -- Antlion Jaw (Rare, 5%)
@@ -11569,8 +11672,12 @@ INSERT INTO `mob_droplist` VALUES (1389,0,0,1000,2307,@UNCOMMON);  -- Vial Of Jo
 -- ZoneID: 100 - Jaggedy-Eared Jack
 INSERT INTO `mob_droplist` VALUES (1390,0,0,1000,856,@VCOMMON); -- Rabbit Hide (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (1390,0,0,1000,4358,@COMMON); -- Slice Of Hare Meat (Common, 10%)
-INSERT INTO `mob_droplist` VALUES (1390,0,0,1000,13112,@VRARE); -- Rabbit Charm (Very Rare, 1%)
+INSERT INTO `mob_droplist` VALUES (1390,0,0,1000,13112,@UNCOMMON); -- Rabbit Charm (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (1390,2,0,1000,4389,0);       -- San Dorian Carrot (Steal)
+INSERT INTO `mob_droplist` VALUES (1390,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1390,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1390,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1390,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- 1391-1394 Available
 
@@ -11595,22 +11702,50 @@ INSERT INTO `mob_droplist` VALUES (1397,0,0,1000,15511,@UNCOMMON); -- Fortitude 
 INSERT INTO `mob_droplist` VALUES (1398,0,0,1000,1847,@ALWAYS);    -- Fifth Virtue (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (1398,0,0,1000,17595,@ALWAYS);   -- Hope Staff (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (1398,0,0,1000,15509,@UNCOMMON); -- Hope Torque (Uncommon, 10%)
+-- XISP Tier 3 Enchantments
+INSERT INTO `mob_droplist` VALUES (1398,1,1,250,3223,180); -- Balance Coin
+INSERT INTO `mob_droplist` VALUES (1398,1,1,250,3227,180); -- Voyage Coin
+INSERT INTO `mob_droplist` VALUES (1398,1,1,250,3219,180); -- Wieldance Coin
+INSERT INTO `mob_droplist` VALUES (1398,1,1,250,3215,180); -- Ardor Coin
+INSERT INTO `mob_droplist` VALUES (1398,1,1,250,3211,180); -- Vision Coin
+INSERT INTO `mob_droplist` VALUES (1398,1,1,250,3337,100); -- Gold Meed
 
 -- ZoneID:  33 - Jailer Of Justice
 INSERT INTO `mob_droplist` VALUES (1399,0,0,1000,1848,@ALWAYS);    -- Fourth Virtue (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (1399,0,0,1000,17710,@ALWAYS);   -- Justice Sword (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (1399,0,0,1000,15508,@UNCOMMON); -- Justice Torque (Uncommon, 10%)
+-- XISP Tier 3 Enchantments
+INSERT INTO `mob_droplist` VALUES (1399,1,1,250,3223,180); -- Balance Coin
+INSERT INTO `mob_droplist` VALUES (1399,1,1,250,3227,180); -- Voyage Coin
+INSERT INTO `mob_droplist` VALUES (1399,1,1,250,3219,180); -- Wieldance Coin
+INSERT INTO `mob_droplist` VALUES (1399,1,1,250,3215,180); -- Ardor Coin
+INSERT INTO `mob_droplist` VALUES (1399,1,1,250,3211,180); -- Vision Coin
+INSERT INTO `mob_droplist` VALUES (1399,1,1,250,3337,100); -- Gold Meed
 
 -- ZoneID:  33 - Jailer Of Love
 INSERT INTO `mob_droplist` VALUES (1400,0,0,1000,18100,@ALWAYS); -- Love Halberd (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (1400,0,0,1000,1911,@COMMON);  -- Aura Of Adulation (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (1400,0,0,1000,1912,@COMMON);  -- Aura Of Voracity (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (1400,0,0,1000,15514,@COMMON); -- Love Torque (Common, 15%)
+-- XISP Tier 3 Enchantments
+INSERT INTO `mob_droplist` VALUES (1400,1,1,@ALWAYS,3223,180); -- Balance Coin
+INSERT INTO `mob_droplist` VALUES (1400,1,1,@ALWAYS,3227,180); -- Voyage Coin
+INSERT INTO `mob_droplist` VALUES (1400,1,1,@ALWAYS,3219,180); -- Wieldance Coin
+INSERT INTO `mob_droplist` VALUES (1400,1,1,@ALWAYS,3215,180); -- Ardor Coin
+INSERT INTO `mob_droplist` VALUES (1400,1,1,@ALWAYS,3211,180); -- Vision Coin
+INSERT INTO `mob_droplist` VALUES (1400,1,1,@ALWAYS,3337,100); -- Gold Meed
 
 -- ZoneID:  33 - Jailer Of Prudence
 INSERT INTO `mob_droplist` VALUES (1401,0,0,1000,1849,@ALWAYS);    -- Sixth Virtue (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (1401,0,0,1000,18397,@ALWAYS);   -- Prudence Rod (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (1401,0,0,1000,15510,@UNCOMMON); -- Prudence Torque (Uncommon, 10%)
+-- XISP Tier 3 Enchantments
+INSERT INTO `mob_droplist` VALUES (1401,1,1,250,3223,180); -- Balance Coin
+INSERT INTO `mob_droplist` VALUES (1401,1,1,250,3227,180); -- Voyage Coin
+INSERT INTO `mob_droplist` VALUES (1401,1,1,250,3219,180); -- Wieldance Coin
+INSERT INTO `mob_droplist` VALUES (1401,1,1,250,3215,180); -- Ardor Coin
+INSERT INTO `mob_droplist` VALUES (1401,1,1,250,3211,180); -- Vision Coin
+INSERT INTO `mob_droplist` VALUES (1401,1,1,250,3337,100); -- Gold Meed
 
 -- ZoneID:  34 - Jailer Of Temperance
 INSERT INTO `mob_droplist` VALUES (1402,0,0,1000,1850,@ALWAYS);    -- First Virtue (Always, 100%)
@@ -11754,6 +11889,10 @@ INSERT INTO `mob_droplist` VALUES (1420,4,0,1000,4377,0);        -- Slice Of Coe
 -- ZoneID: 145 - Juu Duzu The Whirlwind
 INSERT INTO `mob_droplist` VALUES (1421,1,1,@ALWAYS,13052,850);     -- Light Soleas (Group 1, Always, 100% - 85%)
 INSERT INTO `mob_droplist` VALUES (1421,1,1,@ALWAYS,17183,@COMMON); -- Hunters Longbow (Group 1, Always, 100% - Common, 15%)
+INSERT INTO `mob_droplist` VALUES (1421,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1421,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1421,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1421,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 217 - Kadraeth The Hatespawn -- TODO: Abyssea NM
 INSERT INTO `mob_droplist` VALUES (1422,0,0,1000,19258,@UNCOMMON); -- Qirmiz Tathlum (Uncommon, 10%)
@@ -12021,6 +12160,11 @@ INSERT INTO `mob_droplist` VALUES (1449,0,0,1000,836,@VCOMMON);  -- Square Of Da
 INSERT INTO `mob_droplist` VALUES (1449,0,0,1000,836,@VCOMMON);  -- Square Of Damascene Cloth (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (1449,0,0,1000,836,@COMMON);   -- Square Of Damascene Cloth (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (1449,0,0,1000,15899,@RARE);   -- Velocious Belt (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (1449,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1449,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1449,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1449,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1449,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 127 - King Behemoth
 INSERT INTO `mob_droplist` VALUES (1450,0,0,1000,860,@ALWAYS);    -- Behemoth Hide (Always, 100%)
@@ -12045,6 +12189,11 @@ INSERT INTO `mob_droplist` VALUES (1450,0,0,1000,1527,@VCOMMON);  -- Behemoth To
 INSERT INTO `mob_droplist` VALUES (1451,0,0,1000,15223,@COMMON);   -- Aces Helm (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (1451,0,0,1000,901,@UNCOMMON);   -- Venomous Claw (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (1451,0,0,1000,18255,@UNCOMMON); -- Heavy Shell (Uncommon, 10%)
+INSERT INTO `mob_droplist` VALUES (1451,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1451,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1451,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1451,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1451,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 135 - King Zagan
 INSERT INTO `mob_droplist` VALUES (1452,0,0,1000,4249,@ALWAYS);  -- Copy Of Schultz Stratagems (Always, 100%)
@@ -12377,6 +12526,10 @@ INSERT INTO `mob_droplist` VALUES (1495,4,0,1000,18688,0);       -- Lamian Kaman
 
 -- ZoneID: 192 - Nocuous Weapon
 INSERT INTO `mob_droplist` VALUES (1497,0,0,1000,19044,@COMMON); -- Disciple Grip (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (1497,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1497,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1497,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1497,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- 1498-1501 Available
 
@@ -12391,11 +12544,20 @@ INSERT INTO `mob_droplist` VALUES (1504,0,0,1000,926,@VCOMMON);  -- Lizard Tail 
 INSERT INTO `mob_droplist` VALUES (1504,0,0,1000,15351,@COMMON); -- Bounding Boots (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (1504,0,0,1000,852,@UNCOMMON); -- Lizard Skin (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (1504,2,0,1000,4362,0);        -- Lizard Egg (Steal)
+INSERT INTO `mob_droplist` VALUES (1504,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1504,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1504,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1504,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 198 - Leech King
 INSERT INTO `mob_droplist` VALUES (1505,0,0,1000,13359,@COMMON); -- Bloodbead Earring (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (1505,0,0,1000,924,@VCOMMON);  -- Vial Of Fiend Blood (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (1505,0,0,1000,1125,@RARE);    -- Carbuncles Ruby (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (1505,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1505,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1505,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1505,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1505,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 190 - Locus Lemures
 INSERT INTO `mob_droplist` VALUES (1506,0,0,1000,940,@COMMON);   -- Revival Tree Root (Common, 15%)
@@ -12829,6 +12991,10 @@ INSERT INTO `mob_droplist` VALUES (1583,4,0,1000,954,0);       -- Magic Pot Shar
 -- ZoneID: 192 - Maltha
 INSERT INTO `mob_droplist` VALUES (1584,0,0,1000,14464,@VCOMMON); -- Trailers Tunica (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (1584,0,0,1000,637,@VCOMMON);   -- Vial Of Slime Oil (Very Common, 24%)
+INSERT INTO `mob_droplist` VALUES (1584,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1584,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1584,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1584,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:  31 - Mammet-19 Epsilon
 -- ZoneID:  32 - Mammet-22 Zeta
@@ -13365,6 +13531,10 @@ INSERT INTO `mob_droplist` VALUES (1632,4,0,1000,5680,0);         -- Agaricus Mu
 INSERT INTO `mob_droplist` VALUES (1634,0,0,1000,2503,@VCOMMON); -- Handful Of Almonds (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (1634,0,0,1000,847,@COMMON);   -- Bird Feather (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (1634,0,0,1000,4570,@RARE);    -- Bird Egg (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (1634,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1634,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1634,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1634,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:  79 - Marsh Murre
 -- ZoneID:  79 - Slough Skua
@@ -13548,6 +13718,11 @@ INSERT INTO `mob_droplist` VALUES (1663,4,0,1000,2426,0);         -- Wivre Horn 
 -- ZoneID: 104 - Meteormauler Zhagtegg
 INSERT INTO `mob_droplist` VALUES (1664,0,0,1000,17947,@VCOMMON); -- Garde Pick (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (1664,2,0,1000,656,0);          -- Beastcoin (Steal)
+INSERT INTO `mob_droplist` VALUES (1664,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1664,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1664,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1664,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1664,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID:  92 - Meteor Quadav
 INSERT INTO `mob_droplist` VALUES (1665,0,0,1000,2531,@UNCOMMON); -- Shard Of Obsidian (Uncommon, 10%)
@@ -13557,6 +13732,11 @@ INSERT INTO `mob_droplist` VALUES (1665,4,0,1000,4552,0);         -- Serving Of 
 
 -- ZoneID: 123 - Meww The Turtlerider
 INSERT INTO `mob_droplist` VALUES (1666,0,0,1000,17843,@VCOMMON); -- Oliphant (Very Common, 24%)
+INSERT INTO `mob_droplist` VALUES (1666,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1666,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1666,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1666,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1666,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- 1667-1668 Available
 
@@ -13953,6 +14133,11 @@ INSERT INTO `mob_droplist` VALUES (1736,0,0,1000,920,@VCOMMON); -- Malboro Vine 
 INSERT INTO `mob_droplist` VALUES (1736,0,0,1000,920,@VCOMMON); -- Malboro Vine (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (1736,0,0,1000,920,@VCOMMON); -- Malboro Vine (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (1736,2,0,1000,920,0);        -- Malboro Vine (Steal)
+INSERT INTO `mob_droplist` VALUES (1736,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1736,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1736,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1736,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1736,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID:  15 - Morboling
 INSERT INTO `mob_droplist` VALUES (1737,0,0,1000,2907,@UNCOMMON); -- Tiny Morbol Vine (Uncommon, 10%)
@@ -15134,6 +15319,11 @@ INSERT INTO `mob_droplist` VALUES (1836,0,0,1000,1439,@VCOMMON); -- Dragoons Tes
 INSERT INTO `mob_droplist` VALUES (1836,0,0,1000,4484,@COMMON);  -- Shall Shell (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (1836,0,0,1000,16855,@RARE);   -- Colossal Lance (Rare, 5%)
 INSERT INTO `mob_droplist` VALUES (1836,2,0,1000,751,0);         -- Platinum Beastcoin (Steal)
+INSERT INTO `mob_droplist` VALUES (1836,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1836,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1836,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1836,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (1836,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 110 - Ochu
 INSERT INTO `mob_droplist` VALUES (1837,0,0,1000,920,@VCOMMON); -- Malboro Vine (Very Common, 24%)
@@ -15428,7 +15618,11 @@ INSERT INTO `mob_droplist` VALUES (1871,4,0,1000,4438,0); -- Dhalmel Steak (Desp
 INSERT INTO `mob_droplist` VALUES (1871,4,0,1000,5196,0); -- Strip Of Buffalo Jerky (Despoil)
 
 -- ZoneID: 140 - Orcish Barricader
-INSERT INTO `mob_droplist` VALUES (1872,0,0,1000,12342,@RARE); -- Lantern Shield (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (1872,0,0,1000,12342,@COMMON); -- Lantern Shield (Common, 15%) -- XISP
+INSERT INTO `mob_droplist` VALUES (1872,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1872,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1872,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (1872,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 105 - Orcish Beastrider
 -- ZoneID: 105 - Orcish Brawler
@@ -17236,6 +17430,11 @@ INSERT INTO `mob_droplist` VALUES (2112,0,0,1000,4174,@ALWAYS);   -- Vile Elixir
 INSERT INTO `mob_droplist` VALUES (2112,0,0,1000,16822,@ALWAYS);  -- Crimson Blade (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (2112,0,0,1000,18587,@COMMON);  -- Dryad Staff (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2112,0,0,1000,658,@RARE);      -- Damascus Ingot (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (2112,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2112,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2112,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2112,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2112,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 176 - Rock Crab Fished
 -- ZoneID: 176 - Rock Crab
@@ -17843,6 +18042,14 @@ INSERT INTO `mob_droplist` VALUES (2196,1,2,@UNCOMMON,1336,310);  -- Wyrmal Abju
 INSERT INTO `mob_droplist` VALUES (2196,1,2,@UNCOMMON,1314,230);  -- Dryadic Abjuration Head (Group 2, Uncommon, 10% - 23%)
 INSERT INTO `mob_droplist` VALUES (2196,1,2,@UNCOMMON,1327,230);  -- Aquarian Abjuration Legs (Group 2, Uncommon, 10% - 23%)
 INSERT INTO `mob_droplist` VALUES (2196,1,2,@UNCOMMON,1329,230);  -- Martial Abjuration Head (Group 2, Uncommon, 10% - 23%)
+-- XISP Tier 3 Enchantments
+INSERT INTO `mob_droplist` VALUES (2196,1,3,250,3223,180); -- Balance Coin
+INSERT INTO `mob_droplist` VALUES (2196,1,3,250,3227,180); -- Voyage Coin
+INSERT INTO `mob_droplist` VALUES (2196,1,3,250,3219,180); -- Wieldance Coin
+INSERT INTO `mob_droplist` VALUES (2196,1,3,250,3215,180); -- Ardor Coin
+INSERT INTO `mob_droplist` VALUES (2196,1,3,250,3211,180); -- Vision Coin
+INSERT INTO `mob_droplist` VALUES (2196,1,3,250,3337,100); -- Gold Meed
+
 
 -- ZoneID: 254 - Sensenmann
 INSERT INTO `mob_droplist` VALUES (2197,0,0,1000,3269,@UNCOMMON); -- Decaying Molar (Uncommon, 10%)
@@ -17910,6 +18117,10 @@ INSERT INTO `mob_droplist` VALUES (2204,0,0,1000,857,@UNCOMMON);  -- Dhalmel Hid
 INSERT INTO `mob_droplist` VALUES (2204,0,0,1000,857,@UNCOMMON);  -- Dhalmel Hide (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (2204,0,0,1000,13086,@COMMON);  -- Cerulean Pendant (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2204,0,0,1000,938,@UNCOMMON);  -- Sprig Of Papaka Grass (Uncommon, 10%)
+INSERT INTO `mob_droplist` VALUES (2204,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2204,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2204,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2204,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 194 - Seven Of Batons
 INSERT INTO `mob_droplist` VALUES (2205,0,0,1000,979,@UNCOMMON); -- Seven Of Batons Card (Uncommon, 10%)
@@ -18014,6 +18225,11 @@ INSERT INTO `mob_droplist` VALUES (2236,0,0,1000,940,@VCOMMON);  -- Revival Tree
 
 -- ZoneID: 122 - Shikigami Weapon
 INSERT INTO `mob_droplist` VALUES (2237,0,0,1000,14468,@VCOMMON); -- Yinyang Robe (Very Common, 24%)
+INSERT INTO `mob_droplist` VALUES (2237,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2237,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2237,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2237,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2237,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 255 - Shinryu -- TODO: Abyssea NM
 
@@ -18185,6 +18401,11 @@ INSERT INTO `mob_droplist` VALUES (2255,0,0,1000,4174,@ALWAYS);  -- Vile Elixir 
 INSERT INTO `mob_droplist` VALUES (2255,0,0,1000,17416,@ALWAYS); -- Arcana Breaker (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (2255,0,0,1000,15736,@COMMON); -- Trotter Boots (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2255,0,0,1000,658,@RARE);     -- Damascus Ingot (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (2255,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2255,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2255,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2255,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2255,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 254 - Sinister Seidel
 INSERT INTO `mob_droplist` VALUES (2256,0,0,1000,3265,@UNCOMMON); -- Flask Of Bubbling Oil (Uncommon, 10%)
@@ -18277,6 +18498,10 @@ INSERT INTO `mob_droplist` VALUES (2271,4,0,1000,5668,0);         -- Smilodon Li
 -- ZoneID: 192 - Slendlix Spindlethumb
 INSERT INTO `mob_droplist` VALUES (2273,0,0,1000,11494,@UNCOMMON); -- Circes Hat (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (2273,2,0,1000,750,0);           -- Silver Beastcoin (Steal)
+INSERT INTO `mob_droplist` VALUES (2273,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2273,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2273,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2273,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 217 - Slough Bats
 INSERT INTO `mob_droplist` VALUES (2274,0,0,1000,922,@COMMON);   -- Bat Wing (Common, 15%)
@@ -18508,6 +18733,10 @@ INSERT INTO `mob_droplist` VALUES (2308,0,0,1000,13607,@COMMON); -- Mist Silk Ca
 INSERT INTO `mob_droplist` VALUES (2308,0,0,1000,816,@VCOMMON);  -- Spool Of Silk Thread (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2308,0,0,1000,816,@VCOMMON);  -- Spool Of Silk Thread (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2308,2,0,1000,816,0);         -- Spool Of Silk Thread (Steal)
+INSERT INTO `mob_droplist` VALUES (2308,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2308,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2308,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2308,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 217 - Spitting Spider
 INSERT INTO `mob_droplist` VALUES (2309,0,0,1000,2953,@UNCOMMON); -- Jar Of Viscous Spittle (Uncommon, 10%)
@@ -18713,6 +18942,10 @@ INSERT INTO `mob_droplist` VALUES (2336,0,0,1000,16486,@COMMON); -- Beestinger (
 INSERT INTO `mob_droplist` VALUES (2336,0,0,1000,4370,@COMMON);  -- Pot Of Honey (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2336,0,0,1000,846,@UNCOMMON); -- Insect Wing (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (2336,2,0,1000,4370,0);        -- Pot Of Honey (Steal)
+INSERT INTO `mob_droplist` VALUES (2336,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2336,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2336,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2336,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:  65 - Spinner
 INSERT INTO `mob_droplist` VALUES (2337,0,0,1000,838,@COMMON); -- Spider Web (Uncommon, 15%)
@@ -18754,6 +18987,10 @@ INSERT INTO `mob_droplist` VALUES (2343,0,0,1000,4378,@UNCOMMON); -- Jug Of Selb
 INSERT INTO `mob_droplist` VALUES (2343,0,0,1000,17366,@COMMON);  -- Marys Horn (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2343,0,0,1000,882,@RARE);      -- Sheep Tooth (Rare, 5%)
 INSERT INTO `mob_droplist` VALUES (2343,2,0,1000,832,0);          -- Clump Of Sheep Wool (Steal)
+INSERT INTO `mob_droplist` VALUES (2343,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2343,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2343,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2343,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 123 - Stream Sahagin
 INSERT INTO `mob_droplist` VALUES (2344,0,0,1000,888,@COMMON);    -- Seashell (Common, 15%)
@@ -18901,6 +19138,13 @@ INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,1110,@UNCOMMON); -- Vial Of Bla
 INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,1313,@COMMON);   -- Lock Of Sirens Hair (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,1313,@UNCOMMON); -- Lock Of Sirens Hair (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,1313,@UNCOMMON); -- Lock Of Sirens Hair (Uncommon, 10%)
+-- XISP Tier 3 Enchantments
+INSERT INTO `mob_droplist` VALUES (2362,1,3,250,3223,180); -- Balance Coin
+INSERT INTO `mob_droplist` VALUES (2362,1,3,250,3227,180); -- Voyage Coin
+INSERT INTO `mob_droplist` VALUES (2362,1,3,250,3219,180); -- Wieldance Coin
+INSERT INTO `mob_droplist` VALUES (2362,1,3,250,3215,180); -- Ardor Coin
+INSERT INTO `mob_droplist` VALUES (2362,1,3,250,3211,180); -- Vision Coin
+INSERT INTO `mob_droplist` VALUES (2362,1,3,250,3337,100); -- Gold Meed
 
 -- ZoneID: 253 - Svelldrake
 INSERT INTO `mob_droplist` VALUES (2363,0,0,1000,3254,@UNCOMMON); -- Ice Wyvern Scale (Uncommon, 10%)
@@ -19163,6 +19407,10 @@ INSERT INTO `mob_droplist` VALUES (2399,1,1,@UNCOMMON,1613,125);  -- Remnant Of 
 INSERT INTO `mob_droplist` VALUES (2400,1,1,@ALWAYS,16856,950);   -- Obelisk (Group 1, Always, 100% - 95%)
 INSERT INTO `mob_droplist` VALUES (2400,1,1,@ALWAYS,13227,@RARE); -- Plate Belt (Group 1, Always, 100% - Rare, 5%)
 INSERT INTO `mob_droplist` VALUES (2400,2,0,1000,656,0);          -- Beastcoin (Steal)
+INSERT INTO `mob_droplist` VALUES (2400,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2400,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2400,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2400,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:   9 - Thousand Eyes
 INSERT INTO `mob_droplist` VALUES (2401,0,0,1000,914,@COMMON);   -- Vial Of Mercury (Common, 15%)
@@ -19355,6 +19603,10 @@ INSERT INTO `mob_droplist` VALUES (2427,0,0,1000,834,@COMMON);   -- Ball Of Saru
 INSERT INTO `mob_droplist` VALUES (2427,0,0,1000,16443,@COMMON); -- Fruit Punches (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2427,0,0,1000,4369,@VRARE);   -- Four-Leaf Mandragora Bud (Very Rare, 1%)
 INSERT INTO `mob_droplist` VALUES (2427,2,0,1000,4369,0);        -- Four-Leaf Mandragora Bud (Steal)
+INSERT INTO `mob_droplist` VALUES (2427,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2427,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2427,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2427,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:  15 - Tonberry Bedeviler
 INSERT INTO `mob_droplist` VALUES (2428,0,0,1000,1119,@COMMON);   -- Tonberry Coat (Common, 15%)
@@ -19423,6 +19675,11 @@ INSERT INTO `mob_droplist` VALUES (2433,0,0,1000,4956,@RARE);     -- Scroll Of K
 INSERT INTO `mob_droplist` VALUES (2433,0,0,1000,4953,@VRARE);    -- Scroll Of Hojo Ni (Very Rare, 1%)
 INSERT INTO `mob_droplist` VALUES (2433,0,0,1000,1443,@RARE);     -- Pinch Of Dried Mugwort (Rare, 5%)
 INSERT INTO `mob_droplist` VALUES (2433,2,0,1000,748,0);          -- Gold Beastcoin (Steal)
+INSERT INTO `mob_droplist` VALUES (2433,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2433,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2433,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2433,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2433,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 159 - Tonberry Dismayer
 INSERT INTO `mob_droplist` VALUES (2434,0,0,1000,1440,@UNCOMMON); -- Summoners Testimony (Uncommon, 10%)
@@ -19728,6 +19985,11 @@ INSERT INTO `mob_droplist` VALUES (2466,4,0,1000,895,0);        -- Ram Horn (Des
 INSERT INTO `mob_droplist` VALUES (2468,0,0,1000,17510,@VCOMMON); -- Vampiric Claws (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2468,0,0,1000,18007,@VCOMMON); -- Chiroptera Dagger (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2468,0,0,1000,17794,@VCOMMON); -- Niokiyotsuna (Very Common, 24%)
+INSERT INTO `mob_droplist` VALUES (2468,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2468,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2468,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2468,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2468,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 208 - Triarius X-Xv
 INSERT INTO `mob_droplist` VALUES (2469,0,0,1000,1118,@ALWAYS);   -- Antican Pauldron (Always, 100%)
@@ -19887,6 +20149,10 @@ INSERT INTO `mob_droplist` VALUES (2493,0,0,1000,4374,@VCOMMON); -- Sleepshroom 
 INSERT INTO `mob_droplist` VALUES (2493,0,0,1000,12485,@COMMON); -- Fungus Hat (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2493,0,0,1000,4374,@VCOMMON); -- Sleepshroom (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2493,2,0,1000,4374,0);        -- Sleepshroom (Steal)
+INSERT INTO `mob_droplist` VALUES (2493,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2493,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2493,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2493,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 111 - Tundra Tiger
 INSERT INTO `mob_droplist` VALUES (2494,0,0,1000,884,@COMMON);   -- Black Tiger Fang (Common, 15%)
@@ -20207,6 +20473,10 @@ INSERT INTO `mob_droplist` VALUES (2532,0,0,1000,5374,@ALWAYS); -- Opacus Cell (
 -- ZoneID: 103 - Valkurm Emperor
 INSERT INTO `mob_droplist` VALUES (2533,0,0,1000,846,@ALWAYS);   -- Insect Wing (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (2533,0,0,1000,15224,@COMMON); -- Empress Hairpin (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2533,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2533,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2533,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2533,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 176 - Vampire Bat
 INSERT INTO `mob_droplist` VALUES (2534,0,0,1000,922,@COMMON);   -- Bat Wing (Common, 15%)
@@ -21820,6 +22090,10 @@ INSERT INTO `mob_droplist` VALUES (2594,0,0,1000,17754,@COMMON); -- Sylphid Epee
 INSERT INTO `mob_droplist` VALUES (2596,1,1,@ALWAYS,13072,900);       -- Bird Whistle (Group 1, Always, 100% - 90%)
 INSERT INTO `mob_droplist` VALUES (2596,1,1,@ALWAYS,13837,@UNCOMMON); -- Bonzes Circlet (Group 1, Always, 100% - Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (2596,0,0,1000,4994,@COMMON);       -- Scroll of Mage's Ballad (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2596,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2596,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2596,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2596,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 191 - Wadi Crab
 INSERT INTO `mob_droplist` VALUES (2597,0,0,1000,936,@COMMON); -- Chunk Of Rock Salt (Common, 15%)
@@ -22014,6 +22288,11 @@ INSERT INTO `mob_droplist` VALUES (2621,0,0,1000,854,@VCOMMON);  -- Cockatrice S
 INSERT INTO `mob_droplist` VALUES (2621,0,0,1000,854,@VCOMMON);  -- Cockatrice Skin (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2621,0,0,1000,854,@VCOMMON);  -- Cockatrice Skin (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2621,2,0,1000,842,0);         -- Giant Bird Feather (Steal)
+INSERT INTO `mob_droplist` VALUES (2621,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2621,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2621,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2621,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2621,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 215 - Warbler -- TODO: Abyssea NM
 INSERT INTO `mob_droplist` VALUES (2622,0,0,1000,19289,@COMMON); -- Toki (Common, 15%)
@@ -22455,6 +22734,11 @@ INSERT INTO `mob_droplist` VALUES (2682,1,2,@UNCOMMON,3169,250);   -- Savants Se
 INSERT INTO `mob_droplist` VALUES (2683,0,0,1000,15182,@VCOMMON);  -- Zoolater Hat (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2683,0,0,1000,14873,@UNCOMMON); -- Bandomusha Kote (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (2683,0,0,1000,18002,@RARE);     -- Perseuss Harpe (Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (2683,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2683,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2683,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2683,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2683,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID: 215 - Yaanei -- TODO: Abyssea NM
 INSERT INTO `mob_droplist` VALUES (2684,0,0,1000,11617,@ALWAYS); -- Ferine Necklace (Always, 100%)
@@ -23433,6 +23717,10 @@ INSERT INTO `mob_droplist` VALUES (2779,0,0,1000,572,@VRARE);    -- Bag Of Herb 
 INSERT INTO `mob_droplist` VALUES (2779,0,0,1000,573,@RARE);     -- Bag Of Vegetable Seeds (Rare, 5%)
 INSERT INTO `mob_droplist` VALUES (2779,0,0,1000,575,@COMMON);   -- Bag Of Grain Seeds (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2779,2,0,1000,575,0);         -- Bag Of Grain Seeds (Steal)
+INSERT INTO `mob_droplist` VALUES (2779,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2779,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2779,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2779,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 176 - Yarr The Pearleyed
 INSERT INTO `mob_droplist` VALUES (2780,0,0,1000,624,@COMMON);    -- Clump Of Pamtam Kelp (Common, 15%)
@@ -23754,6 +24042,13 @@ INSERT INTO `mob_droplist` VALUES (2819,1,3,@COMMON,1340,300);    -- Neptunal Ab
 INSERT INTO `mob_droplist` VALUES (2819,1,4,@COMMON,1315,400);    -- Dryadic Abjuration Body (Group 4, Common, 15% - 40%)
 INSERT INTO `mob_droplist` VALUES (2819,1,4,@COMMON,1337,300);    -- Wyrmal Abjuration Legs (Group 4, Common, 15% - 30%)
 INSERT INTO `mob_droplist` VALUES (2819,1,4,@COMMON,1340,300);    -- Neptunal Abjuration Body (Group 4, Common, 15% - 30%)
+-- XISP Tier 3 Enchantments
+INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3223,180); -- Balance Coin
+INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3227,180); -- Voyage Coin
+INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3219,180); -- Wieldance Coin
+INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3215,180); -- Ardor Coin
+INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3211,180); -- Vision Coin
+INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3337,100); -- Gold Meed
 
 -- ZoneID: 178 - Mother Globe
 INSERT INTO `mob_droplist` VALUES (2820,0,0,1000,1419,@ALWAYS);    -- Springstone (Always, 100%)
@@ -23876,14 +24171,26 @@ INSERT INTO `mob_droplist` VALUES (2836,0,0,1000,18610,@VCOMMON); -- Spiro Staff
 -- ZoneID: 143 - Bughi Howlblade
 INSERT INTO `mob_droplist` VALUES (2837,1,1,@ALWAYS,12340,950);   -- Marine Shield (Group 1, Always, 100% - 95%)
 INSERT INTO `mob_droplist` VALUES (2837,1,1,@ALWAYS,13071,@RARE); -- Scale Gorget (Group 1, Always, 100% - Rare, 5%)
+INSERT INTO `mob_droplist` VALUES (2837,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2837,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2837,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2837,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 143 - Zighi Boneeater
 INSERT INTO `mob_droplist` VALUES (2838,1,1,@ALWAYS,12797,900);       -- Coarse Gauntlets (Group 1, Always, 100% - 90%)
 INSERT INTO `mob_droplist` VALUES (2838,1,1,@ALWAYS,16934,@UNCOMMON); -- Braveheart (Group 1, Always, 100% - Uncommon, 10%)
+INSERT INTO `mob_droplist` VALUES (2838,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2838,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2838,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2838,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 143 - Nomho Crimsonarmor
 INSERT INTO `mob_droplist` VALUES (2839,1,1,@ALWAYS,13837,900);       -- Bonzes Circlet (Group 1, Always, 100% - 90%)
 INSERT INTO `mob_droplist` VALUES (2839,1,1,@ALWAYS,17414,@UNCOMMON); -- Pixie Mace (Group 1, Always, 100% - Uncommon, 10%)
+INSERT INTO `mob_droplist` VALUES (2839,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2839,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2839,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2839,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 190 - Spook
 INSERT INTO `mob_droplist` VALUES (2840,0,0,1000,825,@COMMON);     -- Square Of Cotton Cloth (Common, 15%)
@@ -23892,6 +24199,10 @@ INSERT INTO `mob_droplist` VALUES (2840,0,0,1000,13613,@UNCOMMON); -- Travelers 
 INSERT INTO `mob_droplist` VALUES (2840,0,0,1000,529,@RARE);       -- Luminicloth (Rare, 5%)
 INSERT INTO `mob_droplist` VALUES (2840,2,0,1000,825,0);           -- Square Of Cotton Cloth (Steal)
 INSERT INTO `mob_droplist` VALUES (2840,4,0,1000,825,0);           -- Square Of Cotton Cloth (Despoil)
+INSERT INTO `mob_droplist` VALUES (2840,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2840,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2840,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2840,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 147 - Dadha Hundredmask
 INSERT INTO `mob_droplist` VALUES (2841,1,1,@ALWAYS,16754,900);       -- Parrying Knife (Group 1, Always, 100% - 90%)
@@ -23948,6 +24259,11 @@ INSERT INTO `mob_droplist` VALUES (2851,2,0,1000,750,0);              -- Silver 
 -- ZoneID: 109 - Bowho Warmonger
 INSERT INTO `mob_droplist` VALUES (2852,0,0,1000,12374,@VCOMMON); -- Tortoise Shield (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2852,2,0,1000,749,0);          -- Mythril Beastcoin (Steal)
+INSERT INTO `mob_droplist` VALUES (2852,1,1,@VCOMMON,3225,225); -- Balance Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2852,1,1,@VCOMMON,3229,225); -- Voyage Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2852,1,1,@VCOMMON,3217,225); -- Ardor Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2852,1,1,@VCOMMON,3213,225); -- Vision Card (XISP)
+INSERT INTO `mob_droplist` VALUES (2852,1,1,@VCOMMON,3334,100); -- Silver Meed (XISP)
 
 -- ZoneID:  99 - Zhuu Buxu The Silent
 INSERT INTO `mob_droplist` VALUES (2853,0,0,1000,16319,@UNCOMMON); -- Sangoma Lappas (Uncommon, 10%)
@@ -24529,15 +24845,31 @@ INSERT INTO `mob_droplist` VALUES (2938,0,0,1000,2842,@COMMON); -- Flawed Garnet
 
 -- ZoneID: 107 - Tococo
 INSERT INTO `mob_droplist` VALUES (2939,0,0,1000,16296,@COMMON); -- Armigers Lace (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2939,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2939,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2939,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2939,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 143 - Quvho Deathhurler
 INSERT INTO `mob_droplist` VALUES (2940,0,0,1000,15052,@COMMON); -- Guerilla Gloves (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2940,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2940,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2940,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2940,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 100 - Amanita
 INSERT INTO `mob_droplist` VALUES (2941,0,0,1000,19043,@COMMON); -- Tenax Strap (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2941,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2941,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2941,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2941,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 102 - Slumbering Samwell
 INSERT INTO `mob_droplist` VALUES (2942,0,0,1000,2832,@COMMON); -- Samwells Shank (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2943,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2943,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2943,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2943,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 112 - Duke Focalor
 INSERT INTO `mob_droplist` VALUES (2943,0,0,1000,2852,@COMMON); -- Ingot Of Tenebrium (Common, 15%)
@@ -24580,9 +24912,17 @@ INSERT INTO `mob_droplist` VALUES (2953,0,0,1000,16374,@UNCOMMON); -- Layqa Sera
 
 -- ZoneID: 108 - Ghillie Dhu
 INSERT INTO `mob_droplist` VALUES (2954,0,0,1000,19160,@COMMON); -- Estramacon (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2954,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2954,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2954,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2954,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 108 - Highlander Lizard
 INSERT INTO `mob_droplist` VALUES (2955,0,0,1000,2834,@COMMON); -- Immortal Molt (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2955,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2955,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2955,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2955,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 261 - Blanched Mandragora
 INSERT INTO `mob_droplist` VALUES (2956,0,0,1000,4368,@UNCOMMON); -- Two-Leaf Mandragora Bud (Uncommon, 10%)
@@ -24680,6 +25020,10 @@ INSERT INTO `mob_droplist` VALUES (2970,4,0,1000,846,0);       -- Insect Wing (D
 
 -- ZoneID: 190 - Barbastelle
 INSERT INTO `mob_droplist` VALUES (2971,0,0,1000,17967,@COMMON); -- Felling Axe (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2971,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2971,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2971,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2971,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 262 - Zoldeff Jagil
 INSERT INTO `mob_droplist` VALUES (2972,0,0,1000,868,@UNCOMMON); -- Handful Of Pugil Scales (Uncommon, 10%)
@@ -24713,6 +25057,10 @@ INSERT INTO `mob_droplist` VALUES (2975,4,0,1000,1623,0);         -- Eft Skin (D
 
 -- ZoneID: 117 - Habrok
 INSERT INTO `mob_droplist` VALUES (2976,0,0,1000,11528,@COMMON); -- Besieger Mantle (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2976,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2976,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2976,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2976,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 262 - Vampire Leech
 INSERT INTO `mob_droplist` VALUES (2977,0,0,1000,924,@UNCOMMON); -- Vial Of Fiend Blood (Uncommon, 10%)
@@ -24753,6 +25101,10 @@ INSERT INTO `mob_droplist` VALUES (2982,0,0,1000,3961,@VRARE); -- Zaffre Yggrete
 
 -- ZoneID: 117 - Herbage Hunter
 INSERT INTO `mob_droplist` VALUES (2983,0,0,1000,11493,@COMMON); -- Precision Bandana (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2983,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2983,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2983,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2983,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 262 - Primordial Orobon -- TODO: add to orobon lure family mixin
 INSERT INTO `mob_droplist` VALUES (2984,0,0,1000,5563,@RARE);  -- Chunk Of Orobon Meat (Rare, 5%)
@@ -24774,9 +25126,17 @@ INSERT INTO `mob_droplist` VALUES (2987,0,0,1000,15942,@UNCOMMON); -- Summoning 
 
 -- ZoneID: 116 - Duke Decapod
 INSERT INTO `mob_droplist` VALUES (2988,0,0,1000,16185,@COMMON); -- Pelte (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2988,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2988,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2988,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2988,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 190 - Ankou
 INSERT INTO `mob_droplist` VALUES (2989,0,0,1000,18604,@VCOMMON); -- Astaroth Cane (Very Common, 24%)
+INSERT INTO `mob_droplist` VALUES (2989,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2989,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2989,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2989,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID:  98 - Hyakinthos
 INSERT INTO `mob_droplist` VALUES (2990,0,0,1000,15850,@RARE); -- Lavas Ring (Rare, 5%)
@@ -24802,18 +25162,34 @@ INSERT INTO `mob_droplist` VALUES (2996,0,0,1000,18841,@UNCOMMON); -- Templar Ma
 
 -- ZoneID: 101 - Rambukk
 INSERT INTO `mob_droplist` VALUES (2997,0,0,1000,2851,@COMMON); -- Bukktooth (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2997,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2997,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2997,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2997,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 103 - Hippomaritimus
 INSERT INTO `mob_droplist` VALUES (2998,0,0,1000,11339,@COMMON); -- Channeling Robe (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (2998,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2998,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2998,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (2998,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 123 - Koropokkur
 INSERT INTO `mob_droplist` VALUES (2999,0,0,1000,11338,@UNCOMMON); -- Aegas Doublet (Uncommon, 10%)
 
 -- ZoneID: 115 - Numbing Norman
 INSERT INTO `mob_droplist` VALUES (3000,0,0,1000,19305,@COMMON); -- Pike (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (3000,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3000,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3000,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3000,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 103 - Metal Shears
 INSERT INTO `mob_droplist` VALUES (3001,0,0,1000,2854,@COMMON); -- Stately Crab Shell (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (3001,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3001,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3001,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3001,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 104 - Sappy Sycamore
 INSERT INTO `mob_droplist` VALUES (3002,0,0,1000,16027,@COMMON); -- Seeker Earring (Common, 15%)
@@ -24823,6 +25199,10 @@ INSERT INTO `mob_droplist` VALUES (3003,0,0,1000,16014,@COMMON); -- Stormer Earr
 
 -- ZoneID: 118 - Wake Warder Wanda
 INSERT INTO `mob_droplist` VALUES (3004,0,0,1000,18605,@COMMON); -- Melampus Staff (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (3004,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3004,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3004,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3004,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- 3005 Available
 
@@ -24888,6 +25268,10 @@ INSERT INTO `mob_droplist` VALUES (3018,0,0,1000,2857,@VCOMMON); -- Lump Of Tokk
 
 -- ZoneID: 191 - Teporingo
 INSERT INTO `mob_droplist` VALUES (3019,0,0,1000,19045,@VCOMMON); -- Succubus Grip (Very Common, 24%)
+INSERT INTO `mob_droplist` VALUES (3019,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3019,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3019,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3019,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 173 - Thoon
 INSERT INTO `mob_droplist` VALUES (3020,0,0,1000,16024,@UNCOMMON); -- Impetus Earring (Uncommon, 10%)
@@ -25010,6 +25394,10 @@ INSERT INTO `mob_droplist` VALUES (3052,0,0,1000,2847,@COMMON); -- Blue Jasper (
 
 -- ZoneID: 190 - Gwyllgi
 INSERT INTO `mob_droplist` VALUES (3053,0,0,1000,15940,@COMMON); -- Gosha Sarashi (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (3053,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3053,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3053,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3053,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 198 - Trembler Tabitha
 INSERT INTO `mob_droplist` VALUES (3054,0,0,1000,2848,@COMMON); -- Grimy Bronze Sheet (Common, 15%)
@@ -25781,11 +26169,17 @@ INSERT INTO `mob_droplist` VALUES (3137,0,0,1000,3494,@UNCOMMON);  -- Forgotten 
 INSERT INTO `mob_droplist` VALUES (3137,1,1,@VRARE,1450,333);      -- Lungo-Nango Jadeshell (Group 1, Very Rare, 1%)
 INSERT INTO `mob_droplist` VALUES (3137,1,1,@VRARE,1453,333);      -- Montiont Silverpiece (Group 1, Very Rare, 1%)
 INSERT INTO `mob_droplist` VALUES (3137,1,1,@VRARE,1456,333);      -- One Hundred Byne Bill (Group 1, Very Rare, 1%)
+-- XISP Tier 4 Relic Enchantments
+INSERT INTO `mob_droplist` VALUES (3137,0,0,1000,3224,@VCOMMON); -- Balance Jewel
 
 -- 3138-3139 Available
 
 -- ZoneID: 118 - Backoo
 INSERT INTO `mob_droplist` VALUES (3140,0,0,1000,2826,@COMMON); -- Mandragora Scale (Common, 15%)
+INSERT INTO `mob_droplist` VALUES (3140,1,1,@VCOMMON,3222,300); -- Balance Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3140,1,1,@VCOMMON,3226,300); -- Voyage Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3140,1,1,@VCOMMON,3214,300); -- Ardor Stone (XISP)
+INSERT INTO `mob_droplist` VALUES (3140,1,1,@VCOMMON,3333,100); -- Copper Meed (XISP)
 
 -- ZoneID: 153 - Ancient Goobbue
 INSERT INTO `mob_droplist` VALUES (3141,0,0,1000,919,@ALWAYS);  -- Clump Of Boyahda Moss (Always, 100%)
@@ -28922,6 +29316,119 @@ INSERT INTO `mob_droplist` VALUES (3411,1,5,@VCOMMON,17745,250); -- Hofud (Group
 INSERT INTO `mob_droplist` VALUES (3411,1,5,@VCOMMON,18121,250); -- Valkyrie's Fork (Group 5, Very Common, 24% - 25%)
 INSERT INTO `mob_droplist` VALUES (3411,1,5,@VCOMMON,16117,250); -- Valhalla Helm (Group 5, Very Common, 24% - 25%)
 INSERT INTO `mob_droplist` VALUES (3411,1,5,@VCOMMON,14577,250); -- Valhalla Breastplate (Group 5, Very Common, 24% - 25%)
+
+-- XISP Section
+
+-- Level 40 Open World Dragon
+-- Guaranteed
+INSERT INTO `mob_droplist` VALUES (4000,0,0,1000,866,@ALWAYS);  -- Wyvern Scales
+INSERT INTO `mob_droplist` VALUES (4000,0,0,1000,866,@VCOMMON); -- Wyvern Scales
+INSERT INTO `mob_droplist` VALUES (4000,0,0,1000,866,@VCOMMON); -- Wyvern Scales
+-- Group 1: (Spells)
+INSERT INTO `mob_droplist` VALUES (4000,1,1,750,4717,250); -- Refresh
+INSERT INTO `mob_droplist` VALUES (4000,1,1,750,4751,250); -- Erase
+INSERT INTO `mob_droplist` VALUES (4000,1,1,750,4714,250); -- Phalanx
+INSERT INTO `mob_droplist` VALUES (4000,1,1,750,4947,250); -- Utsusemi: Ni
+--Group 2: (Spells)
+INSERT INTO `mob_droplist` VALUES (4000,1,2,750,4868,250); -- Dispel
+INSERT INTO `mob_droplist` VALUES (4000,1,2,750,5070,250); -- Magic Finale
+INSERT INTO `mob_droplist` VALUES (4000,1,2,750,4984,250); -- Horde Lullaby
+INSERT INTO `mob_droplist` VALUES (4000,1,2,750,4717,250); -- Refresh
+-- Group 3: (Special Items)
+INSERT INTO `mob_droplist` VALUES (4000,1,3,750,12349,100); -- Balance Buckler
+INSERT INTO `mob_droplist` VALUES (4000,1,3,750,12350,100); -- Strikie Shield
+INSERT INTO `mob_droplist` VALUES (4000,1,3,750,12350,100); -- Astral Shield
+INSERT INTO `mob_droplist` VALUES (4000,1,3,750,13679,100); -- Templar's Mantle
+INSERT INTO `mob_droplist` VALUES (4000,1,3,750,14843,100); -- Spiked Finger Gauntlets
+INSERT INTO `mob_droplist` VALUES (4000,1,3,750,14845,100); -- Sly Gauntlets
+INSERT INTO `mob_droplist` VALUES (4000,1,3,750,14844,100); -- Rush Gloves
+INSERT INTO `mob_droplist` VALUES (4000,1,3,750,15148,100); -- Mana Circlet
+INSERT INTO `mob_droplist` VALUES (4000,1,3,750,13168,100); -- Intellect Torque
+INSERT INTO `mob_droplist` VALUES (4000,1,3,750,13167,100); -- Storm Gorget
+-- Group 4: (Special Items)
+INSERT INTO `mob_droplist` VALUES (4000,1,4,750,13169,100); -- Benign Necklace
+INSERT INTO `mob_droplist` VALUES (4000,1,4,750,15151,100); -- Super Ribbon
+INSERT INTO `mob_droplist` VALUES (4000,1,4,750,13553,100); -- Blitz Ring
+INSERT INTO `mob_droplist` VALUES (4000,1,4,750,13128,100); -- Spectacles
+INSERT INTO `mob_droplist` VALUES (4000,1,4,750,13405,100); -- Enhancing Earring
+INSERT INTO `mob_droplist` VALUES (4000,1,4,750,13677,100); -- Esoteric Mantle
+INSERT INTO `mob_droplist` VALUES (4000,1,4,750,13678,100); -- Sniper's Mantle
+INSERT INTO `mob_droplist` VALUES (4000,1,4,750,13676,100); -- Heavy Mantle
+INSERT INTO `mob_droplist` VALUES (4000,1,4,750,13675,100); -- Rearguard Mantle
+INSERT INTO `mob_droplist` VALUES (4000,1,4,750,14842,100); -- Ivory Mitts
+-- Group 5: (Ranged Slot)
+INSERT INTO `mob_droplist` VALUES (4000,1,5,750,18174,250); -- Mantra Coin
+INSERT INTO `mob_droplist` VALUES (4000,1,5,750,18176,250); -- Nazar Bonjuk
+INSERT INTO `mob_droplist` VALUES (4000,1,5,750,18175,250); -- Optical Needle
+INSERT INTO `mob_droplist` VALUES (4000,1,5,750,18177,250); -- Kakanpu
+-- Group 6:
+INSERT INTO `mob_droplist` VALUES (4000,1,6,950,3225,200); -- Balance Card
+INSERT INTO `mob_droplist` VALUES (4000,1,6,950,3229,200); -- Voyage Card
+INSERT INTO `mob_droplist` VALUES (4000,1,6,950,3217,200); -- Ardor Card
+INSERT INTO `mob_droplist` VALUES (4000,1,6,950,3213,200); -- Vision Card
+INSERT INTO `mob_droplist` VALUES (4000,1,6,950,3334,200); -- Silver Meed
+-- Group 7:
+INSERT INTO `mob_droplist` VALUES (4000,1,7,750,3225,200); -- Balance Card
+INSERT INTO `mob_droplist` VALUES (4000,1,7,750,3229,200); -- Voyage Card
+INSERT INTO `mob_droplist` VALUES (4000,1,7,750,3217,200); -- Ardor Card
+INSERT INTO `mob_droplist` VALUES (4000,1,7,750,3213,200); -- Vision Card
+INSERT INTO `mob_droplist` VALUES (4000,1,7,750,3334,200); -- Silver Meed
+-- Group 8:
+INSERT INTO `mob_droplist` VALUES (4000,1,8,250,3225,200); -- Balance Card
+INSERT INTO `mob_droplist` VALUES (4000,1,8,250,3229,200); -- Voyage Card
+INSERT INTO `mob_droplist` VALUES (4000,1,8,250,3217,200); -- Ardor Card
+INSERT INTO `mob_droplist` VALUES (4000,1,8,250,3213,200); -- Vision Card
+INSERT INTO `mob_droplist` VALUES (4000,1,8,250,3334,200); -- Silver Meed
+-- Group 9: (Elemental Ores)
+INSERT INTO `mob_droplist` VALUES (4000,0,0,400,1255,125); -- Fire Ore
+INSERT INTO `mob_droplist` VALUES (4000,0,0,400,1256,125); -- Ice Ore
+INSERT INTO `mob_droplist` VALUES (4000,0,0,400,1257,125); -- Wind Ore
+INSERT INTO `mob_droplist` VALUES (4000,0,0,400,1258,125); -- Earth Ore
+INSERT INTO `mob_droplist` VALUES (4000,0,0,400,1259,125); -- Lightning Ore
+INSERT INTO `mob_droplist` VALUES (4000,0,0,400,1260,125); -- Water Ore
+INSERT INTO `mob_droplist` VALUES (4000,0,0,400,1261,125); -- Light Ore
+INSERT INTO `mob_droplist` VALUES (4000,0,0,400,1262,125); -- Dark Ore
+
+-- Level 75 Open World Dragon
+-- General
+INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,4272,@VCOMMON);   -- Dragon Meat
+INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,4486,@UNCOMMON);  -- Dragon Heart
+INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,1771,@COMMON);    -- Dragon Bone
+INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,867,@VCOMMON);    -- Dragon Scales
+INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,903,@VCOMMON);    -- Dragon Talon
+INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,1133,@VCOMMON);   -- Dragon Blood
+INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,11581,@UNCOMMON); -- Ire Torque
+-- Relic Armor Crafting Mats
+INSERT INTO `mob_droplist` VALUES (4001,1,1,250,4077,250); -- Moonbow Steel
+INSERT INTO `mob_droplist` VALUES (4001,1,1,250,4078,250); -- Moonbow Cloth
+INSERT INTO `mob_droplist` VALUES (4001,1,1,250,4079,250); -- Moonbow Leather
+INSERT INTO `mob_droplist` VALUES (4001,1,1,250,4080,250); -- Moonbow Urushi
+-- Group 12: Special Drops
+INSERT INTO `mob_droplist` VALUES (4001,1,2,75,11546,200); -- Aesir Mantle
+INSERT INTO `mob_droplist` VALUES (4001,1,2,75,11589,200); -- Aesir Torque
+INSERT INTO `mob_droplist` VALUES (4001,1,2,75,28425,200); -- Salire Belt
+INSERT INTO `mob_droplist` VALUES (4001,1,2,75,17721,200); -- Sanguine Sword
+INSERT INTO `mob_droplist` VALUES (4001,1,2,75,14577,200); -- Valhalla Breastplate
+-- Group 8: Crafting
+INSERT INTO `mob_droplist` VALUES (4000,1,3,100,658,500); -- Damascus Ingot
+INSERT INTO `mob_droplist` VALUES (4000,1,3,100,836,500); -- Damascene Cloth
+-- Group 9: Crafting
+INSERT INTO `mob_droplist` VALUES (4000,1,4,100,658,500); -- Damascus Ingot
+INSERT INTO `mob_droplist` VALUES (4000,1,4,100,836,500); -- Damascene Cloth
+-- Group 10: Enchantment Items
+INSERT INTO `mob_droplist` VALUES (4001,1,5,950,3223,160); -- Balance Coin
+INSERT INTO `mob_droplist` VALUES (4001,1,5,950,3227,160); -- Voyage Coin
+INSERT INTO `mob_droplist` VALUES (4001,1,5,950,3219,160); -- Wieldance Coin
+INSERT INTO `mob_droplist` VALUES (4001,1,5,950,3215,160); -- Ardor Coin
+INSERT INTO `mob_droplist` VALUES (4001,1,5,950,3211,160); -- Vision Coin
+INSERT INTO `mob_droplist` VALUES (4001,1,5,950,3337,200); -- Gold Meed
+-- Group 11: Enchantment Items
+INSERT INTO `mob_droplist` VALUES (4001,1,6,250,3223,160); -- Balance Coin
+INSERT INTO `mob_droplist` VALUES (4001,1,6,250,3227,160); -- Voyage Coin
+INSERT INTO `mob_droplist` VALUES (4001,1,6,250,3219,160); -- Wieldance Coin
+INSERT INTO `mob_droplist` VALUES (4001,1,6,250,3215,160); -- Ardor Coin
+INSERT INTO `mob_droplist` VALUES (4001,1,6,250,3211,160); -- Vision Coin
+INSERT INTO `mob_droplist` VALUES (4001,1,6,250,3337,200); -- Gold Meed
 
 /*!40000 ALTER TABLE `mob_droplist` ENABLE KEYS */;
 UNLOCK TABLES;

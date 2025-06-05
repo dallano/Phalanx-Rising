@@ -6,6 +6,9 @@ local zoneObject = {}
 
 zoneObject.onInitialize = function(zone)
     xi.chocobo.initZone(zone)
+
+    local pos = { x = -100, y = 0, z = -10, rotation = 193, }
+    xi.xispdragon.initNPC(zone, pos) -- XISP
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

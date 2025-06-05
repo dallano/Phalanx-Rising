@@ -86,7 +86,7 @@ xi.anim = xi.animation
 -- 246, 4 = angel spawn + aura
 -- 247, 4 = demon spawn + aura
 
--- 248, 4 = cool buff
+-- 248, 4 = cool buff -- Used for augmenting equipment
 
 
 -- 10, 3  = FFX death

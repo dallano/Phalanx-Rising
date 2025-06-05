@@ -5,7 +5,7 @@
 ---@type TMobEntity
 local entity = {}
 
-entity.onMobSpawn = function(mob)
+entity.onMobInitialize = function(mob)
     xi.nmloot.addDrops(mob)
     mob:setMod(xi.mod.REGAIN, 100)
 end

@@ -13040,12 +13040,12 @@ INSERT INTO `mob_groups` VALUES (14,6551,198,'Ghoul_war',300,0,959,0,0,22,26,0);
 INSERT INTO `mob_groups` VALUES (15,6568,198,'Wendigo_blm',300,0,3254,0,0,24,28,0);
 INSERT INTO `mob_groups` VALUES (16,6408,198,'Jelly',300,0,1190,0,0,26,28,0);
 INSERT INTO `mob_groups` VALUES (17,3165,198,'Poison_Leech',300,0,18,0,0,24,28,0);
-INSERT INTO `mob_groups` VALUES (18,6401,198,'Bleeder_Leech',300,0,18,0,0,83,85,0);
+INSERT INTO `mob_groups` VALUES (18,6401,198,'Bleeder_Leech',300,0,18,0,0,74,77,0);
 INSERT INTO `mob_groups` VALUES (19,71,198,'Air_Elemental',300,4,40,0,0,33,36,0);
 INSERT INTO `mob_groups` VALUES (20,1160,198,'Earth_Elemental',300,4,736,0,0,33,36,0);
-INSERT INTO `mob_groups` VALUES (21,6437,198,'Chaser_Bats',300,0,82,0,0,83,85,0);
-INSERT INTO `mob_groups` VALUES (22,6314,198,'Crypterpillar',300,0,422,0,0,86,88,0);
-INSERT INTO `mob_groups` VALUES (23,6451,198,'Warren_Bat',300,0,461,0,0,86,88,0);
+INSERT INTO `mob_groups` VALUES (21,6437,198,'Chaser_Bats',300,0,82,0,0,80,82,0); -- XISP
+INSERT INTO `mob_groups` VALUES (22,6314,198,'Crypterpillar',300,0,422,0,0,81,82,0); -- XISP
+INSERT INTO `mob_groups` VALUES (23,6451,198,'Warren_Bat',300,0,461,0,0,80,82,0); -- XISP
 INSERT INTO `mob_groups` VALUES (24,120,198,'Ancient_Bat',300,0,461,0,0,26,29,0);
 INSERT INTO `mob_groups` VALUES (25,3537,198,'Seeker_Bats',300,0,82,0,0,23,26,0);
 INSERT INTO `mob_groups` VALUES (26,5893,198,'Gloombound_Lurker',5400,0,3092,4000,0,48,48,0);
@@ -13415,13 +13415,14 @@ INSERT INTO `mob_groups` VALUES (2,7071,210,'Garrison_30',0,129,0,0,0,25,30,1);
 INSERT INTO `mob_groups` VALUES (3,7071,210,'Garrison_40',0,129,0,0,0,35,40,1);
 INSERT INTO `mob_groups` VALUES (4,7071,210,'Garrison_50',0,129,0,0,0,45,50,1);
 INSERT INTO `mob_groups` VALUES (5,7071,210,'Garrison_75',0,129,0,0,0,70,75,1);
-INSERT INTO `mob_groups` VALUES (1000,20000,210,'[XISP]squire',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1001,20001,210,'[XISP]knight',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1002,20002,210,'[XISP]mage',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1003,7071,210,'[XISP]choco',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1004,5551,210,'[XISP]wyvern',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1005,2461,210,'[XISP]avatar',0,129,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (2000,1280,210,'[XISP]dragon',0,129,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1000,20000,210,'[XISP]squire',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1001,20001,210,'[XISP]knight',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1002,20002,210,'[XISP]mage',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1003,7071,210,'[XISP]choco',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1004,5551,210,'[XISP]wyvern',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1005,2461,210,'[XISP]avatar',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (2000,1280,210,'[XISP]dragon40',0,128,4000,3000,0,45,50,1);
+INSERT INTO `mob_groups` VALUES (2001,1280,210,'[XISP]dragon75',0,128,4001,8000,0,75,80,1);
 
 -- ------------------------------------------------------------
 -- Cloister_of_Tides (Zone 211)

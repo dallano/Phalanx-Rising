@@ -497,6 +497,8 @@ local function getDrops(npc, dropType, zoneId)
             else
                 if math.random(1, 100) <= 5 then
                     items[1] = xi.casket_loot.casketItems[zoneId].regionalItems[math.random(1, #xi.casket_loot.casketItems[zoneId].regionalItems)]
+                elseif math.random(1, 100) <= 10 then
+                    items[1] = xi.xisp.augmentItems[1][math.random(1, #xi.xisp.augmentItems[1] - 1)] -- Meeds are dropped by NMs
                 else
                     items[i] = item
                 end

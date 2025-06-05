@@ -10,7 +10,7 @@ local lootTable =
 {
     [1] = -- Starter Zones
     {
-        { nm = { 17215868, 17215888 }, loot = { item = { 13014, }, droprate = xi.drop_rate.RARE        },  }, -- Leaping Lizzy
+        { nm = { 17215868, 17215888 }, loot = { item = { 13014, }, droprate = xi.drop_rate.GUARANTEED    },  }, -- Leaping Lizzy
         { nm = { 17215778, },          loot = { item = { 16296, }, droprate = xi.drop_rate.VERY_COMMON },  }, -- Tococo
         { nm = { 17252657, },          loot = { item = { 13607, }, droprate = xi.drop_rate.COMMON      },  }, -- Spini Spipi
         { nm = { 17248588, },          loot = { item = { 19305, }, droprate = xi.drop_rate.UNCOMMON    },  }, -- Numbing Norman
@@ -18,7 +18,7 @@ local lootTable =
         { nm = { 17248517, },          loot = { item = { 18394, }, droprate = xi.drop_rate.GUARANTEED  },  }, -- Nunyenunc
         { nm = { 17211537, },          loot = { item = { 16486, }, droprate = xi.drop_rate.VERY_COMMON },  }, -- Stinging Sophie
         { nm = { 17252725, },          loot = { item = { 16185, }, droprate = xi.drop_rate.COMMON      },  }, -- Duke Decapod
-        { nm = { 17187111, },          loot = { item = { 13112, }, droprate = xi.drop_rate.RARE        },  }, -- Jaggedy-Eared Jack
+        { nm = { 17187111, },          loot = { item = { 13112, }, droprate = xi.drop_rate.UNCOMMON    },  }, -- Jaggedy-Eared Jack
         { nm = { 17191044, },          loot = { item = { 2851,  }, droprate = xi.drop_rate.VERY_COMMON },  }, -- Rambukk
         { nm = { 17186927, },          loot = { item = { 19043, }, droprate = xi.drop_rate.GUARANTEED  },  }, -- Amanita
         { nm = { 17187047, },          loot = { item = { 12371, }, droprate = xi.drop_rate.GUARANTEED  },  }, -- Fungus Beetle
@@ -36,7 +36,7 @@ local lootTable =
         { nm = { 17354896, }, loot = { item = { 17708,       }, droprate = xi.drop_rate.GUARANTEED  }, }, -- Chariotbuster Byakzak
         { nm = { 17371578, }, loot = { item = { 13072, 13837 }, droprate = xi.drop_rate.VERY_COMMON }, }, -- Vuu Puqu the Beguiler
         { nm = { 17363305, }, loot = { item = { 17414, 13837 }, droprate = xi.drop_rate.VERY_COMMON }, }, -- No'Mho Crimsonarmor
-        { nm = { 17350801, }, loot = { item = { 12342,       }, droprate = xi.drop_rate.RARE        }, }, -- Orcish Barricader
+        { nm = { 17350801, }, loot = { item = { 12342,       }, droprate = xi.drop_rate.UNCOMMON    }, }, -- Orcish Barricader
     },
     [3] = -- City Beginner Dungeons
     {
@@ -144,20 +144,21 @@ local function shuffleLootTable(seed)
 end
 
 xi.nmloot.addDrops = function(mob)
-    local newList = shuffleLootTable(GetServerVariable('[XISP]ServerSeed'))
-    local mobID   = mob:getID()
+    -- local newList = shuffleLootTable(GetServerVariable('[XISP]ServerSeed'))
+    -- local mobID   = mob:getID()
 
-    mob:setDropID(0) -- Wipe old drops
-
-    for _, group in pairs(newList) do
-        for _, data in pairs(group) do
-            if data.nm[1] == mobID  or data.nm[2] == mobID or data.nm[3] == mobID then
-                mob:addListener('ITEM_DROPS', 'ITEM_DROPS_NM', function(mobArg, loot)
-                    for _, item in pairs(data.loot.item) do
-                        loot:addItem(item, data.loot.droprate)
-                    end
-                end)
-            end
-        end
-    end
+    -- for _, group in pairs(newList) do
+    --     for _, data in pairs(group) do
+    --         if data.nm[1] == mobID  or data.nm[2] == mobID or data.nm[3] == mobID then
+    --             mob:addListener('ITEM_DROPS', 'ITEM_DROPS_NM', function(mobArg, loot)
+    --                 for _, item in pairs(data.loot.item) do
+    --                     print("Added: ", GetItemByID(item), "Droprate: ", data.loot.droprate)
+    --                     loot:addItem(item, data.loot.droprate)
+    --                     loot:addItem(1, 8)
+    --                 end
+    --                 print(loot)
+    --             end)
+    --         end
+    --     end
+    -- end
 end

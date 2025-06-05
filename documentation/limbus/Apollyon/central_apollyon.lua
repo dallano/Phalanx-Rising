@@ -64,17 +64,22 @@ content.loot =
         },
 
         {
-            quantity = 2,
+            quantity = 1,
             { item = xi.item.PIECE_OF_OMEGAS_EYE,        weight = xi.loot.weight.NORMAL },
-            { item = xi.item.SEGMENT_OF_OMEGAS_FORELEG,  weight = xi.loot.weight.LOW    },
-            { item = xi.item.SEGMENT_OF_OMEGAS_HIND_LEG, weight = xi.loot.weight.LOW    },
-            { item = xi.item.SEGMENT_OF_OMEGAS_TAIL,     weight = xi.loot.weight.LOW    },
+            { item = xi.item.SEGMENT_OF_OMEGAS_FORELEG,  weight = xi.loot.weight.NORMAL },
+            { item = xi.item.SEGMENT_OF_OMEGAS_HIND_LEG, weight = xi.loot.weight.NORMAL },
+            { item = xi.item.SEGMENT_OF_OMEGAS_TAIL,     weight = xi.loot.weight.NORMAL },
         },
 
         {
             { item = xi.item.NONE,                  weight = xi.loot.weight.EXTREMELY_HIGH },
             { item = xi.item.PIECE_OF_OMEGAS_HEART, weight = xi.loot.weight.NORMAL         },
         },
+
+        {
+            { item = xi.item.NONE, weight = xi.loot.weight.EXTREMELY_HIGH },
+            { item = 3216,         weight = xi.loot.weight.LOW            }, -- XISP Ardor Jewel (17%)
+        }
     },
 }
 

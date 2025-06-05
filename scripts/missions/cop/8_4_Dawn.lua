@@ -49,6 +49,9 @@ local missionOnEventFinish = function(player, csid, option, npc)
         mission:getVar(player, 'Status') == 8
     then
         mission:complete(player)
+        local item = xi.xisp.augmentItems[2][math.random(1, #xi.xisp.augmentItems[2])]
+                    player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, item)
+                    player:addItem(item, 1)
     end
 end
 

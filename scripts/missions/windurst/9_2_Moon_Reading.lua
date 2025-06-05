@@ -226,6 +226,10 @@ mission.sections =
                     -- See: https://ffxiclopedia.fandom.com/wiki/Moon_Reading
 
                     mission:complete(player)
+                    -- XISP
+                    local enchantmentItem = xi.xisp.augmentItems[3][math.random(1, #xi.xisp.augmentItems[3])]
+                    player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, enchantmentItem)
+                    player:addItem(enchantmentItem, 1)
                 end,
             },
         },

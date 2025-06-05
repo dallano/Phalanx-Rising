@@ -103,6 +103,9 @@ mission.sections =
 
                         if hasAllFragments(player) then
                             mission:complete(player)
+                            local item = xi.xisp.augmentItems[2][math.random(1, #xi.xisp.augmentItems[2])]
+                            player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, item)
+                            player:addItem(item, 1)
                             player:messageSpecial(behemothsDominionID.text.FOUND_ALL_FRAGS, xi.ki.LIGHTNING_FRAGMENT)
                         end
                     end

@@ -58,3 +58,28 @@ xi.xisp.sendMenu = function(player, menuID)
         playerArg:customMenu(menuID)
     end)
 end
+
+xi.xisp.createExData = function(val)
+    local exData = {}
+    if val ~= nil then
+        exData[0    ] = bit.band(val, 0x00FF)
+        exData[0 + 1] = bit.rshift(bit.band(val, 0xFF00), 8)
+    end
+
+    return exData
+end
+
+xi.xisp.getExData = function(item)
+    local data = item:getExData()
+    return (bit.lshift(data[0 + 1], 8) + data[0]) or 0
+end
+
+xi.xisp.setExData = function(item, val)
+    if item ~= nil then
+        local newData = xi.xisp.createExData(val)
+
+        if newData then
+            item:setExData(newData)
+        end
+    end
+end

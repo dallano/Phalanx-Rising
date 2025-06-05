@@ -161,6 +161,14 @@ void CLuaItem::delMod(uint16 modID, int16 power)
     PItem->addModifier(CModifier(mod, -power));
 }
 
+void CLuaItem::setAugment(uint8 slot, uint16 id, uint8 val)
+{
+    if (auto* PItem = static_cast<CItemEquipment*>(m_PLuaItem))
+    {
+        PItem->setAugment(slot, id, val);
+    }
+}
+
 auto CLuaItem::getAugment(uint8 slot) -> sol::table
 {
     auto* PItem = static_cast<CItemEquipment*>(m_PLuaItem);
@@ -396,6 +404,7 @@ void CLuaItem::Register()
     SOL_REGISTER("getMod", CLuaItem::getMod);
     SOL_REGISTER("addMod", CLuaItem::addMod);
     SOL_REGISTER("delMod", CLuaItem::delMod);
+    SOL_REGISTER("setAugment", CLuaItem::setAugment);
     SOL_REGISTER("getAugment", CLuaItem::getAugment);
     SOL_REGISTER("getSkillType", CLuaItem::getSkillType);
     SOL_REGISTER("getWeaponskillPoints", CLuaItem::getWeaponskillPoints);

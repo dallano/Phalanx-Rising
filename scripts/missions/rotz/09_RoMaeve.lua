@@ -52,6 +52,9 @@ mission.sections =
                     if option == 0 then
                         -- NOTE: Event should move player to 99.789, -7.086, -11.999, 126 (Norg)
                         mission:complete(player)
+                        local item = xi.xisp.augmentItems[2][math.random(1, #xi.xisp.augmentItems[2])]
+                        player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, item)
+                        player:addItem(item, 1)
                     end
                 end,
             },

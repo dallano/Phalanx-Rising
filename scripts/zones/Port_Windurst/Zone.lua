@@ -64,6 +64,9 @@ zoneObject.onInitialize = function(zone)
     local table = xi.xispal.palInfo[palJob]
     local look  = xi.xispal.generateModelID(xi.xispal.face[table.face], xi.xispal.race[table.race], xi.xispal.knightGearSets[table.job][0])
 
+    local pos = { x = 190, y = -12, z = 232, rotation = 51 }
+    xi.xispdragon.initNPC(zone, pos) -- XISP
+
     zone:insertDynamicEntity({
         objtype   = xi.objType.NPC,
         name      = table.name,

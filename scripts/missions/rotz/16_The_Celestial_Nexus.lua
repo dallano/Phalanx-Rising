@@ -34,6 +34,9 @@ mission.sections =
                 [32001] = function(player, csid, option, npc)
                     if player:getLocalVar('battlefieldWin') == xi.battlefield.id.CELESTIAL_NEXUS then
                         mission:complete(player)
+                        local item = xi.xisp.augmentItems[2][math.random(1, #xi.xisp.augmentItems[2])]
+                        player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, item)
+                        player:addItem(item, 1)
                     end
 
                     player:setPos(0.003, -18.897, 137.112, 64, xi.zone.HALL_OF_THE_GODS)

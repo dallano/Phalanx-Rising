@@ -114,6 +114,13 @@ end
 function CItem:delMod(modID, power)
 end
 
+---@param slot integer
+---@param id integer
+---@param val integer
+---@return nil
+function CItem:setAugment(slot, id, val)
+end
+
 ---@nodiscard
 ---@param slot integer
 ---@return table

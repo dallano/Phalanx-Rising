@@ -531,6 +531,11 @@ xi.dynamis.megaBossOnDeath = function(mob, player, optParams)
 
     player:addTitle(info.beatTitle)
 
+    -- XISP
+    local enchantmentItem = xi.xisp.augmentItems[3][math.random(1, #xi.xisp.augmentItems[3])]
+    player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, enchantmentItem)
+    player:addItem(enchantmentItem, 1)
+
     if not player:hasKeyItem(info.beatKI) then
         npcUtil.giveKeyItem(player, info.beatKI)
         player:setCharVar(info.beatVar, 1)

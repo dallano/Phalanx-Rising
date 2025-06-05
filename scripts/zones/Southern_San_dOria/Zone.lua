@@ -13,6 +13,10 @@ zoneObject.onInitialize = function(zone)
     xi.chocobo.initZone(zone)
     xi.chocoboGame.clearRecord(zone)
     xi.conquest.toggleRegionalNPCs(zone)
+
+    local pos = { x = 14.3, y = 2.1, z = 11.5, rotation = 83 }
+    xi.xispdragon.initNPC(zone, pos) -- XISP
+
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

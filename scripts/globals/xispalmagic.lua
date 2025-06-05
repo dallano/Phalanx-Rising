@@ -107,34 +107,30 @@ xi.xispal.black =
 {
     ELEMENTAL =
     {
-        [75] =
-        {
-
-        },
-        { spell = xi.magic.spell.THUNDER_IV,   hppThreshold = 0, lvl = { [xi.job.BLM] = 66,                   } },
-        { spell = xi.magic.spell.BLIZZARD_IV,  hppThreshold = 0, lvl = { [xi.job.BLM] = 64,                   } },
-        { spell = xi.magic.spell.FIRE_IV,      hppThreshold = 0, lvl = { [xi.job.BLM] = 62,                   } },
-        { spell = xi.magic.spell.AERO_IV,      hppThreshold = 0, lvl = { [xi.job.BLM] = 59,                   } },
-        { spell = xi.magic.spell.WATER_IV,     hppThreshold = 0, lvl = { [xi.job.BLM] = 55,                   } },
-        { spell = xi.magic.spell.STONE_IV,     hppThreshold = 0, lvl = { [xi.job.BLM] = 51,                   } },
-        { spell = xi.magic.spell.THUNDER_III,  hppThreshold = 0, lvl = { [xi.job.BLM] = 66, [xi.job.RDM] = 75 } },
-        { spell = xi.magic.spell.BLIZZARD_III, hppThreshold = 0, lvl = { [xi.job.BLM] = 64, [xi.job.RDM] = 73 } },
-        { spell = xi.magic.spell.FIRE_III,     hppThreshold = 0, lvl = { [xi.job.BLM] = 62, [xi.job.RDM] = 71 } },
-        { spell = xi.magic.spell.AERO_III,     hppThreshold = 0, lvl = { [xi.job.BLM] = 59, [xi.job.RDM] = 69 } },
-        { spell = xi.magic.spell.WATER_III,    hppThreshold = 0, lvl = { [xi.job.BLM] = 55, [xi.job.RDM] = 67 } },
-        { spell = xi.magic.spell.STONE_III,    hppThreshold = 0, lvl = { [xi.job.BLM] = 51, [xi.job.RDM] = 65 } },
-        { spell = xi.magic.spell.THUNDER_II,   hppThreshold = 0, lvl = { [xi.job.BLM] = 46, [xi.job.RDM] = 60 } },
-        { spell = xi.magic.spell.BLIZZARD_II,  hppThreshold = 0, lvl = { [xi.job.BLM] = 42, [xi.job.RDM] = 55 } },
-        { spell = xi.magic.spell.FIRE_II,      hppThreshold = 0, lvl = { [xi.job.BLM] = 38, [xi.job.RDM] = 50 } },
-        { spell = xi.magic.spell.AERO_II,      hppThreshold = 0, lvl = { [xi.job.BLM] = 34, [xi.job.RDM] = 45 } },
-        { spell = xi.magic.spell.WATER_II,     hppThreshold = 0, lvl = { [xi.job.BLM] = 30, [xi.job.RDM] = 40 } },
-        { spell = xi.magic.spell.STONE_II,     hppThreshold = 0, lvl = { [xi.job.BLM] = 26, [xi.job.RDM] = 35 } },
-        { spell = xi.magic.spell.THUNDER,      hppThreshold = 0, lvl = { [xi.job.BLM] = 22, [xi.job.RDM] = 30 } },
-        { spell = xi.magic.spell.BLIZZARD,     hppThreshold = 0, lvl = { [xi.job.BLM] = 17, [xi.job.RDM] = 25 } },
-        { spell = xi.magic.spell.FIRE,         hppThreshold = 0, lvl = { [xi.job.BLM] = 13, [xi.job.RDM] = 19 } },
-        { spell = xi.magic.spell.AERO,         hppThreshold = 0, lvl = { [xi.job.BLM] = 9,  [xi.job.RDM] = 14 } },
-        { spell = xi.magic.spell.WATER,        hppThreshold = 0, lvl = { [xi.job.BLM] = 5,  [xi.job.RDM] = 9  } },
-        { spell = xi.magic.spell.STONE,        hppThreshold = 0, lvl = { [xi.job.BLM] = 1,  [xi.job.RDM] = 4  } },
+        { spell = xi.magic.spell.THUNDER_IV,   hppThreshold = 40, lvl = { [xi.job.BLM] = 66, } },
+        { spell = xi.magic.spell.BLIZZARD_IV,  hppThreshold = 40, lvl = { [xi.job.BLM] = 64, } },
+        { spell = xi.magic.spell.FIRE_IV,      hppThreshold = 40, lvl = { [xi.job.BLM] = 62, } },
+        { spell = xi.magic.spell.AERO_IV,      hppThreshold = 40, lvl = { [xi.job.BLM] = 59, } },
+        { spell = xi.magic.spell.WATER_IV,     hppThreshold = 40, lvl = { [xi.job.BLM] = 55, } },
+        { spell = xi.magic.spell.STONE_IV,     hppThreshold = 40, lvl = { [xi.job.BLM] = 51, } },
+        { spell = xi.magic.spell.THUNDER_III,  hppThreshold = 30, lvl = { [xi.job.BLM] = 66, [xi.job.RDM] = 75 } },
+        { spell = xi.magic.spell.BLIZZARD_III, hppThreshold = 30, lvl = { [xi.job.BLM] = 64, [xi.job.RDM] = 73 } },
+        { spell = xi.magic.spell.FIRE_III,     hppThreshold = 30, lvl = { [xi.job.BLM] = 62, [xi.job.RDM] = 71 } },
+        { spell = xi.magic.spell.AERO_III,     hppThreshold = 30, lvl = { [xi.job.BLM] = 59, [xi.job.RDM] = 69 } },
+        { spell = xi.magic.spell.WATER_III,    hppThreshold = 30, lvl = { [xi.job.BLM] = 55, [xi.job.RDM] = 67 } },
+        { spell = xi.magic.spell.STONE_III,    hppThreshold = 30, lvl = { [xi.job.BLM] = 51, [xi.job.RDM] = 65 } },
+        { spell = xi.magic.spell.THUNDER_II,   hppThreshold = 20, lvl = { [xi.job.BLM] = 46, [xi.job.RDM] = 60 } },
+        { spell = xi.magic.spell.BLIZZARD_II,  hppThreshold = 20, lvl = { [xi.job.BLM] = 42, [xi.job.RDM] = 55 } },
+        { spell = xi.magic.spell.FIRE_II,      hppThreshold = 20, lvl = { [xi.job.BLM] = 38, [xi.job.RDM] = 50 } },
+        { spell = xi.magic.spell.AERO_II,      hppThreshold = 20, lvl = { [xi.job.BLM] = 34, [xi.job.RDM] = 45 } },
+        { spell = xi.magic.spell.WATER_II,     hppThreshold = 20, lvl = { [xi.job.BLM] = 30, [xi.job.RDM] = 40 } },
+        { spell = xi.magic.spell.STONE_II,     hppThreshold = 20, lvl = { [xi.job.BLM] = 26, [xi.job.RDM] = 35 } },
+        { spell = xi.magic.spell.THUNDER,      hppThreshold = 5,  lvl = { [xi.job.BLM] = 22, [xi.job.RDM] = 30 } },
+        { spell = xi.magic.spell.BLIZZARD,     hppThreshold = 5,  lvl = { [xi.job.BLM] = 17, [xi.job.RDM] = 25 } },
+        { spell = xi.magic.spell.FIRE,         hppThreshold = 5,  lvl = { [xi.job.BLM] = 13, [xi.job.RDM] = 19 } },
+        { spell = xi.magic.spell.AERO,         hppThreshold = 5,  lvl = { [xi.job.BLM] = 9,  [xi.job.RDM] = 14 } },
+        { spell = xi.magic.spell.WATER,        hppThreshold = 5,  lvl = { [xi.job.BLM] = 5,  [xi.job.RDM] = 9  } },
+        { spell = xi.magic.spell.STONE,        hppThreshold = 5,  lvl = { [xi.job.BLM] = 1,  [xi.job.RDM] = 4  } },
     },
 
     ENFEEBLE =
@@ -296,15 +292,6 @@ xi.xispal.checkNa = function(pal, party, job, lvl)
     end
 end
 
--- WIP until I'm able to figure out how to allow to change target flags
--- or alternatively write core to add a mob into a player's party (unlikely)
--- The best course of action is write core to create trust dynamic entities
--- that will allow us to insert the entity into the player's party.
--- This will ultimately be the best course of action.
-xi.xispal.checkRegen = function(pal, player, party, job, lvl)
-end
-
-
 xi.xispal.checkCure = function(pal, party, job, lvl)
     if xi.xispal.checkCast(pal) then
         return
@@ -352,17 +339,83 @@ xi.xispal.checkCure = function(pal, party, job, lvl)
 end
 
 
-xi.xispal.checkElemental = function(pal, job, lvl)
+xi.xispal.checkDrain = function(pal, target, lvl)
+    if xi.xispal.checkCast(pal) or pal:getLocalVar('drainRecast') > os.time() then
+        return
+    end
+
+    if
+        target and
+        not target:isUndead() and
+        pal:isEngaged() and
+        pal:getHPP() <= 95 and
+        lvl >= 12
+    then
+        pal:setLocalVar('drainRecast', os.time() + 60)
+        xi.xispal.castSpell(pal, 245, target, pal:getMainJob(), 0)
+    end
+end
+
+
+-- Logic:
+-- Each round to determine which spell to cast will do the following:
+-- First check if we can cast the spell or not, then next is to see the recommended
+-- HPP threshold in which we should be casting. We will then build a table until
+-- we have 6 or less spells, then cast one of the spells at random.
+xi.xispal.checkElemental = function(pal, player, job, lvl)
     if
         xi.xispal.checkCast(pal) or
-        pal:getTarget() == nil or
         (job == xi.job.RDM and pal:getMPP() < 60) or
-        (job == xi.job.BLM and pal:getMPP() < 40)
+        (job == xi.job.BLM and pal:getMPP() < 30) or
+        pal:getLocalVar('elementalRecast') > os.time()
     then
         return
     end
 
-    local spells = xi.xispal.black.ELEMENTAL
+    local target = nil
+
+    for _, member in pairs(xi.xispal.getParty(player)) do
+        if member:isEngaged() then
+            target = member:getTarget()
+        end
+    end
+
+    if target == nil then
+        return
+    end
+
+    local hpp       = target:getHPP()
+    local maxSpells = 6
+    local spells    = {}
+
+    for _, spell in pairs(xi.xispal.black.ELEMENTAL) do
+        local threshold = math.max(5, spell.hppThreshold - target:getMainLvl() / 10)
+        if #spells >= maxSpells then
+            break
+        else
+            if
+                spell.lvl[job] and lvl >= spell.lvl[job] and
+                hpp >= threshold
+            then
+                table.insert(spells, spell.spell)
+            end
+        end
+    end
+
+    local spellToCast = spells[math.random(1, #spells)]
+
+    if target and spellToCast then
+        local recast    = math.random(10, 15)
+        local extraTime = 5
+
+        if job == xi.job.RDM then
+            recast = math.random(30, 40)
+        end
+        -- pal:setLocalVar('elementalRecast', os.time() + recast) -- Don't cast enfeeb spells too frequently
+        xi.xispal.castSpell(pal, spellToCast, target, job, extraTime)
+        pal:setLocalVar('elementalRecast', os.time() + recast)
+        return
+    end
 end
 
 
@@ -385,7 +438,6 @@ xi.xispal.checkEnfeeble = function(pal, job, lvl)
     local enfeeb    = nil
 
     if table then
-        -- Red Mage + Black Mage enfeeble logic:
         if job == xi.job.RDM or job == xi.job.BLM then
             for _, spell in pairs(table) do
                 if
@@ -398,12 +450,12 @@ xi.xispal.checkEnfeeble = function(pal, job, lvl)
                     break
                 end
             end
-        -- Dark Knight absorb logic
-        else
+
+        elseif job == xi.job.DRK then
             for _, spell in pairs(table) do
                 if
                     pal:getLocalVar('spellRecast' .. spell.spell) < os.time() and
-                    lvl >= spell.lvl[job]
+                    spell.lvl[job] and lvl >= spell.lvl[job]
                 then
 
                     if -- Special case for absorb TP
@@ -422,14 +474,12 @@ xi.xispal.checkEnfeeble = function(pal, job, lvl)
                     end
                 end
             end
-    end
-
+        end
     end
 
     if target and enfeeb then
-        -- Only try each enfeeb every so often
         pal:setLocalVar('spellRecast' .. enfeeb, os.time() + math.random(15, 20) + specTime)
-        pal:setLocalVar('enfeebRecast', os.time() + 15) -- Don't cast enfeeb spells too frequently
+        pal:setLocalVar('enfeebRecast', os.time() + math.random(10, 15))
         xi.xispal.castSpell(pal, enfeeb, target, job, extraTime)
         return
     end
@@ -437,7 +487,7 @@ end
 
 
 xi.xispal.checkBuff = function(pal, party, job, lvl)
-    if xi.xispal.checkCast(pal) then
+    if xi.xispal.checkCast(pal) or pal:getLocalVar('buffTimer') > os.time() then
         return
     end
 
@@ -450,7 +500,8 @@ xi.xispal.checkBuff = function(pal, party, job, lvl)
     for _, member in pairs(party) do
         if -- Dump if a player is in need and we're a healer
             (member:getHPP() < 75 and job == xi.job.WHM) or
-            member:getHPP() < 40
+            member:getHPP() < 40 or
+            not member:isAlive()
         then
             return
         end
@@ -497,6 +548,7 @@ xi.xispal.checkBuff = function(pal, party, job, lvl)
 
     if target and buff then
         pal:setLocalVar('spellRecast' .. buff, os.time() + specTime)
+        pal:setLocalVar('buffTimer', os.time() + math.random(10, 20))
         xi.xispal.castSpell(pal, buff, target, job, extraTime)
         return
     end
@@ -507,6 +559,13 @@ xi.xispal.checkSongs = function(pal, party, job, lvl, player)
     if xi.xispal.checkCast(pal) then
         return
     end
+
+    -- Song tailored for player
+    if pal:getLocalVar('playerSong') < os.time() then
+        player:setLocalVar('playerSong', os.time() + 45)
+    end
+
+    -- Song tailored for party
 
 end
 
@@ -556,9 +615,10 @@ xi.xispal.checkMagic = function(pal, player)
         return
     end
 
-    local party = xi.xispal.getParty(player)
-    local job   = pal:getMainJob()
-    local lvl   = pal:getMainLvl()
+    local party  = xi.xispal.getParty(player)
+    local job    = pal:getMainJob()
+    local lvl    = pal:getMainLvl()
+    local target = pal:getTarget()
 
     table.insert(party, player) -- Don't forget to include the player
 
@@ -577,18 +637,20 @@ xi.xispal.checkMagic = function(pal, player)
         xi.xispal.checkEnfeeble(pal, job, lvl)
         xi.xispal.checkCure(pal, party, job, lvl)
         xi.xispal.checkNa(pal, party, job, lvl)
-        xi.xispal.checkElemental(pal, job, lvl)
+        xi.xispal.checkElemental(pal, player, job, lvl)
         return
 
     elseif job == xi.job.BLM then
         xi.xispal.checkEnfeeble(pal, job, lvl)
-        xi.xispal.checkElemental(pal, job, lvl)
+        xi.xispal.checkElemental(pal, player, job, lvl)
         xi.xispal.checkBuff(pal, party, job, lvl)
+        xi.xispal.checkDrain(pal, target, lvl)
         return
 
     elseif job == xi.job.DRK then
+        xi.xispal.checkDrain(pal, target, lvl)
         xi.xispal.checkEnfeeble(pal, job, lvl)
-        xi.xispal.checkElemental(pal, job, lvl)
+        xi.xispal.checkElemental(pal, player, job, lvl)
         return
 
     elseif job == xi.job.BRD then

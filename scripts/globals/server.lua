@@ -7,6 +7,7 @@ xi.server = xi.server or {}
 xi.server.onServerStart = function()
     xi.events.handler.checkSeasonalEvents()
     xi.xisp.setSeed() -- [XISP] Sets server seed used in random generation
+    xi.xispdragon.startTimer()
 end
 
 xi.server.onJSTMidnight = function()
@@ -14,6 +15,7 @@ xi.server.onJSTMidnight = function()
 end
 
 xi.server.onTimeServerTick = function()
+    xi.xispdragon.spawnHandler()
 end
 
 -- Message for use with SmallPacket0x04B

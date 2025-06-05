@@ -24,15 +24,15 @@ xi.xispal = xi.xispal or {}
 ---     HP_HEAL, CLEAR_MIND, MP_HEAL - Used in resting
 ----------------------------------------------------------------------------------------------------------------
 
-local BODY_OFFSET  = 0x1000
-local HANDS_OFFSET = 0x2000
-local LEGS_OFFSET  = 0x3000
-local FEET_OFFSET  = 0x4000
-local MAIN_OFFSET  = 0x5000
-local SUB_OFFSET   = 0x6000
-local RANGE_OFFSET = 0x7000
-
 xi.xispal.generateModelID = function(face, race, table)
+    local BODY_OFFSET  = 0x1000
+    local HANDS_OFFSET = 0x2000
+    local LEGS_OFFSET  = 0x3000
+    local FEET_OFFSET  = 0x4000
+    local MAIN_OFFSET  = 0x5000
+    local SUB_OFFSET   = 0x6000
+    local RANGE_OFFSET = 0x7000
+
     local modelID = "0x0100"
 
     -- Look
@@ -57,22 +57,39 @@ end
 
 -- Returns a table of IDs of all possible followers
 xi.xispal.getFollowers = function(player)
+    local squireID = player:getCharVar('[XISP]squireID')
+    local knightID = player:getCharVar('[XISP]knightID')
+    local mageID   = player:getCharVar('[XISP]mageID')
+    local chocoID  = player:getCharVar('[XISP]chocoID')
     local followers = {}
+    local follower
 
-    if player:getCharVar('[XISP]squireID') ~= 0 then
-        table.insert(followers, player:getCharVar('[XISP]squireID'))
+    if squireID ~= 0 then
+        follower = GetMobByID(squireID)
+        if follower and follower:isSpawned() then
+            table.insert(followers, squireID)
+        end
     end
 
-    if player:getCharVar('[XISP]knightID') ~= 0 then
-        table.insert(followers, player:getCharVar('[XISP]knightID'))
+    if knightID ~= 0 then
+        follower = GetMobByID(knightID)
+        if follower and follower:isSpawned() then
+            table.insert(followers, knightID)
+        end
     end
 
-    if player:getCharVar('[XISP]mageID') ~= 0 then
-        table.insert(followers, player:getCharVar('[XISP]mageID'))
+    if mageID ~= 0 then
+        follower = GetMobByID(mageID)
+        if follower and follower:isSpawned() then
+            table.insert(followers, mageID)
+        end
     end
 
-    if player:getCharVar('[XISP]chocoID') ~= 0 then
-        table.insert(followers, player:getCharVar('[XISP]chocoID'))
+    if chocoID ~= 0 then
+        follower = GetMobByID(chocoID)
+        if follower and follower:isSpawned() then
+            table.insert(followers, chocoID)
+        end
     end
 
     return followers
@@ -110,20 +127,33 @@ xi.xispal.removeMage = function(player)
     player:setCharVar('[XISP]mageJob', 0)
 end
 
--- Returns table of pals as entities. Disclude chocobo.
+-- Returns table of pals and player as entities. Disclude chocobo.
 xi.xispal.getParty = function(player)
+    local squireID = player:getCharVar('[XISP]squireID')
+    local knightID = player:getCharVar('[XISP]knightID')
+    local mageID   = player:getCharVar('[XISP]mageID')
     local party = {}
+    local member
 
-    if player:getCharVar('[XISP]squireID') ~= 0 then
-        table.insert(party, GetMobByID(player:getCharVar('[XISP]squireID')))
+    if squireID ~= 0 then
+        member = GetMobByID(squireID)
+        if member and member:isSpawned() then
+            table.insert(party, member)
+        end
     end
 
-    if player:getCharVar('[XISP]knightID') ~= 0 then
-        table.insert(party, GetMobByID(player:getCharVar('[XISP]knightID')))
+    if knightID ~= 0 then
+        member = GetMobByID(knightID)
+        if member and member:isSpawned() then
+            table.insert(party, member)
+        end
     end
 
-    if player:getCharVar('[XISP]mageID') ~= 0 then
-        table.insert(party, GetMobByID(player:getCharVar('[XISP]mageID')))
+    if mageID ~= 0 then
+        member = GetMobByID(mageID)
+        if member and member:isSpawned() then
+            table.insert(party, member)
+        end
     end
 
     return party
@@ -270,43 +300,42 @@ end
 
 xi.xispal.follow = function(pal, player)
     local followers = xi.xispal.getFollowers(player)
+    local leader = player
 
-    for followerIndex = #followers, 1, -1 do
-        if followers[followerIndex] > 0 then
-            local follower = GetMobByID(followers[followerIndex])
+    for followerIndex = #followers, 1, -1 do -- Loop through followers
+        local follower = GetMobByID(followers[followerIndex])
 
-            -- Only check for ourselves.
-            if follower and follower == pal then
-                local leader
+        if follower and follower == pal then -- Ensure we only arrange logic for ourselves
+            if followerIndex > 1 then -- if index == 1 then follow player
+                local newIndex = followerIndex
 
-                -- If this is the first follower, leader is the player
-                if followerIndex == 1 then
-                    leader = player
-                else
-                    leader = GetMobByID(followers[followerIndex - 1])
+                while newIndex > 1 do
+                    local newLeader = GetMobByID(followers[newIndex - 1])
 
-                    -- If the target is dead, nil or resting, fall back to player
-                    if leader then
-                        if
-                            not leader:isAlive() or
-                            leader:hasStatusEffect(xi.effect.HEALING) or
-                            leader:getCurrentAction() == xi.action.MAGIC_CASTING
-                        then
-                            leader = player
-                        end
+                    if -- See if new Leader is a good candidate as a leader
+                        newLeader and
+                        newLeader:isAlive() and
+                        not newLeader:hasStatusEffect(xi.effect.HEALING)
+                    then
+                        leader = newLeader
+                        newIndex = 1
+                    else
+                        newIndex = newIndex - 1
                     end
                 end
+            end
 
-                -- Don't pursue leader if we're healing. Will adjust if player goes above 15 yalms
-                if
-                    not follower:hasStatusEffect(xi.effect.HEALING) and
-                    follower:getCurrentAction() ~= xi.action.MAGIC_CASTING and
-                    leader
-                then
-                    follower:follow(leader, xi.followType.ROAM)
-                else
-                    follower:unfollow()
-                end
+            if follower:checkDistance(leader) > 40 then
+                local newPos = leader:getPos()
+                follower:setPos(newPos.x + math.random(-2, 2), newPos.y, newPos.z + math.random(-2, 2))
+                return
+            end
+
+            -- Don't pursue leader if we're healing. Will adjust if player goes above 15 yalms
+            if not follower:hasStatusEffect(xi.effect.HEALING) and follower:getCurrentAction() ~= xi.action.MAGIC_CASTING then
+                follower:follow(leader, xi.followType.ROAM)
+            else
+                follower:unfollow()
             end
         end
     end
@@ -319,14 +348,6 @@ xi.xispal.isCaster = function(pal)
     if not pal:isPC() then
         return (job == xi.job.WHM or job == xi.job.BLM or job == xi.job.SMN or job == xi.job.BRD or job == xi.job.NIN)
     end
-end
-
-
-xi.xispal.checkAbility = function(pal, player)
-end
-
-
-xi.xispal.checkWeaponSkill = function(pal, target, player)
 end
 
 
@@ -369,7 +390,7 @@ end
 xi.xispal.calculateStats = function(pal, race, job)
     local raceTable = xi.xispal.statInfo.RACE[race]
     local jobTable  = xi.xispal.statInfo.JOB[job]
-    local lvl = pal:getMainLvl()
+    local lvl       = pal:getMainLvl()
 
     local raceHP = raceTable.HPbase + ((lvl - 1) * raceTable.HPgrowth)
     local jobHP  = jobTable.HPbase + ((lvl - 1) * jobTable.HPbase)
@@ -378,7 +399,12 @@ xi.xispal.calculateStats = function(pal, race, job)
     local jobMP  = jobTable.MPbase + ((lvl - 1) * jobTable.MPbase)
 
     pal:setMaxHP(math.floor(raceHP + jobHP))
-    pal:setMaxMP(math.floor(raceMP + jobMP))
+
+    if jobTable.MPbase == 0 then
+        pal:setMaxMP(0)
+    else
+        pal:setMaxMP(math.floor(raceMP + jobMP))
+    end
 end
 
 
@@ -443,8 +469,8 @@ end
 
 xi.xispal.onMobSpawn = function(pal, player, race, job)
     pal:setLocalVar('[XISP]spellRecast', os.time() + math.random(7, 12))
-    xi.xispal.calculateStats(pal, race, job)
     pal:setMobLevel(player:getMainLvl())
+    pal:setRotation(player:getPos().rot + math.random(-5, 5))
 
     if xi.xispal.isCaster(pal) then
         pal:setBehavior(bit.bor(pal:getBehavior(), xi.behavior.STANDBACK))
@@ -455,12 +481,15 @@ xi.xispal.onMobSpawn = function(pal, player, race, job)
     pal:timer(400, function(palArg)
         player:sendEntityUpdateToPlayer(pal, xi.entityUpdate.ENTITY_SPAWN, xi.updateType.UPDATE_LOOK)
         palArg:setMobMod(xi.mobMod.DONT_ROAM_HOME, 1)
-        palArg:setMobMod(xi.mobMod.NO_DESPAWN, 1)
-        palArg:setMobMod(xi.mobMod.NO_REST, 1)
-        palArg:setMobMod(xi.mobMod.IDLE_DESPAWN, 9999)
         palArg:setMobMod(xi.mobMod.ROAM_DISTANCE, 0)
+        palArg:setMobMod(xi.mobMod.NO_DESPAWN, 1)
         palArg:setMobMod(xi.mobMod.ROAM_COOL, 0)
+        palArg:setMobMod(xi.mobMod.NO_REST, 1)
         palArg:setLocalVar('[XISP]isPal', 1)
+    end)
+
+    pal:timer(2000, function(palArg)
+        xi.xispal.calculateStats(palArg, race, job)
     end)
 end
 
@@ -469,10 +498,13 @@ xi.xispal.onMobRoam = function(pal, player)
     if player:isDead() then
         xi.xispal.raisePlayer(pal, player)
     else
+        local pos = pal:getPos()
+        pal:setSpawn(pos.x, pos.y, pos.z)
+
         if player then
             local anim = player:getAnimation()
 
-            if player:isEngaged() then
+            if player:isEngaged() and not xi.xispal.isCaster(pal) then
                 pal:setAnimation(0)
                 pal:updateEnmity(player:getTarget())
                 return
@@ -502,6 +534,10 @@ end
 
 
 xi.xispal.onMobEngage = function(pal, target, player)
+    if pal:hasPet() then
+        pal:updateEnmity(target)
+    end
+    target:updateClaim(player) -- Temporary fix
 end
 
 
@@ -516,13 +552,15 @@ xi.xispal.onMobFight = function(pal, target, player)
         return
     end
 
+    local job = pal:getMainJob()
+
     xi.xispal.checkMagic(pal, player)
-    xi.xispal.checkAbility(pal, player)
-    xi.xispal.checkWeaponSkill(pal, target, player)
+    xi.xispal.checkAbilities(pal, player, job)
+    xi.xispal.checkWeaponSkill(pal, target, player, job)
     xi.xispal.checkPet(pal, player)
 end
 
-
+-- No despawn handled in mob_pool
 xi.xispal.onMobDeath = function(pal, player)
     pal:setBehavior(bit.bor(pal:getBehavior(), xi.behavior.NO_DESPAWN))
 end

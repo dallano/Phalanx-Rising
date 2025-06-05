@@ -59,6 +59,9 @@ mission.sections =
                 [3002] = function(player, csid, option, npc)
                     player:messageSpecial(whitegateID.text.MEMBER_OF_SALAHEEMS_SENTINELS)
                     mission:complete(player)
+                    local item = xi.xisp.augmentItems[2][math.random(1, #xi.xisp.augmentItems[2])]
+                    player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, item)
+                    player:addItem(item, 1)
                     player:messageSpecial(whitegateID.text.ACCESS_TO_A_MOG_LOCKER)
                 end,
             },

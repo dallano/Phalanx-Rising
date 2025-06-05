@@ -114,6 +114,10 @@ mission.sections =
                 -- should inventory be full.  Set 'Flag' mission variable should this occur.
                 [782] = function(player, csid, option, npc)
                     mission:complete(player)
+                    -- XISP
+                    local enchantmentItem = xi.xisp.augmentItems[3][math.random(1, #xi.xisp.augmentItems[3])]
+                    player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, enchantmentItem)
+                    player:addItem(enchantmentItem, 1)
 
                     if not npcUtil.giveItem(player, xi.item.BASTOKAN_FLAG) then
                         mission:setVar(player, 'Flag', 1)

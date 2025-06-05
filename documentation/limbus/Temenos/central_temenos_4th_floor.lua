@@ -209,6 +209,11 @@ content.loot =
             { item = xi.item.NONE,                   weight = xi.loot.weight.EXTREMELY_HIGH },
             { item = xi.item.PIECE_OF_ULTIMAS_HEART, weight = xi.loot.weight.NORMAL         },
         },
+
+        {
+            { item = xi.item.NONE, weight = xi.loot.weight.EXTREMELY_HIGH },
+            { item = 3228,         weight = xi.loot.weight.LOW            }, -- XISP Voyage Jewel (17%)
+        }
     },
 }
 

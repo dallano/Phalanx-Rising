@@ -181,6 +181,10 @@ mission.sections =
                     local blockingOption = mission:getVar(player, 'Option')
 
                     if mission:complete(player) then
+                        -- XISP
+                        local enchantmentItem = xi.xisp.augmentItems[3][math.random(1, #xi.xisp.augmentItems[3])]
+                        player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, enchantmentItem)
+                        player:addItem(enchantmentItem, 1)
                         -- Cornelia has two options for which CS is displayed, depending on quest
                         -- completion.  This variable is cleared after viewing.
                         mission:setVar(player, 'Stage', 1)

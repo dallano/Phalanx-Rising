@@ -106,6 +106,9 @@ mission.sections =
 
                 [3078] = function(player, csid, option, npc)
                     if mission:complete(player) then
+                        local item = xi.xisp.augmentItems[2][math.random(1, #xi.xisp.augmentItems[2])]
+                        player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, item)
+                        player:addItem(item, 1)
                         player:setLocalVar('Mission[4][17]mustZone', 1)
                         player:setCharVar('Mission[4][17]Timer', VanadielUniqueDay() + 1)
                     end

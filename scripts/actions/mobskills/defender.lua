@@ -1,5 +1,5 @@
 -----------------------------------
--- Defender
+-- NAME_HERE
 -----------------------------------
 ---@type TMobSkill
 local mobskillObject = {}
@@ -9,8 +9,8 @@ mobskillObject.onMobSkillCheck = function(target, mob, skill)
 end
 
 mobskillObject.onMobWeaponSkill = function(target, mob, skill)
-    target:addEnmity(mob, 1, 1800)
-    skill:setMsg(xi.msg.basic.NONE)
+    skill:setMsg(xi.mobskills.mobBuffMove(mob, xi.effect.DEFENDER, 250, 0, 180))
+    return xi.effect.DEFENDER
 end
 
 return mobskillObject

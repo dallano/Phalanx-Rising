@@ -1,30 +1,8 @@
 xi = xi or {}
 xi.xispal = xi.xispal or {}
 
--- XISP pal variables --
--- squireID = ID of dynamic entity for squire
--- tankID   = ID of dynamic entity for tank
--- mageID   = ID of dynamic entity for mage
--- damageID = ID of dynamic entity of DD
--- chocoID  = ID of dynamic entity of Chocobo
-
--- palTimer1   = Used in mini quest for young squire
--- palItem     = ID of the item needed to progress the growing up of the squire
--- chatControl = Controller used to determine conversation when interacting with squire
-
--- squireProg = Progress tracker used to allow squire to grow up (7 indicates adult)
--- squireRace = Race of player squire (int value between 0-7)
--- squireFace = Face of player squire (int value between 0-31)
--- squireName = Name of player's squire (int value indexing a table of 0-15)
--- squireTier = Tier of squire's equipment. Can upgrade once per conquest and requires an extremely rare item at times
-
--- hasChocobo = Flag used in determining if player has turned in a chocobo egg
--- chocoGrow  = Progress tracker used to allow chocobo to grow up
--- chocoWait  = Timer used to allow players to only grow their choco once an in game day
-
--- Quests:
--- quest1Var = Tracker used in the quest for creating the player squire.
--- Second quest uses no tracker, but instead squireProg.
+-- Useful variables
+--- Mob->getMobMod(MOBMOD_WEAPON_BONUS)); // Add this mod to increase a mobs damage by a base amount
 
 xi.xispal.statInfo =
 {
@@ -59,6 +37,73 @@ xi.xispal.statInfo =
         [xi.job.DRG] = { HPbase = 7, HPgrowth = 16, MPbase = 0, MPgrowth = 0,  },
         [xi.job.SMN] = { HPbase = 3, HPgrowth = 10, MPbase = 6, MPgrowth = 16, },
     }
+}
+
+-- STR 79 -- Far too much
+-- DEX 63 -- Seems to balance
+-- AGI 57 -- Seemds to balance
+-- MND 70 -- Far over too much
+-- INT 64 -- Seems to balance (mages need boost)
+-- CHR -- Seems to balance
+
+-- ATT needs balance (Maybe halved?)
+-- ACC exactly balanced with no gear + full skill
+xi.xispal.modData =
+{
+    [xi.job.RDM] =
+    {
+        { xi.mod.STR, -20 },
+    },
+
+    [xi.job.WHM] =
+    {
+
+    },
+
+    [xi.job.BLM] =
+    {
+
+    },
+
+    [xi.job.BRD] =
+    {
+
+    },
+
+    [xi.job.SMN] =
+    {
+
+    },
+
+    [xi.job.BRD] =
+    {
+
+    },
+
+    [xi.job.DRG] =
+    {
+
+    },
+
+    [xi.job.PLD] =
+    {
+
+    },
+
+    [xi.job.DRK] =
+    {
+
+    },
+
+    [xi.job.SAM] =
+    {
+
+    },
+
+    [xi.job.THF] =
+    {
+
+    },
 }
 
 xi.xispal.squireName =

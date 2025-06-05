@@ -81,6 +81,10 @@ mission.sections =
                     if mission:complete(player) then
                         player:delKeyItem(xi.ki.SACRIFICIAL_CHAMBER_KEY)
 
+                        local item = xi.xisp.augmentItems[2][math.random(1, #xi.xisp.augmentItems[2])]
+                        player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, item)
+                        player:addItem(item, 1)
+
                         -- NOTE: RoV mission transition occurs if the player is on Cursed Temple following the completion
                         -- of this event.
                         if player:getCurrentMission(xi.mission.log_id.ROV) == xi.mission.id.rov.THE_CURSED_TEMPLE then

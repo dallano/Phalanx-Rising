@@ -69,6 +69,7 @@ public:
     void  addMod(uint16 modID, int16 power); // add mod to item (or add to a mod already applied on item)
     void  delMod(uint16 modID, int16 power); // remove power from mod
 
+    void setAugment(uint8 slot, uint16 id, uint8 val);
     auto getAugment(uint8 slot) -> sol::table; // get the augment id and power in slot
     // int32 setAugment(lua_State*);           // set the augment id and power in slot
 

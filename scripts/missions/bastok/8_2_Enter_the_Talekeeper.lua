@@ -119,6 +119,10 @@ mission.sections =
             {
                 [176] = function(player, csid, option, npc)
                     if mission:complete(player) then
+                        -- XISP
+                        local enchantmentItem = xi.xisp.augmentItems[3][math.random(1, #xi.xisp.augmentItems[3])]
+                        player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, enchantmentItem)
+                        player:addItem(enchantmentItem, 1)
                         player:delKeyItem(xi.ki.OLD_PIECE_OF_WOOD)
                     end
                 end,
