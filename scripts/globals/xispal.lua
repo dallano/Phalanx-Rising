@@ -301,6 +301,8 @@ end
 xi.xispal.follow = function(pal, player)
     local followers = xi.xispal.getFollowers(player)
     local leader = player
+    local spawn = player:getPos()
+    pal:setSpawn(spawn.x, spawn.y, spawn.z)
 
     for followerIndex = #followers, 1, -1 do -- Loop through followers
         local follower = GetMobByID(followers[followerIndex])

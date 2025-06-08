@@ -10,10 +10,18 @@ effectObject.onEffectGain = function(target, effect)
     -- TODO: This isn't quite right. The IDs we use for mounts vs what we use for power etc.
     -- seem to be off-by-one.
     if effect:getPower() < 2 then
-        target:changeMusic(4, 212)
+        if target:getLocalVar('inBattle') == 0 then
+            target:changeMusic(4, 212)
+        else
+            target:changeMusic(4, 247)
+        end
         target:setAnimation(xi.anim.CHOCOBO)
     else
-        target:changeMusic(4, 84)
+        if target:getLocalVar('inBattle') == 0 then
+            target:changeMusic(4, 84)
+        else
+            target:changeMusic(4, 247)
+        end
         target:setAnimation(xi.anim.MOUNT)
     end
 

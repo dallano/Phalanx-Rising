@@ -29397,7 +29397,6 @@ INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,1771,@COMMON);    -- Dragon Bon
 INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,867,@VCOMMON);    -- Dragon Scales
 INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,903,@VCOMMON);    -- Dragon Talon
 INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,1133,@VCOMMON);   -- Dragon Blood
-INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,11581,@UNCOMMON); -- Ire Torque
 -- Relic Armor Crafting Mats
 INSERT INTO `mob_droplist` VALUES (4001,1,1,250,4077,250); -- Moonbow Steel
 INSERT INTO `mob_droplist` VALUES (4001,1,1,250,4078,250); -- Moonbow Cloth
@@ -29429,6 +29428,35 @@ INSERT INTO `mob_droplist` VALUES (4001,1,6,250,3219,160); -- Wieldance Coin
 INSERT INTO `mob_droplist` VALUES (4001,1,6,250,3215,160); -- Ardor Coin
 INSERT INTO `mob_droplist` VALUES (4001,1,6,250,3211,160); -- Vision Coin
 INSERT INTO `mob_droplist` VALUES (4001,1,6,250,3337,200); -- Gold Meed
+
+-- Open World Battlegrounds
+-- Generic Mob
+-- Group 1: Level 2 Enchantments (2.5% Droprate)
+INSERT INTO `mob_droplist` VALUES (4002,1,1,25,3225,200); -- Balance Card
+INSERT INTO `mob_droplist` VALUES (4002,1,1,25,3229,200); -- Voyage Card
+INSERT INTO `mob_droplist` VALUES (4002,1,1,25,3217,200); -- Ardor Card
+INSERT INTO `mob_droplist` VALUES (4002,1,1,25,3213,200); -- Vision Card
+INSERT INTO `mob_droplist` VALUES (4002,1,1,25,3334,200); -- Silver Meed
+-- Group 2: Level 1 Enchantments (5% Droprate)
+INSERT INTO `mob_droplist` VALUES (4002,1,2,50,3222,250); -- Balance Stone
+INSERT INTO `mob_droplist` VALUES (4002,1,2,50,3226,250); -- Voyage Stone
+INSERT INTO `mob_droplist` VALUES (4002,1,2,50,3214,250); -- Ardor Stone
+INSERT INTO `mob_droplist` VALUES (4002,1,2,50,3333,250); -- Copper Meed
+
+-- NM
+-- Group 1: Level 2 Enchantments (85% Droprate)
+INSERT INTO `mob_droplist` VALUES (4003,1,1,850,3225,200); -- Balance Card
+INSERT INTO `mob_droplist` VALUES (4003,1,1,850,3229,200); -- Voyage Card
+INSERT INTO `mob_droplist` VALUES (4003,1,1,850,3217,200); -- Ardor Card
+INSERT INTO `mob_droplist` VALUES (4003,1,1,850,3213,200); -- Vision Card
+INSERT INTO `mob_droplist` VALUES (4003,1,1,850,3334,200); -- Silver Meed
+-- Group 2: Level 2 Enchantments (10% Droprate)
+INSERT INTO `mob_droplist` VALUES (40032,1,2,100,3225,200); -- Balance Card
+INSERT INTO `mob_droplist` VALUES (40032,1,2,100,3229,200); -- Voyage Card
+INSERT INTO `mob_droplist` VALUES (40032,1,2,100,3217,200); -- Ardor Card
+INSERT INTO `mob_droplist` VALUES (40032,1,2,100,3213,200); -- Vision Card
+INSERT INTO `mob_droplist` VALUES (40032,1,2,100,3334,200); -- Silver Meed
+
 
 /*!40000 ALTER TABLE `mob_droplist` ENABLE KEYS */;
 UNLOCK TABLES;

@@ -11,7 +11,8 @@ local vendorRegion  = xi.region.ZULKHEIM
 local vendorEvent   = 32756
 
 entity.onTrigger = function(player, npc)
-    xi.conquest.vendorOnTrigger(player, vendorRegion, vendorEvent)
+    xi.xispbattlegrounds.spawnCamp(player:getZone(), 0, player:getPos())
+    -- xi.conquest.vendorOnTrigger(player, vendorRegion, vendorEvent)
 end
 
 entity.onEventUpdate = function(player, csid, option, npc)

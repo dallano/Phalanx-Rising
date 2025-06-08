@@ -858,6 +858,7 @@ public:
     bool getUntargetable();
     void setIsAggroable(bool isAggroable);
     bool isAggroable();
+    void setAlwaysRender(bool alwaysRender);
 
     void setDelay(uint16 delay);
     void setDamage(uint16 damage);

@@ -925,7 +925,7 @@ void CZoneEntities::SpawnNPCs(CCharEntity* PChar)
             }
         };
 
-        if (isVisibleStatus && isInRange)
+        if ((isVisibleStatus && isInRange) || static_cast<CNpcEntity*>(PCurrentEntity)->m_alwaysRender)
         {
             tryAddToSpawnList();
         }

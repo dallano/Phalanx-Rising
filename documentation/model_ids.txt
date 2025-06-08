@@ -581,16 +581,16 @@ ID Number    Costume Name
 579    Skeleton 15
 580    Yagudo 1
 581    Yagudo 2
-582    Yagudo 3
-583    Yagudo 4
-584    Yagudo 5
+582    Yagudo 3 (Wand)
+583    Yagudo 4 (Cudgel)
+584    Yagudo 5 (Staff)
 585    Yagudo 6
 586    Yagudo 7
-587    Yagudo 8
+587    Yagudo 8 (Katana)
 588    Yagudo 9
 589    Yagudo 10
 590    Yagudo 11
-591    Yagudo 12
+591    Yagudo 12 (Dagger)
 592    Yagudo 13
 593    Yagudo 14
 594    Yagudo 15
@@ -598,7 +598,7 @@ ID Number    Costume Name
 596    Yagudo 17
 597    Yagudo 18
 598    Yagudo 17
-599    Yagudo 19
+599    Yagudo 19 (Great Katana)
 600    Yagudo 20
 601    Yagudo 21
 602    Yagudo 22
@@ -611,24 +611,24 @@ ID Number    Costume Name
 609    Jormungand
 610    Ouryu
 611    Vrtra
-612    Orc 1
-613    Orc 2
-614    Orc 3
-615    Orc 4
-616    Orc 5
+612    Orc 1 (Spear)
+613    Orc 2 (Dagger)
+614    Orc 3 (Axe)
+615    Orc 4 (Sword)
+616    Orc 5 (Axe)
 617    Orc 6
 618    Orc 7
 619    Orc 8
 620    Orc 9
-621    Orc 10
+621    Orc 10 (Staff)
 622    Orc 11
 623    Orc 12
-624    Orc 13
+624    Orc 13 (H2H)
 625    Orc 14
 626    Orc 15
 627    Orc 16
 628    Orc 17
-629    Orc 18
+629    Orc 18 (Sword and Shield)
 630    Orc 19
 631    Orc 20
 632    Orc 21
@@ -643,13 +643,13 @@ ID Number    Costume Name
 641
 642    Gigas(White+H2H)
 643    Gigas(Black)
-644    Quadav 1
+644    Quadav 1 (Axe)
 645    Quadav 2
-646    Quadav 3
-647    Quadav 4
+646    Quadav 3 (Sword and Shield)
+647    Quadav 4 (Greatsword)
 648    Quadav 5
 649    Quadav 6
-650    Quadav 7
+650    Quadav 7 (Dagger)
 651    Quadav 8
 652    Quadav 9
 653    Quadav 10
@@ -657,12 +657,12 @@ ID Number    Costume Name
 655    Quadav 12
 656    Quadav 13
 657    Quadav 14
-658    Quadav 15
+658    Quadav 15 (Knife)
 659    Quadav 16
 660    Quadav 17
-661    Quadav 18
+661    Quadav 18 (Staff)
 662    Quadav 19
-663    Quadav 20
+663    Quadav 20 (Hammer)
 664    Quadav 21
 665    Quadav 22
 666    Quadav 23

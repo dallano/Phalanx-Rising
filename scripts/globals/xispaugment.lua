@@ -51,7 +51,6 @@ xi.xisp.augments =
             { augmentID = 554, value = 2, name = "INT and MND +3" },
             { augmentID = 514, value = 2, name = "VIT +3", },
             { augmentID = 515, value = 2, name = "AGI +3", },
-            { augmentID = 518, value = 2, name = "CHR +3", },
         },
 
         [3229] = -- Magic Augments (Voyage)
@@ -61,7 +60,7 @@ xi.xisp.augments =
             { augmentID = 131, value = 0, name = "Magic Attack and Accuracy +2" },
             { augmentID = 53,  value = 0, name = "Spell Interruption Rate -1%" },
             { augmentID = 40,  value = 0, name = "Enmity -1" },
-            { augmentID = 82,  value = 14,name = "MP +15" },
+            { augmentID = 9,   value = 14,name = "MP +15" },
         },
 
         [3217] = -- Combat Augments (Ardor)
@@ -116,7 +115,6 @@ xi.xisp.augments =
             { augmentID = 554,  value = 4,  name = "INT and MND +5" },
             { augmentID = 514,  value = 4,  name = "VIT +5" },
             { augmentID = 515,  value = 4,  name = "AGI +5" },
-            { augmentID = 518,  value = 4,  name = "CHR +5" },
         },
 
         [3227] = -- Magic Augments (Voyage)
@@ -133,7 +131,7 @@ xi.xisp.augments =
             { augmentID = 329,  value = 1,  name = "Cure Potency +2%" },
             { augmentID = 141,  value = 1,  name = "Conserve MP +2" },
             { augmentID = 368,  value = 0,  name = "Phalanx +1" },
-            { augmentID = 82,   value = 29, name = "MP +30" },
+            { augmentID = 9,    value = 29, name = "MP +30" },
         },
 
         [3219] = -- Skill Augments (Wieldance)
@@ -192,19 +190,12 @@ xi.xisp.augments =
         {
             { augmentID = 1246, value = 1,  name = "Pet: Physical Damage Taken -2%" },
             { augmentID = 1247, value = 1,  name = "Pet: Magical Damage Taken -2%" },
-            { augmentID = 772,  value = 9,  name = "Lightning Resistance +10" },
+            { augmentID = 796,  value = 4,  name = "All Elemental Resistances +5", },
             { augmentID = 112,  value = 1,  name = "Pet: Damage Taken -2%" },
             { augmentID = 1264, value = 2,  name = "Meditate Duration +3" },
             { augmentID = 71,   value = 1,  name = "All Damage Taken -2%" },
-            { augmentID = 771,  value = 9,  name = "Earth Resistance +10" },
-            { augmentID = 773,  value = 9,  name = "Water Resistance +10" },
-            { augmentID = 774,  value = 9,  name = "Light Resistance +10" },
-            { augmentID = 768,  value = 9,  name = "Fire Resistance +10" },
-            { augmentID = 775,  value = 9,  name = "Dark Resistance +10" },
-            { augmentID = 770,  value = 9,  name = "Wind Resistance +10" },
             { augmentID = 320,  value = 1,  name = "Blood Pact Delay -2" },
             { augmentID = 328,  value = 0,  name = "Critical Damage +1%" },
-            { augmentID = 769,  value = 9,  name = "Ice Resistance +10" },
             { augmentID = 134,  value = 0,  name = "Magic Defense +1" },
             { augmentID = 363,  value = 1,  name = "Block Chance +2" },
             { augmentID = 17,   value = 14, name = "HP and MP +15" },
@@ -401,7 +392,7 @@ dialogue1 =
         "Let's do it!",
         function(playerArg)
             local ID = zones[playerArg:getZoneID()]
-            playerArg:printToPlayer("Hold onto your hats...", xi.msg.channel.NS_SAY, "")
+            playerArg:printToPlayer("Hold onto your hats...", xi.msg.channel.SAY, "Wiseman")
 
             playerArg:timer(2000, function(playerArg1)
                 playerArg1:independentAnimation(playerArg1, 248, 4)
@@ -444,7 +435,7 @@ dialogue2 =
         "Yes, please.",
         function(playerArg)
             local ID = zones[playerArg:getZoneID()]
-            playerArg:printToPlayer("Very well. Here you are.", xi.msg.channel.NS_SAY, "")
+            playerArg:printToPlayer("Very well. Here you are.", xi.msg.channel.SAY, "Wiseman")
 
             local item         = playerArg:getCharVar('[XISP]storedAugment')
             local itemToDelete = playerArg:getCharVar('[XISP]itemToDelete')
@@ -540,7 +531,7 @@ xi.xisp.onAugmentTrade = function(player, npc, trade)
     local augmentItem = player:getCharVar('[XISP]storedAugment')
     local item   = GetItemByID(trade:getItemId())
 
-    if item == nil then
+    if item == nil or trade:getItemCount() > 1 then
         return
     end
 
@@ -667,7 +658,12 @@ xi.xisp.onAugmentTrade = function(player, npc, trade)
 end
 
 xi.xisp.onAugmentTrigger = function(player, npc)
+    if npc:getLocalVar('dialogueLock') == 1 then
+        return
+    end
+
     local item = player:getCharVar('[XISP]storedAugment')
+
     if item ~= 0 then
         local itemName = GetItemByID(item):getName()
         itemName = itemName:gsub("%_", " ")
@@ -676,5 +672,19 @@ xi.xisp.onAugmentTrigger = function(player, npc)
         player:printToPlayer("Hello adventurer. Is this about your " .. itemName .. "?", 0, npc:getPacketName())
         menu3.options = dialogue3
         xi.xisp.sendMenu(player, menu3)
+    else
+        if npc:getLocalVar('introduction') == 1 then
+            player:printToPlayer("Ah, if it isn't my favorite meddler of metal and magic! What'll it be today? Need something enchanted, hmmm?", 0, npc:getPacketName())
+        else
+            npc:setLocalVar('dialogueLock', 1)
+            player:printToPlayer("Ho ho! Well now, what's this? A fresh face with a good head on their shoulders! Welcome, welcome!", 0, npc:getPacketName())
+            player:printToPlayer("The name's Orin, but people know me as the Wiseman. Spent my younger days enchanting blades for the Royal Knights.", 0, npc:getPacketName())
+            player:timer(8000, function(playerArg)
+                playerArg:printToPlayer("These days, I keep it simple. Helping adventurers like yourself bring a bit of magic into their gear", 0, npc:getPacketName())
+                playerArg:printToPlayer("Enchantments, augments, and to occasional curious trinket. If it glows, I know how to make it glow brighter!", 0, npc:getPacketName())
+                npc:setLocalVar('dialogueLock', 0)
+                npc:setLocalVar('introduction', 1)
+            end)
+        end
     end
 end

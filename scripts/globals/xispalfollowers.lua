@@ -400,7 +400,7 @@ xi.xispal.spawnAvatar = function(pal, player)
             avatar:setMobMod(xi.mobMod.SKILL_LIST, summon.skillID)
             avatar:setMod(xi.mod.REGAIN, 100) -- Could use rebalancing
 
-            avatar:timer(2000, function(avatarArg)
+            avatar:timer(5000, function(avatarArg)
                 avatarArg:setTP(3000) -- Use ability right out of the gates
             end)
 

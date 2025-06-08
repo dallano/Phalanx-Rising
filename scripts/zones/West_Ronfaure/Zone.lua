@@ -11,6 +11,7 @@ zoneObject.onInitialize = function(zone)
     zone:registerCylindricalTriggerArea(1, -135.60, 264.53, 8)
 
     xi.conquest.setRegionalConquestOverseers(zone:getRegionID())
+    xi.xispbg.spawnNPC(zone, { x = -409.7, y = -46.7, z = 342.26, rotation = 66 })
 end
 
 zoneObject.onZoneIn = function(player, prevZone)
@@ -27,6 +28,8 @@ zoneObject.onZoneIn = function(player, prevZone)
     if quests.rainbow.onZoneIn(player) then
         cs = 51
     end
+
+    xi.xispbg.resetZone(player)
 
     return cs
 end

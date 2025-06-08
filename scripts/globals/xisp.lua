@@ -1,6 +1,23 @@
 xi = xi or {}
 xi.xisp = xi.xisp or {}
 
+-- Dev notes:
+-- Zones that could be fun to work with:
+--- Resenjima (291) (292 boss fight)
+--- 298 another boss fight zone
+--- 273: fun trial zone
+
+xi.xisp.weight =
+{
+    ULTRARARE   = 2,
+    VERYRARE    = 10,
+    RARE        = 30,
+    UNCOMMON    = 50,
+    COMMON      = 70,
+    VERYCOMMON  = 100,
+    SUPERCOMMON = 140,
+}
+
 xi.xisp.seed_random = function(initial_seed)
     local seed = initial_seed
     local available = {}
@@ -82,4 +99,26 @@ xi.xisp.setExData = function(item, val)
             item:setExData(newData)
         end
     end
+end
+
+xi.xisp.getPointAroundLoc = function(pos, min, max)
+    local random = math.random(1, 4)
+    local posX
+    local posZ
+
+    if random == 1 then
+        posX = pos.x + math.random(min, max)
+        posZ = pos.z + math.random(min, max)
+    elseif random == 2 then
+        posX = pos.x + math.random(min, max)
+        posZ = pos.z - math.random(min, max)
+    elseif random == 3 then
+        posX = pos.x - math.random(min, max)
+        posZ = pos.z + math.random(min, max)
+    else
+        posX = pos.x - math.random(min, max)
+        posZ = pos.z - math.random(min, max)
+    end
+
+    return posX, posZ
 end

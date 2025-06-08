@@ -11,6 +11,7 @@ zoneObject.onInitialize = function(zone)
 
     xi.helm.initZone(zone, xi.helmType.HARVESTING)
     xi.voidwalker.zoneOnInit(zone)
+    xi.xispbg.spawnNPC(zone, { x = -1.19, y = -13.2, z = 339.69, rotation = 154 })
 end
 
 zoneObject.onZoneIn = function(player, prevZone)
@@ -37,6 +38,8 @@ zoneObject.onZoneIn = function(player, prevZone)
     then
         cs = 63
     end
+
+    xi.xispbg.resetZone(player)
 
     return cs
 end

@@ -13421,8 +13421,17 @@ INSERT INTO `mob_groups` VALUES (1002,20002,210,'[XISP]mage',0,128,0,0,0,1,75,1)
 INSERT INTO `mob_groups` VALUES (1003,7071,210,'[XISP]choco',0,128,0,0,0,1,75,1);
 INSERT INTO `mob_groups` VALUES (1004,5551,210,'[XISP]wyvern',0,128,0,0,0,1,75,1);
 INSERT INTO `mob_groups` VALUES (1005,2461,210,'[XISP]avatar',0,128,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (2000,1280,210,'[XISP]dragon40',0,128,4000,3000,0,45,50,1);
+INSERT INTO `mob_groups` VALUES (2000,584,210,'[XISP]dragon40',0,128,4000,3000,0,45,50,1);
 INSERT INTO `mob_groups` VALUES (2001,1280,210,'[XISP]dragon75',0,128,4001,8000,0,75,80,1);
+INSERT INTO `mob_groups` VALUES (2002,20000,210,'[XISP]sandoriaSoldier',0,128,0,0,0,40,40,1);
+INSERT INTO `mob_groups` VALUES (2003,20000,210,'[XISP]bastokSoldier',0,128,0,0,0,40,40,1);
+INSERT INTO `mob_groups` VALUES (2004,20000,210,'[XISP]windurstSoldier',0,128,0,0,0,40,40,1);
+INSERT INTO `mob_groups` VALUES (2005,4477,210,'[XISP]quadav',0,128,4002,0,0,75,80,1);
+INSERT INTO `mob_groups` VALUES (2006,3013,210,'[XISP]orc',0,128,4002,0,0,75,80,1);
+INSERT INTO `mob_groups` VALUES (2007,4459,210,'[XISP]yagudo',0,128,4002,0,0,75,80,1);
+INSERT INTO `mob_groups` VALUES (2008,5774,210,'[XISP]quadavNM',0,128,4003,0,0,75,80,1);
+INSERT INTO `mob_groups` VALUES (2009,259,210,'[XISP]orcNM',0,128,4003,0,0,75,80,1);
+INSERT INTO `mob_groups` VALUES (2010,3298,210,'[XISP]yagudoNM',0,128,4003,0,0,75,80,1);
 
 -- ------------------------------------------------------------
 -- Cloister_of_Tides (Zone 211)

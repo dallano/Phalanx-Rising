@@ -17,6 +17,10 @@ mobskillObject.onMobWeaponSkill = function(target, mob, skill)
     local info = xi.mobskills.mobPhysicalMove(mob, target, skill, numhits, accmod, ftp, xi.mobskills.physicalTpBonus.NO_EFFECT, 0, 0, 0)
     local dmg = xi.mobskills.mobFinalAdjustments(info.dmg, mob, skill, target, xi.attackType.PHYSICAL, xi.damageType.SLASHING, info.hitslanded)
 
+    if mob:getLocalVar('isPal') then
+        target:lowerEnmity(mob, 50 + mob:getMod(xi.mod.HIGH_JUMP_ENMITY_REDUCTION))
+    end
+
     target:takeDamage(dmg, mob, xi.attackType.PHYSICAL, xi.damageType.SLASHING)
     return dmg
 end
