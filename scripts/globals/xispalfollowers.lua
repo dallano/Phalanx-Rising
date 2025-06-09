@@ -20,7 +20,6 @@ xi.xispal.spawnYoungSquire = function(player, zone)
 
     local pal = zone:insertDynamicEntity({
         objtype               = xi.objType.MOB,
-        -- allegiance            = xi.allegiance.PLAYER,
         name                  = xi.xispal.squireName[player:getCharVar('[XISP]squireName')],
         x                     = pos.x + 1,
         y                     = pos.y,
@@ -80,14 +79,13 @@ xi.xispal.spawnChocobo = function(player, zone)
 
     local choco = zone:insertDynamicEntity({
         objtype               = xi.objType.MOB,
-        allegiance            = xi.allegiance.PLAYER,
         name                  = name,
         x                     = pos.x,
         y                     = pos.y,
         z                     = pos.z + 1,
         rotation              = 0 + math.random(0, 360),
         look                  = look,
-        groupId               = 1003,
+        groupId               = 1016,
         groupZoneId           = xi.zone.GM_HOME,
         releaseIdOnDisappear  = true,
 
@@ -97,6 +95,7 @@ xi.xispal.spawnChocobo = function(player, zone)
 
         onMobSpawn = function(choco)
             xi.xispal.onMobSpawn(choco, player, 1, 1)
+            choco:setStatus(xi.status.NORMAL)
             choco:setAutoAttackEnabled(false)
             choco:setUnkillable(true)
         end,
@@ -149,7 +148,7 @@ xi.xispal.spawnSquire = function(player, zone)
         z                     = pos.z + 1,
         rotation              = pos.rotation,
         look                  = look,
-        groupId               = 1000,
+        groupId               = xi.xispal.groupID[race],
         groupZoneId           = xi.zone.GM_HOME,
         releaseIdOnDisappear  = true,
 
@@ -157,6 +156,7 @@ xi.xispal.spawnSquire = function(player, zone)
             pal:setLocalVar('spawnTime', os.time())
             xi.xispal.onMobSpawn(pal, player, race, pal:getMainJob())
             player:setCharVar('[XISP]squireIdleChat', os.time() + math.random(25, 45))
+            pal:setLocalVar('isSquire', 1)
         end,
 
         onMobRoam = function(pal)
@@ -173,6 +173,7 @@ xi.xispal.spawnSquire = function(player, zone)
         end,
 
         onMobDeath = function(pal, player, optParams)
+            xi.xispal.onMobDeath(pal, player)
         end,
 
         onbMobDespawn = function(pal)
@@ -213,13 +214,14 @@ xi.xispal.spawnKnight = function(player, zone)
         z                     = pos.z + 1,
         rotation              = pos.rotation,
         look                  = look,
-        groupId               = 1000,
+        groupId               = table.groupID,
         groupZoneId           = xi.zone.GM_HOME,
         releaseIdOnDisappear  = true,
 
         onMobSpawn = function(pal)
             pal:changeJob(table.job)
             xi.xispal.onMobSpawn(pal, player, table.race, table.job)
+            pal:setLocalVar('isKnight', 1)
         end,
 
         onMobRoam = function(pal)
@@ -263,7 +265,7 @@ xi.xispal.spawnMage = function(player, zone)
         z                     = pos.z - 1,
         rotation              = pos.rotation,
         look                  = look,
-        groupId               = 1000,
+        groupId               = table.groupID,
         groupZoneId           = xi.zone.GM_HOME,
         releaseIdOnDisappear  = true,
 
@@ -271,6 +273,7 @@ xi.xispal.spawnMage = function(player, zone)
             pal:changeJob(table.job)
             xi.xispal.onMobSpawn(pal, player, table.race, table.job)
             pal:setAutoAttackEnabled(false)
+            pal:setLocalVar('isMage', 1)
         end,
 
         onMobRoam = function(pal)
@@ -299,13 +302,14 @@ xi.xispal.spawnWyvern = function(pal)
     local zone = pal:getZone()
     local pos  = pal:getPos()
 
-    local healingBreath = function(wyvern, master)
+    local healingBreath = function(wyvern)
         local master = wyvern:getMaster()
         local lvl    = master:getMainLvl()
+        local hpp    = master:getHPP()
         local skill  = 621 -- Healing Breath
         local healAmount = 80
 
-        if master and master:getHPP() < 50 and wyvern:getLocalVar('breathCooldown') < os.time() then
+        if master and master:isAlive() and hpp < 50 and wyvern:getLocalVar('breathCooldown') < os.time() then
             wyvern:setLocalVar('breathCooldown', os.time() + 20)
 
             if lvl >= 40 then
@@ -332,12 +336,12 @@ xi.xispal.spawnWyvern = function(pal)
         z                     = pos.z - 1,
         rotation              = pos.rotation,
         look                  = 761,
-        groupId               = 1004,
+        groupId               = 1016,
         groupZoneId           = xi.zone.GM_HOME,
         releaseIdOnDisappear  = true,
 
         onMobSpawn = function(wyvern)
-            wyvern:setStatus(xi.status.NORMAL)
+            wyvern:setMobLevel(wyvern:getMaster():getMainLvl() - 2)
         end,
 
         onMobRoam = function(wyvern)
@@ -389,7 +393,7 @@ xi.xispal.spawnAvatar = function(pal, player)
         z                     = pos.z + math.random(1, 2),
         rotation              = pos.rotation,
         look                  = summon.look,
-        groupId               = 1005,
+        groupId               = 1015,
         groupZoneId           = xi.zone.GM_HOME,
         releaseIdOnDisappear  = true,
         specialSpawnAnimation = true,

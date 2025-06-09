@@ -29397,17 +29397,17 @@ INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,1771,@COMMON);    -- Dragon Bon
 INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,867,@VCOMMON);    -- Dragon Scales
 INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,903,@VCOMMON);    -- Dragon Talon
 INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,1133,@VCOMMON);   -- Dragon Blood
+INSERT INTO `mob_droplist` VALUES (4001,0,0,1000,17721,@RARE);     -- Sanguine Sword
 -- Relic Armor Crafting Mats
-INSERT INTO `mob_droplist` VALUES (4001,1,1,250,4077,250); -- Moonbow Steel
-INSERT INTO `mob_droplist` VALUES (4001,1,1,250,4078,250); -- Moonbow Cloth
-INSERT INTO `mob_droplist` VALUES (4001,1,1,250,4079,250); -- Moonbow Leather
-INSERT INTO `mob_droplist` VALUES (4001,1,1,250,4080,250); -- Moonbow Urushi
+INSERT INTO `mob_droplist` VALUES (4001,1,1,100,4077,250); -- Moonbow Steel
+INSERT INTO `mob_droplist` VALUES (4001,1,1,100,4078,250); -- Moonbow Cloth
+INSERT INTO `mob_droplist` VALUES (4001,1,1,100,4079,250); -- Moonbow Leather
+INSERT INTO `mob_droplist` VALUES (4001,1,1,100,4080,250); -- Moonbow Urushi
 -- Group 12: Special Drops
-INSERT INTO `mob_droplist` VALUES (4001,1,2,75,11546,200); -- Aesir Mantle
-INSERT INTO `mob_droplist` VALUES (4001,1,2,75,11589,200); -- Aesir Torque
-INSERT INTO `mob_droplist` VALUES (4001,1,2,75,28425,200); -- Salire Belt
-INSERT INTO `mob_droplist` VALUES (4001,1,2,75,17721,200); -- Sanguine Sword
-INSERT INTO `mob_droplist` VALUES (4001,1,2,75,14577,200); -- Valhalla Breastplate
+INSERT INTO `mob_droplist` VALUES (4001,1,2,75,11546,250); -- Aesir Mantle
+INSERT INTO `mob_droplist` VALUES (4001,1,2,75,11589,250); -- Aesir Torque
+INSERT INTO `mob_droplist` VALUES (4001,1,2,75,28425,250); -- Salire Belt
+INSERT INTO `mob_droplist` VALUES (4001,1,2,75,16057,250); -- Aesir Ear Pendant
 -- Group 8: Crafting
 INSERT INTO `mob_droplist` VALUES (4000,1,3,100,658,500); -- Damascus Ingot
 INSERT INTO `mob_droplist` VALUES (4000,1,3,100,836,500); -- Damascene Cloth

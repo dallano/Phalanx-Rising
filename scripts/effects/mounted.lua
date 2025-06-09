@@ -31,6 +31,7 @@ effectObject.onEffectGain = function(target, effect)
         if hasChocobo > 0 then
             local choco = GetMobByID(hasChocobo)
             if choco then
+                target:setLocalVar('ridingOwnChoco', 1)
                 choco:setBehavior(bit.band(choco:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
                 DespawnMob(hasChocobo)
             end
@@ -50,12 +51,18 @@ effectObject.onEffectLose = function(target, effect)
     if target:isPC() then
         xi.chocoboGame.dismountChoco(target)
 
-        -- XISP
+        -- XISP ---------------------
+        if target:getLocalVar('ridingOwnChoco') == 1 then
+            target:setLocalVar('ridingOwnChoco', 0)
+            target:setCharVar('[XISP]chocoboTimer', os.time() + 300) -- 5 minutes
+        end
+
         target:timer(3000, function(targetArg)
             if target:getCharVar('[XISP]hasChocobo') == 1 then
                 xi.xispal.spawnChocobo(target, target:getZone())
             end
         end)
+        -- --------------------------
     end
 end
 

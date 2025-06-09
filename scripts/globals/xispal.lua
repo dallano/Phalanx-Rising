@@ -301,8 +301,6 @@ end
 xi.xispal.follow = function(pal, player)
     local followers = xi.xispal.getFollowers(player)
     local leader = player
-    local spawn = player:getPos()
-    pal:setSpawn(spawn.x, spawn.y, spawn.z)
 
     for followerIndex = #followers, 1, -1 do -- Loop through followers
         local follower = GetMobByID(followers[followerIndex])
@@ -428,6 +426,7 @@ xi.xispal.checkPet = function(pal, player)
             pal:getPet() == nil
         then
             pal:setLocalVar('petSummon', os.time() + 900)
+            if pal:getAnimation() ~= 0 then pal:setAnimation(0) end
             local wyvern = xi.xispal.spawnWyvern(pal)
 
             wyvern:setSpawn(pos.x + 1, pos.y, pos.z)
@@ -471,6 +470,7 @@ end
 
 xi.xispal.onMobSpawn = function(pal, player, race, job)
     pal:setLocalVar('[XISP]spellRecast', os.time() + math.random(7, 12))
+    pal:setLocalVar('[XISP]isPal', 1)
     pal:setMobLevel(player:getMainLvl())
     pal:setRotation(player:getPos().rot + math.random(-5, 5))
 
@@ -487,11 +487,12 @@ xi.xispal.onMobSpawn = function(pal, player, race, job)
         palArg:setMobMod(xi.mobMod.NO_DESPAWN, 1)
         palArg:setMobMod(xi.mobMod.ROAM_COOL, 0)
         palArg:setMobMod(xi.mobMod.NO_REST, 1)
-        palArg:setLocalVar('[XISP]isPal', 1)
     end)
 
     pal:timer(2000, function(palArg)
         xi.xispal.calculateStats(palArg, race, job)
+        palArg:setHP(palArg:getMaxHP())
+        palArg:setMP(palArg:getMaxHP())
     end)
 end
 
@@ -500,9 +501,6 @@ xi.xispal.onMobRoam = function(pal, player)
     if player:isDead() then
         xi.xispal.raisePlayer(pal, player)
     else
-        local pos = pal:getPos()
-        pal:setSpawn(pos.x, pos.y, pos.z)
-
         if player then
             local anim = player:getAnimation()
 
@@ -518,13 +516,13 @@ xi.xispal.onMobRoam = function(pal, player)
             end
 
             xi.xispal.rest(pal, player)
-            xi.xispal.follow(pal, player) -- Rest logic is needed in follow
+            xi.xispal.follow(pal, player) -- Rest logic is needed before follow
             xi.xispal.checkMagic(pal, player)
             xi.xispal.levelSync(pal, player)
             xi.xispal.checkPet(pal, player)
 
             if pal:getStatusEffect(xi.effect.HEALING) == nil then
-                if anim > 0 and anim ~= 33 then -- Resting is handled in xi.xispal.rest
+                if anim > 0 and anim ~= xi.animation.HEALING then
                     pal:setAnimation(anim)
                 else
                     pal:setAnimation(0)
@@ -536,10 +534,6 @@ end
 
 
 xi.xispal.onMobEngage = function(pal, target, player)
-    if pal:hasPet() then
-        pal:updateEnmity(target)
-    end
-    target:updateClaim(player) -- Temporary fix
 end
 
 
@@ -575,9 +569,9 @@ xi.xispal.onZone = function(player)
     player:timer(200, function(playerArg)
         local zone = playerArg:getZone()
         -- Spawn Chocobo
-        if playerArg:getCharVar('[XISP]hasChocobo') == 1 then
-            xi.xispal.spawnChocobo(playerArg, zone)
-        end
+        -- if playerArg:getCharVar('[XISP]hasChocobo') == 1 then
+        --     xi.xispal.spawnChocobo(playerArg, zone)
+        -- end
 
         -- Spawn Squire
         if playerArg:getCharVar('[XISP]quest1Var') >= 1 then
@@ -588,14 +582,14 @@ xi.xispal.onZone = function(player)
             end
         end
 
-        -- Spawn Knight
-        if playerArg:getCharVar('[XISP]hasKnight') >= 1 then
-            xi.xispal.spawnKnight(playerArg, zone)
-        end
+        -- -- Spawn Knight
+        -- if playerArg:getCharVar('[XISP]hasKnight') >= 1 then
+        --     xi.xispal.spawnKnight(playerArg, zone)
+        -- end
 
-        -- Spawn Mage
-        if playerArg:getCharVar('[XISP]hasMage') >= 1 then
-            xi.xispal.spawnMage(playerArg, zone)
-        end
+        -- -- Spawn Mage
+        -- if playerArg:getCharVar('[XISP]hasMage') >= 1 then
+        --     xi.xispal.spawnMage(playerArg, zone)
+        -- end
     end)
 end

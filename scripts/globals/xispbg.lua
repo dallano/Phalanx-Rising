@@ -164,8 +164,10 @@ xi.xispbg.spawnAlly = function(zone, pos, level)
         releaseIdOnDisappear  = true,
 
         onMobSpawn = function(ally)
+            if info.spellList > 0 then
+                ally:setSpellList(info.spellList)
+            end
             ally:setMobMod(xi.mobMod.SKILL_LIST, info.skillList)
-            ally:setMobMod(xi.mobMod.SPELL_LIST, info.spellList)
             ally:setLocalVar('[XISP]bgFlag', 1)
             ally:setMod(xi.mod.REGEN, 50)
             ally:changeJob(info.job)
@@ -200,12 +202,13 @@ xi.xispbg.spawnMobDeco = function(zone, pos, level)
         namevis               = false,
 
         onMobSpawn = function(mob)
-            mob:setMobMod(xi.mobMod.SKILL_LIST, info.skillList)
-            mob:setMobMod(xi.mobMod.SPELL_LIST, info.spellList)
-            mob:setLocalVar('[XISP]bgFlag', 1)
-            mob:setMod(xi.mod.REGEN, 300)
             mob:changeJob(info.job)
             mob:setMobLevel(level)
+
+            mob:setMobMod(xi.mobMod.SKILL_LIST, info.skillList)
+            mob:setSpellList(info.spellList)
+            mob:setLocalVar('[XISP]bgFlag', 1)
+            mob:setMod(xi.mod.REGEN, 300)
             mob:setUnkillable(true)
         end,
     })
@@ -232,13 +235,16 @@ xi.xispbg.generateMob = function(zone, pos, level)
 
         onMobSpawn = function(mob)
             local newLevel = level + math.random(1, 3)
-            mob:addStatusEffectEx(xi.effect.LEVEL_RESTRICTION, xi.effect.LEVEL_RESTRICTION, level, 0, 0, 0, 0, 0, xi.effectFlag.ON_ZONE + xi.effectFlag.CONFRONTATION)
-            mob:setMobMod(xi.mobMod.SKILL_LIST, info.skillList)
-            mob:setMobMod(xi.mobMod.SPELL_LIST, info.spellList)
-            mob:setMobMod(xi.mobMod.ROAM_DISTANCE, 10)
-            mob:setLocalVar('[XISP]bgFlag', 1)
+            -- Players will typically be solo / only with a squire at this point
+            if level == 15 then newLevel = level + math.random(-2, 0) end
             mob:setMobLevel(newLevel)
+
+            mob:addStatusEffectEx(xi.effect.LEVEL_RESTRICTION, xi.effect.LEVEL_RESTRICTION, level, 0, 0, 0, 0, 0, xi.effectFlag.ON_ZONE + xi.effectFlag.CONFRONTATION)
             mob:changeJob(info.job)
+            mob:setMobMod(xi.mobMod.SKILL_LIST, info.skillList)
+            mob:setMobMod(xi.mobMod.ROAM_DISTANCE, 10)
+            mob:setSpellList(info.spellList)
+            mob:setLocalVar('[XISP]bgFlag', 1)
         end,
     })
 
@@ -283,17 +289,18 @@ xi.xispbg.generateNM = function(zone, pos, level)
         releaseIdOnDisappear  = true,
 
         onMobSpawn = function(mob)
-            local newLevel = level + math.random(5, 7)
+            local newLevel = level + math.random(1, 3)
+            if level == 15 then newLevel = level - 2 end
             mob:addStatusEffectEx(xi.effect.LEVEL_RESTRICTION, xi.effect.LEVEL_RESTRICTION, level, 0, 0, 0, 0, 0, xi.effectFlag.ON_ZONE + xi.effectFlag.CONFRONTATION)
+            mob:setMobLevel(newLevel)
+            mob:changeJob(info.job)
             mob:setMobMod(xi.mobMod.EXP_BONUS, math.random(10, 15) * level)
             mob:setMobMod(xi.mobMod.SKILL_LIST, info.skillList)
-            mob:setMobMod(xi.mobMod.SPELL_LIST, info.spellList)
             mob:setMobMod(xi.mobMod.GIL_MIN, 10 * level)
             mob:setMobMod(xi.mobMod.GIL_MAX, 15 * level)
             mob:setMobMod(xi.mobMod.ROAM_DISTANCE, 5)
             mob:setLocalVar('[XISP]bgFlag', 1)
-            mob:setMobLevel(newLevel)
-            mob:changeJob(info.job)
+            mob:setSpellList(info.spellList)
         end,
     })
     mob:setSpawn(pos.x, pos.y, pos.z)
@@ -348,7 +355,8 @@ end
 
 
 xi.xispbg.initZone = function(player, npc)
-    if GetServerVariable('[XISP]battlefieldCooldown') < os.time() then
+    -- if GetServerVariable('[XISP]battlefieldCooldown') < os.time() then
+    if true then
         player:printToPlayer("Halt, adventurer! Shadows stir beyond the horizon, beastmen gather in force. Steel thy blade, for war is nearly upon us!", 0, npc:getPacketName())
         menu.options = dialogue
         xi.xisp.sendMenu(player, menu)
@@ -371,6 +379,13 @@ xi.xispbg.beginBattle = function(player)
     player:addStatusEffectEx(xi.effect.LEVEL_RESTRICTION, xi.effect.LEVEL_RESTRICTION, info.LEVEL, 0, 0, 0, 0, 0, xi.effectFlag.ON_ZONE + xi.effectFlag.CONFRONTATION)
     for _, member in pairs(xi.xispal.getParty(player)) do
         member:addStatusEffectEx(xi.effect.LEVEL_RESTRICTION, xi.effect.LEVEL_RESTRICTION, info.LEVEL, 0, 0, 0, 0, 0, xi.effectFlag.ON_ZONE + xi.effectFlag.CONFRONTATION)
+        member:timer(2000, function(memberArg)
+            memberArg:setMobMod(xi.mobMod.DONT_ROAM_HOME, 1) -- For some reason these get reset
+            memberArg:setMobMod(xi.mobMod.ROAM_DISTANCE, 0)
+            memberArg:setMobMod(xi.mobMod.NO_DESPAWN, 1)
+            memberArg:setMobMod(xi.mobMod.ROAM_COOL, 0)
+            memberArg:setMobMod(xi.mobMod.NO_REST, 1)
+        end)
     end
 
     -- Setup the decos + spawn mobs
@@ -422,6 +437,8 @@ end
 xi.xispbg.resetZone = function(player)
     player:timer(1000, function(playerArg)
         local zone = player:getZone()
+
+        zone:setLocalVar('[XISP]battlefieldInProgress', 0)
 
         for _, npc in pairs(zone:getNPCs()) do
             if npc:getLocalVar('[XISP]bgFlag') == 1 then

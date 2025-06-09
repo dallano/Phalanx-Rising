@@ -457,18 +457,23 @@ INSERT INTO `mob_family_system` VALUES (407,'Orc-Seed',106,'Orc',7,'Beastmen',1.
 INSERT INTO `mob_family_system` VALUES (408,'Quadav-Seed',116,'Quadav',7,'Beastmen',0.00,40,120,110,2,3,4,4,4,5,3,1,3,1,3,6.0,257,0);
 INSERT INTO `mob_family_system` VALUES (409,'Yagudo-Seed',151,'Yagudo',7,'Beastmen',0.00,40,85,120,2,2,3,3,4,5,3,1,3,1,3,3.0,257,0);
 INSERT INTO `mob_family_system` VALUES (410,'Goblin-Seed',77,'Goblin',7,'Beastmen',0.00,40,91,120,1,3,5,3,4,4,4,1,3,1,3,1.0,257,0);
+INSERT INTO `mob_family_system` VALUES (411,'Pet-Siren',16,'Siren',5,'Avatar',0.00,40,100,120,3,3,3,3,3,3,3,1,3,1,3,0.0,41,0);
 INSERT INTO `mob_family_system` VALUES (435,'Giant_Gnat',75,'Gnat',20,'Vermin',0.00,40,90,120,4,1,4,2,3,6,6,1,3,1,3,8.0,1,0);
 INSERT INTO `mob_family_system` VALUES (436,'Gnat-Bloodlapper',75,'Gnat',20,'Vermin',0.00,40,90,120,4,1,4,2,3,6,6,1,3,1,3,8.0,1,0);
 INSERT INTO `mob_family_system` VALUES (437,'Sapling-Ghillie_Dhu',127,'Sapling',17,'Plantoid',0.00,40,90,120,4,4,3,4,4,4,5,1,3,1,3,4.0,1,0);
 INSERT INTO `mob_family_system` VALUES (438,'Lizard-Highlander',60,'Lizard',14,'Lizard',1.00,40,108,120,4,3,5,4,4,4,4,1,3,1,3,1.0,2,0);
+-- XISP -------------------------------------
+INSERT INTO `mob_family_system` VALUES (439,'Pal-Hume',86,'Humanoid',13,'Humanoid',    0.00,60,55, 55,4,4,4,4,4,4,3,1,3,1,3,0.0,1,0);
+INSERT INTO `mob_family_system` VALUES (440,'Pal-Elvaan',86,'Humanoid',13,'Humanoid',  0.00,60,65,35, 2,5,3,6,6,2,4,1,3,1,3,0.0,1,0);
+INSERT INTO `mob_family_system` VALUES (441,'Pal-Tarutaru',86,'Humanoid',13,'Humanoid',0.00,60,40, 60,6,4,5,3,1,5,4,1,3,1,3,0.0,1,0);
+INSERT INTO `mob_family_system` VALUES (442,'Pal-Galka',86,'Humanoid',13,'Humanoid',   0.00,60,70,40, 3,4,1,5,5,4,6,1,3,1,3,0.0,1,0);
+INSERT INTO `mob_family_system` VALUES (443,'Pal-Mithra',86,'Humanoid',13,'Humanoid',  0.00,60,55, 55,5,1,5,2,4,5,6,1,3,1,3,0.0,1,0);
+---------------------------------------------
 INSERT INTO `mob_family_system` VALUES (444,'Larzos',68,'Shadow',13,'Humanoid',0.00,40,90,110,4,3,4,4,3,3,3,1,3,1,3,0.0,1,0);
 INSERT INTO `mob_family_system` VALUES (445,'Portia',68,'Shadow',13,'Humanoid',0.00,40,90,110,4,3,4,4,3,3,3,1,3,1,3,0.0,1,0);
 INSERT INTO `mob_family_system` VALUES (446,'Ragelise',68,'Shadow',13,'Humanoid',0.00,40,90,110,4,3,4,4,3,3,3,1,3,1,3,0.0,1,0);
 INSERT INTO `mob_family_system` VALUES (447,'Dullahan',166,'Dullahan',19,'Undead',0.00,40,70,140,6,3,6,3,1,5,4,1,3,1,3,2.0,6,0);
-
--- Per multiple sources, Flutterini are Twitherym that have grown exceptionally large and left their swarm
-INSERT INTO `mob_family_system` VALUES (448,'Fluturini',154,'Moth',20,'Vermin',0.00,40,92,90,1,3,4,3,6,6,5,1,3,1,3,3.0,1,0);
-
+INSERT INTO `mob_family_system` VALUES (448,'Fluturini',154,'Moth',20,'Vermin',0.00,40,92,90,1,3,4,3,6,6,5,1,3,1,3,3.0,1,0); -- Per multiple sources, Flutterini are Twitherym that have grown exceptionally large and left their swarm
 INSERT INTO `mob_family_system` VALUES (449,'Bahamut',149,'Wyrm',5,'Avatar',4.00,40,120,90,1,3,1,3,6,3,1,1,3,1,3,3.0,1,0);
 INSERT INTO `mob_family_system` VALUES (450,'Caturae',167,'Caturae',3,'Arcana',1.00,40,90,90,1,3,4,3,6,6,5,1,3,1,3,0.0,1,0);
 INSERT INTO `mob_family_system` VALUES (451,'Pteraketos',168,'Pteraketos',2,'Aquan',4.00,40,120,140,6,5,4,5,3,3,4,1,4,1,2,6.0,2,0);
@@ -531,9 +536,7 @@ INSERT INTO `mob_family_system` VALUES (505,'Fungi',0,'undefined',0,'Unclassifie
 INSERT INTO `mob_family_system` VALUES (506,'Meeble',189,'Meeble',7,'Beastmen',0.00,40,125,90,3,2,5,2,6,4,5,1,2,1,3,5.0,1,0);
 INSERT INTO `mob_family_system` VALUES (507,'Quasilumin',15,'Luminian',0,'Unclassified',1.00,25,100,100,5,5,5,5,5,5,5,5,5,5,5,0.0,2,0);
 
-INSERT INTO `mob_family_system` VALUES (411,'Pet-Siren',16,'Siren',5,'Avatar',0.00,40,100,120,3,3,3,3,3,3,3,1,3,1,3,0.0,41,0);
-
--- Family IDs 10,22,50,96,317-318,405,412-434,439-443 available for use
+-- Family IDs 10,22,50,96,317-318,405,412-434, available for use
 
 /*!40000 ALTER TABLE `mob_family_system` ENABLE KEYS */;
 UNLOCK TABLES;

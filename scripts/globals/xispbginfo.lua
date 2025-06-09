@@ -12,7 +12,6 @@ xi.xispbg.lootTables =
         { CHANCE = 15, { 15642, 15638, 15626, 15630, 15634 }, }, -- Leg Armor (Lvl 15)
         { CHANCE = 15, { 15728, 15724, 15712, 15716, 15720 }, }, -- Feet Armor (Lvl 15)
         { CHANCE = 15, { 16101, 16097, 16085, 16089, 16093 }, }, -- Head Armor (Lvl 15)
-        { CHANCE = 10, { 3225, 3229, 3217, 3213, 3334 }, }, -- Level 2 Enchantments
     },
 
     [25] = -- Level 25
@@ -23,7 +22,6 @@ xi.xispbg.lootTables =
         { CHANCE = 15, { 15642, 15638, 15626, 15630, 15634 }, }, -- Leg Armor (Lvl 15)
         { CHANCE = 15, { 15728, 15724, 15712, 15716, 15720 }, }, -- Feet Armor (Lvl 15)
         { CHANCE = 15, { 16101, 16097, 16085, 16089, 16093 }, }, -- Head Armor (Lvl 15)
-        { CHANCE = 15, { 3225, 3229, 3217, 3213, 3334 }, }, -- Level 2 Enchantments
     },
 
     [35] = -- Level 35
@@ -110,10 +108,10 @@ xi.xispbg.zoneInfo =
         LEVEL = 15,
         MOBS =
         {
-            { look = 614, name = "Orcish Gorer",    groupID = 2006, spellList = 1, skillList = 189, job = xi.job.PLD },
+            { look = 614, name = "Orcish Gorer",    groupID = 2006, spellList = 4, skillList = 189, job = xi.job.PLD },
             { look = 621, name = "Orcish Scorcher", groupID = 2006, spellList = 2, skillList = 189, job = xi.job.BLM },
             { look = 612, name = "Orcish Fangman",  groupID = 2006, spellList = 0, skillList = 189, job = xi.job.DRG },
-            { look = 428, name = "Orcish Belcher",  groupID = 2006, spellList = 0, skillList = 190, job = xi.job.WAR },
+            { look = 624, name = "Orcish Belcher",  groupID = 2006, spellList = 0, skillList = 189, job = xi.job.MNK },
         },
         NMS =
         {

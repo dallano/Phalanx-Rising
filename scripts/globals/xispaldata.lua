@@ -52,57 +52,46 @@ xi.xispal.modData =
 {
     [xi.job.RDM] =
     {
-        { xi.mod.STR, -20 },
     },
 
     [xi.job.WHM] =
     {
-
     },
 
     [xi.job.BLM] =
     {
-
     },
 
     [xi.job.BRD] =
     {
-
     },
 
     [xi.job.SMN] =
     {
-
     },
 
     [xi.job.BRD] =
     {
-
     },
 
     [xi.job.DRG] =
     {
-
     },
 
     [xi.job.PLD] =
     {
-
     },
 
     [xi.job.DRK] =
     {
-
     },
 
     [xi.job.SAM] =
     {
-
     },
 
     [xi.job.THF] =
     {
-
     },
 }
 
@@ -225,12 +214,16 @@ xi.xispal.race =
     [xi.race.GALKA   ] = "08",
 }
 
-xi.xispal.char =
+xi.xispal.groupID =
 {
-    SQUIRE = 0,
-    MAGE   = 1,
-    TANK   = 2,
-    DAMAGE = 3,
+    [xi.race.HUME_M  ] = 1000,
+    [xi.race.HUME_F  ] = 1000,
+    [xi.race.ELVAAN_M] = 1001,
+    [xi.race.ELVAAN_F] = 1001,
+    [xi.race.TARU_M  ] = 1002,
+    [xi.race.TARU_F  ] = 1002,
+    [xi.race.MITHRA  ] = 1003,
+    [xi.race.GALKA   ] = 1004,
 }
 
 xi.xispal.chocoboColor =
@@ -319,6 +312,7 @@ xi.xispal.palInfo =
         job  = xi.job.DRG,
         zone = xi.zone.CHATEAU_DORAGUILLE,
         quest = { xi.questLog.SANDORIA, xi.quest.id.sandoria.THE_HOLY_CREST },
+        groupID = 1005,
     },
 
     [xi.job.THF] =
@@ -328,6 +322,7 @@ xi.xispal.palInfo =
         race = xi.race.MITHRA,
         job  = xi.job.THF,
         zone = xi.zone.PORT_WINDURST,
+        groupID = 1006,
     },
 
     [xi.job.SAM] =
@@ -338,6 +333,7 @@ xi.xispal.palInfo =
         job  = xi.job.SAM,
         zone = xi.zone.NORG,
         quest = { xi.questLog.OUTLANDS, xi.quest.id.outlands.FORGE_YOUR_DESTINY },
+        groupID = 1007,
     },
 
     [xi.job.DRK] =
@@ -348,6 +344,7 @@ xi.xispal.palInfo =
         job  = xi.job.DRK,
         zone = xi.zone.METALWORKS,
         quest = { xi.questLog.BASTOK, xi.quest.id.bastok.BLADE_OF_DARKNESS },
+        groupID = 1008,
     },
 
     [xi.job.PLD] =
@@ -358,6 +355,7 @@ xi.xispal.palInfo =
         job  = xi.job.PLD,
         zone = xi.zone.SOUTHERN_SAN_DORIA,
         quest = { xi.questLog.SANDORIA, xi.quest.id.sandoria.A_KNIGHTS_TEST },
+        groupID = 1009,
     },
 
     -- Mages
@@ -368,6 +366,7 @@ xi.xispal.palInfo =
         race = xi.race.HUME_F,
         job  = xi.job.WHM,
         zone = xi.zone.NORTHERN_SAN_DORIA,
+        groupID = 1010,
     },
 
     [xi.job.BLM] =
@@ -377,6 +376,7 @@ xi.xispal.palInfo =
         race = xi.race.TARU_M,
         job  = xi.job.BLM,
         zone = xi.zone.HEAVENS_TOWER,
+        groupID = 1011,
     },
 
     [xi.job.SMN] =
@@ -387,6 +387,7 @@ xi.xispal.palInfo =
         job  = xi.job.SMN,
         zone = xi.zone.WINDURST_WALLS,
         quest = { xi.questLog.WINDURST, xi.quest.id.windurst.I_CAN_HEAR_A_RAINBOW },
+        groupID = 1012,
     },
 
     [xi.job.BRD] =
@@ -397,6 +398,7 @@ xi.xispal.palInfo =
         job  = xi.job.BRD,
         zone = xi.zone.LOWER_JEUNO,
         quest = { xi.questLog.JEUNO, xi.quest.id.jeuno.PATH_OF_THE_BARD },
+        groupID = 1013,
     },
 
     [xi.job.NIN] =
@@ -407,6 +409,7 @@ xi.xispal.palInfo =
         job  = xi.job.NIN,
         zone = xi.zone.KAZHAM,
         quest = { xi.questLog.BASTOK, xi.quest.id.bastok.AYAME_AND_KAEDE },
+        groupID = 1014,
     },
 }
 

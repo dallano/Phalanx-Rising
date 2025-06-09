@@ -572,9 +572,13 @@ xi.xispal.chocoboTrigger = function(player, choco)
 
     if choco:getModelId() == 86 then -- Adult
         if #player:getNotorietyList() > 0 then
-            player:printToPlayer("You cannot mount your chocobo while in combat.", xi.msg.channel.SYSTEM_3, ' ')
+            player:printToPlayer("You cannot mount your chocobo while in combat.", xi.msg.channel.NS_SAY, ' ')
+            return
+        elseif player:getCharVar('[XISP]chocoboTimer') > os.time() then -- Timer set when getting off mount
+            player:printToPlayer("Your chocobo appears too tired to ride.", xi.msg.channel.NS_SAY, ' ')
             return
         end
+
         menu.options = dialogue
         xi.xisp.sendMenu(player, menu)
 

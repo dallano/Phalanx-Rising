@@ -13410,28 +13410,45 @@ INSERT INTO `mob_groups` VALUES (7,6954,209,'Titan_Prime_HTBF',0,128,0,0,0,99,99
 
 -- Garrison NPCs (1 per level cap). These are inserted dynamically. Only min/max level matters.
 -- Consider adding a dynamic entity spawn param for min / max level so we only need 1 base mob group.
-INSERT INTO `mob_groups` VALUES (1,7071,210,'Garrison_20',0,129,0,0,0,15,20,1);
-INSERT INTO `mob_groups` VALUES (2,7071,210,'Garrison_30',0,129,0,0,0,25,30,1);
-INSERT INTO `mob_groups` VALUES (3,7071,210,'Garrison_40',0,129,0,0,0,35,40,1);
-INSERT INTO `mob_groups` VALUES (4,7071,210,'Garrison_50',0,129,0,0,0,45,50,1);
-INSERT INTO `mob_groups` VALUES (5,7071,210,'Garrison_75',0,129,0,0,0,70,75,1);
-INSERT INTO `mob_groups` VALUES (1000,20000,210,'[XISP]squire',0,128,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1001,20001,210,'[XISP]knight',0,128,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1002,20002,210,'[XISP]mage',0,128,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1003,7071,210,'[XISP]choco',0,128,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1004,5551,210,'[XISP]wyvern',0,128,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (1005,2461,210,'[XISP]avatar',0,128,0,0,0,1,75,1);
-INSERT INTO `mob_groups` VALUES (2000,584,210,'[XISP]dragon40',0,128,4000,3000,0,45,50,1);
-INSERT INTO `mob_groups` VALUES (2001,1280,210,'[XISP]dragon75',0,128,4001,8000,0,75,80,1);
+INSERT INTO `mob_groups` VALUES (1,7071,210,'Garrison_20',0,128,0,0,0,15,20,1);
+INSERT INTO `mob_groups` VALUES (2,7071,210,'Garrison_30',0,128,0,0,0,25,30,1);
+INSERT INTO `mob_groups` VALUES (3,7071,210,'Garrison_40',0,128,0,0,0,35,40,1);
+INSERT INTO `mob_groups` VALUES (4,7071,210,'Garrison_50',0,128,0,0,0,45,50,1);
+INSERT INTO `mob_groups` VALUES (5,7071,210,'Garrison_75',0,128,0,0,0,70,75,1);
+
+-- XISP Section ----------
+-- Pal related
+INSERT INTO `mob_groups` VALUES (1000,20000,210,'[XISP]squire_hume',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1001,20001,210,'[XISP]squire_elvaan',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1002,20002,210,'[XISP]squire_taru',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1003,20003,210,'[XISP]squire_mithra',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1004,20004,210,'[XISP]squire_galka',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1005,20005,210,'[XISP]Emilien',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1006,20006,210,'[XISP]Ayala',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1007,20007,210,'[XISP]Yamagi',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1008,20008,210,'[XISP]Yaric',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1009,20009,210,'[XISP]Isolde',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1010,20010,210,'[XISP]Rilea',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1011,20011,210,'[XISP]Vivio',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1012,20012,210,'[XISP]Irving',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1013,20013,210,'[XISP]Thessa',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1014,20014,210,'[XISP]Umbria',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1015,20015,210,'[XISP]avatar',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1016,20016,210,'[XISP]wyvern',0,128,0,0,0,1,75,1);
+INSERT INTO `mob_groups` VALUES (1017,2462,210,'[XISP]chocobo',0,128,0,0,0,1,75,1);
+-- Open World Dragons
+INSERT INTO `mob_groups` VALUES (2000,584,210,'[XISP]dragon40',0,128,4000,3000,0,45,50,0);
+INSERT INTO `mob_groups` VALUES (2001,1280,210,'[XISP]dragon75',0,128,4001,8000,0,75,80,0);
+-- Open World Battlefields
 INSERT INTO `mob_groups` VALUES (2002,20000,210,'[XISP]sandoriaSoldier',0,128,0,0,0,40,40,1);
 INSERT INTO `mob_groups` VALUES (2003,20000,210,'[XISP]bastokSoldier',0,128,0,0,0,40,40,1);
 INSERT INTO `mob_groups` VALUES (2004,20000,210,'[XISP]windurstSoldier',0,128,0,0,0,40,40,1);
-INSERT INTO `mob_groups` VALUES (2005,4477,210,'[XISP]quadav',0,128,4002,0,0,75,80,1);
-INSERT INTO `mob_groups` VALUES (2006,3013,210,'[XISP]orc',0,128,4002,0,0,75,80,1);
-INSERT INTO `mob_groups` VALUES (2007,4459,210,'[XISP]yagudo',0,128,4002,0,0,75,80,1);
-INSERT INTO `mob_groups` VALUES (2008,5774,210,'[XISP]quadavNM',0,128,4003,0,0,75,80,1);
-INSERT INTO `mob_groups` VALUES (2009,259,210,'[XISP]orcNM',0,128,4003,0,0,75,80,1);
-INSERT INTO `mob_groups` VALUES (2010,3298,210,'[XISP]yagudoNM',0,128,4003,0,0,75,80,1);
+INSERT INTO `mob_groups` VALUES (2005,4477,210,'[XISP]quadav',0,128,4002,0,0,1,80,0);
+INSERT INTO `mob_groups` VALUES (2006,3013,210,'[XISP]orc',0,128,4002,0,0,1,80,0);
+INSERT INTO `mob_groups` VALUES (2007,4459,210,'[XISP]yagudo',0,128,4002,0,0,1,80,0);
+INSERT INTO `mob_groups` VALUES (2008,5774,210,'[XISP]quadavNM',0,128,4003,0,0,1,80,0);
+INSERT INTO `mob_groups` VALUES (2009,259,210,'[XISP]orcNM',0,128,4003,0,0,1,80,0);
+INSERT INTO `mob_groups` VALUES (2010,3298,210,'[XISP]yagudoNM',0,128,4003,0,0,1,80,0);
 
 -- ------------------------------------------------------------
 -- Cloister_of_Tides (Zone 211)

@@ -155,8 +155,6 @@ xi.xispal.black =
             { spell = xi.magic.spell.BLIND,     effect = xi.effect.BLINDNESS, immunity = xi.immunity.BLIND,    lvl = { [xi.job.RDM] = 5,  } },
             { spell = xi.magic.spell.POISON_II, effect = xi.effect.POISON,    immunity = xi.immunity.POISON,   lvl = { [xi.job.RDM] = 46, } },
             { spell = xi.magic.spell.POISON,    effect = xi.effect.POISON,    immunity = xi.immunity.POISON,   lvl = { [xi.job.RDM] = 8,  } },
-            { spell = xi.magic.spell.BIO_II,    effect = xi.effect.BIO,       immunity = xi.immunity.NONE,     lvl = { [xi.job.RDM] = 36, } },
-            { spell = xi.magic.spell.BIO,       effect = xi.effect.BIO,       immunity = xi.immunity.NONE,     lvl = { [xi.job.RDM] = 10, } },
             { spell = xi.magic.spell.DIA_II,    effect = xi.effect.DIA,       immunity = xi.immunity.NONE,     lvl = { [xi.job.RDM] = 31, } },
             { spell = xi.magic.spell.DIA,       effect = xi.effect.DIA,       immunity = xi.immunity.NONE,     lvl = { [xi.job.RDM] = 1,  } },
             { spell = xi.magic.spell.PARALYZE,  effect = xi.effect.PARALYSIS, immunity = xi.immunity.PARALYZE, lvl = { [xi.job.RDM] = 6,  } },
