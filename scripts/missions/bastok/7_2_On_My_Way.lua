@@ -102,7 +102,8 @@ mission.sections =
                 onTrigger = function(player, npc)
                     if
                         player:getMissionStatus(mission.areaId) == 3 and
-                        mission:getVar(player, 'Option') == 1
+                        mission:getVar(player, 'Option') == 1 and
+                        mission:getVar(player, 'GumbahDialog') == 1
                     then
                         return mission:progressEvent(177)
                     end
@@ -125,8 +126,13 @@ mission.sections =
 
             onEventFinish =
             {
+                [175] = function(player, csid, option, npc)
+                    mission:setVar(player, 'GumbahDialog', 1)
+                end,
+
                 [177] = function(player, csid, option, npc)
                     mission:setVar(player, 'Option', 0)
+                    player:delKeyItem(xi.ki.LETTER_FROM_WEREI)
                 end,
             },
         },
@@ -189,8 +195,8 @@ mission.sections =
                         -- completion.  This variable is cleared after viewing.
                         mission:setVar(player, 'Stage', 1)
 
-                        -- Gumbah dialogue is blocking before being able to progress.  If this wasn't
-                        -- completed, make sure this var persists.
+                        -- Gumbah dialogue is blocking before being able to progress.
+                        -- If this wasn't completed, make sure this var persists.
                         if blockingOption == 1 then
                             mission:setVar(player, 'Option', 1)
                         end
@@ -264,13 +270,28 @@ mission.sections =
 
         [xi.zone.BASTOK_MINES] =
         {
-            ['Gumbah'] = mission:progressEvent(177),
+            ['Gumbah'] =
+            {
+                onTrigger = function(player, npc)
+                    if mission:getVar(player, 'GumbahDialog') == 1 then
+                        return mission:progressEvent(177)
+                    else
+                        return mission:progressEvent(175)
+                    end
+                end,
+            },
+
             ['Rashid'] = mission:progressEvent(1011),
 
             onEventFinish =
             {
+                [175] = function(player, csid, option, npc)
+                    mission:setVar(player, 'GumbahDialog', 1)
+                end,
+
                 [177] = function(player, csid, option, npc)
                     mission:setVar(player, 'Option', 0)
+                    player:delKeyItem(xi.ki.LETTER_FROM_WEREI)
                 end,
             },
         },
