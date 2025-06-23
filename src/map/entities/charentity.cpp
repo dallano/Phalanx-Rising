@@ -1216,6 +1216,7 @@ void CCharEntity::OnEngage(CAttackState& state)
     CBattleEntity::OnEngage(state);
     PLatentEffectContainer->CheckLatentsTargetChange();
     this->m_charHistory.battlesFought++;
+    luautils::OnPlayerEngage(this);
 }
 
 void CCharEntity::OnDisengage(CAttackState& state)
@@ -1228,6 +1229,7 @@ void CCharEntity::OnDisengage(CAttackState& state)
         pushPacket(state.GetErrorMsg());
     }
     PLatentEffectContainer->CheckLatentsWeaponDraw(false);
+    luautils::OnPlayerDisengage(this);
 }
 
 bool CCharEntity::CanAttack(CBattleEntity* PTarget, std::unique_ptr<CBasicPacket>& errMsg)

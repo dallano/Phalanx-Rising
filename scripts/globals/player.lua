@@ -154,6 +154,9 @@ xi.player.onGameIn = function(player, firstLogin, zoning)
         if firstLogin then
             xi.player.charCreate(player)
         end
+        if GetServerVariable('[XISP]mainPlayer') == 0 then
+            SetServerVariable('[XISP]mainPlayer', player:getID())
+        end
     else
         -- things checked ONLY during zone in go here
         if
@@ -246,6 +249,24 @@ end
 
 xi.player.onPlayerRaise = function(player)
     xi.xispal.updateFollowers(player)
+end
+
+xi.player.onPlayerEngage = function(player)
+    -- local target = player:getTarget()
+
+    -- if target then
+    --     local isDragon = target:getLocalVar('[XISP]isDragon')
+    --     if isDragon == 1 then -- Lvl 40
+    --         player:changeMusic(2, 216)
+    --     elseif isDragon == 2 then -- Lvl 75
+    --         player:changeMusic(2, 215)
+    --     else
+    --         player:changeMusic(2, player:getZone():setSoloBattleMusic())
+    --     end
+    -- end
+end
+
+xi.player.onPlayerDisengage = function(player)
 end
 
 xi.player.onPlayerDeath = function(player)

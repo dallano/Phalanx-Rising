@@ -23,27 +23,27 @@ xi.xispdragon.info =
 
 xi.xispdragon.names =
 {
-    "Ashvhar", "Brimfang", "Cindresh", "Drakthar", "Ebonmaw", "Fireskorn", "Gloomash", "Hellsing",
-    "Icevorn", "Jhorvex", "Karnith", "Lazuryn", "Mordrake", "Nivhess", "Onyxen", "Pyraxis", "Quellak", "Ravmage",
+    "Ashvhar",  "Brimfang", "Cindresh", "Drakthar", "Ebonmaw", "Fireskorn", "Gloomash", "Hellsing",
+    "Icevorn",  "Jhorvex", "Karnith", "Lazuryn", "Mordrake", "Nivhess", "Onyxen", "Pyraxis", "Quellak", "Ravmage",
     "Searloch", "Thornak", "Umbrith", "Vulkhar", "Wrathos", "Xaldrik", "Ysmirak", "Zenthra", "Aegvorn", "Blaziel",
-    "Cravash", "Drelgath", "Elvaxor", "Fyrskal", "Garnyth", "Harkrax", "Ignivar", "Jurnash", "Kyranok", "Lygrash",
-    "Maelrix", "Nozdrel", "Ormigon", "Pharvix", "Qundral", "Rysshar", "Skaarok", "Thavrix", "Ulmigon", "Vaelgor",
+    "Cravash",  "Drelgath", "Elvaxor", "Fyrskal", "Garnyth", "Harkrax", "Ignivar", "Jurnash", "Kyranok", "Lygrash",
+    "Maelrix",  "Nozdrel", "Ormigon", "Pharvix", "Qundral", "Rysshar", "Skaarok", "Thavrix", "Ulmigon", "Vaelgor",
     "Wyrgarth", "Xendrith", "Yalgron", "Zarvokk", "Arzuron", "Belmorn", "Crythix", "Draxorn", "Elyskar","Faelgor",
-    "Grivash", "Haemrok", "Ironskyr", "Javhorn", "Kezrath", "Lokgrim", "Mournex", "Narthal", "Ogrymon", "Pyrmoth",
-    "Quavrix", "Rexigar", "Sinthyr", "Tazroth", "Urghast", "Vyrmoth", "Wrothak", "Xyzakon", "Yhrisak", "Zolven",
-    "Ankrath", "Braknor", "Cazroth", "Durnval", "Ergron", "Flamrok", "Gharzon", "Hexovar", "Iskaran", "Jaelgor",
-    "Kroven", "Larvok", "Mazgron", "Nyvakar", "Othlarn", "Praxion", "Quornix", "Rhazgul", "Sythrak", "Torgrax",
-    "Ulvreth", "Vorgrim", "Wyrrash", "Xarnok", "Yzareth", "Zindral", "Auvronyx", "Baskrath", "Corthuun", "Drazmeth",
-    "Elarion", "Falkvyr", "Gorvhal", "Hyrnix", "Isvalar", "Jurnyx", "Krozmir", "Lirvash", "Myzthor", "Nalkryn",
-    "Ozravan", "Phaldrak", "Quethys", "Rymvark", "Sylkran", "Tharnyx", "Ulgryth", "Varnok", "Wynthal","Xorthin",
-    "Yarnak", "Zulkrin", "Averusk", "Brimorn", "Calvok", "Durnak", "Eylgar", "Fralnix", "Gavron", "Harkral","Iveros",
-    "Jundrel", "Khaelin", "Lorgrax", "Molthin", "Nyvarn", "Opharon", "Pryntar", "Qyvenar", "Ralkosh", "Skarnyx",
-    "Thazruk", "Ulzakar", "Vorgrax", "Wyrnth", "Xandrek", "Yvelgon", "Zurkash", "Aethros", "Bolgrim", "Cyrkarn", "Droxyl",
-    "Egvorn", "Fylnar", "Goreth", "Haskor", "Inzrak", "Jelgrim", "Kyrval", "Lumith", "Morvex", "Nyzrak", "Orlyth",
-    "Pygron", "Qarnyx", "Ruzgar", "Synrel", "Tavrak", "Ungroth", "Vayrion", "Wenthak", "Xorvak", "Yazven", "Zynthor",
-    "Azgron", "Balvok", "Cindrak", "Drenos", "Ethalor", "Furvak", "Gralkor", "Hymnix", "Izrakel", "Jorvas", "Kellnix", "Lorvak",
-    "Myrron", "Narkesh", "Ormin", "Pavrix", "Quarth", "Rylnax", "Sornak", "Tylroth", "Urvath",
-    "Viskor", "Wulvok", "Xarven", "Yorvik", "Zaldrak",
+    "Grivash",  "Haemrok", "Ironskyr", "Javhorn", "Kezrath", "Lokgrim", "Mournex", "Narthal", "Ogrymon", "Pyrmoth",
+    "Quavrix",  "Rexigar", "Sinthyr", "Tazroth", "Urghast", "Vyrmoth", "Wrothak", "Xyzakon", "Yhrisak", "Zolven",
+    "Ankrath",  "Braknor", "Cazroth", "Durnval", "Ergron", "Flamrok", "Gharzon", "Hexovar", "Iskaran", "Jaelgor",
+    "Kroven",   "Larvok", "Mazgron", "Nyvakar", "Othlarn", "Praxion", "Quornix", "Rhazgul", "Sythrak", "Torgrax",
+    "Ulvreth",  "Vorgrim", "Wyrrash", "Xarnok", "Yzareth", "Zindral", "Auvronyx", "Baskrath", "Corthuun", "Drazmeth",
+    "Elarion",  "Falkvyr", "Gorvhal", "Hyrnix", "Isvalar", "Jurnyx", "Krozmir", "Lirvash", "Myzthor", "Nalkryn",
+    "Ozravan",  "Phaldrak", "Quethys", "Rymvark", "Sylkran", "Tharnyx", "Ulgryth", "Varnok", "Wynthal","Xorthin",
+    "Yarnak",   "Zulkrin", "Averusk", "Brimorn", "Calvok", "Durnak", "Eylgar", "Fralnix", "Gavron", "Harkral","Iveros",
+    "Jundrel",  "Khaelin", "Lorgrax", "Molthin", "Nyvarn", "Opharon", "Pryntar", "Qyvenar", "Ralkosh", "Skarnyx",
+    "Thazruk",  "Ulzakar", "Vorgrax", "Wyrnth", "Xandrek", "Yvelgon", "Zurkash", "Aethros", "Bolgrim", "Cyrkarn", "Droxyl",
+    "Egvorn",   "Fylnar", "Goreth", "Haskor", "Inzrak", "Jelgrim", "Kyrval", "Lumith", "Morvex", "Nyzrak", "Orlyth",
+    "Pygron",   "Qarnyx", "Ruzgar", "Synrel", "Tavrak", "Ungroth", "Vayrion", "Wenthak", "Xorvak", "Yazven", "Zynthor",
+    "Azgron",   "Balvok", "Cindrak", "Drenos", "Ethalor", "Furvak", "Gralkor", "Hymnix", "Izrakel", "Jorvas", "Kellnix", "Lorvak",
+    "Myrron",   "Narkesh", "Ormin", "Pavrix", "Quarth", "Rylnax", "Sornak", "Tylroth", "Urvath",
+    "Viskor",   "Wulvok", "Xarven", "Yorvik", "Zaldrak",
 }
 
 xi.xispdragon.spawnInfo =
@@ -123,6 +123,7 @@ xi.xispdragon.spawnDragon = function(zone, tier, index)
 
         onMobSpawn = function(mob)
             zone:setLocalVar('[XISP]dragonSpawned', 1) -- Used for Dragon watchers
+            mob:setLocalVar('[XISP]isDragon', tier)
             print("XISP DEBUG: Spawning dragon in zone: " .. zone:getName())
             mob:setMobMod(xi.mobMod.IDLE_DESPAWN, 2700) -- Despawns after 45 minutes of being idle
             mob:setMobMod(xi.mobMod.SKILL_LIST, info.skillID)

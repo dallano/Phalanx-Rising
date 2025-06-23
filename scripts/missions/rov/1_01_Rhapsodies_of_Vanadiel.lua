@@ -42,7 +42,9 @@ mission.sections[1] =
 local rovZoneInEvent =
 {
     onZoneIn = function(player, prevZone)
-        return 30035
+        if xi.settings.main.ENABLE_ROV == 1 then
+            return 30035
+        end
     end,
 
     onEventFinish =

@@ -28,7 +28,7 @@ xi.xisp.augments =
 
         [3214] = -- Combat Augments (Ardor)
         {
-            { augmentID = 69,  value = 1, name = "Ranged Accuracy and Attack +2", },
+            { augmentID = 69,  value = 1, name = "Ranged Acc. and Ranged Attk. +2", },
             { augmentID = 51,  value = 1, name = "HP Recovered While Healing +2", },
             { augmentID = 68,  value = 1, name = "Accuracy and Attack +2", },
             { augmentID = 31,  value = 2, name = "Evasion +3", },
@@ -66,7 +66,7 @@ xi.xisp.augments =
         [3217] = -- Combat Augments (Ardor)
         {
             { augmentID = 51,  value = 2, name = "HP Recovered While Healing +3", },
-            { augmentID = 69,  value = 4, name = "Ranged Accuracy and Attack +5" },
+            { augmentID = 69,  value = 4, name = "Ranged Acc. and Ranged Attk. +5" },
             { augmentID = 54,  value = 0, name = "Physical Damage Taken -1%" },
             { augmentID = 55,  value = 0, name = "Magical Damage Taken -1%" },
             { augmentID = 68,  value = 4, name = "Accuracy and Attack +5" },
@@ -167,7 +167,7 @@ xi.xisp.augments =
         [3215] = -- Combat Augments (Ador)
         {
             { augmentID = 51,   value = 3,  name = "HP Recovered While Healing + 4" },
-            { augmentID = 129,  value = 5,  name = "Ranged Accuracy and Attack +6" },
+            { augmentID = 129,  value = 5,  name = "Ranged Acc. and Ranged Attk. +6" },
             { augmentID = 1248, value = 9,  name = "Enhancing Magic Duration +10" },
             { augmentID = 54,   value = 1,  name = "Physical Damage Taken -2%" },
             { augmentID = 326,  value = 1,  name = "Weapon Skill Accuracy + 2" },
@@ -280,7 +280,7 @@ xi.xisp.augments =
 
         [3216] = -- Combat Augments (Ador)
         {
-            { augmentID = 69,   value = 19, name = "Ranged Accuracy and Attack +20", },
+            { augmentID = 69,   value = 19, name = "Ranged Acc. and Ranged Attk. +20", },
             { augmentID = 51,   value = 19, name = "HP recovered while resting +20", },
             { augmentID = 131,  value = 9,  name = "Magic Accuracy and Attack +10", },
             { augmentID = 326,  value = 9,  name = "Weaponskill Accuracy +10", },
@@ -681,7 +681,7 @@ xi.xisp.onAugmentTrigger = function(player, npc)
             player:printToPlayer("The name's Orin, but people know me as the Wiseman. Spent my younger days enchanting blades for the Royal Knights.", 0, npc:getPacketName())
             player:timer(8000, function(playerArg)
                 playerArg:printToPlayer("These days, I keep it simple. Helping adventurers like yourself bring a bit of magic into their gear", 0, npc:getPacketName())
-                playerArg:printToPlayer("Enchantments, augments, and to occasional curious trinket. If it glows, I know how to make it glow brighter!", 0, npc:getPacketName())
+                playerArg:printToPlayer("Enchantments, augments, and the occasional curious trinket. If it glows, I know how to make it glow brighter!", 0, npc:getPacketName())
                 npc:setLocalVar('dialogueLock', 0)
                 npc:setLocalVar('introduction', 1)
             end)

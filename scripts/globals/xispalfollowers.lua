@@ -79,6 +79,7 @@ xi.xispal.spawnChocobo = function(player, zone)
 
     local choco = zone:insertDynamicEntity({
         objtype               = xi.objType.MOB,
+        -- allegiance            = xi.allegiance.PLAYER,
         name                  = name,
         x                     = pos.x,
         y                     = pos.y,
@@ -342,6 +343,7 @@ xi.xispal.spawnWyvern = function(pal)
 
         onMobSpawn = function(wyvern)
             wyvern:setMobLevel(wyvern:getMaster():getMainLvl() - 2)
+            wyvern:addMobMod(xi.mobMod.NO_DESPAWN, 1)
         end,
 
         onMobRoam = function(wyvern)

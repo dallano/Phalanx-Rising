@@ -1223,7 +1223,7 @@ xi.conquest.overseerOnTrigger = function(player, npc, guardNation, guardType, gu
         -- XISP players do not need supplies to earn OP warp
         if not player:hasTeleport(guardNation, guardRegion + 5) then
             player:printToPlayer("Congratulations. You have unlocked this outpost for future teleportion.", xi.msg.channel.SAY, npc:getName())
-            player:addTeleport(guardNation, guardRegion + 5)
+            player:addTeleport(player:getNation(), guardRegion + 5)
         end
 
         local a1 = getArg1(player, guardNation, guardType)

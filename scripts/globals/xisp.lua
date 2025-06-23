@@ -4,8 +4,8 @@ xi.xisp = xi.xisp or {}
 -- Dev notes:
 -- Zones that could be fun to work with:
 --- Resenjima (291) (292 boss fight)
---- 298 another boss fight zone
---- 273: fun trial zone
+---
+--- Empyreal Paradox with music 79 could become something cool
 
 xi.xisp.weight =
 {
@@ -62,7 +62,7 @@ end
 
 
 xi.xisp.setSeed = function()
-    local seed  = GetServerVariable('[XISP]ServerSeed')
+    local seed = GetServerVariable('[XISP]ServerSeed')
 
     if seed == 0 then
         SetServerVariable('[XISP]ServerSeed', os.time())

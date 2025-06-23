@@ -873,6 +873,13 @@ function Battlefield:onEntryEventUpdate(player, csid, option, npc)
                 member:registerBattlefield(self.battlefieldId, area, player:getID(), self)
             end
         end
+
+        -- XISP
+        for _, member in pairs(xi.xispal.getParty(player)) do
+            print("Adding: ", member, " to battlefield")
+            member:addStatusEffect(effect)
+            member:setBattleID(player:getBattleID())
+        end
     end
 
     local autoSkipCS = self:getLocalVar(player, 'CS') == 1 and 100 or 0

@@ -18,6 +18,8 @@ zoneObject.onInitialize = function(zone)
     xi.conquest.setRegionalConquestOverseers(zone:getRegionID())
 
     xi.helm.initZone(zone, xi.helmType.LOGGING)
+
+    xi.xispbg.spawnNPC(zone, { x = -18.28, y = -13.97, z = 44.07, rotation = 124 })
 end
 
 zoneObject.onZoneIn = function(player, prevZone)

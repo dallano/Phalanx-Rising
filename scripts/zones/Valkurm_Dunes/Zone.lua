@@ -21,6 +21,8 @@ zoneObject.onInitialize = function(zone)
             qm2:setStatus(xi.status.DISAPPEAR)
         end
     end
+
+    xi.xispbg.spawnNPC(zone, { x = 136.85, y = -7.3, z = 115.1, rotation = 213 })
 end
 
 zoneObject.onZoneTick = function(zone)

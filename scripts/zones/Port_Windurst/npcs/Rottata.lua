@@ -11,7 +11,7 @@ local teleporterNation = xi.nation.WINDURST
 local teleporterEvent  = 552
 
 entity.onTrigger = function(player, npc)
-    xi.conquest.teleporterOnTrigger(player, teleporterNation, teleporterEvent)
+    xi.conquest.teleporterOnTrigger(player, player:getNation(), teleporterEvent)
 end
 
 entity.onEventUpdate = function(player, csid, option, npc)

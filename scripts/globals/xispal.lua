@@ -197,7 +197,8 @@ xi.xispal.updateFollowers = function(player)
 end
 
 
-xi.xispal.resurrect = function(player)
+-- Power should only range between 1-3
+xi.xispal.resurrect = function(player, power)
     local pal
 
     for _, member in pairs(xi.xispal.getParty(player)) do
@@ -219,8 +220,8 @@ xi.xispal.resurrect = function(player)
             palArg:hideName(false)
             palArg:resetAI()
             palArg:independentAnimation(palArg, 2, 3)
-            palArg:setHP(palArg:getMaxHP() * 0.33)
-            palArg:setMP(palArg:getMaxMP() * 0.33)
+            palArg:setHP(palArg:getMaxHP() * (0.33 * power))
+            palArg:setMP(palArg:getMaxMP() * (0.33 * power))
             palArg:setAnimation(0)
             palArg:stun(4000)
         end)
@@ -228,62 +229,15 @@ xi.xispal.resurrect = function(player)
 end
 
 
-xi.xispal.raisePlayer = function(pal, player)
-    local job = pal:getMainJob()
-    local lvl = pal:getMainLvl()
-
-    if
-        pal:getLocalVar('isCasting') == 1 or
-        player:hasRaiseTractorMenu() or
-        pal:getCurrentAction() == xi.action.MAGIC_CASTING
-    then
-        return
-    end
-
-    if pal:hasStatusEffect(xi.effect.HEALING) then
-        pal:delStatusEffect(xi.effect.HEALING)
-        return
-    end
-
-    if player and player:isDead() and pal:getMP() > 150 then
-        pal:setLocalVar('isCasting', 1)
-        pal:setAnimation(0)
-
-        local spell = nil
-        for _, raise in pairs(xi.xispal.white.RAISE) do
-            if raise.lvl[job] and lvl >= raise.lvl[job] then
-                spell = raise
-            end
-        end
-
-        if spell and pal:checkDistance(player) <= 20 then
-            pal:entityAnimationPacket(xi.animationString.CAST_WHITE_MAGIC_START)
-            pal:timer(spell.castTime, function(palArg)
-                palArg:entityAnimationPacket(xi.animationString.CAST_WHITE_MAGIC_STOP)
-                palArg:independentAnimation(player, spell.spell, 0)
-
-                player:sendRaise(spell.power)
-                palArg:setMP(palArg:getMP() - 150)
-
-                palArg:timer(20 * 1000, function(palArg2)
-                    palArg2:setLocalVar('isCasting', 0)
-                end)
-            end)
-        end
-    end
-end
-
-
 xi.xispal.levelSync = function(pal, player)
-    -- Ensure we're the same level as player
-    if player:getMainLvl() ~= pal:getMainLvl() then
-        pal:setMobLevel(player:getMainLvl())
+    local lvl = player:getMainLvl()
+    if lvl ~= pal:getMainLvl() then
+        pal:setMobLevel(lvl)
     end
 
-    -- Add to battlefield i player is in one.
-    local effect = player:getStatusEffect(xi.effect.BATTLEFIELD)
-    if effect then
-        pal:addStatusEffect(effect)
+    local effect = xi.effect.LEVEL_RESTRICTION
+    if player:hasStatusEffect(effect) and not pal:hasStatusEffect(effect) then
+        pal:addStatusEffectEx(effect, effect, player:getStatusEffect(effect):getPower(), 0, 0)
     end
 end
 
@@ -298,50 +252,6 @@ xi.xispal.hasCompletedAF = function(player)
 end
 
 
-xi.xispal.follow = function(pal, player)
-    local followers = xi.xispal.getFollowers(player)
-    local leader = player
-
-    for followerIndex = #followers, 1, -1 do -- Loop through followers
-        local follower = GetMobByID(followers[followerIndex])
-
-        if follower and follower == pal then -- Ensure we only arrange logic for ourselves
-            if followerIndex > 1 then -- if index == 1 then follow player
-                local newIndex = followerIndex
-
-                while newIndex > 1 do
-                    local newLeader = GetMobByID(followers[newIndex - 1])
-
-                    if -- See if new Leader is a good candidate as a leader
-                        newLeader and
-                        newLeader:isAlive() and
-                        not newLeader:hasStatusEffect(xi.effect.HEALING)
-                    then
-                        leader = newLeader
-                        newIndex = 1
-                    else
-                        newIndex = newIndex - 1
-                    end
-                end
-            end
-
-            if follower:checkDistance(leader) > 40 then
-                local newPos = leader:getPos()
-                follower:setPos(newPos.x + math.random(-2, 2), newPos.y, newPos.z + math.random(-2, 2))
-                return
-            end
-
-            -- Don't pursue leader if we're healing. Will adjust if player goes above 15 yalms
-            if not follower:hasStatusEffect(xi.effect.HEALING) and follower:getCurrentAction() ~= xi.action.MAGIC_CASTING then
-                follower:follow(leader, xi.followType.ROAM)
-            else
-                follower:unfollow()
-            end
-        end
-    end
-end
-
-
 xi.xispal.isCaster = function(pal)
     local job = pal:getMainJob()
 
@@ -351,17 +261,29 @@ xi.xispal.isCaster = function(pal)
 end
 
 
+xi.xispal.chocobo = function(pal, player)
+    if player:getAnimation() == xi.animation.CHOCOBO then
+        pal:setAnimation(5)
+    else
+        if pal:getAnimation() == xi.animation.CHOCOBO then
+            pal:setAnimation(0)
+        end
+    end
+end
+
+
 -- A pal should be told to stop resting before any action is called upon them
 -- This can be readily used with xi.xispal.stopResting(pal)
 -- After a pal stops resting, they will be unable to do so for another 5 seconds
 -- Some logic is handled in healing.lua + xi.xispal.follow
-xi.xispal.rest = function(pal, player, palID)
+xi.xispal.rest = function(pal, player)
     if
         (pal:getHP() >= pal:getMaxHP() and pal:getMP() >= pal:getMaxMP()) or
         pal:getLocalVar('[XISP]canRest') > os.time() or
         pal:getCurrentAction() ~= xi.action.ROAMING or
-        pal:checkDistance(player) >= 15 or
-        pal:getAnimation() == 5 -- Mounted Chocobo
+        pal:checkDistance(player) >= 20 or
+        pal:getAnimation() == 5 or -- Mounted Chocobo
+        pal:getLocalVar('isMoving') == 1
     then
         -- Delete healing if any of these conditions are met
         if pal:getStatusEffect(xi.effect.HEALING) then
@@ -473,6 +395,7 @@ xi.xispal.onMobSpawn = function(pal, player, race, job)
     pal:setLocalVar('[XISP]isPal', 1)
     pal:setMobLevel(player:getMainLvl())
     pal:setRotation(player:getPos().rot + math.random(-5, 5))
+    pal:setRoamFlags(xi.roamFlag.SCRIPTED)
 
     if xi.xispal.isCaster(pal) then
         pal:setBehavior(bit.bor(pal:getBehavior(), xi.behavior.STANDBACK))
@@ -498,37 +421,19 @@ end
 
 
 xi.xispal.onMobRoam = function(pal, player)
-    if player:isDead() then
-        xi.xispal.raisePlayer(pal, player)
-    else
-        if player then
-            local anim = player:getAnimation()
-
-            if player:isEngaged() and not xi.xispal.isCaster(pal) then
-                pal:setAnimation(0)
-                pal:updateEnmity(player:getTarget())
-                return
-            end
-
-            -- Update movement speed after force stop from spell cast
-            if pal:getBaseSpeed() == 0 and pal:getCurrentAction() ~= xi.action.MAGIC_CASTING then
-                pal:setBaseSpeed(player:getBaseSpeed())
-            end
-
+    if player then
+        if player:isDead() then
+            xi.xispal.raisePlayer(pal, player)
+        else
+            xi.xispal.chocobo(pal, player)
             xi.xispal.rest(pal, player)
             xi.xispal.follow(pal, player) -- Rest logic is needed before follow
             xi.xispal.checkMagic(pal, player)
             xi.xispal.levelSync(pal, player)
             xi.xispal.checkPet(pal, player)
-
-            if pal:getStatusEffect(xi.effect.HEALING) == nil then
-                if anim > 0 and anim ~= xi.animation.HEALING then
-                    pal:setAnimation(anim)
-                else
-                    pal:setAnimation(0)
-                end
-            end
         end
+    else
+        DespawnMob(pal:getID())
     end
 end
 
@@ -569,9 +474,9 @@ xi.xispal.onZone = function(player)
     player:timer(200, function(playerArg)
         local zone = playerArg:getZone()
         -- Spawn Chocobo
-        -- if playerArg:getCharVar('[XISP]hasChocobo') == 1 then
-        --     xi.xispal.spawnChocobo(playerArg, zone)
-        -- end
+        if playerArg:getCharVar('[XISP]hasChocobo') == 1 then
+            xi.xispal.spawnChocobo(playerArg, zone)
+        end
 
         -- Spawn Squire
         if playerArg:getCharVar('[XISP]quest1Var') >= 1 then
@@ -582,14 +487,14 @@ xi.xispal.onZone = function(player)
             end
         end
 
-        -- -- Spawn Knight
-        -- if playerArg:getCharVar('[XISP]hasKnight') >= 1 then
-        --     xi.xispal.spawnKnight(playerArg, zone)
-        -- end
+        -- Spawn Knight
+        if playerArg:getCharVar('[XISP]hasKnight') >= 1 then
+            xi.xispal.spawnKnight(playerArg, zone)
+        end
 
-        -- -- Spawn Mage
-        -- if playerArg:getCharVar('[XISP]hasMage') >= 1 then
-        --     xi.xispal.spawnMage(playerArg, zone)
-        -- end
+        -- Spawn Mage
+        if playerArg:getCharVar('[XISP]hasMage') >= 1 then
+            xi.xispal.spawnMage(playerArg, zone)
+        end
     end)
 end

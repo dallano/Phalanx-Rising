@@ -6,27 +6,27 @@ local effectObject = {}
 
 effectObject.onEffectGain = function(target, effect)
     -- Retail sends a music change packet (packet ID 0x5F) in both cases.
-
-    -- TODO: This isn't quite right. The IDs we use for mounts vs what we use for power etc.
-    -- seem to be off-by-one.
-    if effect:getPower() < 2 then
-        if target:getLocalVar('inBattle') == 0 then
-            target:changeMusic(4, 212)
-        else
-            target:changeMusic(4, 247)
-        end
-        target:setAnimation(xi.anim.CHOCOBO)
-    else
-        if target:getLocalVar('inBattle') == 0 then
-            target:changeMusic(4, 84)
-        else
-            target:changeMusic(4, 247)
-        end
-        target:setAnimation(xi.anim.MOUNT)
-    end
-
-    -- XISP
     if target:isPC() then
+
+        -- TODO: This isn't quite right. The IDs we use for mounts vs what we use for power etc.
+        -- seem to be off-by-one.
+        if effect:getPower() < 2 then
+            if target:getLocalVar('inBattle') == 0 then
+                target:changeMusic(4, 212)
+            else
+                target:changeMusic(4, 247)
+            end
+            target:setAnimation(xi.anim.CHOCOBO)
+        else
+            if target:getLocalVar('inBattle') == 0 then
+                target:changeMusic(4, 84)
+            else
+                target:changeMusic(4, 247)
+            end
+            target:setAnimation(xi.anim.MOUNT)
+        end
+
+        -- XISP
         local hasChocobo = target:getCharVar('[XISP]chocoID')
         if hasChocobo > 0 then
             local choco = GetMobByID(hasChocobo)
@@ -34,6 +34,10 @@ effectObject.onEffectGain = function(target, effect)
                 target:setLocalVar('ridingOwnChoco', 1)
                 choco:setBehavior(bit.band(choco:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
                 DespawnMob(hasChocobo)
+            end
+
+            if target:getLocalVar('ownChoco') == 1 then
+                target:changeMusic(4, 177) -- Special XISP mount music
             end
         end
         -- Reset chocobo ID
@@ -45,6 +49,7 @@ effectObject.onEffectTick = function(target, effect)
 end
 
 effectObject.onEffectLose = function(target, effect)
+    target:setLocalVar('ownChoco', 0)
     target:setAnimation(xi.anim.NONE)
 
     -- Remove CharVars from player participating in chocobo riding game

@@ -13,6 +13,8 @@ zoneObject.onInitialize = function(zone)
     GetMobByID(ID.mob.KING_VINEGARROON):setRespawnTime(math.random(900, 10800))
 
     xi.beastmenTreasure.updatePeddlestox(xi.zone.YUHTUNGA_JUNGLE, ID.npc.PEDDLESTOX)
+
+    xi.xispbg.spawnNPC(zone, { x = -3.08, y = 0.17, z = 113.94, rotation = 254 })
 end
 
 zoneObject.onGameDay = function()

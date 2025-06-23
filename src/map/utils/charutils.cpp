@@ -6116,7 +6116,7 @@ namespace charutils
         _sql->Query("UPDATE chars SET playtime = '%u' WHERE charid = '%u' LIMIT 1", playtime, PChar->id);
 
         // Removes new player icon if played for more than 240 hours
-        if (PChar->isNewPlayer() && playDuration >= 240h)
+        if (PChar->isNewPlayer() && playDuration >= 24h)
         {
             PChar->playerConfig.NewAdventurerOffFlg = true;
             PChar->updatemask |= UPDATE_HP;

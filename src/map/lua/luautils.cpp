@@ -4966,6 +4966,20 @@ namespace luautils
         callGlobal<void>("xi.player.onPlayerRaise", PChar);
     }
 
+    void OnPlayerEngage(CCharEntity* PChar)
+    {
+        TracyZoneScoped;
+
+        callGlobal<void>("xi.player.onPlayerEngage", PChar);
+    }
+
+    void OnPlayerDisengage(CCharEntity* PChar)
+    {
+        TracyZoneScoped;
+
+        callGlobal<void>("xi.player.onPlayerDisengage", PChar);
+    }
+
     void OnPlayerDeath(CCharEntity* PChar)
     {
         TracyZoneScoped;

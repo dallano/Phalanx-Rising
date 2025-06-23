@@ -1062,8 +1062,8 @@ void CMobController::DoRoamTick(timer::time_point tick)
                 }
             }
         }
-    }
-    if (m_Tick >= m_LastRoamScript + 3s)
+    } // PMob->getBigMobMod(MOBMOD_ROAM_COOL)
+    if ((m_Tick >= m_LastRoamScript + 3s) || (PMob->m_roamFlags & ROAMFLAG_SCRIPTED && m_Tick >= m_LastRoamScript + 1s)) // XISP (Pals check roam script every second)
     {
         PMob->PAI->EventHandler.triggerListener("ROAM_TICK", PMob);
         luautils::OnMobRoam(PMob);

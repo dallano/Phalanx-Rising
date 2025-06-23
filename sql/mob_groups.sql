@@ -11741,11 +11741,11 @@ INSERT INTO `mob_groups` VALUES (121,4700,171,'Kalos_Eunomia',0,128,0,0,0,97,98,
 -- ------------------------------------------------------------
 
 INSERT INTO `mob_groups` VALUES (1,1038,172,'Ding_Bats',330,0,654,0,0,1,3,0);
-INSERT INTO `mob_groups` VALUES (2,6420,172,'Burrower_Worm',330,0,2501,0,0,75,79,0);
-INSERT INTO `mob_groups` VALUES (3,6469,172,'Colliery_Bat',330,0,654,0,0,75,80,0);
-INSERT INTO `mob_groups` VALUES (4,6365,172,'Soot_Crab',330,0,2104,0,0,75,78,0);
+INSERT INTO `mob_groups` VALUES (2,6420,172,'Burrower_Worm',330,0,2501,0,0,1,3,0);
+INSERT INTO `mob_groups` VALUES (3,6469,172,'Colliery_Bat',330,0,654,0,0,1,3,0);
+INSERT INTO `mob_groups` VALUES (4,6365,172,'Soot_Crab',330,0,2104,0,0,2,4,0);
 INSERT INTO `mob_groups` VALUES (5,3371,172,'River_Crab',330,0,2103,0,0,2,4,0);
-INSERT INTO `mob_groups` VALUES (6,6399,172,'Veindigger_Leech',330,0,963,0,0,75,80,0);
+INSERT INTO `mob_groups` VALUES (6,6399,172,'Veindigger_Leech',330,0,963,0,0,8,12,0);
 
 -- The Gloom Phantom's Approach
 INSERT INTO `mob_groups` VALUES (7,0,172,'Gloom_Phantom',0,128,0,0,0,0,0,0); -- TODO: capture level from retail
@@ -13439,7 +13439,7 @@ INSERT INTO `mob_groups` VALUES (1017,2462,210,'[XISP]chocobo',0,128,0,0,0,1,75,
 -- Open World Dragons
 INSERT INTO `mob_groups` VALUES (2000,584,210,'[XISP]dragon40',0,128,4000,3000,0,45,50,0);
 INSERT INTO `mob_groups` VALUES (2001,1280,210,'[XISP]dragon75',0,128,4001,8000,0,75,80,0);
--- Open World Battlefields
+-- Open World Battlefields (Tier 1)
 INSERT INTO `mob_groups` VALUES (2002,20000,210,'[XISP]sandoriaSoldier',0,128,0,0,0,40,40,1);
 INSERT INTO `mob_groups` VALUES (2003,20000,210,'[XISP]bastokSoldier',0,128,0,0,0,40,40,1);
 INSERT INTO `mob_groups` VALUES (2004,20000,210,'[XISP]windurstSoldier',0,128,0,0,0,40,40,1);
@@ -13449,7 +13449,18 @@ INSERT INTO `mob_groups` VALUES (2007,4459,210,'[XISP]yagudo',0,128,4002,0,0,1,8
 INSERT INTO `mob_groups` VALUES (2008,5774,210,'[XISP]quadavNM',0,128,4003,0,0,1,80,0);
 INSERT INTO `mob_groups` VALUES (2009,259,210,'[XISP]orcNM',0,128,4003,0,0,1,80,0);
 INSERT INTO `mob_groups` VALUES (2010,3298,210,'[XISP]yagudoNM',0,128,4003,0,0,1,80,0);
-
+-- Open World Battlefields (Tier 2)
+INSERT INTO `mob_groups` VALUES (2012,20000,210,'[XISP]selbinaMilitia',0,128,0,0,0,40,40,1);
+INSERT INTO `mob_groups` VALUES (2013,20000,210,'[XISP]mhauraMilitia',0,128,0,0,0,40,40,1);
+INSERT INTO `mob_groups` VALUES (2014,1665,210,'[XISP]goblin',0,128,4002,0,0,1,80,0);
+INSERT INTO `mob_groups` VALUES (2015,1746,210,'[XISP]goblinNM',0,128,4003,0,0,1,80,0);
+-- Open World Battlefields (Tier 3)
+INSERT INTO `mob_groups` VALUES (2016,20000,210,'[XISP]rabaoMilitia',0,128,0,0,0,40,40,1);
+INSERT INTO `mob_groups` VALUES (2017,20000,210,'[XISP]norgMilitia',0,128,0,0,0,40,40,1);
+INSERT INTO `mob_groups` VALUES (2018,182,210,'[XISP]antican',0,128,4002,0,0,1,80,0);
+INSERT INTO `mob_groups` VALUES (2019,2581,210,'[XISP]sahagin',0,128,4002,0,0,1,80,0);
+INSERT INTO `mob_groups` VALUES (2020,3194,210,'[XISP]anticanNM',0,128,4003,0,0,1,80,0);
+INSERT INTO `mob_groups` VALUES (2021,795,210,'[XISP]sahaginNM',0,128,4003,0,0,1,80,0);
 -- ------------------------------------------------------------
 -- Cloister_of_Tides (Zone 211)
 -- ------------------------------------------------------------

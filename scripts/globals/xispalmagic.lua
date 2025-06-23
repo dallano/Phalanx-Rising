@@ -70,15 +70,6 @@ xi.xispal.white =
         { spell = xi.magic.spell.SHELL,         effect = xi.effect.SHELL,   lvl = { [xi.job.RDM] = 17, }, selfOnly = true },
     },
 
-    ENFEEBLE =
-    {
-        { spell = xi.magic.spell.SILENCE,  effect = xi.effect.SILENCE,   immunity = xi.immunity.SILENCE,  lvl = { [xi.job.WHM] = 15, [xi.job.RDM] = 18, } }, -- Silence
-        { spell = xi.magic.spell.DIA_II,   effect = xi.effect.DIA,       immunity = xi.immunity.NONE,     lvl = { [xi.job.WHM] = 36, [xi.job.RDM] = 31, } }, -- Dia 2
-        { spell = xi.magic.spell.DIA,      effect = xi.effect.DIA,       immunity = xi.immunity.NONE,     lvl = { [xi.job.WHM] = 3,  [xi.job.RDM] = 1,  } }, -- Dia
-        { spell = xi.magic.spell.PARALYZE, effect = xi.effect.PARALYSIS, immunity = xi.immunity.PARALYZE, lvl = { [xi.job.WHM] = 4,  [xi.job.RDM] = 6,  } }, -- Paralyze
-        { spell = xi.magic.spell.SLOW,     effect = xi.effect.SLOW,      immunity = xi.immunity.SLOW,     lvl = { [xi.job.WHM] = 13, [xi.job.RDM] = 13, } }, -- Slow
-    },
-
     CURE =
     {
         { spell = xi.magic.spell.CURE_V,   threshold = 400, cost = 0, lvl = { [xi.job.WHM] = 61, } }, -- Cure IV
@@ -137,28 +128,28 @@ xi.xispal.black =
     {
         [xi.job.BLM] =
         {
-            { spell = xi.magic.spell.BURN,      effect = xi.effect.BURN,  immunity = xi.immunity.NONE, lvl = { [xi.job.BLM] = 24, } },
-            { spell = xi.magic.spell.SHOCK,     effect = xi.effect.SHOCK, immunity = xi.immunity.NONE, lvl = { [xi.job.BLM] = 16, } },
-            { spell = xi.magic.spell.CHOKE,     effect = xi.effect.CHOKE, immunity = xi.immunity.NONE, lvl = { [xi.job.BLM] = 20, } },
+            { spell = xi.magic.spell.BURN,      effect = xi.effect.BURN,  immunity = xi.immunity.NONE, lvl = 24, },
+            { spell = xi.magic.spell.SHOCK,     effect = xi.effect.SHOCK, immunity = xi.immunity.NONE, lvl = 16, },
+            { spell = xi.magic.spell.CHOKE,     effect = xi.effect.CHOKE, immunity = xi.immunity.NONE, lvl = 20, },
         },
         [xi.job.DRK] =
         {
-            { spell = xi.magic.spell.ABSORB_TP,                                    lvl = { [xi.job.DRK] = 45, } },
-            { spell = xi.magic.spell.ABSORB_ACC, effect = xi.effect.ACCURACY_DOWN, lvl = { [xi.job.DRK] = 61, } },
-            { spell = xi.magic.spell.ABSORB_STR, effect = xi.effect.STR_DOWN,      lvl = { [xi.job.DRK] = 43, } },
-            { spell = xi.magic.spell.ABSORB_DEX, effect = xi.effect.DEX_DOWN,      lvl = { [xi.job.DRK] = 41, } },
-            { spell = xi.magic.spell.ABSORB_VIT, effect = xi.effect.VIT_DOWN,      lvl = { [xi.job.DRK] = 35, } },
+            { spell = xi.magic.spell.ABSORB_TP,                                    lvl = 45, },
+            { spell = xi.magic.spell.ABSORB_ACC, effect = xi.effect.ACCURACY_DOWN, lvl = 61, },
+            { spell = xi.magic.spell.ABSORB_STR, effect = xi.effect.STR_DOWN,      lvl = 43, },
+            { spell = xi.magic.spell.ABSORB_DEX, effect = xi.effect.DEX_DOWN,      lvl = 41, },
+            { spell = xi.magic.spell.ABSORB_VIT, effect = xi.effect.VIT_DOWN,      lvl = 35, },
         },
         [xi.job.RDM] =
         {
-            { spell = xi.magic.spell.SILENCE,   effect = xi.effect.SILENCE,   immunity = xi.immunity.SILENCE,  lvl = { [xi.job.RDM] = 18, } },
-            { spell = xi.magic.spell.BLIND,     effect = xi.effect.BLINDNESS, immunity = xi.immunity.BLIND,    lvl = { [xi.job.RDM] = 5,  } },
-            { spell = xi.magic.spell.POISON_II, effect = xi.effect.POISON,    immunity = xi.immunity.POISON,   lvl = { [xi.job.RDM] = 46, } },
-            { spell = xi.magic.spell.POISON,    effect = xi.effect.POISON,    immunity = xi.immunity.POISON,   lvl = { [xi.job.RDM] = 8,  } },
-            { spell = xi.magic.spell.DIA_II,    effect = xi.effect.DIA,       immunity = xi.immunity.NONE,     lvl = { [xi.job.RDM] = 31, } },
-            { spell = xi.magic.spell.DIA,       effect = xi.effect.DIA,       immunity = xi.immunity.NONE,     lvl = { [xi.job.RDM] = 1,  } },
-            { spell = xi.magic.spell.PARALYZE,  effect = xi.effect.PARALYSIS, immunity = xi.immunity.PARALYZE, lvl = { [xi.job.RDM] = 6,  } },
-            { spell = xi.magic.spell.SLOW,      effect = xi.effect.SLOW,      immunity = xi.immunity.SLOW,     lvl = { [xi.job.RDM] = 13, } },
+            { spell = xi.magic.spell.SILENCE,   effect = xi.effect.SILENCE,   immunity = xi.immunity.SILENCE,  lvl =  18, },
+            { spell = xi.magic.spell.PARALYZE,  effect = xi.effect.PARALYSIS, immunity = xi.immunity.PARALYZE, lvl =  6,  },
+            { spell = xi.magic.spell.BLIND,     effect = xi.effect.BLINDNESS, immunity = xi.immunity.BLIND,    lvl =  5,  },
+            { spell = xi.magic.spell.DIA_II,    effect = xi.effect.DIA,       immunity = xi.immunity.NONE,     lvl =  31, },
+            { spell = xi.magic.spell.DIA,       effect = xi.effect.DIA,       immunity = xi.immunity.NONE,     lvl =  1,  },
+            { spell = xi.magic.spell.SLOW,      effect = xi.effect.SLOW,      immunity = xi.immunity.SLOW,     lvl =  13, },
+            { spell = xi.magic.spell.POISON_II, effect = xi.effect.POISON,    immunity = xi.immunity.POISON,   lvl =  46, },
+            { spell = xi.magic.spell.POISON,    effect = xi.effect.POISON,    immunity = xi.immunity.POISON,   lvl =  8,  },
         },
     },
 }
@@ -257,6 +248,53 @@ xi.xispal.songs =
     },
 }
 
+
+xi.xispal.raisePlayer = function(pal, player)
+    local job = pal:getMainJob()
+    local lvl = pal:getMainLvl()
+
+    if
+        pal:getLocalVar('isCasting') == 1 or
+        player:hasRaiseTractorMenu() or
+        pal:getCurrentAction() == xi.action.MAGIC_CASTING
+    then
+        return
+    end
+
+    if pal:hasStatusEffect(xi.effect.HEALING) then
+        pal:delStatusEffect(xi.effect.HEALING)
+        return
+    end
+
+    if player and player:isDead() and pal:getMP() > 150 then
+        pal:setLocalVar('isCasting', 1)
+        pal:setAnimation(0)
+
+        local spell = nil
+        for _, raise in pairs(xi.xispal.white.RAISE) do
+            if raise.lvl[job] and lvl >= raise.lvl[job] then
+                spell = raise
+            end
+        end
+
+        if spell and pal:checkDistance(player) <= 20 then
+            pal:entityAnimationPacket(xi.animationString.CAST_WHITE_MAGIC_START)
+            pal:timer(spell.castTime, function(palArg)
+                palArg:entityAnimationPacket(xi.animationString.CAST_WHITE_MAGIC_STOP)
+                palArg:independentAnimation(player, spell.spell, 0)
+
+                player:sendRaise(spell.power)
+                palArg:setMP(palArg:getMP() - 150)
+
+                palArg:timer(20 * 1000, function(palArg2)
+                    palArg2:setLocalVar('isCasting', 0)
+                end)
+            end)
+        end
+    end
+end
+
+
 xi.xispal.checkNa = function(pal, party, job, lvl)
     if xi.xispal.checkCast(pal) or pal:getMPP() < 5 then
         return
@@ -318,6 +356,8 @@ xi.xispal.checkCure = function(pal, party, job, lvl)
                         threshold = threshold * 1.5
                     elseif job == xi.job.PLD and member ~= pal then
                         threshold = threshold * 2
+                    elseif not job == xi.job.WHM then
+                        threshold = threshold * 2.5
                     end
 
                     if member:getMaxHP() - member:getHP() > threshold then
@@ -434,15 +474,21 @@ xi.xispal.checkEnfeeble = function(pal, job, lvl)
     local extraTime = 0
     local specTime  = 0 -- Used by DRK
     local enfeeb    = nil
+    local flag      = true
 
     if table then
         if job == xi.job.RDM or job == xi.job.BLM then
             for _, spell in pairs(table) do
+                if spell.spell == xi.magic.spell.SILENCE and not target:hasSpellList() then
+                    flag = false
+                end
+
                 if
-                    pal:getLocalVar('spellRecast' .. spell.spell) < os.time() and -- Check recast
-                    spell.lvl[job] and lvl >= spell.lvl[job] and -- Check level
-                    not target:hasImmunity(spell.immunity) and -- Check immunity
-                    not target:getStatusEffect(spell.effect) -- Check effect
+                    pal:getLocalVar('spellRecast' .. spell.spell) < os.time() and
+                    not target:getStatusEffect(spell.effect) and
+                    not target:hasImmunity(spell.immunity) and
+                    lvl >= spell.lvl and -- Check level
+                    flag == true-- Check effect
                 then
                     enfeeb = spell.spell
                     break
@@ -608,7 +654,8 @@ xi.xispal.checkMagic = function(pal, player)
     if
         xi.xispal.checkCast(pal) or
         pal:getZone():getTypeMask() == xi.zoneType.CITY or
-        pal:getAnimation() == 5
+        pal:getAnimation() == 5 or
+        (pal:getMPP() < 40 and pal:getCurrentAction() == xi.action.ROAMING)
     then
         return
     end
@@ -652,6 +699,7 @@ xi.xispal.checkMagic = function(pal, player)
         return
 
     elseif job == xi.job.BRD then
+        xi.xispal.checkCure(pal, party, job, lvl)
         xi.xispal.checkSongs(pal, party, job, lvl, player)
         return
 
@@ -666,10 +714,8 @@ end
 
 
 xi.xispal.castSpell = function(pal, spell, target, job, extraTime)
-    -- Stand still to cast, this is reset in onMobRoam
-    if pal:getCurrentAction() == xi.action.ROAMING then
-        pal:setBaseSpeed(0)
-    end
+    local pos = pal:getPos()
+    pal:pathTo(pos.x, pos.y, pos.z) -- Stop pal in their tracks
 
     pal:setLocalVar('[XISP]canRest', os.time() + 12)
 

@@ -24,11 +24,13 @@ mission.sections =
         [xi.zone.WINDURST_WALLS] =
         {
             onZoneIn = function(player, prevZone)
-                if
-                    prevZone == xi.zone.WINDURST_WATERS or
-                    prevZone == xi.zone.WINDURST_WOODS
-                then
-                    return 510
+                if xi.settings.main.ENABLE_ASA == 1 then
+                    if
+                        prevZone == xi.zone.WINDURST_WATERS or
+                        prevZone == xi.zone.WINDURST_WOODS
+                    then
+                        return 510
+                    end
                 end
             end,
 

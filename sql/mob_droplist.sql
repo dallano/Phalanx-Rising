@@ -29444,12 +29444,12 @@ INSERT INTO `mob_droplist` VALUES (4002,1,2,50,3214,250); -- Ardor Stone
 INSERT INTO `mob_droplist` VALUES (4002,1,2,50,3333,250); -- Copper Meed
 
 -- NM
--- Group 1: Level 2 Enchantments (85% Droprate)
-INSERT INTO `mob_droplist` VALUES (4003,1,1,850,3225,200); -- Balance Card
-INSERT INTO `mob_droplist` VALUES (4003,1,1,850,3229,200); -- Voyage Card
-INSERT INTO `mob_droplist` VALUES (4003,1,1,850,3217,200); -- Ardor Card
-INSERT INTO `mob_droplist` VALUES (4003,1,1,850,3213,200); -- Vision Card
-INSERT INTO `mob_droplist` VALUES (4003,1,1,850,3334,200); -- Silver Meed
+-- Group 1: Level 2 Enchantments (40% Droprate)
+INSERT INTO `mob_droplist` VALUES (4003,1,1,400,3225,200); -- Balance Card
+INSERT INTO `mob_droplist` VALUES (4003,1,1,400,3229,200); -- Voyage Card
+INSERT INTO `mob_droplist` VALUES (4003,1,1,400,3217,200); -- Ardor Card
+INSERT INTO `mob_droplist` VALUES (4003,1,1,400,3213,200); -- Vision Card
+INSERT INTO `mob_droplist` VALUES (4003,1,1,400,3334,200); -- Silver Meed
 -- Group 2: Level 2 Enchantments (10% Droprate)
 INSERT INTO `mob_droplist` VALUES (40032,1,2,100,3225,200); -- Balance Card
 INSERT INTO `mob_droplist` VALUES (40032,1,2,100,3229,200); -- Voyage Card

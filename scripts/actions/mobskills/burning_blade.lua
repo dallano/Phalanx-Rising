@@ -10,7 +10,7 @@
 local mobskillObject = {}
 
 mobskillObject.onMobSkillCheck = function(target, mob, skill)
-    mob:messageBasic(xi.msg.basic.READIES_WS, 0, 33)
+    -- mob:messageBasic(xi.msg.basic.READIES_WS, 0, 33)
     return 0
 end
 
@@ -21,7 +21,6 @@ mobskillObject.onMobWeaponSkill = function(target, mob, skill)
     damage = xi.mobskills.mobFinalAdjustments(damage, mob, skill, target, xi.attackType.MAGICAL, xi.damageType.FIRE, xi.mobskills.shadowBehavior.NUMSHADOWS_1)
 
     target:takeDamage(damage, mob, xi.attackType.MAGICAL, xi.damageType.FIRE)
-
     return damage
 end
 

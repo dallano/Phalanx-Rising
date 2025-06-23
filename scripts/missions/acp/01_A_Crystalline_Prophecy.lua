@@ -24,7 +24,9 @@ mission.sections =
         [xi.zone.LOWER_JEUNO] =
         {
             onZoneIn = function(player, prevZone)
-                return 10094
+                if xi.settings.main.ENABLE_ACP == 1 then
+                    return 10094
+                end
             end,
 
             onEventUpdate =

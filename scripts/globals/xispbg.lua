@@ -5,21 +5,26 @@ xi.xispbg.handleLoot = function(zone, level, player)
     lootPool = {}
 
     -- Typical Loot
-    for _, group in ipairs(xi.xispbg.lootTables[level]) do
+    for i, group in ipairs(xi.xispbg.lootTables[level]) do
         if math.random(1, 100) <= group.CHANCE then
-            table.insert(lootPool, group[1][math.random(1, #group[1])])
+            local item = group[1][math.random(1, #group[1])]
+            table.insert(lootPool, item)
         end
     end
 
     -- Zone specific Loot
     for _, specialGroup in ipairs(xi.xispbg.zoneInfo[zone:getID()].SPECIAL_LOOT) do
         if math.random(1, 100) <= specialGroup.CHANCE then
-            table.insert(lootPool, specialGroup[1][math.random(1, #specialGroup[1])])
+            local item = specialGroup[1][math.random(1, #specialGroup[1])]
+            if not player:hasItem(item) then
+                table.insert(lootPool, item)
+            end
         end
     end
 
     -- If no item, give gil instead
     if #lootPool > 0 then
+        flag = false
         for _, item in pairs(lootPool) do
             player:addTreasure(item)
         end
@@ -49,7 +54,12 @@ xi.xispbg.spawnChest = function(zone, level, pos, player)
             if chest:getLocalVar('isOpen') == 0 then
                 -- Check if mobs are still alive
                 for _, variables in pairs(chest:getLocalVars()) do
-                    if GetMobByID(chest:getLocalVar(variables.varname)) and GetMobByID(chest:getLocalVar(variables.varname)):isAlive() then
+                    mobID = chest:getLocalVar(variables.varname)
+                    if
+                        mobID > 100 and -- Filter out unrelated variables
+                        GetMobByID(mobID) ~= nil and
+                        GetMobByID(mobID):isAlive()
+                    then
                         player:printToPlayer("There are still monsters about!", xi.msg.channel.NS_SAY, "")
                         return
                     end
@@ -169,7 +179,7 @@ xi.xispbg.spawnAlly = function(zone, pos, level)
             end
             ally:setMobMod(xi.mobMod.SKILL_LIST, info.skillList)
             ally:setLocalVar('[XISP]bgFlag', 1)
-            ally:setMod(xi.mod.REGEN, 50)
+            ally:setMod(xi.mod.REGEN, 300)
             ally:changeJob(info.job)
             ally:setMobLevel(level)
             ally:setUnkillable(true)
@@ -205,7 +215,6 @@ xi.xispbg.spawnMobDeco = function(zone, pos, level)
             mob:changeJob(info.job)
             mob:setMobLevel(level)
 
-            mob:setMobMod(xi.mobMod.SKILL_LIST, info.skillList)
             mob:setSpellList(info.spellList)
             mob:setLocalVar('[XISP]bgFlag', 1)
             mob:setMod(xi.mod.REGEN, 300)
@@ -234,14 +243,12 @@ xi.xispbg.generateMob = function(zone, pos, level)
         releaseIdOnDisappear  = true,
 
         onMobSpawn = function(mob)
-            local newLevel = level + math.random(1, 3)
-            -- Players will typically be solo / only with a squire at this point
-            if level == 15 then newLevel = level + math.random(-2, 0) end
+            local newLevel = level + math.random(2, 3)
+            if level == 15 then newLevel = level + math.random(-2, 0) end -- Players will typically be solo / only with a squire at this point
             mob:setMobLevel(newLevel)
+            mob:changeJob(info.job)
 
             mob:addStatusEffectEx(xi.effect.LEVEL_RESTRICTION, xi.effect.LEVEL_RESTRICTION, level, 0, 0, 0, 0, 0, xi.effectFlag.ON_ZONE + xi.effectFlag.CONFRONTATION)
-            mob:changeJob(info.job)
-            mob:setMobMod(xi.mobMod.SKILL_LIST, info.skillList)
             mob:setMobMod(xi.mobMod.ROAM_DISTANCE, 10)
             mob:setSpellList(info.spellList)
             mob:setLocalVar('[XISP]bgFlag', 1)
@@ -258,7 +265,7 @@ xi.xispbg.generateMob = function(zone, pos, level)
         else
             -- Try to spawn an NM
             if math.random(1, 100) < 5 then
-                local nm = xi.xispbg.generateNM(zone, mobArg:getSpawnPos(), level)
+                local nm = xi.xispbg.generateNM(zone, mobArg:getPos(), level)
                 nm:spawn()
                 nm:updateEnmity(player)
             end
@@ -295,7 +302,6 @@ xi.xispbg.generateNM = function(zone, pos, level)
             mob:setMobLevel(newLevel)
             mob:changeJob(info.job)
             mob:setMobMod(xi.mobMod.EXP_BONUS, math.random(10, 15) * level)
-            mob:setMobMod(xi.mobMod.SKILL_LIST, info.skillList)
             mob:setMobMod(xi.mobMod.GIL_MIN, 10 * level)
             mob:setMobMod(xi.mobMod.GIL_MAX, 15 * level)
             mob:setMobMod(xi.mobMod.ROAM_DISTANCE, 5)
@@ -355,8 +361,20 @@ end
 
 
 xi.xispbg.initZone = function(player, npc)
-    -- if GetServerVariable('[XISP]battlefieldCooldown') < os.time() then
-    if true then
+    local debug = false
+
+    local requirements = xi.xispbg.zoneInfo[player:getZone():getID()].REQUIREMENTS
+
+    if GetServerVariable('[XISP]battlefieldCooldown') < os.time() or debug then
+        -- Check requirements of battlefield before allowing it to begin
+        if player:getMainLvl() < requirements.LEVEL then
+            player:printToPlayer("Adventurer, build up your strength. I do not see your potential in aiding us in this fight.", 0, npc:getPacketName())
+            return
+        elseif player:getRank(player:getNation()) < requirements.RANK then
+            player:printToPlayer("Adventurer, build up rank in your nation before you can be recognized in this conflict.", 0, npc:getPacketName())
+            return
+        end
+
         player:printToPlayer("Halt, adventurer! Shadows stir beyond the horizon, beastmen gather in force. Steel thy blade, for war is nearly upon us!", 0, npc:getPacketName())
         menu.options = dialogue
         xi.xisp.sendMenu(player, menu)
@@ -440,6 +458,7 @@ xi.xispbg.resetZone = function(player)
 
         zone:setLocalVar('[XISP]battlefieldInProgress', 0)
 
+        -- Give players some time to open last crate
         for _, npc in pairs(zone:getNPCs()) do
             if npc:getLocalVar('[XISP]bgFlag') == 1 then
                 npc:setAlwaysRender(false)
@@ -459,11 +478,17 @@ end
 xi.xispbg.completeBattlefield = function(player)
     local zone = player:getZone()
 
-    xi.xispbg.resetZone(player)
+    for _, mob in pairs(zone:getMobs()) do
+        if mob:getLocalVar('[XISP]bgFlag') == 1 then
+            DespawnMob(mob:getID())
+        end
+    end
 
-    player:changeMusic(0, 120) -- 67
+    zone:setLocalVar('[XISP]battlefieldInProgress', 0)
+
+    player:changeMusic(0, 120)
     player:changeMusic(1, 120)
-    player:changeMusic(2, 101) -- Normal Combat Music
+    player:changeMusic(2, zone:getSoloBattleMusic()) -- Normal Combat Music
     local pos = xi.xispbg.zoneInfo[zone:getID()].DEFENDER_CAMPS[1].pos
 
     player:setLocalVar('inBattle', 0)

@@ -12,6 +12,18 @@ local lizzyPHTable =
 {
     [ID.mob.LEAPING_LIZZY[1] - 1] = ID.mob.LEAPING_LIZZY[1], -- -275.441 20.451 -347.294
     [ID.mob.LEAPING_LIZZY[2] - 1] = ID.mob.LEAPING_LIZZY[2], -- -322.871 30.052 -401.184
+
+    [ID.mob.LEAPING_LIZZY[1] - 2] = ID.mob.LEAPING_LIZZY[1],
+    [ID.mob.LEAPING_LIZZY[2] - 2] = ID.mob.LEAPING_LIZZY[2],
+
+    [ID.mob.LEAPING_LIZZY[1] - 3] = ID.mob.LEAPING_LIZZY[1],
+    [ID.mob.LEAPING_LIZZY[2] - 3] = ID.mob.LEAPING_LIZZY[2],
+
+    [ID.mob.LEAPING_LIZZY[1] - 4] = ID.mob.LEAPING_LIZZY[1],
+    [ID.mob.LEAPING_LIZZY[2] - 4] = ID.mob.LEAPING_LIZZY[2],
+
+    [ID.mob.LEAPING_LIZZY[1] - 5] = ID.mob.LEAPING_LIZZY[1],
+    [ID.mob.LEAPING_LIZZY[2] - 5] = ID.mob.LEAPING_LIZZY[2],
 }
 
 entity.onMobDeath = function(mob, player, optParams)

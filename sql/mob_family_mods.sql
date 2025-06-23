@@ -920,6 +920,33 @@ INSERT INTO `mob_family_mods` VALUES (404,36,35,1); -- ROAM_COOL: 35
 INSERT INTO `mob_family_mods` VALUES (404,51,3,1);  -- ROAM_TURNS: 3
 INSERT INTO `mob_family_mods` VALUES (404,52,30,1); -- ROAM_RATE: 30
 
+-- Pals
+INSERT INTO `mob_family_mods` VALUES (439,32,1,1); -- DONT_ROAM_HOME: 1
+INSERT INTO `mob_family_mods` VALUES (439,31,0,1); -- ROAM_DISTANCE: 0
+INSERT INTO `mob_family_mods` VALUES (439,37,1,1); -- NO_DESPAWN: 1
+INSERT INTO `mob_family_mods` VALUES (439,36,0,1); -- ROAM_COOL: 0
+INSERT INTO `mob_family_mods` VALUES (439,70,1,1); -- NO_REST: 1
+INSERT INTO `mob_family_mods` VALUES (440,32,1,1); -- DONT_ROAM_HOME: 1
+INSERT INTO `mob_family_mods` VALUES (440,31,0,1); -- ROAM_DISTANCE: 0
+INSERT INTO `mob_family_mods` VALUES (440,37,1,1); -- NO_DESPAWN: 1
+INSERT INTO `mob_family_mods` VALUES (440,36,0,1); -- ROAM_COOL: 0
+INSERT INTO `mob_family_mods` VALUES (440,70,1,1); -- NO_REST: 1
+INSERT INTO `mob_family_mods` VALUES (441,32,1,1); -- DONT_ROAM_HOME: 1
+INSERT INTO `mob_family_mods` VALUES (441,31,0,1); -- ROAM_DISTANCE: 0
+INSERT INTO `mob_family_mods` VALUES (441,37,1,1); -- NO_DESPAWN: 1
+INSERT INTO `mob_family_mods` VALUES (441,36,0,1); -- ROAM_COOL: 0
+INSERT INTO `mob_family_mods` VALUES (441,70,1,1); -- NO_REST: 1
+INSERT INTO `mob_family_mods` VALUES (442,32,1,1); -- DONT_ROAM_HOME: 1
+INSERT INTO `mob_family_mods` VALUES (442,31,0,1); -- ROAM_DISTANCE: 0
+INSERT INTO `mob_family_mods` VALUES (442,37,1,1); -- NO_DESPAWN: 1
+INSERT INTO `mob_family_mods` VALUES (442,36,0,1); -- ROAM_COOL: 0
+INSERT INTO `mob_family_mods` VALUES (442,70,1,1); -- NO_REST: 1
+INSERT INTO `mob_family_mods` VALUES (443,32,1,1); -- DONT_ROAM_HOME: 1
+INSERT INTO `mob_family_mods` VALUES (443,31,0,1); -- ROAM_DISTANCE: 0
+INSERT INTO `mob_family_mods` VALUES (443,37,1,1); -- NO_DESPAWN: 1
+INSERT INTO `mob_family_mods` VALUES (443,36,0,1); -- ROAM_COOL: 0
+INSERT INTO `mob_family_mods` VALUES (443,70,1,1); -- NO_REST: 1
+
 -- Lamiae-Medusa
 INSERT INTO `mob_family_mods` VALUES (469,10,10,1); -- SUBLINK: 10
 

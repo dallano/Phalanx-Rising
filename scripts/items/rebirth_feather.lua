@@ -22,7 +22,7 @@ itemObject.onItemCheck = function(target, item, param, caster)
 end
 
 itemObject.onItemUse = function(target)
-    xi.xispal.resurrect(target)
+    xi.xispal.resurrect(target, 2)
 end
 
 return itemObject

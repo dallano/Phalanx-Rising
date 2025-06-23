@@ -463,11 +463,11 @@ INSERT INTO `mob_family_system` VALUES (436,'Gnat-Bloodlapper',75,'Gnat',20,'Ver
 INSERT INTO `mob_family_system` VALUES (437,'Sapling-Ghillie_Dhu',127,'Sapling',17,'Plantoid',0.00,40,90,120,4,4,3,4,4,4,5,1,3,1,3,4.0,1,0);
 INSERT INTO `mob_family_system` VALUES (438,'Lizard-Highlander',60,'Lizard',14,'Lizard',1.00,40,108,120,4,3,5,4,4,4,4,1,3,1,3,1.0,2,0);
 -- XISP -------------------------------------
-INSERT INTO `mob_family_system` VALUES (439,'Pal-Hume',86,'Humanoid',13,'Humanoid',    0.00,60,55, 55,4,4,4,4,4,4,3,1,3,1,3,0.0,1,0);
-INSERT INTO `mob_family_system` VALUES (440,'Pal-Elvaan',86,'Humanoid',13,'Humanoid',  0.00,60,65,35, 2,5,3,6,6,2,4,1,3,1,3,0.0,1,0);
-INSERT INTO `mob_family_system` VALUES (441,'Pal-Tarutaru',86,'Humanoid',13,'Humanoid',0.00,60,40, 60,6,4,5,3,1,5,4,1,3,1,3,0.0,1,0);
-INSERT INTO `mob_family_system` VALUES (442,'Pal-Galka',86,'Humanoid',13,'Humanoid',   0.00,60,70,40, 3,4,1,5,5,4,6,1,3,1,3,0.0,1,0);
-INSERT INTO `mob_family_system` VALUES (443,'Pal-Mithra',86,'Humanoid',13,'Humanoid',  0.00,60,55, 55,5,1,5,2,4,5,6,1,3,1,3,0.0,1,0);
+INSERT INTO `mob_family_system` VALUES (439,'Pal-Hume',86,'Humanoid',13,'Humanoid',    0.00,40,55,55,4,4,4,4,4,4,3,1,3,1,3,0.0,1,0);
+INSERT INTO `mob_family_system` VALUES (440,'Pal-Elvaan',86,'Humanoid',13,'Humanoid',  0.00,40,65,35,2,5,3,6,6,2,4,1,3,1,3,0.0,1,0);
+INSERT INTO `mob_family_system` VALUES (441,'Pal-Tarutaru',86,'Humanoid',13,'Humanoid',0.00,40,40,60,6,4,5,3,1,5,4,1,3,1,3,0.0,1,0);
+INSERT INTO `mob_family_system` VALUES (442,'Pal-Galka',86,'Humanoid',13,'Humanoid',   0.00,40,70,40,3,4,1,5,5,4,6,1,3,1,3,0.0,1,0);
+INSERT INTO `mob_family_system` VALUES (443,'Pal-Mithra',86,'Humanoid',13,'Humanoid',  0.00,40,55,55,5,1,5,2,4,5,6,1,3,1,3,0.0,1,0);
 ---------------------------------------------
 INSERT INTO `mob_family_system` VALUES (444,'Larzos',68,'Shadow',13,'Humanoid',0.00,40,90,110,4,3,4,4,3,3,3,1,3,1,3,0.0,1,0);
 INSERT INTO `mob_family_system` VALUES (445,'Portia',68,'Shadow',13,'Humanoid',0.00,40,90,110,4,3,4,4,3,3,3,1,3,1,3,0.0,1,0);

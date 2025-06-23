@@ -9,6 +9,7 @@ local zoneObject = {}
 zoneObject.onInitialize = function(zone)
     -- A Chocobo Riding Game finish line
     zone:registerCylindricalTriggerArea(1, 580.074, -307.355, 5)
+    xi.xispbg.spawnNPC(zone, { x = 721.2, y = -1, z = -670.6, rotation = 154 })
 end
 
 zoneObject.onZoneIn = function(player, prevZone)
@@ -25,6 +26,8 @@ zoneObject.onZoneIn = function(player, prevZone)
     if quests.rainbow.onZoneIn(player) then
         cs = 901
     end
+
+    xi.xispbg.resetZone(player)
 
     return cs
 end

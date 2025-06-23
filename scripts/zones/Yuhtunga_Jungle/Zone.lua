@@ -22,6 +22,8 @@ zoneObject.onInitialize = function(zone)
     GetMobByID(ID.mob.TURTLERIDER):setRespawnTime(math.random(900, 10800))
 
     GetMobByID(ID.mob.PYUU_THE_SPATEMAKER):setRespawnTime(math.random(5400, 7200))
+
+    xi.xispbg.spawnNPC(zone, { x = -251.37, y = 0.25, z = -409.30, rotation = 113 })
 end
 
 zoneObject.onGameDay = function()

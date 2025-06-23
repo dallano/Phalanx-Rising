@@ -78,10 +78,12 @@ mission.sections =
         [xi.zone.NORTHERN_SAN_DORIA] =
         {
             onZoneIn = function(player, prevZone)
-                local missionStatus = player:getMissionStatus(mission.areaId)
-                local seenCS = utils.mask.getBit(missionStatus, 0)
-                if not seenCS and not player:isInMogHouse() then
-                    return 878
+                if xi.settings.main.ENABLE_SOA == 1 then
+                    local missionStatus = player:getMissionStatus(mission.areaId)
+                    local seenCS = utils.mask.getBit(missionStatus, 0)
+                    if not seenCS and not player:isInMogHouse() then
+                        return 878
+                    end
                 end
             end,
 
@@ -98,10 +100,12 @@ mission.sections =
         [xi.zone.BASTOK_MARKETS] =
         {
             onZoneIn = function(player, prevZone)
-                local missionStatus = player:getMissionStatus(mission.areaId)
-                local seenCS = utils.mask.getBit(missionStatus, 1)
-                if not seenCS and not player:isInMogHouse() then
-                    return 22
+                if xi.settings.main.ENABLE_SOA == 1 then
+                    local missionStatus = player:getMissionStatus(mission.areaId)
+                    local seenCS = utils.mask.getBit(missionStatus, 1)
+                    if not seenCS and not player:isInMogHouse() then
+                        return 22
+                    end
                 end
             end,
 
@@ -118,10 +122,12 @@ mission.sections =
         [xi.zone.WINDURST_WOODS] =
         {
             onZoneIn = function(player, prevZone)
-                local missionStatus = player:getMissionStatus(mission.areaId)
-                local seenCS = utils.mask.getBit(missionStatus, 2)
-                if not seenCS and not player:isInMogHouse() then
-                    return 839
+                if xi.settings.main.ENABLE_SOA == 1 then
+                    local missionStatus = player:getMissionStatus(mission.areaId)
+                    local seenCS = utils.mask.getBit(missionStatus, 2)
+                    if not seenCS and not player:isInMogHouse() then
+                        return 839
+                    end
                 end
             end,
 

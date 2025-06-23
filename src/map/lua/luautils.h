@@ -420,6 +420,8 @@ namespace luautils
     auto GetFurthestValidPosition(CLuaBaseEntity* fromTarget, float distance, float theta) -> sol::table;
 
     void OnPlayerRaise(CCharEntity* PChar);
+    void OnPlayerEngage(CCharEntity* PChar);
+    void OnPlayerDisengage(CCharEntity* PChar);
     void OnPlayerDeath(CCharEntity* PChar);
     void OnPlayerLevelUp(CCharEntity* PChar);
     void OnPlayerLevelDown(CCharEntity* PChar);
