@@ -72,11 +72,11 @@ xi.xispal.white =
 
     CURE =
     {
-        { spell = xi.magic.spell.CURE_V,   threshold = 400, cost = 0, lvl = { [xi.job.WHM] = 61, } }, -- Cure IV
-        { spell = xi.magic.spell.CURE_IV,  threshold = 350, cost = 0, lvl = { [xi.job.WHM] = 41, [xi.job.RDM] = 0, [xi.job.PLD] = 55, } }, -- Cure IV
-        { spell = xi.magic.spell.CURE_III, threshold = 180, cost = 0, lvl = { [xi.job.WHM] = 21, [xi.job.RDM] = 0, [xi.job.PLD] = 30, } }, -- Cure III
-        { spell = xi.magic.spell.CURE_II,  threshold = 100, cost = 0, lvl = { [xi.job.WHM] = 11, [xi.job.RDM] = 0, [xi.job.PLD] = 17, } }, -- Cure II
-        { spell = xi.magic.spell.CURE,     threshold = 35,  cost = 0, lvl = { [xi.job.WHM] = 1,  [xi.job.RDM] = 0, [xi.job.PLD] = 5,  } }, -- Cure
+        { spell = xi.magic.spell.CURE_V,   threshold = 400, cost = 0, lvl = { [xi.job.WHM] = 61, } },
+        { spell = xi.magic.spell.CURE_IV,  threshold = 350, cost = 0, lvl = { [xi.job.WHM] = 41, [xi.job.RDM] = 48, [xi.job.PLD] = 55, } },
+        { spell = xi.magic.spell.CURE_III, threshold = 180, cost = 0, lvl = { [xi.job.WHM] = 21, [xi.job.RDM] = 26, [xi.job.PLD] = 30, } },
+        { spell = xi.magic.spell.CURE_II,  threshold = 100, cost = 0, lvl = { [xi.job.WHM] = 11, [xi.job.RDM] = 14, [xi.job.PLD] = 17, } },
+        { spell = xi.magic.spell.CURE,     threshold = 35,  cost = 0, lvl = { [xi.job.WHM] = 1,  [xi.job.RDM] = 3,  [xi.job.PLD] = 5,  } },
     },
 
     REGEN =

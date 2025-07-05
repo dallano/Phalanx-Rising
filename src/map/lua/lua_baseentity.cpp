@@ -11750,10 +11750,10 @@ uint8 CLuaBaseEntity::registerBattlefield(sol::object const& arg0, sol::object c
         registration.timeLimit  = std::chrono::seconds(battlefield.get<int32>("timeLimit"));
         registration.isMission  = battlefield.get_or("isMission", false);
 
-        if (registration.isMission && settings::get<uint8>("map.LV_CAP_MISSION_BCNM") == 0)
-        {
-            registration.levelCap = settings::get<uint8>("main.MAX_LEVEL");
-        }
+        // if (registration.isMission && settings::get<uint8>("map.LV_CAP_MISSION_BCNM") == 0)
+        // {
+        //     registration.levelCap = settings::get<uint8>("main.MAX_LEVEL");
+        // }
 
         registration.showTimer = battlefield.get_or("showTimer", true);
         registration.rules |= battlefield.get<bool>("allowSubjob") ? RULES_ALLOW_SUBJOBS : 0;
@@ -11898,6 +11898,37 @@ bool CLuaBaseEntity::hasEnteredBattlefield()
 
     auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
     return CBattlefield::hasPlayerEntered(PChar);
+}
+
+/************************************************************************
+ *  Function: addMobToBattlefield()
+ *  Purpose : Adds a custom mob to a player's battlefield or instance
+ *  Example : if player:addMobToBattlefield(mob) then
+ *  Notes   :
+ ************************************************************************/
+
+void CLuaBaseEntity::addMobToBattlefield(CLuaBaseEntity* PEntity)
+{
+    if (auto* PMob = static_cast<CMobEntity*>(PEntity->GetBaseEntity()))
+    {
+        auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
+        PChar->StatusEffectContainer->CopyConfrontationEffect(PMob);
+        PMob->setBattleID(PChar->getBattleID());
+
+        if (PChar->PBattlefield)
+        {
+            PMob->PBattlefield = PChar->PBattlefield;
+        }
+
+        if (PChar->PInstance)
+        {
+            PMob->PInstance = PChar->PInstance;
+        }
+    }
+    else
+    {
+        ShowWarning("Attempting to add base enmity to invalid entity type (%s).", m_PBaseEntity->getName());
+    }
 }
 
 /************************************************************************
@@ -19593,6 +19624,7 @@ void CLuaBaseEntity::Register()
     SOL_REGISTER("isInDynamis", CLuaBaseEntity::isInDynamis);
     SOL_REGISTER("setEnteredBattlefield", CLuaBaseEntity::setEnteredBattlefield);
     SOL_REGISTER("hasEnteredBattlefield", CLuaBaseEntity::hasEnteredBattlefield);
+    SOL_REGISTER("addMobToBattlefield", CLuaBaseEntity::addMobToBattlefield);
 
     // Battle Utilities
     SOL_REGISTER("isAlive", CLuaBaseEntity::isAlive);

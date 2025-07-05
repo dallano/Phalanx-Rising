@@ -233,11 +233,7 @@ xi.xispal.levelSync = function(pal, player)
     local lvl = player:getMainLvl()
     if lvl ~= pal:getMainLvl() then
         pal:setMobLevel(lvl)
-    end
-
-    local effect = xi.effect.LEVEL_RESTRICTION
-    if player:hasStatusEffect(effect) and not pal:hasStatusEffect(effect) then
-        pal:addStatusEffectEx(effect, effect, player:getStatusEffect(effect):getPower(), 0, 0)
+        xi.xispal.calculateStats(pal, player)
     end
 end
 
@@ -309,7 +305,20 @@ xi.xispal.stopResting = function(pal)
 end
 
 
-xi.xispal.calculateStats = function(pal, race, job)
+xi.xispal.calculateStats = function(pal, player)
+    local job = pal:getMainJob()
+    local race = 1
+
+    if pal:getLocalVar('isChoco') then
+        return
+    end
+
+    if pal:getLocalVar('isSquire') == 1 then
+        race = player:getCharVar('[XISP]squireRace')
+    else
+        race = xi.xispal.palInfo[job].race
+    end
+
     local raceTable = xi.xispal.statInfo.RACE[race]
     local jobTable  = xi.xispal.statInfo.JOB[job]
     local lvl       = pal:getMainLvl()
@@ -413,7 +422,7 @@ xi.xispal.onMobSpawn = function(pal, player, race, job)
     end)
 
     pal:timer(2000, function(palArg)
-        xi.xispal.calculateStats(palArg, race, job)
+        xi.xispal.calculateStats(palArg, player)
         palArg:setHP(palArg:getMaxHP())
         palArg:setMP(palArg:getMaxHP())
     end)

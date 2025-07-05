@@ -172,7 +172,7 @@ xi.settings.map =
     FELLOW_TP_MULTIPLIER = 1.0,
 
     -- Adjust max HP pool for NMs, regular mobs, players, and trusts/fellows. Acts as a multiplier, so default is 1.
-    NM_HP_MULTIPLIER        = 0.8,
+    NM_HP_MULTIPLIER        = 1.0,
     MOB_HP_MULTIPLIER       = 0.5,
     PLAYER_HP_MULTIPLIER    = 1.0,
     ALTER_EGO_HP_MULTIPLIER = 1.0,
@@ -231,15 +231,15 @@ xi.settings.map =
 
     -- Allows parry, block, and guard to skill up regardless of the action occuring.
     -- This did not happen in previous eras
-    PARRY_OLD_SKILLUP_STYLE = false,
-    BLOCK_OLD_SKILLUP_STYLE = false,
-    GUARD_OLD_SKILLUP_STYLE = false,
+    PARRY_OLD_SKILLUP_STYLE = true,
+    BLOCK_OLD_SKILLUP_STYLE = true,
+    GUARD_OLD_SKILLUP_STYLE = true,
 
     -- Globally adjusts ALL battlefield level caps by this many levels.
-    BATTLE_CAP_TWEAK = 5,
+    BATTLE_CAP_TWEAK = 0,
 
     -- Enable/disable level cap of mission battlefields stored in database.
-    LV_CAP_MISSION_BCNM = true,
+    LV_CAP_MISSION_BCNM = false,
 
     -- Allow players to enter BCNMs which are flagged as experimental
     BCNM_ENABLE_EXPERIMENTAL = true,

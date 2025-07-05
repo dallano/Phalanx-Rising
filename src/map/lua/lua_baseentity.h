@@ -596,6 +596,7 @@ public:
     bool  isInDynamis();
     void  setEnteredBattlefield(bool entered);
     bool  hasEnteredBattlefield();
+    void  addMobToBattlefield(CLuaBaseEntity* PEntity);
 
     // Battle Utilities
     bool isAlive();

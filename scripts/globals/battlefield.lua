@@ -876,9 +876,7 @@ function Battlefield:onEntryEventUpdate(player, csid, option, npc)
 
         -- XISP
         for _, member in pairs(xi.xispal.getParty(player)) do
-            print("Adding: ", member, " to battlefield")
-            member:addStatusEffect(effect)
-            member:setBattleID(player:getBattleID())
+            player:addMobToBattlefield(member)
         end
     end
 
@@ -961,12 +959,13 @@ function Battlefield:onBattlefieldInitialize(battlefield)
 
     -- NOTE: Experimental battlefields are at most partially implemented.  Increase mob levels
     -- for temporary tuning.
-    if self.experimental then
-        local battlefieldMobs = battlefield:getMobs(true, true)
-        for _, mobObj in ipairs(battlefieldMobs) do
-            mobObj:setMobLevel(math.min(mobObj:getMainLvl() * 2, 255))
-        end
-    end
+    -- XISP Disabled this
+    -- if self.experimental then
+    --     local battlefieldMobs = battlefield:getMobs(true, true)
+    --     for _, mobObj in ipairs(battlefieldMobs) do
+    --         mobObj:setMobLevel(math.min(mobObj:getMainLvl() * 2, 255))
+    --     end
+    -- end
 
     for mobId, path in pairs(self.paths) do
         GetMobByID(mobId):pathThrough(path, xi.path.flag.PATROL)

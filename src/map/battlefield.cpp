@@ -277,10 +277,10 @@ void CBattlefield::ApplyLevelRestrictions(CCharEntity* PChar) const
         cap += settings::get<int8>("map.BATTLE_CAP_TWEAK"); // We wait till here to do this because we don't want to modify uncapped battles.
 
         // Check if it's a mission and if config setting applies.
-        if (!settings::get<bool>("map.LV_CAP_MISSION_BCNM") && m_isMission == 1)
-        {
-            cap = settings::get<uint8>("main.MAX_LEVEL"); // Cap to server max level to strip buffs - this is the retail diff between uncapped and capped to max lv.
-        }
+        // if (!settings::get<bool>("map.LV_CAP_MISSION_BCNM") && m_isMission == 1)
+        // {
+        //     cap = settings::get<uint8>("main.MAX_LEVEL"); // Cap to server max level to strip buffs - this is the retail diff between uncapped and capped to max lv.
+        // }
 
         PChar->StatusEffectContainer->DelStatusEffectsByFlag(EFFECTFLAG_DISPELABLE, EffectNotice::Silent);
         PChar->StatusEffectContainer->AddStatusEffect(new CStatusEffect(EFFECT_LEVEL_RESTRICTION, EFFECT_LEVEL_RESTRICTION, cap, 0s, 0s));

@@ -19,7 +19,7 @@ xi.xisp.augments =
 
         [3226] = -- Magic Augments (Voyage)
         {
-            { augmentID = 52,  value = 1, name = "MP Recovered While Healing +2", },
+            { augmentID = 52,  value = 0, name = "MP Recovered While Healing +1", },
             { augmentID = 35,  value = 0, name = "Magic Accuracy +1", },
             { augmentID = 133, value = 0, name = "Magic Attack +1", },
             { augmentID = 17,  value = 2, name = "HP and MP +3", },
@@ -170,7 +170,7 @@ xi.xisp.augments =
             { augmentID = 129,  value = 5,  name = "Ranged Acc. and Ranged Attk. +6" },
             { augmentID = 1248, value = 9,  name = "Enhancing Magic Duration +10" },
             { augmentID = 54,   value = 1,  name = "Physical Damage Taken -2%" },
-            { augmentID = 326,  value = 1,  name = "Weapon Skill Accuracy + 2" },
+            { augmentID = 326,  value = 1,  name = "Weapon Skill Accuracy +2" },
             { augmentID = 327,  value = 0,  name = "Weapon Skill Damage +1%" },
             { augmentID = 56,   value = 1,  name = "Breath Damage Taken -2%" },
             { augmentID = 68,   value = 5,  name = "Accuracy and Attack +6" },

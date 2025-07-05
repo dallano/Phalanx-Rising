@@ -99,6 +99,7 @@ xi.xispal.spawnChocobo = function(player, zone)
             choco:setStatus(xi.status.NORMAL)
             choco:setAutoAttackEnabled(false)
             choco:setUnkillable(true)
+            choco:setLocalVar('isChoco', 1)
         end,
 
         onMobRoam = function(choco)

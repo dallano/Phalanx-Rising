@@ -235,7 +235,6 @@ xi.xispal.chocoboColor =
     [4] = 0x0800, -- green
 }
 
-
 -- 0x0700200000000000000000000000000000000000 -- Default Chocobo:
 -- 0x0700210000000000000000000000000000000000 -- Black Chocobo:
 -- 0x0700220000000000000000000000000000000000 -- Blue Chocobo:
@@ -873,7 +872,7 @@ xi.xispal.mageGearSets =
         hands = xi.xispal.equipment.BRD_AF,
         legs  = xi.xispal.equipment.BRD_AF,
         feet  = xi.xispal.equipment.BRD_AF,
-        main  = xi.xispal.weapons[0][1] + 5, -- 0, 1, 3
+        main  = xi.xispal.weapons[0][1] + 10, -- 0, 1, 3
         sub   = 256,
     },
 

@@ -2530,6 +2530,12 @@ function CBaseEntity:hasEnteredBattlefield()
 end
 
 ---@nodiscard
+---@param PEntity CBaseEntity
+---@return nil
+function CBaseEntity:addMobToBattlefield(PEntity)
+end
+
+---@nodiscard
 ---@return boolean
 function CBaseEntity:isAlive()
 end
