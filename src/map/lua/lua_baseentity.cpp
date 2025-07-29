@@ -161,6 +161,7 @@
 #include "utils/itemutils.h"
 #include "utils/jailutils.h"
 #include "utils/mobutils.h"
+#include "utils/mountutils.h"
 #include "utils/petutils.h"
 #include "utils/puppetutils.h"
 #include "utils/trustutils.h"
@@ -188,9 +189,15 @@ CLuaBaseEntity::CLuaBaseEntity(CBaseEntity* PEntity)
  *  Notes   : Mainly used for showing retail text specific to an NPC
  ************************************************************************/
 
-void CLuaBaseEntity::showText(CLuaBaseEntity* mob, uint16 messageID, sol::object const& p0, sol::object const& p1, sol::object const& p2, sol::object const& p3)
+void CLuaBaseEntity::showText(CLuaBaseEntity* entity, uint16 messageID, sol::object const& p0, sol::object const& p1, sol::object const& p2, sol::object const& p3)
 {
-    CBaseEntity* PBaseEntity = mob->GetBaseEntity();
+    CBaseEntity* PBaseEntity = entity->GetBaseEntity();
+
+    if (PBaseEntity == nullptr)
+    {
+        ShowError("Invalid entity used on showText() function. Message ID (%i)", messageID);
+        return;
+    }
 
     if (PBaseEntity->objtype == TYPE_NPC)
     {
@@ -749,7 +756,7 @@ uint32 CLuaBaseEntity::getLocalVar(std::string const& var)
 /************************************************************************
  *  Function: setLocalVar()
  *  Purpose : Assigns a local variable to an entity
- *  Example : mob:setLocalVar("pop", os.time() + math.random(1200,7200));
+ *  Example : mob:setLocalVar("pop", GetSystemTime() + math.random(1200,7200));
  *  Notes   :
  ************************************************************************/
 
@@ -2538,11 +2545,11 @@ bool CLuaBaseEntity::sendGuild(uint16 guildID, uint8 open, uint8 close, uint8 ho
  *  Example : player:openSendBox()
  ************************************************************************/
 
-void CLuaBaseEntity::openSendBox()
+void CLuaBaseEntity::openSendBox() const
 {
     if (auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity))
     {
-        dboxutils::OpenSendBox(PChar, 0x0D, 2);
+        dboxutils::OpenSendBox(PChar);
     }
 }
 
@@ -4589,20 +4596,18 @@ void CLuaBaseEntity::addShopItem(uint16 itemID, double rawPrice, sol::object con
  *  Notes   :
  ************************************************************************/
 
-auto CLuaBaseEntity::getCurrentGPItem(uint8 guildID) -> std::tuple<uint16, uint16>
+auto CLuaBaseEntity::getCurrentGPItem(const uint8 guildId) const -> std::tuple<uint16, uint16>
 {
-    if (m_PBaseEntity->objtype != TYPE_PC)
+    if (auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity))
     {
-        ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
-        return { 0, 0 };
+        const CGuild* PGuild           = guildutils::GetGuild(guildId);
+        auto [itemId, remainingPoints] = PGuild->getDailyGPItem(PChar);
+
+        return { itemId, remainingPoints };
     }
 
-    CGuild*      PGuild = guildutils::GetGuild(guildID);
-    CCharEntity* PChar  = static_cast<CCharEntity*>(m_PBaseEntity);
-
-    auto GPItem = PGuild->getDailyGPItem(PChar);
-
-    return { GPItem.first, GPItem.second };
+    ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
+    return { 0, 0 };
 }
 
 /************************************************************************
@@ -5302,38 +5307,36 @@ uint8 CLuaBaseEntity::storeWithPorterMoogle(uint16 slipId, sol::table const& ext
  *  Notes   : See scripts/globals/porter_moogle.lua
  ************************************************************************/
 
-sol::table CLuaBaseEntity::getRetrievableItemsForSlip(uint16 slipId)
+auto CLuaBaseEntity::getRetrievableItemsForSlip(const uint16 slipId) const -> sol::table
 {
-    if (m_PBaseEntity->objtype != TYPE_PC)
+    if (const auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity))
     {
-        ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
-        return {};
+        const auto slipSlotId = PChar->getStorage(LOC_INVENTORY)->SearchItem(slipId);
+
+        if (slipSlotId == ERROR_SLOTID)
+        {
+            return {};
+        }
+
+        auto* slip = PChar->getStorage(LOC_INVENTORY)->GetItem(slipSlotId);
+
+        if (slip == nullptr)
+        {
+            ShowError("Slip item was null.");
+            return {};
+        }
+
+        sol::table table = lua.create_table();
+        for (int i = 0; i < CItem::extra_size; i++)
+        {
+            table.add(slip->m_extra[i]);
+        }
+
+        return table;
     }
 
-    CCharEntity* PChar      = (CCharEntity*)m_PBaseEntity;
-    auto         slipSlotId = PChar->getStorage(LOC_INVENTORY)->SearchItem(slipId);
-
-    if (slipSlotId == 255)
-    {
-        return {};
-    }
-
-    auto* slip = PChar->getStorage(LOC_INVENTORY)->GetItem(slipSlotId);
-
-    if (slip == nullptr)
-    {
-        ShowError("Slip item was null.");
-        return {};
-    }
-
-    sol::table table = lua.create_table();
-    // TODO Is extra sized defined anywhere?
-    for (int i = 0; i < 24; i++)
-    {
-        table.add(slip->m_extra[i]);
-    }
-
-    return table;
+    ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
+    return {};
 }
 
 /************************************************************************
@@ -6943,6 +6946,7 @@ uint8 CLuaBaseEntity::levelRestriction(sol::object const& level)
             charutils::BuildingCharTraitsTable(PChar);
             charutils::BuildingCharAbilityTable(PChar);
             charutils::CheckValidEquipment(PChar);
+            luautils::CheckForGearSet(PChar);
 
             PChar->updatemask |= UPDATE_HP;
 
@@ -8693,7 +8697,7 @@ void CLuaBaseEntity::completeAssault(uint8 missionID)
  *  Notes   :
  ************************************************************************/
 
-void CLuaBaseEntity::addKeyItem(uint16 keyItemID)
+void CLuaBaseEntity::addKeyItem(const KeyItem keyItemID) const
 {
     if (m_PBaseEntity->objtype != TYPE_PC)
     {
@@ -8702,12 +8706,12 @@ void CLuaBaseEntity::addKeyItem(uint16 keyItemID)
     }
 
     auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
-    uint8 table = keyItemID >> 9;
+    uint8 table = static_cast<uint16_t>(keyItemID) >> 9;
 
     if (table >= MAX_KEYS_TABLE)
     {
         // Bail out if an invalid keyitem is being added
-        ShowWarning("CLuaBaseEntity::addKeyItem() - Attempting to add invalid key item: %d", keyItemID);
+        ShowWarning("CLuaBaseEntity::addKeyItem() - Attempting to add invalid key item: %d", static_cast<uint16_t>(keyItemID));
         return;
     }
 
@@ -8729,7 +8733,7 @@ void CLuaBaseEntity::addKeyItem(uint16 keyItemID)
  *  Notes   :
  ************************************************************************/
 
-bool CLuaBaseEntity::hasKeyItem(uint16 keyItemID)
+auto CLuaBaseEntity::hasKeyItem(const KeyItem keyItemID) const -> bool
 {
     if (m_PBaseEntity->objtype != TYPE_PC)
     {
@@ -8747,7 +8751,7 @@ bool CLuaBaseEntity::hasKeyItem(uint16 keyItemID)
  *  Notes   :
  ************************************************************************/
 
-void CLuaBaseEntity::delKeyItem(uint16 keyItemID)
+void CLuaBaseEntity::delKeyItem(const KeyItem keyItemID) const
 {
     if (m_PBaseEntity->objtype != TYPE_PC)
     {
@@ -8756,12 +8760,12 @@ void CLuaBaseEntity::delKeyItem(uint16 keyItemID)
     }
 
     auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
-    uint8 table = keyItemID >> 9;
+    uint8 table = static_cast<uint16_t>(keyItemID) >> 9;
 
     if (table >= MAX_KEYS_TABLE)
     {
         // Bail out if an invalid keyitem is being added
-        ShowWarning("CLuaBaseEntity::delKeyItem() - Attempting to delete invalid key item: %d", keyItemID);
+        ShowWarning("CLuaBaseEntity::delKeyItem() - Attempting to delete invalid key item: %d", static_cast<uint16_t>(keyItemID));
         return;
     }
 
@@ -8778,7 +8782,7 @@ void CLuaBaseEntity::delKeyItem(uint16 keyItemID)
  *  Notes   :
  ************************************************************************/
 
-bool CLuaBaseEntity::seenKeyItem(uint16 keyItemID)
+bool CLuaBaseEntity::seenKeyItem(const KeyItem keyItemID) const
 {
     if (m_PBaseEntity->objtype != TYPE_PC)
     {
@@ -8796,7 +8800,7 @@ bool CLuaBaseEntity::seenKeyItem(uint16 keyItemID)
  *  Notes   : Some things just can't be unseen... (not implemented though)
  ************************************************************************/
 
-void CLuaBaseEntity::unseenKeyItem(uint16 keyItemID)
+void CLuaBaseEntity::unseenKeyItem(const KeyItem keyItemID) const
 {
     if (m_PBaseEntity->objtype != TYPE_PC)
     {
@@ -8805,12 +8809,12 @@ void CLuaBaseEntity::unseenKeyItem(uint16 keyItemID)
     }
 
     auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
-    uint8 table = keyItemID >> 9;
+    uint8 table = static_cast<uint16_t>(keyItemID) >> 9;
 
     if (table >= MAX_KEYS_TABLE)
     {
         // Bail out if an invalid keyitem is being added
-        ShowWarning("CLuaBaseEntity::unseenKeyItem() - Attempting to unsee invalid key item: %d", keyItemID);
+        ShowWarning("CLuaBaseEntity::unseenKeyItem() - Attempting to unsee invalid key item: %d", static_cast<uint16_t>(keyItemID));
         return;
     }
 
@@ -9632,20 +9636,18 @@ void CLuaBaseEntity::delAssaultPoint(uint8 region, int32 points)
  *  Notes   :
  ************************************************************************/
 
-auto CLuaBaseEntity::addGuildPoints(uint8 guildID, uint8 slotID) -> std::tuple<uint8, int16>
+auto CLuaBaseEntity::addGuildPoints(const uint8 guildId, const uint8 slotId) const -> std::tuple<uint8, int16>
 {
-    if (m_PBaseEntity->objtype != TYPE_PC)
+    if (auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity))
     {
-        ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
-        return { 0, 0 };
+        const CGuild* PGuild              = guildutils::GetGuild(guildId);
+        auto [itemQuantity, earnedPoints] = PGuild->addGuildPoints(PChar, PChar->TradeContainer->getItem(slotId));
+
+        return { itemQuantity, earnedPoints };
     }
 
-    CGuild* PGuild = guildutils::GetGuild(guildID);
-    auto*   PChar  = static_cast<CCharEntity*>(m_PBaseEntity);
-
-    std::pair<uint8, uint16> gpResult = PGuild->addGuildPoints(PChar, PChar->TradeContainer->getItem(slotID));
-
-    return { gpResult.first, gpResult.second };
+    ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
+    return { 0, 0 };
 }
 
 /************************************************************************
@@ -10323,36 +10325,34 @@ void CLuaBaseEntity::capSkill(uint8 skill)
  *  Notes   :
  ************************************************************************/
 
-void CLuaBaseEntity::capAllSkills()
+void CLuaBaseEntity::capAllSkills() const
 {
-    if (m_PBaseEntity->objtype != TYPE_PC)
+    if (auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity))
     {
-        ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
+        for (uint8 i = SKILL_HAND_TO_HAND; i <= SKILL_HANDBELL; ++i) // For SKILL_HAND_TO_HAND (1) - SKILL_HANDBELL (46)
+        {
+            const char* Query = "INSERT INTO char_skills "
+                                "SET "
+                                "charid = ?, "
+                                "skillid = ?, "
+                                "value = ?, "
+                                "rank = ? "
+                                "ON DUPLICATE KEY UPDATE value = ?, rank = ?";
+
+            db::preparedStmt(Query, PChar->id, i, 5000, PChar->RealSkills.rank[i], 5000, PChar->RealSkills.rank[i]);
+
+            uint16 maxSkill               = 10 * battleutils::GetMaxSkill(static_cast<SKILLTYPE>(i), PChar->GetMJob(), PChar->GetMLevel());
+            PChar->RealSkills.skill[i]    = maxSkill; // set to capped
+            PChar->WorkingSkills.skill[i] = maxSkill / 10;
+            PChar->WorkingSkills.skill[i] |= 0x8000; // set blue capped flag
+        }
+
+        charutils::CheckWeaponSkill(PChar, SKILL_NONE);
+        PChar->pushPacket<CCharSkillsPacket>(PChar);
         return;
     }
 
-    auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
-
-    for (uint8 i = SKILL_HAND_TO_HAND; i <= SKILL_HANDBELL; ++i) // For SKILL_HAND_TO_HAND (1) - SKILL_HANDBELL (46)
-    {
-        const char* Query = "INSERT INTO char_skills "
-                            "SET "
-                            "charid = ?, "
-                            "skillid = ?, "
-                            "value = ?, "
-                            "rank = ? "
-                            "ON DUPLICATE KEY UPDATE value = ?, rank = ? LIMIT 1";
-
-        db::preparedStmt(Query, PChar->id, i, 5000, PChar->RealSkills.rank[i], 5000, PChar->RealSkills.rank[i]);
-
-        uint16 maxSkill               = 10 * battleutils::GetMaxSkill(static_cast<SKILLTYPE>(i), PChar->GetMJob(), PChar->GetMLevel());
-        PChar->RealSkills.skill[i]    = maxSkill; // set to capped
-        PChar->WorkingSkills.skill[i] = maxSkill / 10;
-        PChar->WorkingSkills.skill[i] |= 0x8000; // set blue capped flag
-    }
-
-    charutils::CheckWeaponSkill(PChar, SKILL_NONE);
-    PChar->pushPacket<CCharSkillsPacket>(PChar);
+    ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
 }
 
 /************************************************************************
@@ -11361,7 +11361,7 @@ uint32 CLuaBaseEntity::getLeaderID()
 /************************************************************************
  *  Function: getPartyLastMemberJoinedTime()
  *  Purpose : Get the epoch time point in seconds that the last PC joined the party (if any)
- *  Example : seconds_since_last_member_joined = os.time() - player:getPartyLastMemberJoinedTime()
+ *  Example : seconds_since_last_member_joined = GetSystemTime() - player:getPartyLastMemberJoinedTime()
  *  Notes   :
  ************************************************************************/
 
@@ -16004,17 +16004,30 @@ void CLuaBaseEntity::setPetName(uint8 pType, uint16 value, sol::object const& ar
     }
 }
 
-void CLuaBaseEntity::registerChocobo(uint32 value)
+void CLuaBaseEntity::registerChocobo(const ChocoboColor color, sol::table const& traits) const
 {
-    if (m_PBaseEntity == nullptr || m_PBaseEntity->objtype != TYPE_PC)
+    if (auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity))
     {
-        ShowWarning("Invalid Entity");
+        const auto largeBeak   = traits.get_or("largeBeak", false);
+        const auto fullTail    = traits.get_or("fullTail", false);
+        const auto largeTalons = traits.get_or("largeTalons", false);
+
+        const ChocoboCustomProperties newChocobo{
+            .traits = ChocoboPhysicalTraits{
+                .largeBeak   = largeBeak,
+                .largeTalons = largeTalons,
+                .fullTail    = fullTail,
+            },
+            .color = color,
+        };
+
+        PChar->m_FieldChocobo = newChocobo.properties;
+        PChar->m_mountId      = 0;
+        db::preparedStmt("UPDATE char_pet SET field_chocobo = ? WHERE charid = ?", PChar->m_FieldChocobo, PChar->id);
         return;
     }
 
-    auto* PChar           = static_cast<CCharEntity*>(m_PBaseEntity);
-    PChar->m_FieldChocobo = value;
-    db::preparedStmt("UPDATE char_pet SET field_chocobo = ? WHERE charid = ?", value, PChar->id);
+    ShowWarning("Invalid Entity (PC: %s) calling function.", m_PBaseEntity->getName());
 }
 
 /************************************************************************
@@ -18037,6 +18050,47 @@ void CLuaBaseEntity::useMobAbility(sol::variadic_args va)
 }
 
 /************************************************************************
+ *  Function: usePetAbility()
+ *  Purpose : Instruct a Pet to use a specified Job Ability
+ *  Example : pet:usePetAbility(xi.ability.PERFECT_DEFENSE, pet)
+ *  Notes   : Inserts directly into queue stack with 0ms delay,
+ *  and checks queue for immediate use.
+ ************************************************************************/
+
+void CLuaBaseEntity::usePetAbility(uint16 skillId, sol::object const& target) const
+{
+    CBattleEntity* PTarget{ nullptr };
+
+    if (!battleutils::GetPetSkill(skillId))
+    {
+        return;
+    }
+
+    if ((target != sol::lua_nil) && target.is<CLuaBaseEntity*>())
+    {
+        const auto* PLuaBaseEntity = target.as<CLuaBaseEntity*>();
+        PTarget                    = static_cast<CBattleEntity*>(PLuaBaseEntity->m_PBaseEntity);
+    }
+
+    // clang-format off
+    m_PBaseEntity->PAI->QueueAction(queueAction_t(0ms, true, [PTarget, skillId](auto PEntity)
+    {
+        if (PTarget)
+        {
+            PEntity->PAI->PetSkill(PTarget->targid, skillId);
+        }
+        else if (dynamic_cast<CMobEntity*>(PEntity))
+        {
+            PEntity->PAI->PetSkill(static_cast<CMobEntity*>(PEntity)->GetBattleTargetID(), skillId);
+        }
+    }));
+    // clang-format on
+
+    // Check queue immediately in case of 0 ms delay abilities
+    m_PBaseEntity->PAI->checkQueueImmediately();
+}
+
+/************************************************************************
  *  Function: getAbilityDistance()
  *  Purpose : Returns the distance for a specified ability from mob_skills
  *  Example : mob:getAbilityDistance(740)
@@ -19034,7 +19088,7 @@ auto CLuaBaseEntity::getContestRewardStatus() -> sol::table
     {
         std::string Query = "SELECT contestrank, share "
                             "FROM   fishing_contest_entries "
-                            "WHERE  charid = (?) "
+                            "WHERE  charid = ? "
                             "AND    claimed != 1";
 
         auto ret = db::preparedStmt(Query, PChar->id);
@@ -19925,6 +19979,7 @@ void CLuaBaseEntity::Register()
     SOL_REGISTER("castSpell", CLuaBaseEntity::castSpell);
     SOL_REGISTER("useJobAbility", CLuaBaseEntity::useJobAbility);
     SOL_REGISTER("useMobAbility", CLuaBaseEntity::useMobAbility);
+    SOL_REGISTER("usePetAbility", CLuaBaseEntity::usePetAbility);
     SOL_REGISTER("getAbilityDistance", CLuaBaseEntity::getAbilityDistance);
     SOL_REGISTER("hasTPMoves", CLuaBaseEntity::hasTPMoves);
     SOL_REGISTER("drawIn", CLuaBaseEntity::drawIn);

@@ -275,7 +275,7 @@ end
 xi.promyvion.receptacleOnMobRoam = function(mob)
     -- Handle idle stray spawn.
     -- NOTE: Strays poped when receptacles are idle don't automatically link unless they are in a certain range.
-    if os.time() >= mob:getLocalVar('[Stray]CooldownIdle') then
+    if GetSystemTime() >= mob:getLocalVar('[Stray]CooldownIdle') then
         local strayId = checkForStrays(mob) -- Returns stray Id OR 0
 
         -- Spawn stray.
@@ -306,7 +306,7 @@ xi.promyvion.receptacleOnMobFight = function(mob, target)
     end
 
     -- Handle engaged stray spawn.
-    if os.time() >= strayCooldown then
+    if GetSystemTime() >= strayCooldown then
         local strayId = checkForStrays(mob)
 
         -- Spawn stray.

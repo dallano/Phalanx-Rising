@@ -98,12 +98,11 @@ xi.settings.map =
     -- Disables Treasure Hunter procs (Era behavior wants this true)
     DISABLE_TREASURE_HUNTER_PROCS = true,
 
-    -- Weaponskill point base (before skillchain) for breaking latent - whole numbers only. retail is 1.
-    WS_POINTS_BASE = 1,
+    -- Weaponskill point base (before skillchain) for breaking latent - whole numbers only. retail is 5.
+    WS_POINTS_BASE = 5,
 
-    -- Weaponskill points per skillchain element - whole numbers only, retail is 1
-    -- (tier 3 sc's have 4 elements, plus 1 for the ws itself, giving 5 points to the closer).
-    WS_POINTS_SKILLCHAIN = 1,
+    -- Weaponskill points per skillchain level - whole numbers only, retail is 2
+    WS_POINTS_SKILLCHAIN = 2,
 
     -- Enable/disable jobs other than BST and RNG having widescan
     ALL_JOBS_WIDESCAN = true,
@@ -273,6 +272,8 @@ xi.settings.map =
     AUDIT_LINKSHELL = false,
     AUDIT_UNITY     = false,
     AUDIT_PARTY     = false,
+    AUDIT_BALLISTA  = false,
+    AUDIT_ASSIST    = false,
 
     -- Player Item Transaction Logging (Default: Off)
     -- Logs player item transactions to the database for persistence.

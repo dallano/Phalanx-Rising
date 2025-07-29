@@ -6,7 +6,7 @@
 local effectObject = {}
 
 effectObject.onEffectGain = function(target, effect)
-    target:setAnimation(33)
+    target:setAnimation(xi.animation.HEALING)
 
     -- Abyssea Lights and time remaining check
     if
@@ -33,14 +33,14 @@ effectObject.onEffectGain = function(target, effect)
         local waitTimeInSeconds = math.random(minWaitTime, maxWaitTime)
 
         target:messageSpecial(ID.text.ENERGIES_COURSE)
-        target:setLocalVar('GEO_DWL_Resting', os.time() + waitTimeInSeconds)
+        target:setLocalVar('GEO_DWL_Resting', GetSystemTime() + waitTimeInSeconds)
 
         target:timer(waitTimeInSeconds * 1000, function(targetArg)
             local finishTime = targetArg:getLocalVar('GEO_DWL_Resting')
 
             if
                 finishTime > 0 and
-                os.time() >= finishTime
+                GetSystemTime() >= finishTime
             then
                 targetArg:messageSpecial(ID.text.MYSTICAL_WARMTH) -- You feel a mystical warmth welling up inside you!
                 targetArg:setLocalVar('GEO_DWL_Resting', 0)
@@ -55,14 +55,13 @@ effectObject.onEffectGain = function(target, effect)
 end
 
 effectObject.onEffectTick = function(target, effect)
-
     local healtime = effect:getTickCount()
     if healtime > 2 then
         -- curse II also known as "zombie"
         if
-        not target:hasStatusEffect(xi.effect.DISEASE) and
-        not target:hasStatusEffect(xi.effect.PLAGUE) and
-        not target:hasStatusEffect(xi.effect.CURSE_II)
+            not target:hasStatusEffect(xi.effect.DISEASE) and
+            not target:hasStatusEffect(xi.effect.PLAGUE) and
+            not target:hasStatusEffect(xi.effect.CURSE_II)
         then
             local healHP = 0
             if
@@ -70,7 +69,8 @@ effectObject.onEffectTick = function(target, effect)
                 target:hasStatusEffect(xi.effect.SIGNET) or
                 target:getLocalVar('[XISP]isPal')
             then
-                healHP = 10 + (3 * math.floor(target:getMainLvl() / 10)) + (healtime - 2) * (1 + math.floor(target:getMaxHP() / 300)) + target:getMod(xi.mod.HPHEAL)
+                healHP = 10 + (3 * math.floor(target:getMainLvl() / 10)) +
+                    (healtime - 2) * (1 + math.floor(target:getMaxHP() / 300)) + target:getMod(xi.mod.HPHEAL)
             else
                 target:addTP(xi.settings.main.HEALING_TP_CHANGE)
                 healHP = 10 + (healtime - 2) + target:getMod(xi.mod.HPHEAL)
@@ -94,8 +94,8 @@ effectObject.onEffectTick = function(target, effect)
 end
 
 effectObject.onEffectLose = function(target, effect)
-    target:setAnimation(0)
-    target:delStatusEffect(xi.effect.LEAVEGAME)
+    target:setAnimation(xi.animation.NONE)
+    target:delStatusEffectSilent(xi.effect.LEAVEGAME)
 
     -- Dances with Luopans
     target:setLocalVar('GEO_DWL_Resting', 0)

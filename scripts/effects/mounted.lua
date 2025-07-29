@@ -5,6 +5,7 @@
 local effectObject = {}
 
 effectObject.onEffectGain = function(target, effect)
+    local mountId = effect:getPower()
     -- Retail sends a music change packet (packet ID 0x5F) in both cases.
     if target:isPC() then
 

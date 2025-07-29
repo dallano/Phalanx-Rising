@@ -19,22 +19,35 @@ mission.sections =
             return currentMission == mission.missionId
         end,
 
+        [xi.zone.AHT_URHGAN_WHITEGATE] =
+        {
+            ['Naja_Salaheem'] =
+            {
+                onTrigger = function(player, npc)
+                    return mission:event(3148, xi.besieged.getMercenaryRank(player), 1, 0, 0, 0, 0, 0, 0, 0)
+                end,
+            },
+        },
+
         [xi.zone.RULUDE_GARDENS] =
         {
             onTriggerAreaEnter =
             {
                 [1] = function(player, triggerArea)
-                    return mission:progressEvent(10097)
+                    return mission:progressEvent(10097, 0, 0, 0, 0, 0, 0, 0, 0)
                 end,
             },
 
             onEventFinish =
             {
                 [10097] = function(player, csid, option, npc)
-                    mission:complete(player)
-                    local item = xi.xisp.augmentItems[2][math.random(1, #xi.xisp.augmentItems[2])]
-                    player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, item)
-                    player:addItem(item, 1)
+                    if mission:complete(player) then
+                        local item = xi.xisp.augmentItems[2][math.random(1, #xi.xisp.augmentItems[2])]
+                        player:messageSpecial(zones[player:getZoneID()].text.ITEM_OBTAINED, item)
+                        player:addItem(item, 1)
+                        player:setLocalVar('Mission[4][39]mustZone', 1)
+                        player:setCharVar('Mission[4][39]Timer', VanadielUniqueDay() + 1)
+                    end
                 end,
             },
         },
