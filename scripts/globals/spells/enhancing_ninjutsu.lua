@@ -25,8 +25,8 @@ local pTable =
     [xi.magic.spell.MYOSHU_ICHI  ] = { 1, xi.effect.SUBTLE_BLOW_PLUS, 10, 180, true  },
     [xi.magic.spell.TONKO_ICHI   ] = { 1, xi.effect.INVISIBLE,         0, 420, false },
     [xi.magic.spell.TONKO_NI     ] = { 2, xi.effect.INVISIBLE,         0, 600, false },
-    [xi.magic.spell.UTSUSEMI_ICHI] = { 1, xi.effect.COPY_IMAGE,        3,   0, false },
-    [xi.magic.spell.UTSUSEMI_NI  ] = { 1, xi.effect.COPY_IMAGE,        4,   0, false },
+    [xi.magic.spell.UTSUSEMI_ICHI] = { 1, xi.effect.COPY_IMAGE,        2,   0, true  }, -- XISP (Reduced # of shadows by one)
+    [xi.magic.spell.UTSUSEMI_NI  ] = { 1, xi.effect.COPY_IMAGE,        3,   0, true  }, -- XISP (Reduced # of shadows by one)
     [xi.magic.spell.UTSUSEMI_SAN ] = { 1, xi.effect.COPY_IMAGE,        5,   0, false },
     [xi.magic.spell.YAIN_ICHI    ] = { 1, xi.effect.PAX,              15, 300, true  },
 }

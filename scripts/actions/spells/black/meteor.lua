@@ -43,6 +43,8 @@ spellObject.onSpellCast = function(caster, target, spell)
     dmg = dmg * xi.spells.damage.calculateNukeAbsorbOrNullify(target, spell:getElement())
     --add in final adjustments
     dmg = finalMagicAdjustments(caster, target, spell, dmg)
+
+    dmg = math.min(999, dmg) -- Do not exceed 999 dmg (XISP balance)
     return dmg
 end
 

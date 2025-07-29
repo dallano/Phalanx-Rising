@@ -19,7 +19,6 @@ entity.onMobSpawn = function(mob)
     mob:setMod(xi.mod.STUN_MEVA, 35)
     mob:setMod(xi.mod.BIND_MEVA, 35)
     mob:setMod(xi.mod.GRAVITY_MEVA, 35)
-    mob:addStatusEffect(xi.effect.REGEN, 50, 3, 0)
     mob:setLocalVar('numAdds', 1)
 end
 

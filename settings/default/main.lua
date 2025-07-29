@@ -11,6 +11,14 @@ xi.settings = xi.settings or {}
 
 xi.settings.main =
 {
+    -- --------------------------------
+    -- XISP settings
+    -- --------------------------------
+
+    DEMO_REWARD = true, -- Set false when game is officially launched
+
+    -- --------------------------------
+
     -- Server name (not longer than 15 characters)
     SERVER_NAME = "FFXISP",
 

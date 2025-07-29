@@ -82,13 +82,13 @@ local spawnPets = function(mob, minionOffset)
             mobArg:setMobAbilityEnabled(true)
             GetMobByID(minionOffset + 0):setSpawn(mobArg:getXPos() + 4, mobArg:getYPos(), mobArg:getZPos())
             GetMobByID(minionOffset + 1):setSpawn(mobArg:getXPos(), mobArg:getYPos(), mobArg:getZPos() + 4)
-            GetMobByID(minionOffset + 2):setSpawn(mobArg:getXPos(), mobArg:getYPos(), mobArg:getZPos() - 4)
+            -- GetMobByID(minionOffset + 2):setSpawn(mobArg:getXPos(), mobArg:getYPos(), mobArg:getZPos() - 4)
             SpawnMob(minionOffset + 0):setMobMod(xi.mobMod.SUPERLINK, mobArg:getTargID())
             SpawnMob(minionOffset + 1):setMobMod(xi.mobMod.SUPERLINK, mobArg:getTargID())
-            SpawnMob(minionOffset + 2):setMobMod(xi.mobMod.SUPERLINK, mobArg:getTargID())
+            -- SpawnMob(minionOffset + 2):setMobMod(xi.mobMod.SUPERLINK, mobArg:getTargID())
             GetMobByID(minionOffset + 0):updateEnmity(mobArg:getTarget())
             GetMobByID(minionOffset + 1):updateEnmity(mobArg:getTarget())
-            GetMobByID(minionOffset + 2):updateEnmity(mobArg:getTarget())
+            -- GetMobByID(minionOffset + 2):updateEnmity(mobArg:getTarget())
         end
     end)
 end
@@ -97,7 +97,7 @@ local spawnSharks = function(mob)
     -- determine which sharks are currently spawned
     local phuaboUp = {}
     local phuaboDn = {}
-    for i = ID.mob.JAILER_OF_LOVE + 1, ID.mob.JAILER_OF_LOVE + 9 do
+    for i = ID.mob.JAILER_OF_LOVE + 1, ID.mob.JAILER_OF_LOVE + 6 do
         local phuabo = GetMobByID(i)
 
         if phuabo then
@@ -212,12 +212,12 @@ entity.onMobFight = function(mob, target)
     -- reduce regen after nine Xzomits and Hpemdes (total of both) groups are killed
     if
         mob:getLocalVar('JoL_Regen_Reduction') == 0 and
-        mob:getLocalVar('JoL_Qn_xzomit_Killed') >= 9 and
-        mob:getLocalVar('JoL_Qn_hpemde_Killed') >= 9
+        mob:getLocalVar('JoL_Qn_xzomit_Killed') >= 6 and
+        mob:getLocalVar('JoL_Qn_hpemde_Killed') >= 6
     then
         mob:setLocalVar('JoL_Regen_Reduction', 1)
         mob:delMod(xi.mod.REGEN, 260)
-        mob:setMod(xi.mod.DMGMAGIC, -2500) -- magic damage taken reduced from 50% to 25% after killing nine xzomits and hpemdes
+        mob:setMod(xi.mod.DMGMAGIC, 0) -- magic damage taken reduced from 50% to 0% after killing nine xzomits and hpemdes
     end
 
     -- every 2 minutes JoL will change the element it absorbs/casts spells this change happens after a two hour animation
@@ -245,12 +245,13 @@ entity.onMobFight = function(mob, target)
         mob:setLocalVar('twohour_tp', 0)
     end
 
-    -- spawn minions in 2.5 minute intervals
+    -- spawn minions in 5 minute intervals (XISP)
     if
         os.time() > mob:getLocalVar('pop_pets') and
-        mob:canUseAbilities()
+        mob:canUseAbilities() and
+        mob:getLocalVar('JoL_Regen_Reduction') == 0 -- XISP Stops spawning pets after player has killed enough
     then
-        mob:setLocalVar('pop_pets', os.time() + 150)
+        mob:setLocalVar('pop_pets', os.time() + 300)
 
         local spawns = mob:getLocalVar('SPAWNS')
         if spawns < 8 then

@@ -17,9 +17,10 @@ entity.onMobSpawn = function(mob)
     mob:addImmunity(xi.immunity.LIGHT_SLEEP)
     mob:addImmunity(xi.immunity.DARK_SLEEP)
     mob:setMod(xi.mod.DMGMAGIC, -3500)
-    mob:setMobMod(xi.mobMod.WEAPON_BONUS, 36) -- 108 total weapon damage
-    mob:setMod(xi.mod.DEF, 4112)
-    mob:setMod(xi.mod.ATT, 450)
+    -- mob:adMobMod(xi.mobMod.WEAPON_BONUS, 36) -- 108 total weapon damage
+    -- mob:setMod(xi.mod.DEF, 411)
+    mob:setMod(xi.mod.DEF, 352)
+    -- mob:setMod(xi.mod.ATT, 450)
 
     -- Despawn the ???
     GetNPCByID(ID.npc.ADAMANTOISE_QM):setStatus(xi.status.DISAPPEAR)

@@ -36,6 +36,11 @@ local startingJobGear =
     [xi.job.THF] = { xi.item.ONION_KNIFE                               },
 }
 
+local demoPlayerReward =
+{
+
+}
+
 -----------------------------------
 -- public functions
 -----------------------------------
@@ -145,6 +150,12 @@ xi.player.charCreate = function(player)
     player:setCharVar('TutorialProgress', 1)            -- Has not started tutorial
     player:setCharVar('EinherjarIntro', 1)              -- Has not seen Einherjar intro
     player:setNewPlayer(true)                           -- apply new player flag
+
+    -- XISP
+    if xi.settings.main.DEMO_REWARD == true then
+        player:printToPlayer("Thank you for supporting the pre-release demo. Please enjoy this reward!", xi.msg.channel.SYSTEM_1, "Abdiah")
+        npcUtil.giveItem(player, 0)
+    end
 end
 
 -- called by core after a player logs into the server or zones

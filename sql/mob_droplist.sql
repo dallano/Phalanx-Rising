@@ -24042,13 +24042,8 @@ INSERT INTO `mob_droplist` VALUES (2819,1,3,@COMMON,1340,300);    -- Neptunal Ab
 INSERT INTO `mob_droplist` VALUES (2819,1,4,@COMMON,1315,400);    -- Dryadic Abjuration Body (Group 4, Common, 15% - 40%)
 INSERT INTO `mob_droplist` VALUES (2819,1,4,@COMMON,1337,300);    -- Wyrmal Abjuration Legs (Group 4, Common, 15% - 30%)
 INSERT INTO `mob_droplist` VALUES (2819,1,4,@COMMON,1340,300);    -- Neptunal Abjuration Body (Group 4, Common, 15% - 30%)
--- XISP Tier 3 Enchantments
-INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3223,180); -- Balance Coin
-INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3227,180); -- Voyage Coin
-INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3219,180); -- Wieldance Coin
-INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3215,180); -- Ardor Coin
-INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3211,180); -- Vision Coin
-INSERT INTO `mob_droplist` VALUES (2819,1,1,@ALWAYS,3337,100); -- Gold Meed
+-- XISP Tier 4 Relic Enchantment
+INSERT INTO `mob_droplist` VALUES (2819,0,0,1000,3346,@COMMON); -- Gloomy Charm (Common, 15%)
 
 -- ZoneID: 178 - Mother Globe
 INSERT INTO `mob_droplist` VALUES (2820,0,0,1000,1419,@ALWAYS);    -- Springstone (Always, 100%)

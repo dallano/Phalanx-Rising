@@ -31,6 +31,7 @@ xi.xispal.ability =
         { id = 1432, recastVar = 'weaponBash', timer = 180, lvl = 20, needsTarget = true,  effect = nil, },
     },
 
+    -- v2.0
     [xi.job.SAM] =
     {
         { id = 1436, recastVar = 'meditate', timer = 180, lvl = 30, needsTarget = false, effect = nil, },
@@ -42,6 +43,7 @@ xi.xispal.ability =
         { id = 698,  recastVar = 'defender', timer = 180, lvl = 50, needsTarget = false, effect = xi.effect.DEFENDER, },
     },
 
+    -- v2.0
     [xi.job.NIN] =
     {
         { id = 1430, recastVar = 'innin', timer = 180, lvl = 40, needsTarget = false, effect = xi.effect.INNIN, },

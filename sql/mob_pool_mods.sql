@@ -88,7 +88,7 @@ INSERT INTO `mob_pool_mods` VALUES (559,62,-50,0);   -- ATTP: -50
 -- Byakko
 INSERT INTO `mob_pool_mods` VALUES (592,3,100,1);  -- MP_BASE: 100
 INSERT INTO `mob_pool_mods` VALUES (592,68,15,0);  -- EVA: 15
-INSERT INTO `mob_pool_mods` VALUES (592,302,45,0); -- TRIPLE_ATTACK: 45
+INSERT INTO `mob_pool_mods` VALUES (592,302,15,0); -- TRIPLE_ATTACK: 15 (XISP)
 
 -- Cargo Crab Colin
 INSERT INTO `mob_pool_mods` VALUES (639,63,25,0); -- DEFP: 25
@@ -216,8 +216,8 @@ INSERT INTO `mob_pool_mods` VALUES (2255,368,70,0); -- REGAIN: 70
 INSERT INTO `mob_pool_mods` VALUES (2262,370,125,0); -- REGEN: 125
 
 -- Kirin
-INSERT INTO `mob_pool_mods` VALUES (2265,368,150,0); -- REGAIN: 150
-INSERT INTO `mob_pool_mods` VALUES (2265,370,50,0);  -- REGEN: 50
+INSERT INTO `mob_pool_mods` VALUES (2265,368,50,0); -- REGAIN: 50 (XISP)
+INSERT INTO `mob_pool_mods` VALUES (2265,370,25,0);  -- REGEN: 25 (XISP)
 
 -- Knight Crab
 INSERT INTO `mob_pool_mods` VALUES (2271,64,15,0);  -- COMBAT_SKILLUP_RATE: 15

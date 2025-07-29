@@ -237,17 +237,12 @@ entity.onMobSpawn = function(mob)
     -- Special check for regen modification by JoL pets killed
     local jol = GetMobByID(ID.mob.JAILER_OF_LOVE)
     if jol ~= nil then
-        if jol:getLocalVar('JoL_Qn_xzomit_Killed') == 9 then
-            mob:addMod(xi.mod.REGEN, 125)
-        end
-
-        if jol:getLocalVar('JoL_Qn_hpemde_Killed') == 9 then
-            mob:addMod(xi.mod.REGEN, 125)
-        end
+        mob:addMod(xi.mod.REGEN, 125 - jol:getLocalVar('JoL_Qn_xzomit_Killed') * 5)
+        mob:addMod(xi.mod.REGEN, 125 - jol:getLocalVar('JoL_Qn_hpemde_Killed') * 5)
     end
 
     -- base regen by day/element
-    mob:addMod(xi.mod.REGEN, 250)
+    mob:addMod(xi.mod.REGEN, 100)
 
     --[[
     mob:setMod(xi.mod.UDMGPHYS, 0)
@@ -290,15 +285,15 @@ entity.onMobFight = function(mob)
             mobArg:setAnimationSub(2)
             mobArg:stun(2000)
 
-            mobArg:addMod(xi.mod.STR, 50)
-            mobArg:addMod(xi.mod.DEX, 50)
-            mobArg:addMod(xi.mod.VIT, 50)
-            mobArg:addMod(xi.mod.AGI, 50)
-            mobArg:addMod(xi.mod.INT, 50)
-            mobArg:addMod(xi.mod.MND, 50)
-            mobArg:addMod(xi.mod.CHR, 50)
-            mobArg:addMod(xi.mod.ATT, 300)
-            mobArg:addMod(xi.mod.MATT, 50)
+            mobArg:addMod(xi.mod.STR, 25) -- XISP (Original: 50)
+            mobArg:addMod(xi.mod.DEX, 25) -- XISP (Original: 50)
+            mobArg:addMod(xi.mod.VIT, 25) -- XISP (Original: 50)
+            mobArg:addMod(xi.mod.AGI, 25) -- XISP (Original: 50)
+            mobArg:addMod(xi.mod.INT, 25) -- XISP (Original: 50)
+            mobArg:addMod(xi.mod.MND, 25) -- XISP (Original: 50)
+            mobArg:addMod(xi.mod.CHR, 25) -- XISP (Original: 50)
+            mobArg:addMod(xi.mod.ATT, 150) -- XISP (Original: 300)
+            mobArg:addMod(xi.mod.MATT, 25) -- XISP (Original: 50)
 
             xi.av.bracelets = true
         end)

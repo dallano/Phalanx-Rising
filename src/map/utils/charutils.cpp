@@ -6134,7 +6134,7 @@ namespace charutils
 
         _sql->Query("UPDATE chars SET playtime = '%u' WHERE charid = '%u' LIMIT 1", playtime, PChar->id);
 
-        // Removes new player icon if played for more than 240 hours
+        // Removes new player icon if played for more than 24 hours (XISP reduced 240 to 24)
         if (PChar->isNewPlayer() && playDuration >= 24h)
         {
             PChar->playerConfig.NewAdventurerOffFlg = true;

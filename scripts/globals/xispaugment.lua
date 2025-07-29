@@ -382,7 +382,7 @@ local dialogue4 = {}
 
 menu1 =
 {
-    title = 'Attach enchantment?',
+    title = 'Attach this enchantment?',
     options = {},
 }
 
