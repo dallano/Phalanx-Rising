@@ -354,7 +354,9 @@ xi.xispal.checkCure = function(pal, party, job, lvl)
                     -- Jobs other than whm will heal with more specific behaviors
                     if job == xi.job.RDM then
                         threshold = threshold * 1.5
+                        extraTime = 5
                     elseif job == xi.job.PLD and member ~= pal then
+                        extraTime = 10
                         threshold = threshold * 2
                     elseif not job == xi.job.WHM then
                         threshold = threshold * 2.5

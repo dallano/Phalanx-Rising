@@ -336,6 +336,9 @@ xi.xispal.calculateStats = function(pal, player)
     else
         pal:setMaxMP(math.floor(raceMP + jobMP))
     end
+
+    pal:setMP(pal:getMaxMP())
+    pal:setHP(pal:getMaxHP())
 end
 
 
@@ -405,6 +408,7 @@ xi.xispal.onMobSpawn = function(pal, player, race, job)
     pal:setMobLevel(player:getMainLvl())
     pal:setRotation(player:getPos().rot + math.random(-5, 5))
     pal:setRoamFlags(xi.roamFlag.SCRIPTED)
+    pal:setBaseSpeed(100) -- For some reason this needs to be set at a high value to work properly
 
     if xi.xispal.isCaster(pal) then
         pal:setBehavior(bit.bor(pal:getBehavior(), xi.behavior.STANDBACK))
@@ -419,12 +423,7 @@ xi.xispal.onMobSpawn = function(pal, player, race, job)
         palArg:setMobMod(xi.mobMod.NO_DESPAWN, 1)
         palArg:setMobMod(xi.mobMod.ROAM_COOL, 0)
         palArg:setMobMod(xi.mobMod.NO_REST, 1)
-    end)
-
-    pal:timer(2000, function(palArg)
         xi.xispal.calculateStats(palArg, player)
-        palArg:setHP(palArg:getMaxHP())
-        palArg:setMP(palArg:getMaxHP())
     end)
 end
 

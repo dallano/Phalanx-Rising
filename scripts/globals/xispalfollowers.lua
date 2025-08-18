@@ -17,6 +17,8 @@ xi.xispal.spawnYoungSquire = function(player, zone)
     if player:getCharVar('[XISP]quest1Var') ~= 1 then
         return
     end
+    
+    player:setCharVar('[XISP]squireIdleChat', os.time() + math.random(720, 900))
 
     local pal = zone:insertDynamicEntity({
         objtype               = xi.objType.MOB,
@@ -42,17 +44,17 @@ xi.xispal.spawnYoungSquire = function(player, zone)
             pal:setAutoAttackEnabled(false)
             pal:setUnkillable(true)
         end,
-
+        
         onMobRoam = function(pal)
             xi.xispal.follow(pal, player)
             xi.xispal.idleYoungSquireChat(pal, player)
-
+            
             if not player:isAlive() then
                 DespawnMob(pal:getID())
             end
         end,
     })
-
+    
     player:setCharVar('[XISP]squireID', pal:getID())
     pal:setSpawn(pos.x - 1, pos.y, pos.z)
     pal:spawn()

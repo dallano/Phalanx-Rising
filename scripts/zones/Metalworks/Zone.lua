@@ -81,8 +81,8 @@ zoneObject.onInitialize = function(zone)
             if player:hasCompletedQuest(table.quest[1], table.quest[2]) and player:getRank(player:getNation()) >= 3 then
                 if player:getCharVar('[XISP]' .. table.name .. 'FirstDialogue') == 0 and npc:getLocalVar('dialogueLock') == 0 then
                     npc:setLocalVar('dialogueLock', 1)
-                    player:printToPlayer("I Don't mind the soot. It comes with the job when you're posted near the smelters.", xi.msg.channel.SAY, table.name)
-                    player:timer(4000, function(player)
+                    player:printToPlayer("I don't mind the soot... It comes with the job when you're posted near the smelters.", xi.msg.channel.SAY, table.name)
+                    player:timer(1000, function(player)
                         player:printToPlayer("They call it 'honest work.' Maybe it is. But I feel these walls closing in.", xi.msg.channel.SAY, table.name)
                         player:timer(4000, function(player)
                             player:printToPlayer("Every hammer strike echoes in my chest. Not from pride, but a longing.", xi.msg.channel.SAY, table.name)

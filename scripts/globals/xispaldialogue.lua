@@ -101,8 +101,8 @@ xi.xispal.idleYoungSquireChat = function(pal, player)
     local zoneType   = pal:getZone():getTypeMask()
 
     -- Entering a new zone. Only happens once
-    if pal:getLocalVar('newZoneChatTimer') < os.time() and pal:getLocalVar('newZoneChat') == 0 then
-        pal:setLocalVar('newZoneChat', 1)
+    if player:getCharVar('[XISP]squireIdleChat') < os.time() then
+        player:setCharVar('[XISP]squireIdleChat', os.time() + math.random(720, 900)) -- 12 to 15 min
 
         if zoneType == xi.zoneType.OUTDOORS then
             local random = math.random(1, 30)

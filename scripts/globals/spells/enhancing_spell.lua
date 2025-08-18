@@ -258,14 +258,22 @@ xi.spells.enhancing.calculateEnhancingBasePower = function(caster, target, spell
 
     -- Blaze Spikes (Info from from BG-Wiki)
     elseif spellEffect == xi.effect.BLAZE_SPIKES then
-        basePower = utils.clamp(math.floor(math.floor((caster:getStat(xi.mod.INT) + 50) / 12) * (1 + caster:getMod(xi.mod.MATT) / 100)), 1, 25)
+        if caster:isPC() then -- XISP
+            basePower = utils.clamp(math.floor(math.floor((caster:getStat(xi.mod.INT) + 50) / 4) * (1 + caster:getMod(xi.mod.MATT) / 100)), 1, 75)
+        else
+            basePower = utils.clamp(math.floor(math.floor((caster:getStat(xi.mod.INT) + 50) / 12) * (1 + caster:getMod(xi.mod.MATT) / 100)), 1, 25)
+        end
 
     -- Ice Spikes, Shock Spikes (Info from from BG-Wiki)
     elseif
         spellEffect == xi.effect.ICE_SPIKES or
         spellEffect == xi.effect.SHOCK_SPIKES
     then
-        basePower = utils.clamp(math.floor(math.floor((caster:getStat(xi.mod.INT) + 50) / 20) * (1 + caster:getMod(xi.mod.MATT) / 100)), 1, 15)
+        if caster:isPC() then -- XISP
+            basePower = utils.clamp(math.floor(math.floor((caster:getStat(xi.mod.INT) + 50) / 6) * (1 + caster:getMod(xi.mod.MATT) / 100)), 1, 50)
+        else
+            basePower = utils.clamp(math.floor(math.floor((caster:getStat(xi.mod.INT) + 50) / 20) * (1 + caster:getMod(xi.mod.MATT) / 100)), 1, 15)
+        end
 
     -- Stoneskin
     elseif spellEffect == xi.effect.STONESKIN then
