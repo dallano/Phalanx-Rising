@@ -36,11 +36,6 @@ local startingJobGear =
     [xi.job.THF] = { xi.item.ONION_KNIFE                               },
 }
 
-local demoPlayerReward =
-{
-
-}
-
 -----------------------------------
 -- public functions
 -----------------------------------
@@ -150,12 +145,6 @@ xi.player.charCreate = function(player)
     player:setCharVar('TutorialProgress', 1)            -- Has not started tutorial
     player:setCharVar('EinherjarIntro', 1)              -- Has not seen Einherjar intro
     player:setNewPlayer(true)                           -- apply new player flag
-
-    -- XISP
-    if xi.settings.main.DEMO_REWARD == true then
-        player:printToPlayer("Thank you for supporting the pre-release demo. Please enjoy this reward!", xi.msg.channel.SYSTEM_1, "Abdiah")
-        npcUtil.giveItem(player, 0)
-    end
 end
 
 -- called by core after a player logs into the server or zones
@@ -165,6 +154,7 @@ xi.player.onGameIn = function(player, firstLogin, zoning)
         if firstLogin then
             xi.player.charCreate(player)
         end
+
         if GetServerVariable('[XISP]mainPlayer') == 0 then
             SetServerVariable('[XISP]mainPlayer', player:getID())
         end
@@ -181,8 +171,6 @@ xi.player.onGameIn = function(player, firstLogin, zoning)
             player:messageSpecial(ID.text.ABYSSEA_TIME_OFFSET + 8)
             player:setPos(unpack(xi.abyssea.exitPositions[zoneID]))
         end
-
-        -- XISP
     end
 
     -- Abyssea starting quest should be flagged when expansion is active

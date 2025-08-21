@@ -68,6 +68,9 @@ xi.xispbg.spawnChest = function(zone, level, pos, player)
                 chest:setLocalVar('isOpen', 1)
                 chest:entityAnimationPacket(xi.animationString.OPEN_CRATE_GLOW)
                 xi.xispbg.handleLoot(zone, level, player)
+
+            else
+                player:printToPlayer("This chest has already been open.", xi.msg.channel.NS_SAY, "")
             end
         end,
     })

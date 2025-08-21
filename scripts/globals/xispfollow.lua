@@ -64,7 +64,7 @@ xi.xispal.follow = function(pal, player)
         pal:getCurrentAction() ~= xi.action.MAGIC_CASTING
     then
         pal:setLocalVar('isMoving', 1)
-        pal:pathTo(posX, lPos.y, posZ)
+        pal:pathTo(posX, lPos.y, posZ, xi.path.flag.RUN)
     else
         pal:setLocalVar('isMoving', 0)
         pal:pathTo(pos.x, pos.y, pos.z)

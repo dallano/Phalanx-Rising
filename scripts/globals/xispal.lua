@@ -259,7 +259,7 @@ end
 
 xi.xispal.chocobo = function(pal, player)
     if player:getAnimation() == xi.animation.CHOCOBO then
-        pal:setAnimation(5)
+        pal:setAnimation(xi.animation.CHOCOBO)
     else
         if pal:getAnimation() == xi.animation.CHOCOBO then
             pal:setAnimation(0)
