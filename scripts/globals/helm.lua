@@ -516,14 +516,10 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 3330, xi.item.ARROWWOOD_LOG },
-                    { 1750, xi.item.ASH_LOG       },
-                    { 2000, xi.item.MAPLE_LOG     },
-                    { 1420, xi.item.FAERIE_APPLE  },
-                    {  830, xi.item.WALNUT_LOG    },
-                    {  170, xi.item.ACORN         },
+                    {  600, xi.item.OAK_LOG       },
                     {  330, xi.item.ELM_LOG       },
-                    {  170, xi.item.OAK_LOG       },
+                    {   20, xi.item.FAERIE_APPLE  },
+                    {   10, xi.item.ACORN         },
                 },
 
                 points =
@@ -539,14 +535,10 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 2220, xi.item.ARROWWOOD_LOG },
-                    { 2220, xi.item.FAERIE_APPLE  },
-                    { 2220, xi.item.ASH_LOG       },
-                    { 2220, xi.item.MAPLE_LOG     },
-                    {  100, xi.item.WALNUT_LOG    },
-                    {  100, xi.item.ACORN         },
-                    { 1110, xi.item.ELM_LOG       },
-                    {  100, xi.item.OAK_LOG       },
+                    {  600, xi.item.OAK_LOG       },
+                    {  330, xi.item.ELM_LOG       },
+                    {   20, xi.item.FAERIE_APPLE  },
+                    {   10, xi.item.ACORN         },
                 },
 
                 points =
@@ -1165,15 +1157,15 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1460, xi.item.CHUNK_OF_COPPER_ORE    },
                     { 1650, xi.item.CHUNK_OF_IRON_ORE      },
-                    { 1300, xi.item.CHUNK_OF_TIN_ORE       },
-                    { 1140, xi.item.PEBBLE                 },
                     { 1320, xi.item.CHUNK_OF_ZINC_ORE      },
                     {  840, xi.item.FLINT_STONE            },
+                    {  800, xi.item.CHUNK_OF_TIN_ORE       },
+                    {  660, xi.item.CHUNK_OF_COPPER_ORE    },
+                    {  400, xi.item.CHUNK_OF_DARKSTEEL_ORE },
                     {  360, xi.item.CHUNK_OF_SILVER_ORE    },
                     {  170, xi.item.RED_ROCK               },
-                    {  150, xi.item.CHUNK_OF_DARKSTEEL_ORE },
+                    {  140, xi.item.PEBBLE                 },
                     {  110, xi.item.CHUNK_OF_GOLD_ORE      },
                 },
 
@@ -1222,11 +1214,8 @@ local helmInfo =
                 {
                     { 1130, xi.item.CHUNK_OF_ZINC_ORE     },
                     {  940, xi.item.CHUNK_OF_IRON_ORE     },
-                    { 1040, xi.item.PEBBLE                },
-                    {  970, xi.item.CHUNK_OF_TIN_ORE      },
                     {  900, xi.item.CHUNK_OF_MYTHRIL_ORE  },
                     {  900, xi.item.CHUNK_OF_SILVER_ORE   },
-                    {  800, xi.item.CHUNK_OF_COPPER_ORE   },
                     {  100, xi.item.CHUNK_OF_PLATINUM_ORE },
                 },
 
@@ -1235,24 +1224,24 @@ local helmInfo =
                     { -68.142, -16.709,  250.590 },
                     { -63.334,  -9.468,  191.074 }, -- (R)F-7
                     { -48.409, -17.077,  227.142 },
-                    {  22.365, -32.317,   82.608 },
-                    {  22.911, -32.471, -109.982 }, -- (R)G-10
-                    { 104.773, -32.418,   82.766 },
-                    { 132.025,  -1.226,  169.978 }, -- (R)H-7
-                    { 133.693,  -0.063,  167.560 },
                     { 152.025, -17.085,  143.561 }, -- (R)H-7
                     { 152.190, -16.394,  142.365 },
-                    { 186.116, -15.432,    6.930 },
-                    { 216.457,  -1.625,  112.444 }, -- (R)I-8
                     { 223.246, -11.863,  185.263 },
                     { 241.255, -16.567,  256.516 }, -- (R)I-6
-                    { 256.587, -33.185,  190.811 }, -- (R)J-6
-                    { 266.499, -32.401,  -71.379 },
-                    { 269.898, -32.782,  -68.259 }, -- (R)J-9
                     { 282.245, -16.391,  177.981 }, -- (R)J-7
                     { 288.996, -16.535,   93.222 }, -- (R)J-8
                     { 290.244, -15.718,  104.856 },
                     { 306.015, -16.275,   49.876 },
+                    { -49.150, -16.180, 224.1920 },
+                    -- {  22.911, -32.471, -109.982 }, -- (R)G-10
+                    -- { 104.773, -32.418,   82.766 },
+                    -- { 132.025,  -1.226,  169.978 }, -- (R)H-7
+                    -- { 133.693,  -0.063,  167.560 },
+                    -- { 186.116, -15.432,    6.930 },
+                    -- { 216.457,  -1.625,  112.444 }, -- (R)I-8
+                    -- { 256.587, -33.185,  190.811 }, -- (R)J-6
+                    -- { 266.499, -32.401,  -71.379 },
+                    -- { 269.898, -32.782,  -68.259 }, -- (R)J-9
                 },
             },
 
@@ -1261,12 +1250,12 @@ local helmInfo =
                 drops =
                 {
                     { 2450, xi.item.CHUNK_OF_IRON_ORE      },
-                    { 1800, xi.item.PEBBLE                 },
                     { 1850, xi.item.CHUNK_OF_COPPER_ORE    },
                     { 1330, xi.item.CHUNK_OF_ZINC_ORE      },
                     { 1120, xi.item.CHUNK_OF_TIN_ORE       },
-                    {  550, xi.item.SNAPPING_MOLE          },
                     {  180, xi.item.CHUNK_OF_SILVER_ORE    },
+                    {  150, xi.item.PEBBLE                 },
+                    {   50, xi.item.SNAPPING_MOLE          },
                     {   40, xi.item.CHUNK_OF_DARKSTEEL_ORE },
                 },
 
@@ -1278,24 +1267,24 @@ local helmInfo =
                     { -57.674, 6.631, -168.595 },
                     { -52.187, 7.880, -103.336 },
                     { -50.801, 7.795, -178.933 },
-                    { -27.681, 7.125, -267.218 },
-                    { -11.095, 6.485, -180.763 }, -- (R)I-9
+                    -- { -27.681, 7.125, -267.218 },
+                    -- { -11.095, 6.485, -180.763 }, -- (R)I-9
                     {   1.854, 8.113, -176.282 },
-                    {  13.896, 7.429, -291.885 }, -- (R)I-11
-                    {  14.347, 7.068,  -50.338 }, -- (R)I-8
-                    {  14.464, 7.335,  -50.905 },
+                    -- {  13.896, 7.429, -291.885 }, -- (R)I-11
+                    -- {  14.347, 7.068,  -50.338 }, -- (R)I-8
+                    -- {  14.464, 7.335,  -50.905 },
                     {  16.606, 8.071, -119.420 },
-                    {  52.265, 6.909, -107.853 }, -- (R)J-8
-                    {  53.561, 7.657, -272.379 },
-                    {  58.583, 7.729, -273.176 },
-                    {  66.074, 7.700, -151.352 },
-                    {  68.980, 7.312, -253.231 }, -- (R)J-10
-                    { 103.774, 6.930, -187.465 }, -- (R)J-9
-                    { 133.030, 7.434, -207.489 },
-                    { 133.341, 7.255, -141.532 },
-                    { 133.975, 7.184, -131.237 },
-                    { 134.829, 7.634, -131.175 },
-                    { 146.979, 7.881, -209.748 },
+                    -- {  52.265, 6.909, -107.853 }, -- (R)J-8
+                    -- {  53.561, 7.657, -272.379 },
+                    -- {  58.583, 7.729, -273.176 },
+                    -- {  66.074, 7.700, -151.352 },
+                    -- {  68.980, 7.312, -253.231 }, -- (R)J-10
+                    -- { 103.774, 6.930, -187.465 }, -- (R)J-9
+                    -- { 133.030, 7.434, -207.489 },
+                    -- { 133.341, 7.255, -141.532 },
+                    -- { 133.975, 7.184, -131.237 },
+                    -- { 134.829, 7.634, -131.175 },
+                    -- { 146.979, 7.881, -209.748 },
                 },
             },
 
@@ -1303,15 +1292,12 @@ local helmInfo =
             {
                 drops =
                 {
-                    { 1890, xi.item.PEBBLE                 },
-                    { 1670, xi.item.CHUNK_OF_ZINC_ORE      },
-                    { 1510, xi.item.CHUNK_OF_COPPER_ORE    },
-                    { 1470, xi.item.CHUNK_OF_TIN_ORE       },
                     { 1450, xi.item.CHUNK_OF_IRON_ORE      },
                     {  810, xi.item.CHUNK_OF_SILVER_ORE    },
                     {  590, xi.item.CHUNK_OF_DARKSTEEL_ORE },
-                    {  400, xi.item.RED_ROCK               },
-                    {   80, xi.item.CHUNK_OF_GOLD_ORE      },
+                    {  300, xi.item.CHUNK_OF_ZINC_ORE      },
+                    {  200, xi.item.RED_ROCK               },
+                    {  100, xi.item.CHUNK_OF_GOLD_ORE      },
                 },
 
                 points =
@@ -1319,21 +1305,21 @@ local helmInfo =
                     { -172.555,  -0.330,  303.216 },
                     { -171.214,  -0.100,  376.661 },
                     { -161.341, -24.382,  222.992 },
-                    { -145.420, -28.425,  326.760 },
+                    -- { -145.420, -28.425,  326.760 },
                     { -137.089, -40.658,  150.613 },
                     { -107.372,  -0.380,  256.981 }, -- (R)H-8
                     {  -64.416, -40.104,  253.775 },
-                    {  -26.623, -60.805, -141.508 },
-                    {  -24.341, -60.806, -169.115 }, -- (R)G-8
-                    {  -13.810, -40.108,  -87.118 }, -- (R)G-7
-                    {  -10.364, -40.028,  -84.169 },
-                    {   27.651, -40.074,   62.101 },
-                    {   31.350, -41.101,  195.396 }, -- (R)H-6
-                    {   71.523, -60.258, -174.060 },
-                    {   92.931, -60.659, -224.312 },
-                    {  100.512, -41.629,  209.397 }, -- (R)I-6
-                    {  145.349, -40.450,   24.710 }, -- (R)I-8
-                    {  155.746, -20.678,  216.857 }, -- (R)I-9
+                    -- {  -26.623, -60.805, -141.508 },
+                    -- {  -24.341, -60.806, -169.115 }, -- (R)G-8
+                    -- {  -13.810, -40.108,  -87.118 }, -- (R)G-7
+                    -- {  -10.364, -40.028,  -84.169 },
+                    -- {   27.651, -40.074,   62.101 },
+                    -- {   31.350, -41.101,  195.396 }, -- (R)H-6
+                    -- {   71.523, -60.258, -174.060 },
+                    -- {   92.931, -60.659, -224.312 },
+                    -- {  100.512, -41.629,  209.397 }, -- (R)I-6
+                    -- {  145.349, -40.450,   24.710 }, -- (R)I-8
+                    -- {  155.746, -20.678,  216.857 }, -- (R)I-9
                 },
             },
 
@@ -1410,7 +1396,7 @@ local function pickItem(player, info)
     local zoneId = player:getZoneID()
 
     -- found nothing
-    if math.random(1, 100) > info.settingRate then
+    if math.random(1, 100) > 85 then -- it's broken for some reason
         return 0
     end
 
@@ -1538,9 +1524,10 @@ xi.helm.onTrade = function(player, npc, trade, helmType, csid, func)
 
         -- success! reward item and decrement number of remaining uses on the point
         if itemID ~= 0 then
+            player:addStatusEffect(xi.effect.FLEE, 5000, 0, 30)
             player:addItem(itemID)
 
-            local uses = (npc:getLocalVar('uses') - 1) % 4
+            local uses = (npc:getLocalVar('uses') - 1) % 6
             npc:setLocalVar('uses', uses)
 
             if uses == 0 then

@@ -146,8 +146,7 @@ zoneObject.onZoneIn = function(player, prevZone)
         player:getYPos() == 0 and
         player:getZPos() == 0
     then
-        if prevZone == xi.zone.WINDURST_JEUNO_AIRSHIP then
-            cs = { 10004 }
+        if prevZone == xi.zone.PORT_JEUNO then
             player:setPos(228.000, -3.000, 76.000, 160)
         else
             local position = math.random(1, 5) + 195
@@ -171,7 +170,7 @@ end
 
 zoneObject.onEventFinish = function(player, csid, option, npc)
     if csid == 10002 then
-        player:setPos(0, 0, 0, 0, 225)
+        player:setPos(0, 0, 0, 0, xi.zone.PORT_JEUNO)
     end
 end
 

@@ -20,6 +20,7 @@ entity.onTrigger = function(player, npc)
         { xi.item.BRONZE_AXE,         328, 3, },
         { xi.item.CLAYMORE,          2828, 3, },
         { xi.item.MYTHRIL_CLAYMORE, 43680, 1, },
+        { xi.item.HARPOON,            185, 1, }, -- XISP
         { xi.item.BRONZE_SPEAR,       915, 3, },
         { xi.item.BRASS_SPEAR,       5408, 3, },
         { xi.item.SPEAR,            18345, 3, },

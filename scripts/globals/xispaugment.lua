@@ -76,7 +76,7 @@ xi.xisp.augments =
             { augmentID = 31,  value = 4, name = "Evasion +5" },
             { augmentID = 33,  value = 6, name = "Defense +7" },
             { augmentID = 39,  value = 0, name = "Enmity +1" },
-            { augmentID = 78,  value = 14,name = "HP +15" },
+            { augmentID = 1,   value = 14,name = "HP +15" },
         },
 
         [3213] = -- Misc / Job specific Augments (Vision)

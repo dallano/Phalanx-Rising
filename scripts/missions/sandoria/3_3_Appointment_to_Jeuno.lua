@@ -22,6 +22,7 @@ mission.reward =
 {
     gil = 5000,
     rank = 4,
+    keyItem = xi.ki.AIRSHIP_PASS,
 }
 
 local handleAcceptMission = function(player, csid, option, npc)

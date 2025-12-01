@@ -11,6 +11,8 @@ entity.onTrigger = function(player, npc)
     local stock =
     {
         { xi.item.LEATHER_BELT,          442, 3 },
+        { xi.item.PINCH_OF_PRISM_POWDER, 345, 3 },
+        { xi.item.POT_OF_SILENT_OIL,     302, 3 },
         { xi.item.LIZARD_BELT,          2808, 3 },
         { xi.item.SILVER_BELT,         11618, 1 },
         { xi.item.CIRCLET,               166, 3 },

@@ -31,7 +31,23 @@ dialogue1 =
                 playerArg:setCharVar('[XISP]hasChocobo', 1)
                 playerArg:setCharVar('[XISP]chocoGrow', 0)
                 playerArg:setCharVar('[XISP]hasEgg', 0)
-                xi.xispal.spawnChocobo(playerArg)
+
+                local colorChance = math.random(1, 100)
+                if colorChance <= 3 then
+                    playerArg:setCharVar('[XISP]chocoColor', 2) -- Black 3% chance
+                elseif colorChance <= 8 then
+                    playerArg:setCharVar('[XISP]chocoColor', 4) -- Blue 5% chance
+                elseif colorChance <= 13 then
+                    playerArg:setCharVar('[XISP]chocoColor', 6) -- Red 5% chance
+                elseif colorChance <= 18 then
+                    playerArg:setCharVar('[XISP]chocoColor', 8) -- Green 5% chance
+                else
+                    playerArg:setCharVar('[XISP]chocoColor', 1) -- Normal 82% chance
+                end
+
+                xi.xispal.spawnChocobo(playerArg, playerArg:getZone())
+
+
             end
         end,
     },
@@ -59,7 +75,7 @@ xi.xispal.onChocoboTrade = function(player, npc, trade)
     local name = npc:getName()
 
     if trade then
-        if -- TODO (Each egg type gives different color)
+        if
             npcUtil.tradeHasExactly(trade, xi.item.CHOCOBO_EGG_FAINTLY_WARM) or
             npcUtil.tradeHasExactly(trade, xi.item.CHOCOBO_EGG_SLIGHTLY_WARM) or
             npcUtil.tradeHasExactly(trade, xi.item.CHOCOBO_EGG_A_BIT_WARM) or

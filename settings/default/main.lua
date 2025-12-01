@@ -23,7 +23,7 @@ xi.settings.main =
     SERVER_NAME = "FFXISP",
 
     SERVER_MESSAGE =
-        "Welcome to Final Fantasy XI Singleplayer! A tailed experience that aims to give the player\n" ..
+        "Welcome to Final Fantasy XISP! A tailed experience that aims to give the player\n" ..
         "a fun and engaging solo experience without the need of trusts.",
 
     -- Setting to lock content more accurately to the expansions defined below.
@@ -125,7 +125,7 @@ xi.settings.main =
     ALL_MAPS                       = 1,  -- Set to 1 to give starting characters all the maps.
     UNLOCK_OUTPOST_WARPS           = 0,  -- Set to 1 to give starting characters all outpost warps.  2 to add Tu'Lia and Tavnazia.
 
-    SHOP_PRICE      = 1, -- Multiplies prices in NPC shops.
+    SHOP_PRICE      = 0.75,  -- Multiplies prices in NPC shops.
     GIL_RATE        = 1.500, -- Multiplies gil earned from quests.  Won't always display in game.
     BAYLD_RATE      = 1.000, -- Multiples bayld earned from quests.
     -- Note: EXP rates are also influenced by conf setting
@@ -174,10 +174,10 @@ xi.settings.main =
     EXCAVATION_BREAK_CHANCE = 0, -- % chance for the pickaxe to break during excavation.  Set between 0 and 100.
     LOGGING_BREAK_CHANCE    = 0, -- % chance for the hatchet to break during logging.  Set between 0 and 100.
     MINING_BREAK_CHANCE     = 0, -- % chance for the pickaxe to break during mining.  Set between 0 and 100.
-    HARVESTING_RATE         = 25, -- % chance to recieve an item from haresting.  Set between 0 and 100.
-    EXCAVATION_RATE         = 25, -- % chance to recieve an item from excavation.  Set between 0 and 100.
-    LOGGING_RATE            = 25, -- % chance to recieve an item from logging.  Set between 0 and 100.
-    MINING_RATE             = 25, -- % chance to recieve an item from mining.  Set between 0 and 100.
+    HARVESTING_RATE         = 75, -- % chance to recieve an item from haresting.  Set between 0 and 100.
+    EXCAVATION_RATE         = 75, -- % chance to recieve an item from excavation.  Set between 0 and 100.
+    LOGGING_RATE            = 75, -- % chance to recieve an item from logging.  Set between 0 and 100.
+    MINING_RATE             = 75, -- % chance to recieve an item from mining.  Set between 0 and 100.
     DIGGING_RATE            = 85, -- % chance to receive an item from chocbo digging during favorable weather.  Set between 0 and 100.
 
     HEALING_TP_CHANGE       = -100, -- Change in TP for each healing tick. Default is -100

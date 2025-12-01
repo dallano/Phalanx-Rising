@@ -67,9 +67,9 @@ xi.xispbg.zoneInfo =
         },
         NMS =
         {
-            { look = 2077, name = "Qokk the Pale", groupID = 2010, spellList = 0, job = xi.job.SAM },
-            { look = 2080, name = "Bloodplume",    groupID = 2010, spellList = 0, job = xi.job.NIN },
-            { look = 2082, name = "Khot the Grim", groupID = 2010, spellList = 0, job = xi.job.MNK },
+            { look = 2077, name = "Quokk the Pale", groupID = 2010, spellList = 0, job = xi.job.SAM },
+            { look = 2080, name = "Bloodplume",     groupID = 2010, spellList = 0, job = xi.job.NIN },
+            { look = 2082, name = "Khot the Grim",  groupID = 2010, spellList = 0, job = xi.job.MNK },
         },
         ALLIES =
         {
@@ -226,14 +226,14 @@ xi.xispbg.zoneInfo =
         CAMPS =
         {
             { pos = { x = 55,  y = 0,  z = -5,  rotation = 0, }, numMobs = 3, },
-            { pos = { x = 90,  y = 0,  z = -5,  rotation = 0, }, numMobs = 4, },
+            { pos = { x = 90,  y = 0,  z = -5,  rotation = 0, }, numMobs = 2, },
             { pos = { x = 150, y = 0,  z = -30, rotation = 0, }, numMobs = 3, },
             { pos = { x = 180, y = 0,  z = 0,   rotation = 0, }, numMobs = 3, },
             { pos = { x = 153, y = -6, z = 40,  rotation = 0, }, numMobs = 3, },
-            { pos = { x = 115, y = -7, z = 65,  rotation = 0, }, numMobs = 4, },
+            { pos = { x = 115, y = -7, z = 65,  rotation = 0, }, numMobs = 2, },
             { pos = { x = 80,  y = -8, z = 50,  rotation = 0, }, numMobs = 3, },
             { pos = { x = 65,  y = -8, z = 100, rotation = 0, }, numMobs = 3, },
-            { pos = { x = 15,  y = -7, z = 80,  rotation = 0, }, numMobs = 4, },
+            { pos = { x = 15,  y = -7, z = 80,  rotation = 0, }, numMobs = 2, },
             { pos = { x = -10, y = -1, z = 30,  rotation = 0, }, numMobs = 3, },
         },
         DEFENDER_CAMPS =

@@ -122,7 +122,7 @@ xi.settings.map =
 
     -- Multiplier for speed of engaged mobs when their target is out of range.
     -- The default for almost all mobs on retail is 2.5x their normal speed.
-    MOB_RUN_SPEED_MULTIPLIER = 0.95,
+    MOB_RUN_SPEED_MULTIPLIER = 2.5,
 
     -- Allows you to manipulate the constant multiplier in the skill-up rate formulas, having a potent effect on skill-up rates.
     SKILLUP_CHANCE_MULTIPLIER = 2.0,

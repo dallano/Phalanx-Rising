@@ -47,11 +47,19 @@ xi.xispal.follow = function(pal, player)
     if player:isEngaged() then
         local target = player:getTarget()
 
-        if job == xi.job.WHM or job == xi.job.BLM or job == xi.job.SMN then
-        elseif job == xi.job.BRD then
-        else
-            pal:updateEnmity(target)
+        for _, mob in pairs(player:getNotorietyList()) do
+            if mob:isMob() and mob == target then
+                if
+                    job ~= xi.job.WHM and
+                    job ~= xi.job.BLM and
+                    job ~= xi.job.SMN and
+                    job ~= xi.job.BRD
+                then
+                    pal:updateEnmity(target)
+                end
+            end
         end
+
     end
 
     -- Follow Target Handling

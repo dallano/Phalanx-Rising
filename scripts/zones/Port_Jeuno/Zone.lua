@@ -30,15 +30,15 @@ zoneObject.onZoneIn = function(player, prevZone)
         player:getYPos() == 0 and
         player:getZPos() == 0
     then
-        if prevZone == xi.zone.SAN_DORIA_JEUNO_AIRSHIP then
+        if prevZone == xi.zone.PORT_SAN_DORIA then
             cs = 10018
             player:setPos(-87.000, 12.000, 116.000, 128)
-        elseif prevZone == xi.zone.BASTOK_JEUNO_AIRSHIP then
-            cs = 10020
-            player:setPos(-50.000, 12.000, -116.000, 0)
-        elseif prevZone == xi.zone.WINDURST_JEUNO_AIRSHIP then
+        elseif prevZone == xi.zone.PORT_WINDURST then
             cs = 10019
             player:setPos(16.000, 12.000, -117.000, 0)
+        elseif prevZone == xi.zone.PORT_BASTOK then
+            cs = 10020
+            player:setPos(-50.000, 12.000, -116.000, 0)
         elseif prevZone == xi.zone.KAZHAM_JEUNO_AIRSHIP then
             cs = 10021
             player:setPos(-24.000, 12.000, 116.000, 128)
@@ -72,13 +72,13 @@ end
 
 zoneObject.onEventFinish = function(player, csid, option, npc)
     if csid == 10010 then
-        player:setPos(0, 0, 0, 0, 223)
+        player:setPos(0, 0, 0, 0, xi.zone.PORT_SAN_DORIA)
     elseif csid == 10011 then
-        player:setPos(0, 0, 0, 0, 225)
+        player:setPos(0, 0, 0, 0, xi.zone.PORT_WINDURST)
     elseif csid == 10012 then
-        player:setPos(0, 0, 0, 0, 224)
+        player:setPos(0, 0, 0, 0, xi.zone.PORT_BASTOK)
     elseif csid == 10013 then
-        player:setPos(0, 0, 0, 0, 226)
+        player:setPos(0, 0, 0, 0, xi.zone.KAZHAM)
     end
 end
 

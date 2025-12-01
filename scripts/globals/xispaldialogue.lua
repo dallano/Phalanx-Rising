@@ -556,6 +556,16 @@ xi.xispal.chocoboTrigger = function(player, choco)
                 if choco then
                     playerArg:delStatusEffectSilent(xi.effect.MOUNTED)
                     playerArg:setLocalVar('ownChoco', 1)
+
+                    local traits =
+                    {
+                        largeBeak   = false,
+                        fullTail    = false,
+                        largeTalons = false,
+                    }
+
+                    playerArg:registerChocobo(playerArg:getCharVar('[XISP]chocoColor'), traits)
+
                     playerArg:addStatusEffectEx(xi.effect.MOUNTED, xi.effect.MOUNTED, xi.mount.CHOCOBO, 0, 1800, 0, 360, true)
                     choco:setBehavior(bit.band(choco:getBehavior(), bit.bnot(xi.behavior.NO_DESPAWN)))
                     DespawnMob(choco:getID())
@@ -571,7 +581,7 @@ xi.xispal.chocoboTrigger = function(player, choco)
 
     local chocogrow = player:getCharVar('[XISP]chocoGrow')
 
-    if choco:getModelId() == 86 then -- Adult
+    if chocogrow >= 10 then -- Adult
         if #player:getNotorietyList() > 0 then
             player:printToPlayer("You cannot mount your chocobo while in combat.", xi.msg.channel.NS_SAY, ' ')
             return

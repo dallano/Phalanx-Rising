@@ -129,19 +129,24 @@ xi.xispal.checkAbilities = function(pal, player, job)
         return
     end
 
-    local castTarget  = pal
-    local target      = pal:getTarget()
-    local control     = true
-    local tankMode    = false
-    local playerJob   = player:getMainJob()
-    local battleTime  = pal:getBattleTime()
-    local palHPP      = pal:getHPP()
-
     for _, ability in pairs(xi.xispal.ability[job]) do
+        local castTarget  = pal
+        local target      = pal:getTarget()
+        local control     = true
+        local tankMode    = false
+        local playerJob   = player:getMainJob()
+        local battleTime  = pal:getBattleTime()
+        local palHPP      = pal:getHPP()
+
         local var = ability.recastVar
 
         -- Skip this ability if recast timer is on cooldown
-        if pal:getLocalVar(ability.recastVar) > os.time() then goto skip end
+        if
+            pal:getLocalVar(ability.recastVar) > os.time() or
+            player:getMainLvl() < ability.lvl
+        then
+            goto skip
+        end
 
         -- Used by SAM (Will enter a tank mode if player isn't a dedicated tank job)
         if playerJob ~= xi.job.PLD and playerJob ~= xi.job.RUN then
@@ -186,7 +191,7 @@ xi.xispal.checkAbilities = function(pal, player, job)
                 end
             end
 
-        -- DRK will only use abilites partially into fight and above 80% HP (save weaponbash)
+            -- DRK will only use abilites partially into fight and above 80% HP (save weaponbash)
         elseif job == xi.job.DRK then
             if ability.recastVar == 'weaponBash' and target:getCurrentAction() ~= xi.action.MAGIC_CASTING then
                 control = false
@@ -251,6 +256,10 @@ xi.xispal.checkWeaponSkill = function(pal, target, player, job)
                 end
             end
         end
+    end
+
+    if #weaponskills == 0 then
+        return
     end
 
     pal:useMobAbility(weaponskills[math.random(1, #weaponskills)], target)

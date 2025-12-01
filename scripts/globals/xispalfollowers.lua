@@ -61,33 +61,47 @@ xi.xispal.spawnYoungSquire = function(player, zone)
 end
 
 xi.xispal.spawnChocobo = function(player, zone)
-    local look = 86 -- Default yellow chocobo
+    local look = "0x0700200000000000000000000000000000000000" -- Default yellow chocobo
     local pos  = player:getPos()
     local name = "Chocobo"
+    local chocoStage = player:getCharVar('[XISP]chocoGrow')
+    local babyLook = 1997
 
-    if player:getCharVar('[XISP]chocoGrow') < 10 then
+    if chocoStage < 10 then
         name = "Baby Chocobo"
-        look = 3031 -- Baby Chocobo
     end
 
     -- Alternatively check for zones we don't want chocobo in
     if
         player:getStatusEffect(xi.effect.MOUNTED) ~= nil or
-        (look == 86 and zone:getTypeMask() ~= xi.zoneType.OUTDOORS)
+        (chocoStage >= 10 and zone:getTypeMask() ~= xi.zoneType.OUTDOORS)
     then
         return
     end
 
+    -- Check for color overrides
+    if chocoStage >= 10 then
+        local color = player:getCharVar('[XISP]chocoColor')
+        if color == 2 then
+            look = "0x0700210000000000000000000000000000000000" -- Black
+        elseif color == 4 then
+            look = "0x0700220000000000000000000000000000000000" -- Blue
+        elseif color == 6 then
+            look = "0x0700230000000000000000000000000000000000" -- Red
+        elseif color == 8 then
+            look = "0x0700240000000000000000000000000000000000" -- Green
+        end
+    end
 
     local choco = zone:insertDynamicEntity({
         objtype               = xi.objType.MOB,
-        -- allegiance            = xi.allegiance.PLAYER,
+        -- allegiance            = xi.allegiance.PLAYER, 
         name                  = name,
         x                     = pos.x,
         y                     = pos.y,
         z                     = pos.z + 1,
         rotation              = 0 + math.random(0, 360),
-        look                  = look,
+        look                  = (chocoStage >= 10) and look or babyLook,
         groupId               = 1016,
         groupZoneId           = xi.zone.GM_HOME,
         releaseIdOnDisappear  = true,

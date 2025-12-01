@@ -1849,7 +1849,7 @@ INSERT INTO `mob_skills` VALUES (1856,1600,'omega_javelin',0,0.0,7.0,2000,1500,4
 -- INSERT INTO `mob_skills` VALUES (1888,1632,'tremors',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1889,1633,'spirit_vacuum',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1890,1634,'sound_vacuum',0,0.0,7.0,2000,1500,4,0,0,0,0,0,0);
-INSERT INTO `mob_skills` VALUES (1891,3,'provoke',0,0.0,7.0,2000,0,4,0,0,0,0,0,0);      -- XISP humanoid
+INSERT INTO `mob_skills` VALUES (1891,3,'provoke',0,0.0,13.0,2000,0,4,0,0,0,0,0,0);      -- XISP humanoid
 INSERT INTO `mob_skills` VALUES (1892,94,'spirit_link',0,0.0,7.0,2000,0,1,0,0,0,0,0,0); -- XISP humanoid
 INSERT INTO `mob_skills` VALUES (1893,97,'spirit_surge',0,0.0,7.0,2000,0,1,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (1894,1241,'potent_lunge',0,0.0,7.0,2000,1500,4,0,0,3,0,0,0);

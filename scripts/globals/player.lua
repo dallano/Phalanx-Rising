@@ -251,18 +251,18 @@ xi.player.onPlayerRaise = function(player)
 end
 
 xi.player.onPlayerEngage = function(player)
-    -- local target = player:getTarget()
+    local target = player:getTarget()
 
-    -- if target then
-    --     local isDragon = target:getLocalVar('[XISP]isDragon')
-    --     if isDragon == 1 then -- Lvl 40
-    --         player:changeMusic(2, 216)
-    --     elseif isDragon == 2 then -- Lvl 75
-    --         player:changeMusic(2, 215)
-    --     else
-    --         player:changeMusic(2, player:getZone():setSoloBattleMusic())
-    --     end
-    -- end
+    if target then
+        local isDragon = target:getLocalVar('[XISP]isDragon')
+        if isDragon == 1 then -- Lvl 40
+            player:changeMusic(2, 216)
+        elseif isDragon == 2 then -- Lvl 75
+            player:changeMusic(2, 215)
+        else
+            player:changeMusic(2, player:getZone():setSoloBattleMusic())
+        end
+    end
 end
 
 xi.player.onPlayerDisengage = function(player)

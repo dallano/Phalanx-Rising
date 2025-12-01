@@ -48,24 +48,25 @@ content.loot =
     },
 
     {
-        { item = xi.item.GUNROMARU,      weight = 111 }, -- Gunromaru
-        { item = xi.item.PLATOON_DAGGER, weight = 139 }, -- Platoon Dagger
-        { item = xi.item.PLATOON_EDGE,   weight = 139 }, -- Platoon Edge
-        { item = xi.item.PLATOON_LANCE,  weight =  42 }, -- Platoon Lance
-        { item = xi.item.PLATOON_SWORD,  weight = 181 }, -- Platoon Sword
-        { item = xi.item.PURPLE_ROCK,    weight =  97 }, -- Purple Rock
-        { item = xi.item.RED_ROCK,       weight =  69 }, -- Red Rock
-        { item = xi.item.WHITE_ROCK,     weight =  14 }, -- White Rock
-        { item = xi.item.BLACK_ROCK,     weight =  28 }, -- Black Rock
-        { item = xi.item.GREEN_ROCK,     weight =  28 }, -- Green Rock
-        { item = xi.item.YELLOW_ROCK,    weight =  14 }, -- Yellow Rock
-        { item = xi.item.BLUE_ROCK,      weight =  69 }, -- Blue Rock
+        { item = xi.item.PLATOON_LANCE,  weight = 333 }, -- Platoon Lance
+        { item = xi.item.PLATOON_SWORD,  weight = 333 }, -- Platoon Sword
+        { item = xi.item.GUNROMARU,      weight = 333 }, -- Gunromaru
     },
 
     {
-        { item = xi.item.NONE,        weight = 389 }, -- nothing
-        { item = xi.item.ASTRAL_RING, weight = 167 }, -- astral_ring
-        { item = xi.item.BAT_WING,    weight = 444 }, -- bat_wing
+        { item = xi.item.PURPLE_ROCK,    weight =  15 }, -- Purple Rock
+        { item = xi.item.RED_ROCK,       weight =  15 }, -- Red Rock
+        { item = xi.item.WHITE_ROCK,     weight =  15 }, -- White Rock
+        { item = xi.item.BLACK_ROCK,     weight =  15 }, -- Black Rock
+        { item = xi.item.GREEN_ROCK,     weight =  15 }, -- Green Rock
+        { item = xi.item.YELLOW_ROCK,    weight =  15 }, -- Yellow Rock
+        { item = xi.item.BLUE_ROCK,      weight =  15 }, -- Blue Rock
+    },
+
+    {
+        { item = xi.item.NONE,        weight = 150 }, -- nothing
+        { item = xi.item.ASTRAL_RING, weight = 500 }, -- astral_ring
+        { item = xi.item.BAT_WING,    weight = 350 }, -- bat_wing
     },
 }
 

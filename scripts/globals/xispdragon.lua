@@ -153,6 +153,9 @@ xi.xispdragon.spawnDragon = function(zone, tier, index)
             drawIn(mob, target)
         end,
 
+        onMobDeath = function(mob, player, optParams)
+        end,
+
         onMobDespawn = function(mob, player, optParams)
             zone:setLocalVar('[XISP]dragonSpawned', 0)
         end,
