@@ -1,1 +1,1 @@
-## dallano Changelog (2026-09-15)
+## dallano Changelog (2026-10-01)
